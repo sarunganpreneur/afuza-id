@@ -1,0 +1,128 @@
+export type ApprovalRisk =
+  | "LOW"
+  | "MEDIUM"
+  | "HIGH"
+  | "CRITICAL";
+
+export type ApprovalStatus =
+  | "PENDING"
+  | "APPROVED"
+  | "REJECTED"
+  | "EXPIRED";
+
+export type ApprovalPolicy = {
+  id: string;
+  action_type: string;
+  title: string;
+  description: string;
+  default_risk: ApprovalRisk;
+  requires_human_approval: boolean;
+  execution_enabled: boolean;
+};
+
+export type ApprovalRecord = {
+  id: string;
+  action_type: string;
+  title: string;
+  requester: string;
+  requester_type: "USER" | "AGENT" | "SYSTEM";
+  risk: ApprovalRisk;
+  status: ApprovalStatus;
+  payload_summary: string;
+  created_at: string;
+  expires_at: string | null;
+  decided_at: string | null;
+  decided_by: string | null;
+  execution_enabled: boolean;
+};
+
+export const APPROVAL_POLICIES: ApprovalPolicy[] = [
+  {
+    id: "publish-site",
+    action_type: "SITE_PUBLISH",
+    title: "Publish Website",
+    description:
+      "Publish or replace a public website version.",
+    default_risk: "HIGH",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "bulk-outbound",
+    action_type: "BULK_OUTBOUND",
+    title: "Bulk Outbound Communication",
+    description:
+      "Send high-volume WhatsApp, email or other outbound communication.",
+    default_risk: "CRITICAL",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "deployment",
+    action_type: "DEPLOYMENT",
+    title: "Production Deployment",
+    description:
+      "Deploy application or infrastructure changes to production.",
+    default_risk: "CRITICAL",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "pricing-change",
+    action_type: "PRICING_CHANGE",
+    title: "Pricing or Commercial Change",
+    description:
+      "Change customer-facing price, discount, offer or commercial term.",
+    default_risk: "HIGH",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "agent-create",
+    action_type: "AGENT_CREATE",
+    title: "Create Agent",
+    description:
+      "Create or register a new operational AI agent.",
+    default_risk: "MEDIUM",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "agent-permission-change",
+    action_type: "AGENT_PERMISSION_CHANGE",
+    title: "Change Agent Permission",
+    description:
+      "Expand or modify an agent's operational scope or permissions.",
+    default_risk: "CRITICAL",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "workflow-enable",
+    action_type: "AUTOMATION_ENABLE",
+    title: "Enable Automation",
+    description:
+      "Enable an automation capable of taking external actions.",
+    default_risk: "HIGH",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+  {
+    id: "data-delete",
+    action_type: "DATA_DELETE",
+    title: "Delete Operational Data",
+    description:
+      "Delete project, customer, lead or other operational records.",
+    default_risk: "CRITICAL",
+    requires_human_approval: true,
+    execution_enabled: false,
+  },
+];
+
+/*
+ * V1 intentionally starts with an empty inbox.
+ *
+ * Approval records will be persisted when the approval service
+ * is introduced. We do not fabricate pending approvals.
+ */
+export const APPROVAL_RECORDS: ApprovalRecord[] = [];

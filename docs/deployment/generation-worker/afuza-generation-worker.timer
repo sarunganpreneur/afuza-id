@@ -1,0 +1,11 @@
+[Unit]
+Description=Run one AFUZA.ID generation job periodically
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=20s
+Unit=afuza-generation-worker.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

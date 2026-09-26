@@ -1,0 +1,39 @@
+import { type NextRequest, NextResponse } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
+
+export async function proxy(request: NextRequest) {
+  const sessionResponse = await updateSession(request);
+
+  const hostname = (request.headers.get("host") ?? "")
+    .split(":")[0]
+    .toLowerCase();
+
+  const { pathname } = request.nextUrl;
+
+  if (
+    hostname === "ops.afuza.id" &&
+    !pathname.startsWith("/_next") &&
+    !pathname.startsWith("/api") &&
+    !pathname.startsWith("/ops") &&
+    pathname !== "/favicon.ico"
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname === "/" ? "/ops" : `/ops${pathname}`;
+
+    const rewriteResponse = NextResponse.rewrite(url);
+
+    sessionResponse.cookies.getAll().forEach((cookie) => {
+      rewriteResponse.cookies.set(cookie);
+    });
+
+    return rewriteResponse;
+  }
+
+  return sessionResponse;
+}
+
+export const config = {
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
+};

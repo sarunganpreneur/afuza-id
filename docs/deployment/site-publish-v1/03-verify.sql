@@ -1,0 +1,7 @@
+-- Read-only verification. No user rows or payload values are selected.
+begin;
+set transaction read only;
+select p.proname, pg_get_function_identity_arguments(p.oid) as arguments, case when p.prosecdef then 'SECURITY DEFINER' else 'SECURITY INVOKER' end as security_mode, p.proconfig, has_function_privilege('postgres', p.oid, 'EXECUTE') as postgres_execute, has_function_privilege('service_role', p.oid, 'EXECUTE') as service_role_execute, has_function_privilege('public', p.oid, 'EXECUTE') as public_execute, has_function_privilege('anon', p.oid, 'EXECUTE') as anon_execute, has_function_privilege('authenticated', p.oid, 'EXECUTE') as authenticated_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and p.oid in ('public.publish_site_version(uuid, integer)'::regprocedure, 'public.unpublish_site(uuid)'::regprocedure, 'public.get_published_site(text)'::regprocedure);
+select count(*) as published_join_mismatches from public.sites s where s.published_version is not null and not exists (select 1 from public.site_versions sv where sv.site_id = s.id and sv.version_number = s.published_version and sv.content_snapshot->>'schemaVersion' = 'site_content_v1');
+select count(*) as published_non_v1 from public.site_versions sv join public.sites s on s.id = sv.site_id and s.published_version = sv.version_number where sv.content_snapshot->>'schemaVersion' is distinct from 'site_content_v1';
+rollback;

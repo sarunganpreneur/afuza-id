@@ -1,0 +1,16 @@
+[Unit]
+Description=AFUZA.ID generation worker (single job)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=afuzaid
+WorkingDirectory=/home/afuzaid/web/afuza.id/private/app
+EnvironmentFile=/home/afuzaid/web/afuza.id/private/app/.env.local
+ExecStart=/usr/bin/npm run generation:worker -- --once
+TimeoutStartSec=20min
+KillSignal=SIGTERM
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
