@@ -563,7 +563,13 @@ describe("Immutable source grounding", () => {
 
 describe("Analysis completion lifecycle contract", () => {
   it("moves analysis completion from ANALYZING to GENERATING_CONTENT", () => {
-    const migration = readFileSync("../schema/migrations/20260911_phase5g3b_fix_analysis_completion_status.sql", "utf8");
+    const migration = readFileSync(
+      new URL(
+        "../../../supabase/migrations/20260912_generation_content_v1_hardening.sql",
+        import.meta.url,
+      ),
+      "utf8",
+    );
 
     expect(migration).toContain("gj.status = 'ANALYZING'::public.generation_status");
     expect(migration).toContain("set status = 'GENERATING_CONTENT'::public.generation_status");
