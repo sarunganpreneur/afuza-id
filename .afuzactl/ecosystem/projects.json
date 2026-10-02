@@ -402,12 +402,17 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_3_READY",
+      "execution_state": "BUNDLE_4_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
           "to_state": "BUNDLE_3_READY",
           "evidence": [".afuzactl/ecosystem/bundle3-report.md", "9be051a0ecf2bc83a11b1a5f630fb92926a6c889"]
+        },
+        {
+          "from_state": "BUNDLE_3_READY",
+          "to_state": "BUNDLE_4_READY",
+          "evidence": [".afuzactl/ecosystem/bundle4-report.md", "da24609dc1a1fa718e93af5b3589ffcc03858fd8"]
         }
       ],
       "blockers": [],
@@ -467,12 +472,17 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_3_READY",
+      "execution_state": "BUNDLE_4_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
           "to_state": "BUNDLE_3_READY",
           "evidence": [".afuzactl/ecosystem/bundle3-report.md", "f672b605239893620495d4e9f4e25506ac64834b"]
+        },
+        {
+          "from_state": "BUNDLE_3_READY",
+          "to_state": "BUNDLE_4_READY",
+          "evidence": [".afuzactl/ecosystem/bundle4-report.md", "0adec56f4f937039c18e751924102c68683ec953"]
         }
       ],
       "blockers": [],
@@ -516,12 +526,17 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_3_READY",
+      "execution_state": "BUNDLE_4_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
           "to_state": "BUNDLE_3_READY",
           "evidence": [".afuzactl/ecosystem/bundle3-report.md", "72093222ff42ab73f18ca10967bf4db375b65c5f"]
+        },
+        {
+          "from_state": "BUNDLE_3_READY",
+          "to_state": "BUNDLE_4_READY",
+          "evidence": [".afuzactl/ecosystem/bundle4-report.md", "3ef8cadc46e4576bd9b20be6ac31aca57de3cc1f"]
         }
       ],
       "blockers": [],

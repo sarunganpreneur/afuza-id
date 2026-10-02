@@ -312,11 +312,12 @@ describe("Afuza ecosystem registry", () => {
     const report = control.createEcosystemReport(ecosystem);
     expect(report).toContain("AUTONOMOUS_BUILD_READY: 3");
     expect(report).toContain("EXECUTION_SPEC_READY: 3");
-    expect(report).toContain("BUNDLE_3_READY: 3");
+    expect(report).toContain("BUNDLE_4_READY: 3");
     expect(report).toContain("BUNDLE_2_READY | BUNDLE_3_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)");
-    expect(report).toContain("- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY");
-    expect(report).toContain("- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY");
-    expect(report).toContain("- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY");
+    expect(report).toContain("BUNDLE_3_READY | BUNDLE_4_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)");
+    expect(report).toContain("- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY");
+    expect(report).toContain("- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY");
+    expect(report).toContain("- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY");
     expect(report).toContain("Drive document IDs supplied: 3");
     expect(report).toContain("Contents unavailable pending Google sign-in: 21");
     expect(report).toContain("PASOK.IN");
@@ -329,8 +330,8 @@ describe("Afuza ecosystem registry", () => {
     const project = ecosystem.validation.projects.get("chalwa.id");
     if (!project) throw new Error("CHALWA project is missing");
     project.autonomous_build_readiness = "IMPLEMENTATION_IN_PROGRESS";
-    expect(project.execution_state).toBe("BUNDLE_3_READY");
-    expect(control.createEcosystemReport(ecosystem)).toContain("BUNDLE_3_READY: 3");
+    expect(project.execution_state).toBe("BUNDLE_4_READY");
+    expect(control.createEcosystemReport(ecosystem)).toContain("BUNDLE_4_READY: 3");
   });
 
   it("keeps specification readiness unchanged when execution state changes", () => {
@@ -347,7 +348,7 @@ describe("Afuza ecosystem registry", () => {
     const readiness = ecosystem.validation.readiness.get("chalwa.id");
     if (!readiness) throw new Error("CHALWA readiness record is missing");
     readiness.status = "READY_FOR_HUMAN_TEST";
-    expect(control.createEcosystemReport(ecosystem)).toContain("BUNDLE_3_READY: 3");
+    expect(control.createEcosystemReport(ecosystem)).toContain("BUNDLE_4_READY: 3");
   });
 
   it("reports missing legacy execution state as NOT_RECORDED, never as Bundle 2", () => {
@@ -357,7 +358,7 @@ describe("Afuza ecosystem registry", () => {
     delete project.execution_state;
     const report = control.createEcosystemReport(ecosystem);
     expect(report).toContain("NOT_RECORDED: 14");
-    expect(report).toContain("BUNDLE_3_READY: 3");
+    expect(report).toContain("BUNDLE_4_READY: 3");
     expect(report).not.toContain("BUNDLE_2_READY: 3");
   });
 

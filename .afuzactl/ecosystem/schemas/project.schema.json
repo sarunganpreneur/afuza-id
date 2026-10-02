@@ -18,15 +18,15 @@
     "capabilities_provided": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "spec_readiness": { "enum": ["NOT_RECORDED", "EXECUTION_SPEC_READY"] },
     "autonomous_build_readiness": { "enum": ["DISCOVERED", "PRD_MISSING_EXTERNAL", "PRD_DRAFT", "PRD_READY", "SPEC_INCOMPLETE", "EXECUTION_SPEC_READY", "DEPENDENCY_BLOCKED", "AUTONOMOUS_BUILD_READY", "IMPLEMENTATION_IN_PROGRESS", "READY_FOR_HUMAN_TEST", "PRODUCTION"] },
-    "execution_state": { "enum": ["NOT_RECORDED", "NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY"] },
+    "execution_state": { "enum": ["NOT_RECORDED", "NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY", "BUNDLE_4_READY", "STAGING_READY"] },
     "execution_transitions": {
       "type": "array",
       "items": {
         "type": "object",
         "required": ["from_state", "to_state", "evidence"],
         "properties": {
-          "from_state": { "enum": ["NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY"] },
-          "to_state": { "enum": ["NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY"] },
+          "from_state": { "enum": ["NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY", "BUNDLE_4_READY", "STAGING_READY"] },
+          "to_state": { "enum": ["NOT_STARTED", "FOUNDATION_READY", "BUNDLE_2_READY", "BUNDLE_3_READY", "BUNDLE_4_READY", "STAGING_READY"] },
           "evidence": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
         },
         "additionalProperties": false
