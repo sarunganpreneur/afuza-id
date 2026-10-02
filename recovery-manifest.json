@@ -18,7 +18,20 @@
       "1208f1f5be64a0ec82a97381ad23bbea3ed3c6be"
     ],
     "source_checkout_before_integration": "feature/lp100-cashflow-sprint at dc975281f745e96a5140143270bd96a611ed3d17",
-    "remote_backup": "REMOTE_BACKUP_PENDING: no Git remote configured",
+    "remote_backup": {
+      "status": "VERIFIED",
+      "provider": "GitHub",
+      "repository": "sarunganpreneur/afuza-id",
+      "remote_name": "origin",
+      "ssh_authentication": "dedicated afuzaid deploy key via github-afuza; authentication verified",
+      "canonical_remote_branch": "canonical/ax-control-plane-20261003",
+      "canonical_local_sha": "49969c0729ff72175f0f40959992e10f72f4de0a",
+      "canonical_remote_sha": "49969c0729ff72175f0f40959992e10f72f4de0a",
+      "safety_remote_branch": "backup/pre-ax-control-promotion-20261003",
+      "safety_local_sha": "dc975281f745e96a5140143270bd96a611ed3d17",
+      "safety_remote_sha": "dc975281f745e96a5140143270bd96a611ed3d17",
+      "verified_at": "2026-10-03T02:20:02+07:00"
+    },
     "promotion_commit_description": "AX control-plane recovery + canonicalization"
   },
   "control_plane_operations": {
@@ -32,6 +45,7 @@
     "production_runtime": "/home/afuzaid/apps/afuza-id",
     "production_runtime_owns_ax_state": false,
     "bundle_3_executed": false,
+    "bundle_3_authorized": true,
     "ready_for_human_test_projects": []
   },
   "evidence_model": {
@@ -328,7 +342,8 @@
     "local_toolchain": "Installed in this recovery worktree with npm ci from package-lock.json; no NODE_PATH fallback",
     "dependency_drift": "No package-lock change or dependency-version drift; package.json recovery script change predated installation",
     "drive_evidence": "PASS: synthetic IDs removed, 24 IDs explicitly unavailable, 3 supplied IDs retained, zero unsupported CONTENT_RECONCILED records, no Google credentials found",
-    "promotion_gate": "READY_TO_PROMOTE=YES; all required candidate gates pass; not promoted"
+    "promotion_gate": "READY_TO_PROMOTE=YES; all required candidate gates pass; not promoted",
+    "remote_backup_verified": "YES; SSH authentication, repository access, canonical SHA, safety SHA, doctor, and portfolio checks all pass"
   },
   "drift_audit": {
     "tracked_changes": [
