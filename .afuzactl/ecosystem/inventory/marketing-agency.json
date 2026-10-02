@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project_id": "marketing-agency",
-  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "inventory_timestamp": "2026-10-03T03:54:03+07:00",
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/marketing-agency",
@@ -204,6 +204,15 @@
       "evidence": [
         "Adjacent WAHA provider, AFUZA.ID generation action, and Video OS host/bootstrap docs exist; no approved Marketing Agency integration contract."
       ]
+    },
+    {
+      "area": "Pre-Bundle-3 tenant, entitlement, and capability-boundary inventory",
+      "status": "PARTIAL",
+      "evidence": [
+        "src/agency-domain.ts defines Tenant, TenantMembership, AccountAssignment, ServiceSubscription, AgencyTask, BillingProfile, ClientPortalConfig, and SharedCapabilityReference; Client type is absent.",
+        "Tenant equality and fail-closed unknown-feature helpers exist, but storage access is not automatically tenant-scoped, subscription entitlement is not bound to a membership context, account assignment is not membership-validated, and approval-gated execution/audit are absent.",
+        "No local Campaign/Lead/LeadScore canonical models exist; shared acquisition is reference-only. Expected Bundle 3 write set: src/agency-domain.ts, its tests, and new tenant/assignment/adapter contract modules/tests. No schema/migration exists in this root; no migration required for the bounded slice. No semantic blocker."
+      ]
     }
   ],
   "gaps": [
@@ -232,7 +241,7 @@
     {
       "question": "What auth should it reuse?",
       "status": "VERIFIED",
-      "answer": "Reuse shared Afuza identity/auth if its verified contract supports multi-application identity and tenant membership; do not create an incompatible auth silo without evidence. Contract verification is still pending.",
+      "answer": "The already-approved architecture reuses shared AFUZA identity/auth when compatible and forbids a second canonical identity system. Multi-application tenant-membership contract compatibility remains an implementation verification task, not an ownership decision.",
       "evidence": [
         "portfolio-state.json:ax03-decision-marketing-agency-ownership",
         "portfolio-state.json:ax03-decision-shared-capability-ownership"
@@ -241,7 +250,7 @@
     {
       "question": "What database/schema owns tenant/client?",
       "status": "VERIFIED",
-      "answer": "Marketing Agency owns and is the canonical writer for Tenant/Client, TenantMembership, AccountAssignment, ServiceSubscription, AgencyTask, BillingProfile, ClientPortalConfig, and agency-specific business state in its separately owned schema/database; schema not yet created.",
+      "answer": "The already-approved architecture makes Marketing Agency the canonical writer for Tenant/Client, TenantMembership, AccountAssignment, ServiceSubscription, AgencyTask, BillingProfile, ClientPortalConfig, and agency-specific business state in its separate persistence boundary; schema not yet created.",
       "evidence": [
         "portfolio-state.json:ax03-decision-marketing-agency-ownership",
         "portfolio-state.json:ax03-decision-single-writer-data-ownership"
@@ -250,7 +259,7 @@
     {
       "question": "What service owns Lead/Campaign?",
       "status": "INFERRED",
-      "answer": "Shared Acquisition Engine has a lead upsert route and commercial lead store; no Marketing Agency Campaign service/owner is evidenced.",
+      "answer": "The already-approved architecture assigns Campaign, Lead, LeadScore, qualification, suppression, outreach, WhatsApp, and acquisition analytics to Shared Acquisition Engine. Marketing Agency must use external contracts/references and must not create duplicate canonical models.",
       "evidence": [
         "src/app/api/internal/lead-engine/v1/leads/upsert/route.ts",
         "src/app/api/internal/lead-engine/v1/_lib/store.ts"
@@ -259,7 +268,7 @@
     {
       "question": "What service owns Approval?",
       "status": "INFERRED",
-      "answer": "AFUZA OPS has an approval registry and persistence table; Marketing Agency approval-domain ownership/integration is unresolved.",
+      "answer": "Approval is the shared control capability by prior approved architecture; Marketing Agency must enforce its approval-required execution boundary through an explicit adapter contract. Runtime adapter integration is not present.",
       "evidence": [
         "src/lib/ops/approvals-registry.ts",
         "supabase/migrations/20260924_ops_approval_persistence_v1.sql"
@@ -308,6 +317,18 @@
         "/home/afuzaid/apps/afuza-creative-os/README-INFRASTRUCTURE.md",
         "/etc/nginx/sites-enabled/video.afuza.id"
       ]
+    },
+    {
+      "question": "What does the pre-Bundle-3 local runtime implement, and what is the bounded Bundle 3 delta?",
+      "status": "VERIFIED",
+      "answer": "Baseline c8d905861e98ff57388f110b7548866f52c5f36d is clean; lint, typecheck, 6/6 tests, and build pass. Basic tenant-scope equality and feature checks exist, but Client, membership-bound assignment, tenant-bound entitlement, enforced storage isolation, approval-aware command boundary, adapter contracts, and audit are missing. Expected edits are src/agency-domain.ts, its tests, and new owned-domain/adapter modules. No schema/migration exists in this root; no migration required. No semantic ownership blocker.",
+      "evidence": ["/home/afuzaid/apps/marketing-agency/src/agency-domain.ts", "/home/afuzaid/apps/marketing-agency/src/agency-domain.test.ts", "baseline commit c8d905861e98ff57388f110b7548866f52c5f36d"]
+    },
+    {
+      "question": "Does the runtime inventory reveal a shared canonical-writer collision or production dependency?",
+      "status": "VERIFIED",
+      "answer": "No. Marketing Agency contains only reference types for shared capabilities and no duplicated acquisition entities. The three project roots/write sets are disjoint. No production service, shared database, customer, billing, messaging, or provider endpoint was accessed.",
+      "evidence": ["/home/afuzaid/apps/marketing-agency", ".afuzactl/ecosystem/portfolio-state.json"]
     },
     {
       "question": "What port is safe?",

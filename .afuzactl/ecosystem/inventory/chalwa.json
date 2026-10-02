@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project_id": "chalwa.id",
-  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "inventory_timestamp": "2026-10-03T03:54:03+07:00",
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/chalwa",
@@ -114,6 +114,15 @@
       "evidence": [
         "Baseline lint, typecheck, 7 unit tests, and build pass; Bundle 3 lifecycle/RBAC gates have not been implemented."
       ]
+    },
+    {
+      "area": "Pre-Bundle-3 design/product lifecycle inventory",
+      "status": "PARTIAL",
+      "evidence": [
+        "src/domain.ts has DRAFT/REVIEW/APPROVED/REJECTED/ARCHIVED designs, approval metadata enforcement on product conversion, PLANNED/ACTIVE/ARCHIVED products, default role permissions, and SKU uniqueness.",
+        "Missing GENERATED/REVIEW_REQUIRED/READY_FOR_PRODUCT and READY/PUBLISHED/UNPUBLISHED states; no lifecycle service, product transition graph, service-boundary authorization, audit/event record, or idempotent transition storage.",
+        "Bundle 3 write set is isolated to src/domain.ts, src/domain.test.ts, and new src lifecycle/service modules/tests. No existing database/schema means no migration is required for this bounded slice; semantic blocker: none."
+      ]
     }
   ],
   "gaps": [
@@ -124,5 +133,19 @@
   "blockers": [],
   "required_approvals": [],
   "recommended_next_action": "Bundle 2 execution remains the current proven lifecycle state; no human-test promotion or production rollout is claimed.",
-  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY"
+  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+  "phase0_answers": [
+    {
+      "question": "What does the pre-Bundle-3 runtime implement, and what is the bounded Bundle 3 delta?",
+      "status": "VERIFIED",
+      "answer": "Baseline 4dd9a7c76954a6c662ba3130fb013027138c96ae is clean; lint, typecheck, 7/7 tests, and build pass. Domain code contains basic design review/approval and product conversion, but not the specified full design/product states, enforced service RBAC, audit, or transition idempotency. Expected edits are src/domain.ts and its tests/new service modules. No schema or migration exists; no migration required. No semantic blocker.",
+      "evidence": ["/home/afuzaid/apps/chalwa/src/domain.ts", "/home/afuzaid/apps/chalwa/src/domain.test.ts", "baseline commit 4dd9a7c76954a6c662ba3130fb013027138c96ae"]
+    },
+    {
+      "question": "What shared write surfaces or production dependencies overlap this inventory?",
+      "status": "VERIFIED",
+      "answer": "No shared schema/migration or overlapping project-root write surface exists. Shared auth/AI/approval are contract references only; no external or production action was invoked.",
+      "evidence": ["/home/afuzaid/apps/chalwa", ".afuzactl/ecosystem/portfolio-state.json"]
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project_id": "klodhost",
-  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "inventory_timestamp": "2026-10-03T03:54:03+07:00",
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/klodhost",
@@ -100,6 +100,15 @@
       "evidence": [
         "No KlodHost environment, Nginx host, unit, package manifest, or tests found."
       ]
+    },
+    {
+      "area": "Pre-Bundle-3 provisioning orchestration inventory",
+      "status": "PARTIAL",
+      "evidence": [
+        "src/contracts.ts provides ProviderAdapter/FakeProviderAdapter, REQUESTED/QUEUED/RUNNING/SUCCEEDED/FAILED/BLOCKED/CANCELLED states, and a basic customer/admin privileged predicate.",
+        "VALIDATED/PROVISIONING/CONFIGURING/VERIFYING/ACTIVE/ROLLBACK_REQUIRED, command orchestration, durable idempotency/retry, audit, and lifecycle tests are absent. assertIdempotent is a no-op; ProviderReference.kind includes Contabo, so the core provider boundary needs tightening.",
+        "Billing and infrastructure are separate basic contract types but have no integrated state. Bundle 3 write set: src/contracts.ts, src/contracts.test.ts, and new src orchestration/adapter modules. Deterministic fake adapter only; no migration or semantic blocker."
+      ]
     }
   ],
   "gaps": [
@@ -111,5 +120,19 @@
   "blockers": [],
   "required_approvals": [],
   "recommended_next_action": "Bundle 2 execution remains the current proven lifecycle state; no human-test promotion or production rollout is claimed.",
-  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY"
+  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+  "phase0_answers": [
+    {
+      "question": "What does the pre-Bundle-3 runtime implement, and what is the bounded Bundle 3 delta?",
+      "status": "VERIFIED",
+      "answer": "Baseline 00fc57548c64021bc4289b848f6aa8efaf4c52f4 is clean; lint, typecheck, 5/5 tests, and build pass. A fake provider and coarse transition predicate exist, but staged orchestration, validated/configuring/verifying/active states, idempotency, retry, audit, and complete provider neutrality are missing. Expected edits are src/contracts.ts, its tests, and new orchestration/adapter modules. No schema or migration exists; no migration required. No semantic blocker.",
+      "evidence": ["/home/afuzaid/apps/klodhost/src/contracts.ts", "/home/afuzaid/apps/klodhost/src/contracts.test.ts", "baseline commit 00fc57548c64021bc4289b848f6aa8efaf4c52f4"]
+    },
+    {
+      "question": "Can orchestration be tested without a real provider or privileged shell?",
+      "status": "VERIFIED",
+      "answer": "Yes. Use deterministic FakeProviderAdapter behavior and authorized command objects only. No Contabo/provider call or privileged shell operation was invoked; no overlapping schema/write surface exists.",
+      "evidence": ["/home/afuzaid/apps/klodhost/src/contracts.ts", "/home/afuzaid/apps/klodhost"]
+    }
+  ]
 }
