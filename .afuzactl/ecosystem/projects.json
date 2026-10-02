@@ -401,6 +401,15 @@
       ],
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "spec_readiness": "EXECUTION_SPEC_READY",
+      "execution_state": "BUNDLE_3_READY",
+      "execution_transitions": [
+        {
+          "from_state": "BUNDLE_2_READY",
+          "to_state": "BUNDLE_3_READY",
+          "evidence": [".afuzactl/ecosystem/bundle3-report.md", "9be051a0ecf2bc83a11b1a5f630fb92926a6c889"]
+        }
+      ],
       "blockers": [],
       "external_source_required": false,
       "confidence": "HIGH"
@@ -457,6 +466,15 @@
       ],
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "spec_readiness": "EXECUTION_SPEC_READY",
+      "execution_state": "BUNDLE_3_READY",
+      "execution_transitions": [
+        {
+          "from_state": "BUNDLE_2_READY",
+          "to_state": "BUNDLE_3_READY",
+          "evidence": [".afuzactl/ecosystem/bundle3-report.md", "f672b605239893620495d4e9f4e25506ac64834b"]
+        }
+      ],
       "blockers": [],
       "external_source_required": false,
       "confidence": "HIGH"
@@ -497,6 +515,15 @@
       ],
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "spec_readiness": "EXECUTION_SPEC_READY",
+      "execution_state": "BUNDLE_3_READY",
+      "execution_transitions": [
+        {
+          "from_state": "BUNDLE_2_READY",
+          "to_state": "BUNDLE_3_READY",
+          "evidence": [".afuzactl/ecosystem/bundle3-report.md", "72093222ff42ab73f18ca10967bf4db375b65c5f"]
+        }
+      ],
       "blockers": [],
       "external_source_required": false,
       "confidence": "HIGH"

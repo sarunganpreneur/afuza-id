@@ -10,32 +10,43 @@
 ## Readiness
 
 Spec readiness:
-- DISCOVERED: 1
 - EXECUTION_SPEC_READY: 3
-- IMPLEMENTATION_IN_PROGRESS: 2
-- PRD_DRAFT: 1
-- PRD_MISSING_EXTERNAL: 3
-- SPEC_INCOMPLETE: 7
+- NOT_RECORDED: 14
 
 Autonomous readiness:
 - AUTONOMOUS_BUILD_READY: 3
-
-Execution lifecycle:
-- BUNDLE_2_READY: 3
 - DISCOVERED: 1
 - IMPLEMENTATION_IN_PROGRESS: 2
 - PRD_DRAFT: 1
 - PRD_MISSING_EXTERNAL: 3
 - SPEC_INCOMPLETE: 7
 
+Execution lifecycle:
+- BUNDLE_3_READY: 3
+- NOT_RECORDED: 14
+
+Project state:
+- Afuza Ecosystem Portfolio: Spec: NOT_RECORDED; Autonomous: DISCOVERED; Execution: NOT_RECORDED
+- AFUZA.ID Core: Spec: NOT_RECORDED; Autonomous: IMPLEMENTATION_IN_PROGRESS; Execution: NOT_RECORDED
+- AFUZA OPS Command Center: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- Shared Acquisition Engine: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- AI Lead Finder / Lead Discovery: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- LP100 Campaign: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- AFUZA Landing Page Production System / Product Factory: Spec: NOT_RECORDED; Autonomous: PRD_DRAFT; Execution: NOT_RECORDED
+- AFUZA Creative OS / video.afuza.id: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- AFUZA AI Workforce Platform: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- OMNIVORA: Spec: NOT_RECORDED; Autonomous: IMPLEMENTATION_IN_PROGRESS; Execution: NOT_RECORDED
+- AFUZA Revenue Engine V1: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
+- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY
+- PASOK.IN: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
+- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY
+- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_3_READY
+- HIKSAS: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
+- KonsultanHalal: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
+
 ## Normalized transitions
 
-- DISCOVERED | DISCOVERED: 1
-- EXECUTION_SPEC_READY | AUTONOMOUS_BUILD_READY: 3
-- IMPLEMENTATION_IN_PROGRESS | IMPLEMENTATION_IN_PROGRESS: 2
-- PRD_DRAFT | PRD_DRAFT: 1
-- PRD_MISSING_EXTERNAL | PRD_MISSING_EXTERNAL: 3
-- SPEC_INCOMPLETE | SPEC_INCOMPLETE: 7
+- BUNDLE_2_READY | BUNDLE_3_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)
 
 | Project | Readiness | External source required | Blockers / gaps |
 | --- | --- | --- | --- |

@@ -637,15 +637,16 @@ function printEcosystemReadiness(ecosystem) {
 
 function createEcosystemReport(ecosystem) {
   const projects = [...ecosystem.validation.projects.values()];
-  const readiness = [...ecosystem.validation.readiness.values()];
-  const specReadinessCounts = countBy(readiness, (item) => item.status === "AUTONOMOUS_BUILD_READY" ? "EXECUTION_SPEC_READY" : item.status);
-  const autonomousReadinessCounts = countBy(readiness, (item) => item.status === "AUTONOMOUS_BUILD_READY" ? "AUTONOMOUS_BUILD_READY" : item.status === "READY_FOR_HUMAN_TEST" ? "AUTONOMOUS_BUILD_READY" : item.status === "PRODUCTION" ? "AUTONOMOUS_BUILD_READY" : "N/A");
-  const executionLifecycleCounts = countBy(readiness, (item) => item.status === "AUTONOMOUS_BUILD_READY" ? "BUNDLE_2_READY" : item.status === "READY_FOR_HUMAN_TEST" ? "BUNDLE_2_READY" : item.status === "PRODUCTION" ? "BUNDLE_2_READY" : item.status);
+  const specReadinessCounts = countBy(projects, (item) => item.spec_readiness || "NOT_RECORDED");
+  const autonomousReadinessCounts = countBy(projects, (item) => item.autonomous_build_readiness || "NOT_RECORDED");
+  const executionLifecycleCounts = countBy(projects, (item) => item.execution_state || "NOT_RECORDED");
   const sourceCounts = countBy([...ecosystem.validation.sources.values()], (item) => item.status);
   const capabilityCounts = countBy([...ecosystem.validation.capabilities.values()], (item) => item.classification);
   const sourceDocuments = [...ecosystem.validation.sources.values()].filter((item) => item.source_type === "google_drive_document");
-  const normalizedTransitions = countBy(readiness, (item) => `${item.previous_status || item.status} | ${item.status}`);
+  const executionTransitions = projects.flatMap((project) => (project.execution_transitions || []).map((transition) => ({ project, transition })));
+  const normalizedTransitions = countBy(executionTransitions, ({ transition }) => `${transition.from_state} | ${transition.to_state}`);
   const rows = projects.map((project) => `| ${project.name} | ${project.autonomous_build_readiness} | ${project.external_source_required ? "Yes" : "No"} | ${project.blockers.join("; ") || "None recorded"} |`).join("\n");
+  const projectStateLines = projects.map((project) => `- ${project.name}: Spec: ${project.spec_readiness || "NOT_RECORDED"}; Autonomous: ${project.autonomous_build_readiness}; Execution: ${project.execution_state || "NOT_RECORDED"}`);
   const sourceLines = Object.entries(sourceCounts).sort(([left], [right]) => left.localeCompare(right)).map(([key, count]) => `- ${key}: ${count}`).join("\n");
   const capabilityLines = Object.entries(capabilityCounts).sort(([left], [right]) => left.localeCompare(right)).map(([key, count]) => `- ${key}: ${count}`).join("\n");
   const readinessLines = [
@@ -657,8 +658,14 @@ function createEcosystemReport(ecosystem) {
     "",
     "Execution lifecycle:",
     ...Object.entries(executionLifecycleCounts).filter(([key]) => key !== "N/A").sort(([left], [right]) => left.localeCompare(right)).map(([key, count]) => `- ${key}: ${count}`),
+    "",
+    "Project state:",
+    ...projectStateLines,
   ].join("\n");
-  const transitionLines = Object.entries(normalizedTransitions).sort(([left], [right]) => left.localeCompare(right)).map(([key, count]) => `- ${key}: ${count}`).join("\n");
+  const transitionLines = Object.entries(normalizedTransitions).sort(([left], [right]) => left.localeCompare(right)).map(([key, count]) => {
+    const projectNames = executionTransitions.filter(({ transition }) => `${transition.from_state} | ${transition.to_state}` === key).map(({ project }) => project.name).sort().join(", ");
+    return `- ${key}: ${count} (${projectNames})`;
+  }).join("\n");
   const queueLines = ecosystem.executionQueue.items.map((item) => `- ${item.classification}: ${item.title} (${item.project_id})`).join("\n");
   const driveIdsSupplied = sourceDocuments.filter((item) => typeof item.external_document_id === "string" && item.external_document_id.length > 10).length;
   const contentsBlocked = sourceDocuments.filter((item) => item.external_document_id === null && item.last_known_metadata?.document_id_status === "NOT_PROVIDED").length;
