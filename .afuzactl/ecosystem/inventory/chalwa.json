@@ -5,16 +5,17 @@
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/chalwa",
-    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
-    "framework": "None; repository skeleton only.",
-    "runtime": "UNKNOWN",
-    "package_manager": "UNKNOWN",
-    "scripts": [],
+    "git_state": "Separate afuzaid-owned Git repository on main; scaffold baseline committed as 4dd9a7c76954a6c662ba3130fb013027138c96ae.",
+    "framework": "Node.js and TypeScript scaffold; no production framework selected.",
+    "runtime": "Node.js local project scripts verified; deployment/runtime configuration not verified.",
+    "package_manager": "npm with committed package-lock.json.",
+    "scripts": ["lint", "typecheck", "test", "build", "dev", "start"],
     "structure": [
       "README.md records approved project ownership and domain boundaries.",
       ".gitignore excludes dependency/build outputs and environment files.",
-      "No app source, lockfile, database, migrations, auth code, tests, or service definitions.",
-      "Separate Git metadata exists with initial branch main and no commit."
+      "TypeScript domain/index source, unit tests, health test, package manifest, and lockfile are committed as the pre-Bundle-3 baseline.",
+      "Separate Git metadata is on main with baseline commit 4dd9a7c76954a6c662ba3130fb013027138c96ae.",
+      "No database, migrations, or production service definitions are present."
     ]
   },
   "classification": "EXISTING_PARTIAL",
@@ -28,14 +29,14 @@
   "dependencies": [
     {
       "name": "Afuza authentication",
-      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "status": "APPROVED_SHARED_CAPABILITY_BOUNDARY; explicit consumer contract integration remains unverified",
       "evidence": [
         ".afuzactl/ecosystem/capabilities.json:authentication"
       ]
     },
     {
       "name": "Afuza AI generation",
-      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "status": "APPROVED_SHARED_CAPABILITY_BOUNDARY; explicit consumer contract integration remains unverified",
       "evidence": [
         ".afuzactl/ecosystem/capabilities.json:ai-generation"
       ]
@@ -58,7 +59,7 @@
   "shared_capabilities": [
     {
       "capability": "authentication",
-      "status": "CANDIDATE; ownership/reuse boundary unclear",
+      "status": "APPROVED_REUSE_BOUNDARY; authentication contract compatibility remains unverified",
       "evidence": [
         ".afuzactl/ecosystem/capabilities.json"
       ]
@@ -90,14 +91,14 @@
       "area": "CHALWA repository skeleton",
       "status": "PARTIAL",
       "evidence": [
-        "/home/afuzaid/apps/chalwa is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+        "/home/afuzaid/apps/chalwa is an afuzaid-owned Git repository on main with committed pre-Bundle-3 baseline 4dd9a7c76954a6c662ba3130fb013027138c96ae."
       ]
     },
     {
       "area": "Database, migrations, authentication, tests, and build",
       "status": "MISSING",
       "evidence": [
-        "No CHALWA repository was found; no project-local configuration or test commands were available."
+        "No database migrations, authentication implementation, or service definitions are present in the baseline."
       ]
     },
     {
@@ -111,14 +112,13 @@
       "area": "Verification gates",
       "status": "MISSING",
       "evidence": [
-        "No CHALWA test/build environment available; gates were not run."
+        "Baseline lint, typecheck, 7 unit tests, and build pass; Bundle 3 lifecycle/RBAC gates have not been implemented."
       ]
     }
   ],
   "gaps": [
-    "Framework/runtime/package manager and app scripts not selected or installed.",
-    "No application, database/auth setup, tests, or build exists yet.",
-    "Shared-service contracts and development/staging runtime/domain remain unverified."
+    "No production framework, database, migrations, or deployment runtime is configured.",
+    "Shared-service consumer contracts and staging runtime/domain remain unverified."
   ],
   "conflicts": [],
   "blockers": [],

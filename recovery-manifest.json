@@ -413,9 +413,12 @@
     "scripts/portfolio-inbox.cjs": "57a904ba57300aaa40ef1faa94345deef7b97c6636ddce15e118949c1cd3c876",
     ".afuzactl/ecosystem/projects.json": "6ad4226c9c87d86a6fa7c0eeed852767457e4205b68aa30f27af19b118641f9c",
     ".afuzactl/ecosystem/readiness.json": "fbe5e6baab79e58eb9bef39f6410310f1d44fb3812e10dc363cc6aa984af7bb9",
-    ".afuzactl/ecosystem/portfolio-state.json": "5fdba6fbd4eb889b1d3e2b888e900a0442e12bc72742dd8f1ed67abb627e52bd",
-    ".afuzactl/ecosystem/execution-queue.json": "1bd552cac5978496d496dfb2e906b940fdd2cd9ad964171adf35d41ac434a9a8",
-    ".afuzactl/ecosystem/execution-plan.json": "5e3c5c8e95d3a47592279133f293292f496fcf5159f547e8f3f676549c869d43",
+    ".afuzactl/ecosystem/portfolio-state.json": "46b034dfc2ed5b983adf43c09f2eda44f65e0b1d428572c4582a8d8d308be6fa",
+    ".afuzactl/ecosystem/execution-queue.json": "3a98c895ca6c423e80d5f2398e337560b6e7765e022423f1f0907505bd62f281",
+    ".afuzactl/ecosystem/inventory/chalwa.json": "e4da18949d49ebbd99ca469355f6e619574f75c565ea274efdf8c8137e714f2b",
+    ".afuzactl/ecosystem/inventory/klodhost.json": "3a2c9d720b5e7a00809e9bee83b7e68ad174a0fa00901133738c7d99aff2c4d8",
+    ".afuzactl/ecosystem/inventory/marketing-agency.json": "2b038de0ffc9be3e63da4d2f2c5008cf0c85423e260ae35a9ef204bc11adf0fd",
+    ".afuzactl/ecosystem/execution-plan.json": "387e7726f026e23b2568b969ae128c3beba576f8d603bf9a35b8f03081eb7803",
     ".afuzactl/ecosystem/active-batch.json": "77f24ad3e959a740442d238ebaa5f9ef9897a57b922c96ef8aab6ffd51ae50f9",
     ".afuzactl/ecosystem/source-inventory.json": "d7a6098de4c3764912415c09b69750951e4c41fd33f1e4ce406c24a1f477a808",
     "src/lib/afuza-ecosystem.test.ts": "46a2496b3afb97f59e47aae202f05e725b4658914fe8e9b1123421dc451a619a",
@@ -425,7 +428,7 @@
     "src/app/ops/_components/ApprovalsReal.tsx": "80520b49902575279bed5820f63940ed4f7653441b65fbc0039e3481f073d70b",
     "src/app/ops/_components/ExecutionsReal.tsx": "13a46e3957b0839f5229801d1dceddfc4b6a146e15d780258571f3e7669cd8c4",
     "docs/AX-CONTROL-SNAPSHOT-POLICY.md": "5208b947ba0cdc9196191bb96d049722cacaabc6b23424fb3a9111f762bb7293",
-    ".afuzactl/ecosystem/report.md": "e0bebc9837dc2bdb5ec437af02e50008206dafaa15d20bf33a7f9603745b978a",
+    ".afuzactl/ecosystem/report.md": "a1281077f86588c48e0f5ae39febbed831cd9753ca4e6c8854f897827488a3c7",
     ".afuzactl/state.json": "ad0155e24818c69ec64fde55b463e0e321dd443e0be8266d32d2d6c7a439f400"
   },
   "canonical_state": {
@@ -451,6 +454,28 @@
     "marketing-agency": "BUNDLE_2_READY",
     "ready_for_human_test_projects": [],
     "bundle_3_executed": false
+  },
+  "pre_bundle3_decision_reconciliation": {
+    "status": "PASS",
+    "provenance": "ARCHITECTURE_DECISION_ALREADY_APPROVED; approval was supplied as existing architecture authority, not newly requested; original approval timestamp unavailable",
+    "ledger_recorded_at": "2026-10-03T02:44:32+07:00",
+    "decisions": [
+      "ax03-decision-chalwa-repository-ownership",
+      "ax03-decision-klodhost-repository-ownership",
+      "ax03-decision-marketing-agency-ownership"
+    ],
+    "project_baselines": {
+      "chalwa.id": "4dd9a7c76954a6c662ba3130fb013027138c96ae",
+      "klodhost": "00fc57548c64021bc4289b848f6aa8efaf4c52f4",
+      "marketing-agency": "c8d905861e98ff57388f110b7548866f52c5f36d"
+    },
+    "baseline_gates": {
+      "chalwa.id": "lint PASS; typecheck PASS; tests 7/7 PASS; build PASS",
+      "klodhost": "lint PASS; typecheck PASS; tests 5/5 PASS; build PASS",
+      "marketing-agency": "lint PASS; typecheck PASS; tests 6/6 PASS; build PASS"
+    },
+    "planner": "Three ownership approvals and baseline bootstrap items complete; three separate runtime inventory actions PARALLEL; zero collisions",
+    "execution_state_preserved": "All three projects remain BUNDLE_2_READY; no Bundle 3 work was executed"
   },
   "recovery_decision": {
     "stale_fixture_summary": "Recovered tests initially reflected the old AX-02/AX-03 snapshot and temporarily downgraded project state to satisfy those expectations.",

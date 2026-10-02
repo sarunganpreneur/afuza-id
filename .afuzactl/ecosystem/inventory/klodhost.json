@@ -5,16 +5,17 @@
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/klodhost",
-    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
-    "framework": "None; provider-agnostic repository skeleton only.",
-    "runtime": "UNKNOWN",
-    "package_manager": "UNKNOWN",
-    "scripts": [],
+    "git_state": "Separate afuzaid-owned Git repository on main; provider-neutral scaffold baseline committed as 00fc57548c64021bc4289b848f6aa8efaf4c52f4.",
+    "framework": "Node.js and TypeScript provider-neutral scaffold; no production framework selected.",
+    "runtime": "Node.js local project scripts verified; deployment/runtime configuration not verified.",
+    "package_manager": "npm with committed package-lock.json.",
+    "scripts": ["lint", "typecheck", "test", "build", "dev", "start"],
     "structure": [
       "README.md records approved separate platform ownership and provider-agnostic boundary.",
       ".gitignore excludes dependency/build outputs and environment files.",
-      "No app source, provider adapters, Node Agent, billing/provisioning code, database, tests, or services.",
-      "Separate Git metadata exists with initial branch main and no commit."
+      "TypeScript contracts/index source, unit tests, health test, package manifest, and lockfile are committed as the pre-Bundle-3 baseline.",
+      "Separate Git metadata is on main with baseline commit 00fc57548c64021bc4289b848f6aa8efaf4c52f4.",
+      "No provider adapters, Node Agent, database, or service definitions are present."
     ]
   },
   "classification": "EXISTING_PARTIAL",
@@ -65,7 +66,7 @@
     },
     {
       "capability": "authentication",
-      "status": "AFUZA.ID implementation exists; KlodHost reuse not established",
+      "status": "Approved shared-auth boundary; explicit AFUZA identity contract consumer integration remains unverified",
       "evidence": [
         ".afuzactl/ecosystem/capabilities.json:authentication"
       ]
@@ -76,7 +77,7 @@
       "area": "KlodHost repository skeleton",
       "status": "PARTIAL",
       "evidence": [
-        "/home/afuzaid/apps/klodhost is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+        "/home/afuzaid/apps/klodhost is an afuzaid-owned Git repository on main with committed pre-Bundle-3 baseline 00fc57548c64021bc4289b848f6aa8efaf4c52f4."
       ]
     },
     {
@@ -102,8 +103,7 @@
     }
   ],
   "gaps": [
-    "Framework/runtime/package manager and app scripts not selected or installed.",
-    "No KlodHost runtime/tooling, service, database, or staging configuration found.",
+    "Deployment/runtime, database, services, and staging configuration are not established.",
     "Provider abstraction and Contabo coupling cannot be assessed without source code.",
     "Billing, provisioning, Node Agent, and deployment tests are absent locally."
   ],

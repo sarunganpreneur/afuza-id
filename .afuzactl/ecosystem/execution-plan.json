@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-02T18:46:11.373Z",
+  "generated_at": "2026-10-02T19:53:27.588Z",
   "planning_only": true,
   "projects_evaluated": 17,
   "collisions": [],
@@ -645,218 +645,12 @@
     },
     {
       "project_id": "chalwa.id",
-      "action_id": "queue-chalwa-boundary-decision",
-      "action_type": "HUMAN_APPROVAL",
-      "objective": "Confirm canonical CHALWA repository owner/location and shared-service reuse boundaries",
-      "classification": "HUMAN_DECISION",
-      "mode": "MUTATING",
-      "dependencies": [
-        "queue-chalwa-inventory"
-      ],
-      "permission_level": "L5",
-      "approvals": [
-        "Confirm canonical repository ownership/location and shared-service reuse boundaries."
-      ],
-      "readiness": "AUTONOMOUS_BUILD_READY",
-      "risk": "medium",
-      "environment_available": true,
-      "shared_capability_context": [
-        {
-          "capability_id": "authentication",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza.id"
-        },
-        {
-          "capability_id": "ai-generation",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza.id"
-        },
-        {
-          "capability_id": "publishing",
-          "classification": "SHARED_CORE",
-          "owner_status": "CLEAR",
-          "provider_project": "afuza.id"
-        }
-      ],
-      "shared_capability_leverage": "medium",
-      "decision_id": "ax03-decision-chalwa-repository-ownership",
-      "bootstrap_scope": null,
-      "target_path": null,
-      "target_path_available": true,
-      "expected_outputs": [],
-      "stop_conditions": [],
-      "blockers": [],
-      "resource_scopes": [],
-      "repository_path": "/home/afuzaid/apps/chalwa",
-      "repository_paths": [],
-      "infrastructure_mutation": false,
-      "infrastructure_scopes": [],
-      "parallel_safe": false,
-      "collision_reasons": [],
-      "reason": "Approval required: Confirm canonical repository ownership/location and shared-service reuse boundaries.."
-    },
-    {
-      "project_id": "klodhost",
-      "action_id": "queue-klodhost-repository-decision",
-      "action_type": "HUMAN_APPROVAL",
-      "objective": "Confirm canonical KlodHost repository owner and hosting location",
-      "classification": "HUMAN_DECISION",
-      "mode": "MUTATING",
-      "dependencies": [
-        "queue-klodhost-inventory"
-      ],
-      "permission_level": "L5",
-      "approvals": [
-        "Confirm canonical KlodHost repository owner and hosting location."
-      ],
-      "readiness": "AUTONOMOUS_BUILD_READY",
-      "risk": "medium",
-      "environment_available": true,
-      "shared_capability_context": [
-        {
-          "capability_id": "payments-billing",
-          "classification": "UNKNOWN",
-          "owner_status": "UNASSIGNED",
-          "provider_project": null
-        },
-        {
-          "capability_id": "observability",
-          "classification": "UNKNOWN",
-          "owner_status": "UNASSIGNED",
-          "provider_project": null
-        }
-      ],
-      "shared_capability_leverage": "medium",
-      "decision_id": "ax03-decision-klodhost-repository-ownership",
-      "bootstrap_scope": null,
-      "target_path": null,
-      "target_path_available": true,
-      "expected_outputs": [],
-      "stop_conditions": [],
-      "blockers": [],
-      "resource_scopes": [],
-      "repository_path": "/home/afuzaid/apps/klodhost",
-      "repository_paths": [],
-      "infrastructure_mutation": false,
-      "infrastructure_scopes": [],
-      "parallel_safe": false,
-      "collision_reasons": [],
-      "reason": "Approval required: Confirm canonical KlodHost repository owner and hosting location.."
-    },
-    {
-      "project_id": "marketing-agency",
-      "action_id": "queue-marketing-ownership-decision",
-      "action_type": "HUMAN_APPROVAL",
-      "objective": "Confirm Marketing Agency repository and tenant/auth/data/service ownership map",
-      "classification": "HUMAN_DECISION",
-      "mode": "MUTATING",
-      "dependencies": [
-        "queue-marketing-phase0-inventory"
-      ],
-      "permission_level": "L5",
-      "approvals": [
-        "Confirm repository ownership and tenant/auth/database/service boundaries before bootstrap."
-      ],
-      "readiness": "AUTONOMOUS_BUILD_READY",
-      "risk": "medium",
-      "environment_available": true,
-      "shared_capability_context": [
-        {
-          "capability_id": "authentication",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza.id"
-        },
-        {
-          "capability_id": "agent-runtime",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza-ai"
-        },
-        {
-          "capability_id": "lead-discovery",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "shared-acquisition-engine"
-        },
-        {
-          "capability_id": "lead-scoring",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "shared-acquisition-engine"
-        },
-        {
-          "capability_id": "qualification",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "shared-acquisition-engine"
-        },
-        {
-          "capability_id": "approval-queue",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "ops.afuza.id"
-        },
-        {
-          "capability_id": "outreach",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNASSIGNED",
-          "provider_project": null
-        },
-        {
-          "capability_id": "whatsapp",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNASSIGNED",
-          "provider_project": null
-        },
-        {
-          "capability_id": "acquisition-analytics",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "shared-acquisition-engine"
-        },
-        {
-          "capability_id": "landing-page-generation",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza.id"
-        },
-        {
-          "capability_id": "ai-generation",
-          "classification": "CANDIDATE_SHARED",
-          "owner_status": "UNCLEAR",
-          "provider_project": "afuza.id"
-        }
-      ],
-      "shared_capability_leverage": "high",
-      "decision_id": "ax03-decision-marketing-agency-ownership",
-      "bootstrap_scope": null,
-      "target_path": null,
-      "target_path_available": true,
-      "expected_outputs": [],
-      "stop_conditions": [],
-      "blockers": [],
-      "resource_scopes": [],
-      "repository_path": "/home/afuzaid/apps/marketing-agency",
-      "repository_paths": [],
-      "infrastructure_mutation": false,
-      "infrastructure_scopes": [],
-      "parallel_safe": false,
-      "collision_reasons": [],
-      "reason": "Approval required: Confirm repository ownership and tenant/auth/database/service boundaries before bootstrap.."
-    },
-    {
-      "project_id": "chalwa.id",
       "action_id": "queue-chalwa-repository-bootstrap",
       "action_type": "BOOTSTRAP",
       "objective": "Prepare decision-authorized standalone CHALWA repository skeleton",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "COMPLETED",
       "mode": "MUTATING",
-      "dependencies": [
-        "queue-chalwa-boundary-decision"
-      ],
+      "dependencies": [],
       "permission_level": "L1",
       "approvals": [],
       "readiness": "AUTONOMOUS_BUILD_READY",
@@ -907,18 +701,16 @@
       "infrastructure_scopes": [],
       "parallel_safe": false,
       "collision_reasons": [],
-      "reason": "Waiting for queue-chalwa-boundary-decision."
+      "reason": "Authoritative portfolio decision recorded."
     },
     {
       "project_id": "klodhost",
       "action_id": "queue-klodhost-repository-bootstrap",
       "action_type": "BOOTSTRAP",
       "objective": "Prepare decision-authorized provider-agnostic KlodHost repository skeleton",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "COMPLETED",
       "mode": "MUTATING",
-      "dependencies": [
-        "queue-klodhost-repository-decision"
-      ],
+      "dependencies": [],
       "permission_level": "L1",
       "approvals": [],
       "readiness": "AUTONOMOUS_BUILD_READY",
@@ -963,18 +755,16 @@
       "infrastructure_scopes": [],
       "parallel_safe": false,
       "collision_reasons": [],
-      "reason": "Waiting for queue-klodhost-repository-decision."
+      "reason": "Authoritative portfolio decision recorded."
     },
     {
       "project_id": "marketing-agency",
       "action_id": "queue-marketing-agency-repository-bootstrap",
       "action_type": "BOOTSTRAP",
       "objective": "Prepare decision-authorized Marketing Agency repository skeleton and domain ownership README",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "COMPLETED",
       "mode": "MUTATING",
-      "dependencies": [
-        "queue-marketing-ownership-decision"
-      ],
+      "dependencies": [],
       "permission_level": "L1",
       "approvals": [],
       "readiness": "AUTONOMOUS_BUILD_READY",
@@ -1073,14 +863,14 @@
       "infrastructure_scopes": [],
       "parallel_safe": false,
       "collision_reasons": [],
-      "reason": "Waiting for queue-marketing-ownership-decision."
+      "reason": "Authoritative portfolio decision recorded."
     },
     {
       "project_id": "chalwa.id",
       "action_id": "queue-chalwa-runtime-inventory",
       "action_type": "READ_ONLY_INVENTORY",
       "objective": "Read-only verify CHALWA development tooling, environment, staging/domain path, and shared interfaces",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "PARALLEL",
       "mode": "READ_ONLY",
       "dependencies": [
         "queue-chalwa-repository-bootstrap"
@@ -1125,16 +915,16 @@
       ],
       "infrastructure_mutation": false,
       "infrastructure_scopes": [],
-      "parallel_safe": false,
+      "parallel_safe": true,
       "collision_reasons": [],
-      "reason": "Waiting for queue-chalwa-repository-bootstrap."
+      "reason": "Read-only action is independently eligible for parallel execution."
     },
     {
       "project_id": "klodhost",
       "action_id": "queue-klodhost-runtime-inventory",
       "action_type": "READ_ONLY_INVENTORY",
       "objective": "Read-only verify KlodHost Node/tooling availability, staging path, dependencies, and provider-neutral boundary",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "PARALLEL",
       "mode": "READ_ONLY",
       "dependencies": [
         "queue-klodhost-repository-bootstrap"
@@ -1173,16 +963,16 @@
       ],
       "infrastructure_mutation": false,
       "infrastructure_scopes": [],
-      "parallel_safe": false,
+      "parallel_safe": true,
       "collision_reasons": [],
-      "reason": "Waiting for queue-klodhost-repository-bootstrap."
+      "reason": "Read-only action is independently eligible for parallel execution."
     },
     {
       "project_id": "marketing-agency",
       "action_id": "queue-marketing-agency-runtime-inventory",
       "action_type": "READ_ONLY_INVENTORY",
       "objective": "Read-only verify Marketing Agency runtime, staging/domain convention, shared auth contract, and capability endpoints",
-      "classification": "WAITING_DEPENDENCY",
+      "classification": "PARALLEL",
       "mode": "READ_ONLY",
       "dependencies": [
         "queue-marketing-agency-repository-bootstrap"
@@ -1275,9 +1065,9 @@
       ],
       "infrastructure_mutation": false,
       "infrastructure_scopes": [],
-      "parallel_safe": false,
+      "parallel_safe": true,
       "collision_reasons": [],
-      "reason": "Waiting for queue-marketing-agency-repository-bootstrap."
+      "reason": "Read-only action is independently eligible for parallel execution."
     }
   ]
 }

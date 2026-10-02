@@ -5,16 +5,17 @@
   "repository": {
     "classification": "EXISTING_PARTIAL",
     "path": "/home/afuzaid/apps/marketing-agency",
-    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
-    "framework": "None; repository skeleton only.",
-    "runtime": "Not selected or verified.",
-    "package_manager": "Not selected.",
-    "scripts": [],
+    "git_state": "Separate afuzaid-owned Git repository on main; tenant-domain scaffold baseline committed as c8d905861e98ff57388f110b7548866f52c5f36d.",
+    "framework": "Node.js and TypeScript tenant-domain scaffold; no production framework selected.",
+    "runtime": "Node.js local project scripts verified; deployment/runtime configuration not verified.",
+    "package_manager": "npm with committed package-lock.json.",
+    "scripts": ["lint", "typecheck", "test", "build", "dev", "start"],
     "structure": [
       "README.md records agency-owned domains and shared-capability/data-writer boundaries.",
       ".gitignore excludes dependency/build outputs and environment files.",
       "AFUZA.ID core source remains separate at /home/afuzaid/apps/afuza-id.",
-      "Separate Git metadata exists with initial branch main and no commit.",
+      "Tenant-domain TypeScript source, tests, package manifest, and lockfile are committed as the pre-Bundle-3 baseline.",
+      "Separate Git metadata is on main with baseline commit c8d905861e98ff57388f110b7548866f52c5f36d.",
       "No Marketing Agency systemd unit or marketingagency.afuza.id Nginx site found."
     ]
   },
@@ -83,7 +84,7 @@
   "dependencies": [
     {
       "name": "Supabase Auth/database",
-      "status": "Existing in AFUZA.ID; Marketing Agency tenant/auth/schema ownership unresolved",
+      "status": "Marketing Agency tenant-domain persistence ownership is approved; shared auth compatibility and integration contract remain unverified",
       "evidence": [
         "src/lib/supabase/server.ts",
         "supabase/migrations"
@@ -116,7 +117,7 @@
   "shared_capabilities": [
     {
       "capability": "authentication",
-      "status": "Supabase Auth exists in AFUZA.ID; cross-product tenant/identity contract unresolved",
+      "status": "Reuse of shared AFUZA identity/auth is approved when compatible; multi-application tenant-membership contract remains unverified",
       "evidence": [
         "src/lib/supabase/server.ts",
         ".afuzactl/ecosystem/capabilities.json:authentication"
@@ -166,7 +167,7 @@
       "area": "Dedicated Marketing Agency repository skeleton",
       "status": "PARTIAL",
       "evidence": [
-        "/home/afuzaid/apps/marketing-agency is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+        "/home/afuzaid/apps/marketing-agency is an afuzaid-owned Git repository on main with committed pre-Bundle-3 baseline c8d905861e98ff57388f110b7548866f52c5f36d."
       ]
     },
     {
@@ -207,7 +208,7 @@
   ],
   "gaps": [
     "No Marketing Agency app/runtime/package manager or scripts exist yet.",
-    "Tenant business state has an assigned owner but no schema/implementation exists.",
+    "Tenant business state has an assigned owner; the persistence schema and implementation remain future work.",
     "Shared auth multi-application tenant-membership contract and API/event contracts remain unverified.",
     "No Marketing Agency staging checkout, service, Nginx site, or safe port reservation exists.",
     "N8N state and service integration were not verified.",

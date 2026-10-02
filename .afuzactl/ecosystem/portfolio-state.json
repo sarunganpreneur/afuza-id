@@ -1,1 +1,83 @@
-{"schema_version":1,"active_batch_id":"ax03-inventory-batch-001","completed_actions":[],"inbox_imports":[],"decisions":[],"external_evidence":[]}
+{
+	"schema_version": 1,
+	"active_batch_id": "ax03-inventory-batch-001",
+	"completed_actions": [
+		{
+			"action_id": "queue-chalwa-repository-bootstrap",
+			"project_id": "chalwa.id",
+			"completed_at": "2026-10-03T02:50:20+07:00",
+			"result_path": "/home/afuzaid/apps/chalwa/README.md",
+			"action_type": "BOOTSTRAP"
+		},
+		{
+			"action_id": "queue-klodhost-repository-bootstrap",
+			"project_id": "klodhost",
+			"completed_at": "2026-10-03T02:50:20+07:00",
+			"result_path": "/home/afuzaid/apps/klodhost/README.md",
+			"action_type": "BOOTSTRAP"
+		},
+		{
+			"action_id": "queue-marketing-agency-repository-bootstrap",
+			"project_id": "marketing-agency",
+			"completed_at": "2026-10-03T02:50:20+07:00",
+			"result_path": "/home/afuzaid/apps/marketing-agency/README.md",
+			"action_type": "BOOTSTRAP"
+		}
+	],
+	"inbox_imports": [],
+	"decisions": [
+		{
+			"decision_id": "ax03-decision-chalwa-repository-ownership",
+			"project_id": "chalwa.id",
+			"category": "REPOSITORY_OWNERSHIP",
+			"title": "Approved existing CHALWA repository ownership and shared-service boundaries",
+			"status": "APPROVED",
+			"authority": "AUTHORITATIVE_USER_DECISION",
+			"recorded_at": "2026-10-03T02:44:32+07:00",
+			"source": "ARCHITECTURE_DECISION_ALREADY_APPROVED; supplied in the AX-04 decision reconciliation instruction; original approval timestamp unavailable",
+			"queue_action_id": "queue-chalwa-boundary-decision",
+			"statements": [
+				"Canonical separate CHALWA application/repository root is /home/afuzaid/apps/chalwa.",
+				"CHALWA is the canonical writer for Design lifecycle, Product/catalog lifecycle, and storefront/order-facing CHALWA business state.",
+				"Shared identity/authentication may be reused through the explicit AFUZA identity contract; AI generation uses the shared AFUZA AI contract; shared approval/control may be consumed where applicable.",
+				"No undocumented shared database coupling; one canonical writer per domain; cross-project shared capability access uses explicit API, event, or contract boundaries."
+			]
+		},
+		{
+			"decision_id": "ax03-decision-klodhost-repository-ownership",
+			"project_id": "klodhost",
+			"category": "REPOSITORY_OWNERSHIP",
+			"title": "Approved existing KlodHost platform ownership and development location",
+			"status": "APPROVED",
+			"authority": "AUTHORITATIVE_USER_DECISION",
+			"recorded_at": "2026-10-03T02:44:32+07:00",
+			"source": "ARCHITECTURE_DECISION_ALREADY_APPROVED; supplied in the AX-04 decision reconciliation instruction; original approval timestamp unavailable",
+			"queue_action_id": "queue-klodhost-repository-decision",
+			"statements": [
+				"Canonical separate KlodHost platform/repository root and current development location are /home/afuzaid/apps/klodhost; development domain is klodhost.afuza.id and future production brand/domain is klodhost.com.",
+				"KlodHost owns hosting, provisioning lifecycle, provider abstraction, node-agent contract, infrastructure state, and KlodHost billing-domain state.",
+				"Core architecture remains provider-neutral; Contabo is provider one, not a core-domain dependency.",
+				"Billing state and infrastructure state remain separate; tenant/customer events cannot directly execute privileged shell; shared authentication uses the explicit AFUZA identity contract; no undocumented cross-project database coupling."
+			]
+		},
+		{
+			"decision_id": "ax03-decision-marketing-agency-ownership",
+			"project_id": "marketing-agency",
+			"category": "DATA_OWNERSHIP",
+			"title": "Approved existing Marketing Agency tenant, identity, persistence, and shared-service ownership",
+			"status": "APPROVED",
+			"authority": "AUTHORITATIVE_USER_DECISION",
+			"recorded_at": "2026-10-03T02:44:32+07:00",
+			"source": "ARCHITECTURE_DECISION_ALREADY_APPROVED; supplied in the AX-04 decision reconciliation instruction; original approval timestamp unavailable",
+			"queue_action_id": "queue-marketing-ownership-decision",
+			"statements": [
+				"Canonical Marketing Agency application/repository root and development location are /home/afuzaid/apps/marketing-agency; development domain is marketingagency.afuza.id.",
+				"Marketing Agency owns Tenant, Client, TenantMembership, AccountAssignment, ServiceSubscription, AgencyTask, BillingProfile, ClientPortalConfig, and agency-specific business state in its own persistence boundary.",
+				"Use shared AFUZA identity/auth when compatible; Marketing Agency does not create a second canonical identity system.",
+				"Shared Acquisition Engine canonically owns Campaign, Lead, LeadScore, qualification, suppression, outreach, WhatsApp, and acquisition analytics. Approval is the shared control capability; AI generation is AFUZA AI; landing-page generation is shared AFUZA LP; creative/video is Creative OS where used.",
+				"Shared-domain records remain owned by their canonical services. Integrations use explicit contracts, APIs, events, or references; no undocumented cross-project database writes."
+			]
+		}
+	],
+	"external_evidence": []
+}
