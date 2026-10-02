@@ -7,9 +7,16 @@
   "canonical_merge_approved": true,
   "canonicalization": {
     "canonical_control_root": "/home/afuzaid/engineering/repos/afuza-id",
+    "canonical_branch": "canonical/ax-control-plane-20261003",
+    "promotion_commit": "1fab5e92ba3bacb5336c8ea80662f2ebdd2c5a3c",
     "integration_branch": "recovery/ax-control-plane-canonical-20261003",
     "safety_reference": "backup/pre-ax-control-promotion-20261003",
     "original_dirty_worktree_preserved": true,
+    "preserved_worktree": "/home/afuzaid/engineering/worktrees/afuza-id-feature-lp100-preserved",
+    "preservation_stashes": [
+      "df52ddfe1ddb13041a9a0e4e10c4ce2f7a0cce18",
+      "1208f1f5be64a0ec82a97381ad23bbea3ed3c6be"
+    ],
     "source_checkout_before_integration": "feature/lp100-cashflow-sprint at dc975281f745e96a5140143270bd96a611ed3d17",
     "remote_backup": "REMOTE_BACKUP_PENDING: no Git remote configured",
     "promotion_commit_description": "AX control-plane recovery + canonicalization"
@@ -17,10 +24,13 @@
   "control_plane_operations": {
     "runtime_state_snapshot_policy": "docs/AX-CONTROL-SNAPSHOT-POLICY.md",
     "launcher": "/home/afuzaid/bin/afuzactl",
+    "launcher_cross_cwd_smoke": "PASS from /home/afuzaid, /home/afuzaid/apps/chalwa, /home/afuzaid/apps/klodhost, and /home/afuzaid/apps/marketing-agency",
     "AFUZA_CONTROL_ROOT": "/home/afuzaid/engineering/repos/afuza-id",
     "profile_export": "/home/afuzaid/.profile",
     "production_runtime": "/home/afuzaid/apps/afuza-id",
-    "production_runtime_owns_ax_state": false
+    "production_runtime_owns_ax_state": false,
+    "bundle_3_executed": false,
+    "ready_for_human_test_projects": []
   },
   "evidence_model": {
     "authority_order": [
@@ -151,7 +161,15 @@
       "findings": [
         {
           "file": "scripts/afuza.cjs",
-          "locations": ["4:12", "5:14", "6:23", "7:14", "8:13", "9:81", "10:25"],
+          "locations": [
+            "4:12",
+            "5:14",
+            "6:23",
+            "7:14",
+            "8:13",
+            "9:81",
+            "10:25"
+          ],
           "rule": "@typescript-eslint/no-require-imports",
           "classification": "RECOVERY_EXPOSED_BY_CONFIG",
           "recovery_only_in_current_lint": true,
@@ -160,7 +178,10 @@
         },
         {
           "file": "scripts/afuza.cjs",
-          "locations": ["641:9", "649:9"],
+          "locations": [
+            "641:9",
+            "649:9"
+          ],
           "rule": "@typescript-eslint/no-unused-vars",
           "classification": "WARNING_ONLY",
           "recovery_only_in_current_lint": true,
@@ -169,7 +190,9 @@
         },
         {
           "file": "src/app/ops/_components/AccessTeam.tsx",
-          "locations": ["203:7"],
+          "locations": [
+            "203:7"
+          ],
           "rule": "react-hooks/set-state-in-effect",
           "classification": "BASELINE_EXISTING",
           "baseline_head_has_same_finding": true,
@@ -180,7 +203,9 @@
         },
         {
           "file": "src/app/ops/_components/ApprovalsReal.tsx",
-          "locations": ["213:5"],
+          "locations": [
+            "213:5"
+          ],
           "rule": "react-hooks/set-state-in-effect",
           "classification": "BASELINE_EXISTING",
           "baseline_head_has_same_finding": true,
@@ -191,7 +216,9 @@
         },
         {
           "file": "src/app/ops/_components/ExecutionsReal.tsx",
-          "locations": ["500:10"],
+          "locations": [
+            "500:10"
+          ],
           "rule": "react-hooks/set-state-in-effect",
           "classification": "BASELINE_EXISTING",
           "baseline_head_has_same_finding": true,
@@ -208,28 +235,36 @@
       "findings": [
         {
           "file": "sample/Auto Tools/selenium/webdriver/remote/findElements.js",
-          "locations": ["1:8"],
+          "locations": [
+            "1:8"
+          ],
           "rule": "parsing error: Identifier expected",
           "classification": "BASELINE_EXISTING",
           "file_modified_by_recovery": false
         },
         {
           "file": "sample/Auto Tools/selenium/webdriver/remote/getAttribute.js",
-          "locations": ["1:8"],
+          "locations": [
+            "1:8"
+          ],
           "rule": "parsing error: Identifier expected",
           "classification": "BASELINE_EXISTING",
           "file_modified_by_recovery": false
         },
         {
           "file": "sample/Auto Tools/selenium/webdriver/remote/isDisplayed.js",
-          "locations": ["1:8"],
+          "locations": [
+            "1:8"
+          ],
           "rule": "parsing error: Identifier expected",
           "classification": "BASELINE_EXISTING",
           "file_modified_by_recovery": false
         },
         {
           "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
-          "locations": ["203:17"],
+          "locations": [
+            "203:17"
+          ],
           "rule": "@next/next/no-assign-module-variable",
           "severity": "ERROR",
           "classification": "BASELINE_EXISTING",
@@ -237,7 +272,12 @@
         },
         {
           "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
-          "locations": ["483:13", "1084:9", "1127:9", "1791:9"],
+          "locations": [
+            "483:13",
+            "1084:9",
+            "1127:9",
+            "1791:9"
+          ],
           "rule": "@typescript-eslint/no-unused-expressions",
           "severity": "WARNING",
           "classification": "WARNING_ONLY",
@@ -245,7 +285,22 @@
         },
         {
           "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
-          "locations": ["635:59", "967:14", "1048:63", "1239:18", "1509:10", "1628:18", "1640:18", "1653:43", "1681:43", "1782:13", "1898:30", "1954:40", "1954:52", "2368:14"],
+          "locations": [
+            "635:59",
+            "967:14",
+            "1048:63",
+            "1239:18",
+            "1509:10",
+            "1628:18",
+            "1640:18",
+            "1653:43",
+            "1681:43",
+            "1782:13",
+            "1898:30",
+            "1954:40",
+            "1954:52",
+            "2368:14"
+          ],
           "rule": "@typescript-eslint/no-unused-vars",
           "severity": "WARNING",
           "classification": "WARNING_ONLY",
@@ -275,16 +330,45 @@
   },
   "drift_audit": {
     "tracked_changes": [
-      { "file": "eslint.config.mjs", "classification": "LINT_CONFIG" },
-      { "file": "package.json", "classification": "AX_RECOVERY", "detail": "Recovery CLI script entry predated this lint task" },
-      { "file": "src/app/ops/_components/AccessTeam.tsx", "classification": "BASELINE_LINT_REPAIR" },
-      { "file": "src/app/ops/_components/ApprovalsReal.tsx", "classification": "BASELINE_LINT_REPAIR" },
-      { "file": "src/app/ops/_components/ExecutionsReal.tsx", "classification": "BASELINE_LINT_REPAIR" }
+      {
+        "file": "eslint.config.mjs",
+        "classification": "LINT_CONFIG"
+      },
+      {
+        "file": "package.json",
+        "classification": "AX_RECOVERY",
+        "detail": "Recovery CLI script entry predated this lint task"
+      },
+      {
+        "file": "src/app/ops/_components/AccessTeam.tsx",
+        "classification": "BASELINE_LINT_REPAIR"
+      },
+      {
+        "file": "src/app/ops/_components/ApprovalsReal.tsx",
+        "classification": "BASELINE_LINT_REPAIR"
+      },
+      {
+        "file": "src/app/ops/_components/ExecutionsReal.tsx",
+        "classification": "BASELINE_LINT_REPAIR"
+      }
     ],
     "untracked_recovery_artifacts": {
-      "AX_RECOVERY": [".afuzactl/**", "afuza", "docs/ECOSYSTEM-REGISTRY.md", "scripts/afuza.cjs", "scripts/portfolio-inbox.cjs", "scripts/portfolio-planner.cjs"],
-      "AX_TEST_MIGRATION": ["src/lib/afuza-control.test.ts", "src/lib/afuza-ecosystem.test.ts", "src/lib/afuza-portfolio.test.ts"],
-      "RECOVERY_MANIFEST": ["recovery-manifest.json"]
+      "AX_RECOVERY": [
+        ".afuzactl/**",
+        "afuza",
+        "docs/ECOSYSTEM-REGISTRY.md",
+        "scripts/afuza.cjs",
+        "scripts/portfolio-inbox.cjs",
+        "scripts/portfolio-planner.cjs"
+      ],
+      "AX_TEST_MIGRATION": [
+        "src/lib/afuza-control.test.ts",
+        "src/lib/afuza-ecosystem.test.ts",
+        "src/lib/afuza-portfolio.test.ts"
+      ],
+      "RECOVERY_MANIFEST": [
+        "recovery-manifest.json"
+      ]
     },
     "package_lock": "UNCHANGED",
     "unexplained_changes": [],
@@ -314,7 +398,7 @@
     ".afuzactl/ecosystem/readiness.json": "fbe5e6baab79e58eb9bef39f6410310f1d44fb3812e10dc363cc6aa984af7bb9",
     ".afuzactl/ecosystem/portfolio-state.json": "5fdba6fbd4eb889b1d3e2b888e900a0442e12bc72742dd8f1ed67abb627e52bd",
     ".afuzactl/ecosystem/execution-queue.json": "1bd552cac5978496d496dfb2e906b940fdd2cd9ad964171adf35d41ac434a9a8",
-    ".afuzactl/ecosystem/execution-plan.json": "30d2bf7dcb1fdd77fafa9ff160bb2fd793d0a01514912c9c7bd1fb7b0b17ae8f",
+    ".afuzactl/ecosystem/execution-plan.json": "5e3c5c8e95d3a47592279133f293292f496fcf5159f547e8f3f676549c869d43",
     ".afuzactl/ecosystem/active-batch.json": "77f24ad3e959a740442d238ebaa5f9ef9897a57b922c96ef8aab6ffd51ae50f9",
     ".afuzactl/ecosystem/source-inventory.json": "d7a6098de4c3764912415c09b69750951e4c41fd33f1e4ce406c24a1f477a808",
     "src/lib/afuza-ecosystem.test.ts": "46a2496b3afb97f59e47aae202f05e725b4658914fe8e9b1123421dc451a619a",
@@ -324,7 +408,8 @@
     "src/app/ops/_components/ApprovalsReal.tsx": "80520b49902575279bed5820f63940ed4f7653441b65fbc0039e3481f073d70b",
     "src/app/ops/_components/ExecutionsReal.tsx": "13a46e3957b0839f5229801d1dceddfc4b6a146e15d780258571f3e7669cd8c4",
     "docs/AX-CONTROL-SNAPSHOT-POLICY.md": "5208b947ba0cdc9196191bb96d049722cacaabc6b23424fb3a9111f762bb7293",
-    ".afuzactl/ecosystem/report.md": "e0bebc9837dc2bdb5ec437af02e50008206dafaa15d20bf33a7f9603745b978a"
+    ".afuzactl/ecosystem/report.md": "e0bebc9837dc2bdb5ec437af02e50008206dafaa15d20bf33a7f9603745b978a",
+    ".afuzactl/state.json": "ad0155e24818c69ec64fde55b463e0e321dd443e0be8266d32d2d6c7a439f400"
   },
   "canonical_state": {
     "chalwa.id": {
@@ -363,6 +448,7 @@
     "ax_regressions": "PASS: 3 test files, 36/36",
     "local_toolchain_installation": "npm ci from package-lock.json, installed only in this recovery worktree; local eslint, vitest, next, and tsc binaries verified",
     "full_verify_result": "PASS: doctor, lint, TypeScript, Vitest, Next.js build, and staging smoke",
+    "canonical_path_revalidation": "PASS; initial tsc invocation encountered stale .next route types left by the unrelated pre-promotion worktree; ran next typegen, then full verify passed",
     "canonical_state_unchanged": true,
     "dependency_drift": "No package-lock changes or dependency-version drift from installation",
     "drive_evidence_safety": "Synthetic IDs removed; 24 unavailable IDs remain explicit; 3 supplied IDs retained; CONTENT_RECONCILED count is zero because referenced content is uninspected; no Google credentials found",
