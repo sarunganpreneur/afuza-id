@@ -1,0 +1,1283 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-02T18:32:57.942Z",
+  "planning_only": true,
+  "projects_evaluated": 17,
+  "collisions": [],
+  "entries": [
+    {
+      "project_id": "chalwa.id",
+      "action_id": "queue-chalwa-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Run read-only repository and environment inventory against the CHALWA implementation plan",
+      "classification": "PARALLEL",
+      "mode": "READ_ONLY",
+      "dependencies": [],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/chalwa",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": true,
+      "collision_reasons": [],
+      "reason": "Read-only action is independently eligible for parallel execution."
+    },
+    {
+      "project_id": "klodhost",
+      "action_id": "queue-klodhost-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Run read-only repository inventory and classify GREENFIELD / EXISTING_PARTIAL / EXISTING_CONFLICTING",
+      "classification": "PARALLEL",
+      "mode": "READ_ONLY",
+      "dependencies": [],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "payments-billing",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "observability",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/klodhost",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": true,
+      "collision_reasons": [],
+      "reason": "Read-only action is independently eligible for parallel execution."
+    },
+    {
+      "project_id": "marketing-agency",
+      "action_id": "queue-marketing-phase0-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Execute documented Phase 0 read-only real-infrastructure inventory",
+      "classification": "PARALLEL",
+      "mode": "READ_ONLY",
+      "dependencies": [],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "agent-runtime",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza-ai"
+        },
+        {
+          "capability_id": "lead-discovery",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "qualification",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "outreach",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "whatsapp",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "acquisition-analytics",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "landing-page-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/marketing-agency",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": true,
+      "collision_reasons": [],
+      "reason": "Read-only action is independently eligible for parallel execution."
+    },
+    {
+      "project_id": "shared-acquisition-engine",
+      "action_id": "queue-acquisition-prd",
+      "action_type": "HUMAN_APPROVAL",
+      "objective": "Resolve scoring and outbound approval policy conflicts",
+      "classification": "HUMAN_DECISION",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L5",
+      "approvals": [],
+      "readiness": "SPEC_INCOMPLETE",
+      "risk": "high",
+      "environment_available": false,
+      "shared_capability_context": [
+        {
+          "capability_id": "lead-discovery",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "qualification",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "outreach",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "whatsapp",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "acquisition-analytics",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "No consolidated authoritative acquisition PRD identified.",
+        "Scoring policy conflicts across source docs and implementation.",
+        "Outbound approval/send policy conflicts across workflow docs and implementation.",
+        "No consolidated approved PRD.",
+        "Scoring and outbound policy conflicts unresolved.",
+        "Implementation evidence is in a dirty worktree."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/engineering/repos/afuza-id/src/lib/acquisition",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Action requires human authorization."
+    },
+    {
+      "project_id": "afuza.ecosystem",
+      "action_id": "queue-portfolio-source-sync",
+      "action_type": "IMPLEMENT",
+      "objective": "Inspect registered Drive PRD/spec contents and reconcile acceptance criteria",
+      "classification": "EXTERNAL_SOURCE_REQUIRED",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "DISCOVERED",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [],
+      "shared_capability_leverage": "high",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "Registry is discovery/planning metadata only; AX-02 does not authorize portfolio project execution.",
+        "Portfolio registry built from mounted sources; external Google Drive inventory is unavailable."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/afuza-id/.afuzactl/ecosystem",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Authoritative external source evidence is missing."
+    },
+    {
+      "project_id": "afuza-lp-system",
+      "action_id": "queue-lp-factory-boundary",
+      "action_type": "IMPLEMENT",
+      "objective": "Clarify Product Factory boundary versus AFUZA.ID generator",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-portfolio-source-sync"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "PRD_DRAFT",
+      "risk": "medium",
+      "environment_available": false,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "asset-storage",
+          "classification": "PROJECT_SPECIFIC",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "Architecture and implementation plan are present; approved product acceptance scope and boundary with existing AFUZA.ID generator need confirmation.",
+        "Architecture/plan docs exist; implementation and isolated product boundary are not evidenced."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/projects/afuza-lp-system",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-portfolio-source-sync, project:afuza.id."
+    },
+    {
+      "project_id": "afuza-creative-os",
+      "action_id": "queue-creative-os-acceptance",
+      "action_type": "IMPLEMENT",
+      "objective": "Complete Creative OS product scope and acceptance criteria",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-portfolio-source-sync"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "SPEC_INCOMPLETE",
+      "risk": "medium",
+      "environment_available": false,
+      "shared_capability_context": [],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "Infrastructure bootstrap explicitly says services/databases/workers are not provisioned; domain ownership and first product acceptance criteria need confirmation.",
+        "Infrastructure bootstrap says production services/databases/workers are not provisioned."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/afuza-creative-os",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-portfolio-source-sync."
+    },
+    {
+      "project_id": "pasok.in",
+      "action_id": "queue-pasok-in-prd",
+      "action_type": "IMPLEMENT",
+      "objective": "Identify authoritative PASOK.IN PRD/spec outside the inspected empty folders",
+      "classification": "EXTERNAL_SOURCE_REQUIRED",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "PRD_MISSING_EXTERNAL",
+      "risk": "low",
+      "environment_available": false,
+      "shared_capability_context": [],
+      "shared_capability_leverage": "unknown",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "Drive project folder is known; inspected Business & Strategy and Product & Technology folders are empty. No completed PRD/spec is inferred; other folders have not been established as authoritative requirements.",
+        "Drive folder is known; the inspected Business & Strategy and Product & Technology folders are empty. No authoritative PRD/spec identified."
+      ],
+      "resource_scopes": [],
+      "repository_path": null,
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Authoritative external source evidence is missing."
+    },
+    {
+      "project_id": "hiksas",
+      "action_id": "queue-hiksas-source",
+      "action_type": "IMPLEMENT",
+      "objective": "Identify HIKSAS authoritative PRD/spec reference",
+      "classification": "EXTERNAL_SOURCE_REQUIRED",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "PRD_MISSING_EXTERNAL",
+      "risk": "low",
+      "environment_available": false,
+      "shared_capability_context": [],
+      "shared_capability_leverage": "unknown",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "No authoritative Drive PRD/spec reference identified.",
+        "No authoritative Drive PRD/spec reference identified."
+      ],
+      "resource_scopes": [],
+      "repository_path": null,
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Authoritative external source evidence is missing."
+    },
+    {
+      "project_id": "konsultanhalal",
+      "action_id": "queue-konsultanhalal-source",
+      "action_type": "IMPLEMENT",
+      "objective": "Identify KonsultanHalal authoritative project PRD reference",
+      "classification": "EXTERNAL_SOURCE_REQUIRED",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "PRD_MISSING_EXTERNAL",
+      "risk": "low",
+      "environment_available": false,
+      "shared_capability_context": [],
+      "shared_capability_leverage": "unknown",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "No authoritative project PRD package identified.",
+        "No authoritative project PRD package identified."
+      ],
+      "resource_scopes": [],
+      "repository_path": null,
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Authoritative external source evidence is missing."
+    },
+    {
+      "project_id": "omnivora",
+      "action_id": "queue-omnivora-reconcile",
+      "action_type": "IMPLEMENT",
+      "objective": "Reconcile local Omnivora architecture with portfolio-level approved requirements",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-portfolio-source-sync"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "IMPLEMENTATION_IN_PROGRESS",
+      "risk": "medium",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "audit-trail",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": null
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "README describes a bounded sprint foundation, not a complete portfolio-level PRD; external communication is intentionally disabled.",
+        "Production shell and CRM sprint docs exist; external communication is explicitly disabled and business acceptance scope is partial."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/omnivora",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-portfolio-source-sync."
+    },
+    {
+      "project_id": "afuza.id",
+      "action_id": "queue-afuza-id-prd",
+      "action_type": "IMPLEMENT",
+      "objective": "Compile next AFUZA.ID product requirements after AX-01",
+      "classification": "SPEC_GAP",
+      "mode": "MUTATING",
+      "dependencies": [],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "IMPLEMENTATION_IN_PROGRESS",
+      "risk": "medium",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "agent-runtime",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza-ai"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "asset-storage",
+          "classification": "PROJECT_SPECIFIC",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "audit-trail",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": null
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [
+        "AX-01 execution foundation is complete; product requirements for future work must still be compiled from an approved specification.",
+        "AX-01 foundation passes; future product requirements remain uncompiled."
+      ],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/afuza-id",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Specification or readiness evidence is incomplete."
+    },
+    {
+      "project_id": "chalwa.id",
+      "action_id": "queue-chalwa-boundary-decision",
+      "action_type": "HUMAN_APPROVAL",
+      "objective": "Confirm canonical CHALWA repository owner/location and shared-service reuse boundaries",
+      "classification": "HUMAN_DECISION",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-chalwa-inventory"
+      ],
+      "permission_level": "L5",
+      "approvals": [
+        "Confirm canonical repository ownership/location and shared-service reuse boundaries."
+      ],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "medium",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": "ax03-decision-chalwa-repository-ownership",
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/chalwa",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Approval required: Confirm canonical repository ownership/location and shared-service reuse boundaries.."
+    },
+    {
+      "project_id": "klodhost",
+      "action_id": "queue-klodhost-repository-decision",
+      "action_type": "HUMAN_APPROVAL",
+      "objective": "Confirm canonical KlodHost repository owner and hosting location",
+      "classification": "HUMAN_DECISION",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-klodhost-inventory"
+      ],
+      "permission_level": "L5",
+      "approvals": [
+        "Confirm canonical KlodHost repository owner and hosting location."
+      ],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "medium",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "payments-billing",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "observability",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": "ax03-decision-klodhost-repository-ownership",
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/klodhost",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Approval required: Confirm canonical KlodHost repository owner and hosting location.."
+    },
+    {
+      "project_id": "marketing-agency",
+      "action_id": "queue-marketing-ownership-decision",
+      "action_type": "HUMAN_APPROVAL",
+      "objective": "Confirm Marketing Agency repository and tenant/auth/data/service ownership map",
+      "classification": "HUMAN_DECISION",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-marketing-phase0-inventory"
+      ],
+      "permission_level": "L5",
+      "approvals": [
+        "Confirm repository ownership and tenant/auth/database/service boundaries before bootstrap."
+      ],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "medium",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "agent-runtime",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza-ai"
+        },
+        {
+          "capability_id": "lead-discovery",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "qualification",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "outreach",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "whatsapp",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "acquisition-analytics",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "landing-page-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": "ax03-decision-marketing-agency-ownership",
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/marketing-agency",
+      "repository_paths": [],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Approval required: Confirm repository ownership and tenant/auth/database/service boundaries before bootstrap.."
+    },
+    {
+      "project_id": "chalwa.id",
+      "action_id": "queue-chalwa-repository-bootstrap",
+      "action_type": "BOOTSTRAP",
+      "objective": "Prepare decision-authorized standalone CHALWA repository skeleton",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-chalwa-boundary-decision"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": "ax03-decision-chalwa-repository-ownership",
+      "bootstrap_scope": "REPOSITORY_SKELETON_ONLY",
+      "target_path": "/home/afuzaid/apps/chalwa",
+      "target_path_available": false,
+      "expected_outputs": [
+        "/home/afuzaid/apps/chalwa/README.md"
+      ],
+      "stop_conditions": [
+        "Target path exists and is not empty.",
+        "Action would add application behavior, dependency installation, database artifacts, services, DNS, or deployment changes.",
+        "Filesystem ownership differs from the afuzaid project owner."
+      ],
+      "blockers": [],
+      "resource_scopes": [
+        "repo:/home/afuzaid/apps/chalwa"
+      ],
+      "repository_path": "/home/afuzaid/apps/chalwa",
+      "repository_paths": [
+        "/home/afuzaid/apps/chalwa"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-chalwa-boundary-decision."
+    },
+    {
+      "project_id": "klodhost",
+      "action_id": "queue-klodhost-repository-bootstrap",
+      "action_type": "BOOTSTRAP",
+      "objective": "Prepare decision-authorized provider-agnostic KlodHost repository skeleton",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-klodhost-repository-decision"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "payments-billing",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "observability",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": "ax03-decision-klodhost-repository-ownership",
+      "bootstrap_scope": "REPOSITORY_SKELETON_ONLY",
+      "target_path": "/home/afuzaid/apps/klodhost",
+      "target_path_available": false,
+      "expected_outputs": [
+        "/home/afuzaid/apps/klodhost/README.md"
+      ],
+      "stop_conditions": [
+        "Target path exists and is not empty.",
+        "Action would add application behavior, dependency installation, database artifacts, services, DNS, or deployment changes.",
+        "Filesystem ownership differs from the afuzaid project owner."
+      ],
+      "blockers": [],
+      "resource_scopes": [
+        "repo:/home/afuzaid/apps/klodhost"
+      ],
+      "repository_path": "/home/afuzaid/apps/klodhost",
+      "repository_paths": [
+        "/home/afuzaid/apps/klodhost"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-klodhost-repository-decision."
+    },
+    {
+      "project_id": "marketing-agency",
+      "action_id": "queue-marketing-agency-repository-bootstrap",
+      "action_type": "BOOTSTRAP",
+      "objective": "Prepare decision-authorized Marketing Agency repository skeleton and domain ownership README",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "MUTATING",
+      "dependencies": [
+        "queue-marketing-ownership-decision"
+      ],
+      "permission_level": "L1",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "agent-runtime",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza-ai"
+        },
+        {
+          "capability_id": "lead-discovery",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "qualification",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "outreach",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "whatsapp",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "acquisition-analytics",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "landing-page-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": "ax03-decision-marketing-agency-ownership",
+      "bootstrap_scope": "REPOSITORY_SKELETON_ONLY",
+      "target_path": "/home/afuzaid/apps/marketing-agency",
+      "target_path_available": false,
+      "expected_outputs": [
+        "/home/afuzaid/apps/marketing-agency/README.md"
+      ],
+      "stop_conditions": [
+        "Target path exists and is not empty.",
+        "Action would add auth, tenant/schema ownership, application behavior, dependency installation, services, DNS, or deployment changes.",
+        "Filesystem ownership differs from the afuzaid project owner."
+      ],
+      "blockers": [],
+      "resource_scopes": [
+        "repo:/home/afuzaid/apps/marketing-agency"
+      ],
+      "repository_path": "/home/afuzaid/apps/marketing-agency",
+      "repository_paths": [
+        "/home/afuzaid/apps/marketing-agency"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-marketing-ownership-decision."
+    },
+    {
+      "project_id": "chalwa.id",
+      "action_id": "queue-chalwa-runtime-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Read-only verify CHALWA development tooling, environment, staging/domain path, and shared interfaces",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "READ_ONLY",
+      "dependencies": [
+        "queue-chalwa-repository-bootstrap"
+      ],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "publishing",
+          "classification": "SHARED_CORE",
+          "owner_status": "CLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/chalwa",
+      "repository_paths": [
+        "/home/afuzaid/apps/chalwa"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-chalwa-repository-bootstrap."
+    },
+    {
+      "project_id": "klodhost",
+      "action_id": "queue-klodhost-runtime-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Read-only verify KlodHost Node/tooling availability, staging path, dependencies, and provider-neutral boundary",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "READ_ONLY",
+      "dependencies": [
+        "queue-klodhost-repository-bootstrap"
+      ],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "payments-billing",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "observability",
+          "classification": "UNKNOWN",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        }
+      ],
+      "shared_capability_leverage": "medium",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/klodhost",
+      "repository_paths": [
+        "/home/afuzaid/apps/klodhost"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-klodhost-repository-bootstrap."
+    },
+    {
+      "project_id": "marketing-agency",
+      "action_id": "queue-marketing-agency-runtime-inventory",
+      "action_type": "READ_ONLY_INVENTORY",
+      "objective": "Read-only verify Marketing Agency runtime, staging/domain convention, shared auth contract, and capability endpoints",
+      "classification": "WAITING_DEPENDENCY",
+      "mode": "READ_ONLY",
+      "dependencies": [
+        "queue-marketing-agency-repository-bootstrap"
+      ],
+      "permission_level": "L0",
+      "approvals": [],
+      "readiness": "AUTONOMOUS_BUILD_READY",
+      "risk": "low",
+      "environment_available": true,
+      "shared_capability_context": [
+        {
+          "capability_id": "authentication",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "agent-runtime",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza-ai"
+        },
+        {
+          "capability_id": "lead-discovery",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "lead-scoring",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "qualification",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "approval-queue",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "ops.afuza.id"
+        },
+        {
+          "capability_id": "outreach",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "whatsapp",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNASSIGNED",
+          "provider_project": null
+        },
+        {
+          "capability_id": "acquisition-analytics",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "shared-acquisition-engine"
+        },
+        {
+          "capability_id": "landing-page-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        },
+        {
+          "capability_id": "ai-generation",
+          "classification": "CANDIDATE_SHARED",
+          "owner_status": "UNCLEAR",
+          "provider_project": "afuza.id"
+        }
+      ],
+      "shared_capability_leverage": "high",
+      "decision_id": null,
+      "bootstrap_scope": null,
+      "target_path": null,
+      "target_path_available": true,
+      "expected_outputs": [],
+      "stop_conditions": [],
+      "blockers": [],
+      "resource_scopes": [],
+      "repository_path": "/home/afuzaid/apps/marketing-agency",
+      "repository_paths": [
+        "/home/afuzaid/apps/marketing-agency"
+      ],
+      "infrastructure_mutation": false,
+      "infrastructure_scopes": [],
+      "parallel_safe": false,
+      "collision_reasons": [],
+      "reason": "Waiting for queue-marketing-agency-repository-bootstrap."
+    }
+  ]
+}

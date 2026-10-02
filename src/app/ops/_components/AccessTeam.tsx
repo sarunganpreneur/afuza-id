@@ -200,17 +200,19 @@ export default function AccessTeam() {
 
   useEffect(
     () => {
-      load().catch(
-        (err) =>
+      const timer = window.setTimeout(() => {
+        load().catch((err) =>
           setError(
             humanError(
-              err instanceof
-                Error
-                ? err.message
-                : "TEAM_DATA_ERROR",
+              err instanceof Error ? err.message : "TEAM_DATA_ERROR",
             ),
           ),
-      );
+        );
+      }, 0);
+
+      return () => {
+        window.clearTimeout(timer);
+      };
     },
     [load],
   );

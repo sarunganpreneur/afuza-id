@@ -1,0 +1,76 @@
+{
+  "adjudication": "PASS",
+  "decision_rule": "AUTONOMOUS_BUILD_READY requires enough verified information and authority to begin a bounded, safe L0-L4 implementation without another business decision; remaining gaps that are only implementation work do not block promotion.",
+  "projects": [
+    {
+      "project": "CHALWA.id",
+      "failed_predicates": [],
+      "blocker_classes": [],
+      "first_bundle_independently_executable": true,
+      "final_readiness": "AUTONOMOUS_BUILD_READY"
+    },
+    {
+      "project": "KlodHost",
+      "failed_predicates": [],
+      "blocker_classes": [],
+      "first_bundle_independently_executable": true,
+      "final_readiness": "AUTONOMOUS_BUILD_READY"
+    },
+    {
+      "project": "Marketing Agency",
+      "failed_predicates": [],
+      "blocker_classes": [],
+      "first_bundle_independently_executable": true,
+      "final_readiness": "AUTONOMOUS_BUILD_READY"
+    }
+  ],
+  "true_human_architecture_dependency_blockers": [],
+  "implementation_work_incorrectly_treated_as_blocker_before": [
+    "initialize/scaffold missing app structure",
+    "install packages",
+    "configure TypeScript/lint/test",
+    "create local/staging database",
+    "create migrations",
+    "create worker skeleton",
+    "add health route",
+    "choose an unused staging port",
+    "create staging systemd service",
+    "add Nginx staging host",
+    "configure Redis/queue",
+    "create provider adapters",
+    "create test harness",
+    "add CI",
+    "create .env.example"
+  ],
+  "autonomous_build_ready": [
+    "CHALWA.id",
+    "KlodHost",
+    "Marketing Agency"
+  ],
+  "execution_spec_ready": [
+    "CHALWA.id",
+    "KlodHost",
+    "Marketing Agency"
+  ],
+  "next_ax04_candidate_batch": [
+    {
+      "project": "CHALWA.id",
+      "first_bounded_bundle": "reconcile existing skeleton; establish project toolchain; typed config; health/test/build baseline; no production dependency",
+      "permission_level": "L0-L4",
+      "parallel_safe": true
+    },
+    {
+      "project": "KlodHost",
+      "first_bounded_bundle": "Phase 0 repository foundation; toolchain/workspace baseline; web/worker/package skeleton reconciliation; no real provider/provisioning calls",
+      "permission_level": "L0-L4",
+      "parallel_safe": true
+    },
+    {
+      "project": "Marketing Agency",
+      "first_bounded_bundle": "repository/toolchain foundation; typed config; health/test baseline; agency-domain shell; no outbound acquisition execution",
+      "permission_level": "L0-L4",
+      "parallel_safe": true
+    }
+  ],
+  "human_decision_required": false
+}

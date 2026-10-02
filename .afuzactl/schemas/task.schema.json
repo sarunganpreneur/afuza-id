@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "requirement_ids", "dependencies", "responsible", "permission_level", "actions", "verification_gates", "state", "retries", "blocker_reason", "approval_requirements"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_-]+$" },
+    "requirement_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "dependencies": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "responsible": { "type": "object", "required": ["capability"], "properties": { "capability": { "type": "string", "minLength": 1 }, "agent": { "type": "string" } }, "additionalProperties": false },
+    "permission_level": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5", "L6"] },
+    "actions": { "type": "array", "items": { "type": "object", "required": ["type", "description"], "properties": { "type": { "enum": ["agent_instruction", "verify"] }, "description": { "type": "string", "minLength": 1 }, "gates": { "type": "array", "items": { "enum": ["lint", "typecheck", "tests", "build", "staging_smoke"] } } }, "additionalProperties": false } },
+    "verification_gates": { "type": "array", "items": { "enum": ["configuration_schema", "lint", "typecheck", "tests", "build", "staging_smoke"] }, "uniqueItems": true },
+    "state": { "enum": ["PLANNED", "READY", "IN_PROGRESS", "VERIFYING", "DONE", "BLOCKED", "APPROVAL_REQUIRED"] },
+    "retries": { "type": "integer", "minimum": 0 },
+    "blocker_reason": { "type": ["string", "null"] },
+    "approval_requirements": { "type": "array", "items": { "enum": ["L5", "L6"] }, "uniqueItems": true }
+  },
+  "additionalProperties": false
+}

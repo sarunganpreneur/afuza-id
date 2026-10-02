@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["environments"],
+  "properties": { "environments": { "type": "object", "required": ["local", "staging", "production"], "properties": { "local": { "$ref": "#/definitions/environment" }, "staging": { "$ref": "#/definitions/environment" }, "production": { "$ref": "#/definitions/environment" } }, "additionalProperties": false } },
+  "definitions": { "environment": { "type": "object", "required": ["available", "credentials"], "properties": { "available": { "type": "boolean" }, "start_command": { "type": "string" }, "app_url": { "type": "string", "format": "uri" }, "health_url": { "type": "string", "format": "uri" }, "health_url_env": { "type": "string" }, "checkout_path": { "type": "string" }, "app_port": { "type": "integer", "minimum": 1, "maximum": 65535 }, "public_url": { "type": "string", "format": "uri" }, "app_path": { "type": "string" }, "app_service": { "type": "string" }, "app_bind": { "type": "string" }, "service": { "type": "string" }, "internal_endpoint": { "type": "string", "format": "uri" }, "health_path": { "type": "string", "pattern": "^/" }, "public_endpoint": { "type": ["string", "null"], "format": "uri-reference" }, "deployment_policy": { "type": "object", "required": ["approval_required", "restart_permission_level"], "properties": { "approval_required": { "type": "boolean" }, "restart_permission_level": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5", "L6"] } }, "additionalProperties": false }, "credentials": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+  "additionalProperties": false
+}

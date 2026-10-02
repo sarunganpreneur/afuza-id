@@ -1,0 +1,1 @@
+{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["schema_version","sources"],"properties":{"schema_version":{"const":1},"sources":{"type":"array","items":{"$ref":"source.schema.json"}}},"additionalProperties":false}

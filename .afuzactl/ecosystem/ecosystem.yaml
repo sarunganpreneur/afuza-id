@@ -1,0 +1,27 @@
+ecosystem:
+  id: afuza.ecosystem
+  name: Afuza Ecosystem
+  core_platform_project: afuza.id
+  orchestrator_project: ops.afuza.id
+registry_path: .afuzactl/ecosystem/projects.json
+shared_capabilities_path: .afuzactl/ecosystem/capabilities.json
+dependencies_path: .afuzactl/ecosystem/dependencies.json
+readiness_path: .afuzactl/ecosystem/readiness.json
+execution_queue_path: .afuzactl/ecosystem/execution-queue.json
+source_inventory_path: .afuzactl/ecosystem/source-inventory.json
+requirements_path: .afuzactl/ecosystem/requirements.json
+source_roots:
+  - /home/afuzaid/apps
+  - /home/afuzaid/projects
+  - /home/afuzaid/engineering/repos
+  - /home/afuzaid/shared
+  - /home/afuzaid/ai
+  - /home/afuzaid/web
+  - external://Google Drive (not mounted for this session)
+execution_policy:
+  discovery_only: true
+  product_changes_allowed: false
+  production_changes_allowed: false
+  outbound_external_actions_allowed: false
+  execution_ordering_authority: AX-03
+  preserve_ax01: true

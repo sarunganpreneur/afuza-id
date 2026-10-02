@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "project_id": "marketing-agency",
+  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "repository": {
+    "classification": "EXISTING_PARTIAL",
+    "path": "/home/afuzaid/apps/marketing-agency",
+    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
+    "framework": "None; repository skeleton only.",
+    "runtime": "Not selected or verified.",
+    "package_manager": "Not selected.",
+    "scripts": [],
+    "structure": [
+      "README.md records agency-owned domains and shared-capability/data-writer boundaries.",
+      ".gitignore excludes dependency/build outputs and environment files.",
+      "AFUZA.ID core source remains separate at /home/afuzaid/apps/afuza-id.",
+      "Separate Git metadata exists with initial branch main and no commit.",
+      "No Marketing Agency systemd unit or marketingagency.afuza.id Nginx site found."
+    ]
+  },
+  "classification": "EXISTING_PARTIAL",
+  "environment": {
+    "development": "No Marketing Agency environment registered.",
+    "staging": "marketingagency.afuza.id is specified in the reconciliation artifact but no matching Nginx site, service, or app checkout was found.",
+    "production": "No Marketing Agency production service/domain configuration found.",
+    "environment_variable_names": [
+      "SUPABASE_URL",
+      "SUPABASE_ANON_KEY",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "LEAD_ENGINE_INTERNAL_TOKEN",
+      "WAHA_BASE_URL",
+      "WAHA_API_KEY",
+      "WAHA_SESSION"
+    ]
+  },
+  "services": [
+    {
+      "name": "afuza-id.service",
+      "state": "ACTIVE; adjacent AFUZA.ID production app, not Marketing Agency",
+      "evidence": [
+        "/etc/systemd/system/afuza-id.service"
+      ]
+    },
+    {
+      "name": "afuza-id-staging.service",
+      "state": "ACTIVE; adjacent AFUZA.ID staging app, not Marketing Agency",
+      "evidence": [
+        "/etc/systemd/system/afuza-id-staging.service",
+        "doctor service health check"
+      ]
+    },
+    {
+      "name": "omnivora.service",
+      "state": "ACTIVE; separate product",
+      "evidence": [
+        "/etc/systemd/system/omnivora.service"
+      ]
+    },
+    {
+      "name": "afuza-ai.service",
+      "state": "ACTIVE; adjacent shared capability candidate",
+      "evidence": [
+        "/etc/systemd/system/afuza-ai.service"
+      ]
+    },
+    {
+      "name": "WAHA upstream",
+      "state": "Nginx host configured at waha.afuza.id; localhost port 3005 is listening; service ownership/runtime not verified",
+      "evidence": [
+        "/etc/nginx/sites-enabled/waha.afuza.id",
+        "read-only listening-socket inventory"
+      ]
+    },
+    {
+      "name": "Video Creative OS",
+      "state": "Infrastructure not provisioned; video.afuza.id Nginx site exists; planned bind 127.0.0.1:4400 is not an active service",
+      "evidence": [
+        "/home/afuzaid/apps/afuza-creative-os/README-INFRASTRUCTURE.md",
+        "/etc/nginx/sites-enabled/video.afuza.id"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "Supabase Auth/database",
+      "status": "Existing in AFUZA.ID; Marketing Agency tenant/auth/schema ownership unresolved",
+      "evidence": [
+        "src/lib/supabase/server.ts",
+        "supabase/migrations"
+      ]
+    },
+    {
+      "name": "Shared Acquisition Engine",
+      "status": "Lead upsert/scoring/approval APIs exist in AFUZA.ID source; consumer contract and deployment parity unresolved",
+      "evidence": [
+        "src/app/api/internal/lead-engine/v1/leads/upsert/route.ts",
+        "src/app/api/internal/lead-engine/v1/_lib/auth.ts"
+      ]
+    },
+    {
+      "name": "N8N",
+      "status": "Workflow documents/contracts exist; Marketing Agency runtime/integration not verified",
+      "evidence": [
+        "projects/afuza-revenue-engine-v1/docs/04-N8N-WORKFLOWS.md",
+        "web/ops.afuza.id/docs/api/N8N_INTEGRATION_CONTRACT.md"
+      ]
+    },
+    {
+      "name": "Email provider",
+      "status": "UNKNOWN; no owned campaign email integration evidenced",
+      "evidence": [
+        "Portfolio capability registry marks email UNKNOWN / UNASSIGNED"
+      ]
+    }
+  ],
+  "shared_capabilities": [
+    {
+      "capability": "authentication",
+      "status": "Supabase Auth exists in AFUZA.ID; cross-product tenant/identity contract unresolved",
+      "evidence": [
+        "src/lib/supabase/server.ts",
+        ".afuzactl/ecosystem/capabilities.json:authentication"
+      ]
+    },
+    {
+      "capability": "lead-discovery / lead-scoring",
+      "status": "Current internal lead-engine routes and storage exist; shared ownership and consumer contract unresolved",
+      "evidence": [
+        "src/app/api/internal/lead-engine/v1",
+        ".afuzactl/ecosystem/capabilities.json:lead-discovery,lead-scoring"
+      ]
+    },
+    {
+      "capability": "approval-queue",
+      "status": "AFUZA OPS approval registry/persistence exists; Marketing Agency domain ownership/integration unresolved",
+      "evidence": [
+        "src/lib/ops/approvals-registry.ts",
+        "supabase/migrations/20260924_ops_approval_persistence_v1.sql"
+      ]
+    },
+    {
+      "capability": "WAHA / WhatsApp",
+      "status": "Provider implementation exists in separate /home/afuzaid/apps/src tree and proxy hostname configured; ownership and operating state unresolved",
+      "evidence": [
+        "/home/afuzaid/apps/src/app/api/internal/lead-engine/v1/_lib/waha-delivery-provider.ts",
+        "/etc/nginx/sites-enabled/waha.afuza.id"
+      ]
+    },
+    {
+      "capability": "landing-page generation",
+      "status": "AFUZA.ID authenticated generation action/RPC exists; no approved cross-product API contract",
+      "evidence": [
+        "src/app/actions/generation.ts"
+      ]
+    },
+    {
+      "capability": "Video Creative OS",
+      "status": "Not provisioned; existing static host config is not an application service",
+      "evidence": [
+        "/home/afuzaid/apps/afuza-creative-os/README-INFRASTRUCTURE.md"
+      ]
+    }
+  ],
+  "implementation_evidence": [
+    {
+      "area": "Dedicated Marketing Agency repository skeleton",
+      "status": "PARTIAL",
+      "evidence": [
+        "/home/afuzaid/apps/marketing-agency is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+      ]
+    },
+    {
+      "area": "Shared Acquisition lead API",
+      "status": "PARTIAL",
+      "evidence": [
+        "Lead upsert route authenticates via bearer-token name and requires an idempotency key; not a Marketing Agency consumer integration."
+      ]
+    },
+    {
+      "area": "Campaign lifecycle and tenant/client schema",
+      "status": "MISSING",
+      "evidence": [
+        "No Marketing Agency campaign/tenant schema or service found; no database queried."
+      ]
+    },
+    {
+      "area": "Approval integration",
+      "status": "PARTIAL",
+      "evidence": [
+        "AFUZA OPS approval registry/persistence exists; Marketing Agency integration contract is absent."
+      ]
+    },
+    {
+      "area": "Usage/metering",
+      "status": "MISSING",
+      "evidence": [
+        "No usage service evidenced; AFUZA OPS Usage page is a placeholder."
+      ]
+    },
+    {
+      "area": "WA/email, landing-page, and Video OS integration",
+      "status": "PARTIAL",
+      "evidence": [
+        "Adjacent WAHA provider, AFUZA.ID generation action, and Video OS host/bootstrap docs exist; no approved Marketing Agency integration contract."
+      ]
+    }
+  ],
+  "gaps": [
+    "No Marketing Agency app/runtime/package manager or scripts exist yet.",
+    "Tenant business state has an assigned owner but no schema/implementation exists.",
+    "Shared auth multi-application tenant-membership contract and API/event contracts remain unverified.",
+    "No Marketing Agency staging checkout, service, Nginx site, or safe port reservation exists.",
+    "N8N state and service integration were not verified.",
+    "Production database state was not queried."
+  ],
+  "conflicts": [],
+  "blockers": [],
+  "required_approvals": [],
+  "recommended_next_action": "Bundle 2 execution remains the current proven lifecycle state; no human-test promotion or production rollout is claimed.",
+  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+  "phase0_answers": [
+    {
+      "question": "Where should Marketing Agency code live?",
+      "status": "VERIFIED",
+      "answer": "Separate application repository at /home/afuzaid/apps/marketing-agency; development domain marketingagency.afuza.id; production brand/domain configurable. Repository skeleton now exists.",
+      "evidence": [
+        "portfolio-state.json:ax03-decision-marketing-agency-ownership",
+        "/home/afuzaid/apps/marketing-agency/README.md"
+      ]
+    },
+    {
+      "question": "What auth should it reuse?",
+      "status": "VERIFIED",
+      "answer": "Reuse shared Afuza identity/auth if its verified contract supports multi-application identity and tenant membership; do not create an incompatible auth silo without evidence. Contract verification is still pending.",
+      "evidence": [
+        "portfolio-state.json:ax03-decision-marketing-agency-ownership",
+        "portfolio-state.json:ax03-decision-shared-capability-ownership"
+      ]
+    },
+    {
+      "question": "What database/schema owns tenant/client?",
+      "status": "VERIFIED",
+      "answer": "Marketing Agency owns and is the canonical writer for Tenant/Client, TenantMembership, AccountAssignment, ServiceSubscription, AgencyTask, BillingProfile, ClientPortalConfig, and agency-specific business state in its separately owned schema/database; schema not yet created.",
+      "evidence": [
+        "portfolio-state.json:ax03-decision-marketing-agency-ownership",
+        "portfolio-state.json:ax03-decision-single-writer-data-ownership"
+      ]
+    },
+    {
+      "question": "What service owns Lead/Campaign?",
+      "status": "INFERRED",
+      "answer": "Shared Acquisition Engine has a lead upsert route and commercial lead store; no Marketing Agency Campaign service/owner is evidenced.",
+      "evidence": [
+        "src/app/api/internal/lead-engine/v1/leads/upsert/route.ts",
+        "src/app/api/internal/lead-engine/v1/_lib/store.ts"
+      ]
+    },
+    {
+      "question": "What service owns Approval?",
+      "status": "INFERRED",
+      "answer": "AFUZA OPS has an approval registry and persistence table; Marketing Agency approval-domain ownership/integration is unresolved.",
+      "evidence": [
+        "src/lib/ops/approvals-registry.ts",
+        "supabase/migrations/20260924_ops_approval_persistence_v1.sql"
+      ]
+    },
+    {
+      "question": "What service owns Usage?",
+      "status": "UNKNOWN",
+      "answer": "No usage/metering service owner found; AFUZA OPS Usage page is a placeholder.",
+      "evidence": [
+        "src/app/ops/usage/page.tsx"
+      ]
+    },
+    {
+      "question": "How is Shared Acquisition Engine invoked?",
+      "status": "VERIFIED",
+      "answer": "Internal route POST /api/internal/lead-engine/v1/leads/upsert uses Bearer authentication and an idempotency-key; no Marketing Agency consumer contract exists.",
+      "evidence": [
+        "src/app/api/internal/lead-engine/v1/leads/upsert/route.ts",
+        "src/app/api/internal/lead-engine/v1/_lib/auth.ts"
+      ]
+    },
+    {
+      "question": "What can be reused for WA/email?",
+      "status": "INFERRED",
+      "answer": "A WAHA provider implementation and waha.afuza.id Nginx proxy exist; email provider ownership is unknown. Reuse and runtime ownership require confirmation.",
+      "evidence": [
+        "/home/afuzaid/apps/src/app/api/internal/lead-engine/v1/_lib/waha-delivery-provider.ts",
+        "/etc/nginx/sites-enabled/waha.afuza.id"
+      ]
+    },
+    {
+      "question": "How is LP generator invoked?",
+      "status": "VERIFIED",
+      "answer": "AFUZA.ID site generation uses authenticated request_site_generation Supabase RPC; this is not an approved cross-product Marketing Agency API contract.",
+      "evidence": [
+        "src/app/actions/generation.ts",
+        "supabase/migrations/20260915_edit_regenerate_v1.sql"
+      ]
+    },
+    {
+      "question": "How is Video OS invoked?",
+      "status": "UNKNOWN",
+      "answer": "Video OS is not provisioned; video.afuza.id config exists and its infrastructure README describes a planned 127.0.0.1:4400 bind, not a running API.",
+      "evidence": [
+        "/home/afuzaid/apps/afuza-creative-os/README-INFRASTRUCTURE.md",
+        "/etc/nginx/sites-enabled/video.afuza.id"
+      ]
+    },
+    {
+      "question": "What port is safe?",
+      "status": "UNKNOWN",
+      "answer": "No Marketing Agency port is assigned. Current socket snapshot is not a reservation and must not be treated as proof of a safe port.",
+      "evidence": [
+        "Read-only listening-socket inventory; no Marketing Agency service/unit exists"
+      ]
+    },
+    {
+      "question": "What Nginx/systemd convention should be followed?",
+      "status": "INFERRED",
+      "answer": "Existing AFUZA apps use per-app systemd units as user afuzaid and localhost reverse-proxy Nginx sites; no Marketing Agency site/unit exists. Apply only after an approved deployment boundary.",
+      "evidence": [
+        "/etc/systemd/system/afuza-id.service",
+        "/etc/systemd/system/afuza-id-staging.service",
+        "/etc/nginx/sites-enabled/afuza.id",
+        "/etc/nginx/sites-enabled/ops.afuza.id"
+      ]
+    }
+  ]
+}

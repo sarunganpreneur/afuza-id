@@ -1,0 +1,26 @@
+environments:
+  local:
+    available: true
+    start_command: npm run dev
+    app_url: http://127.0.0.1:3000
+    health_url: http://127.0.0.1:3000/api/health
+    credentials: []
+  staging:
+    available: true
+    checkout_path: /home/afuzaid/apps/afuza-id-staging
+    service: afuza-id-staging.service
+    internal_endpoint: http://127.0.0.1:4101
+    health_path: /api/health
+    public_endpoint: null
+    deployment_policy:
+      approval_required: false
+      restart_permission_level: L4
+    credentials: []
+  production:
+    available: false
+    public_url: https://afuza.id
+    health_url: https://afuza.id/api/health
+    app_path: /home/afuzaid/web/afuza.id/private/app
+    app_service: afuza-id.service
+    app_bind: 127.0.0.1:4100
+    credentials: []

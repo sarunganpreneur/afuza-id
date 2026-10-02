@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["project", "repository", "source_of_truth", "targets", "execution", "deployment"],
+  "properties": {
+    "project": { "type": "object", "required": ["id", "name"], "properties": { "id": { "type": "string", "minLength": 1 }, "name": { "type": "string", "minLength": 1 } }, "additionalProperties": false },
+    "repository": { "type": "object", "required": ["path", "source_control", "remote_url", "default_branch"], "properties": { "path": { "type": "string" }, "source_control": { "type": "string" }, "remote_url": { "type": ["string", "null"] }, "default_branch": { "type": ["string", "null"] } }, "additionalProperties": false },
+    "source_of_truth": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "targets": { "type": "object", "required": ["default", "definitions"], "properties": { "default": { "enum": ["local", "staging", "production"] }, "definitions": { "type": "object", "required": ["local", "staging", "production"], "properties": { "local": { "$ref": "#/definitions/target" }, "staging": { "$ref": "#/definitions/target" }, "production": { "$ref": "#/definitions/target" } }, "additionalProperties": false } }, "additionalProperties": false },
+    "execution": { "type": "object", "required": ["autonomous_through", "max_safe_retries", "require_acceptance_evidence", "never_deploy_production"], "properties": { "autonomous_through": { "enum": ["L0", "L1", "L2", "L3", "L4"] }, "max_safe_retries": { "type": "integer", "minimum": 0 }, "require_acceptance_evidence": { "type": "boolean" }, "never_deploy_production": { "const": true } }, "additionalProperties": false },
+    "deployment": { "type": "object", "required": ["staging_approval_required", "production_approval_required", "external_actions_approval_required"], "properties": { "staging_approval_required": { "type": "boolean" }, "production_approval_required": { "const": true }, "external_actions_approval_required": { "const": true } }, "additionalProperties": false }
+  },
+  "definitions": { "target": { "type": "object", "required": ["environment", "autonomous"], "properties": { "environment": { "enum": ["local", "staging", "production"] }, "autonomous": { "type": "boolean" } }, "additionalProperties": false } },
+  "additionalProperties": false
+}

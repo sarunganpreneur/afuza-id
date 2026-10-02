@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "batch_id", "status", "created_at", "mode", "items"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "batch_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["READY", "IN_PROGRESS", "COMPLETED", "BLOCKED"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "mode": { "enum": ["READ_ONLY", "SAFE_PREPARATION"] },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["project_id", "action_id", "action_type", "objective", "mode", "dependencies", "permission_level", "parallel_safe", "stop_conditions", "expected_outputs", "verification", "state"],
+        "properties": {
+          "project_id": { "type": "string" },
+          "action_id": { "type": "string" },
+          "action_type": { "enum": ["READ_ONLY_INVENTORY", "BOOTSTRAP"] },
+          "objective": { "type": "string" },
+          "mode": { "enum": ["READ_ONLY", "MUTATING"] },
+          "dependencies": { "type": "array", "items": { "type": "string" } },
+          "permission_level": { "enum": ["L0", "L1"] },
+          "parallel_safe": { "type": "boolean" },
+          "resource_scopes": { "type": "array", "items": { "type": "string" } },
+          "repository_path": { "type": ["string", "null"] },
+          "repository_paths": { "type": "array", "items": { "type": "string" } },
+          "infrastructure_mutation": { "type": "boolean" },
+          "infrastructure_scopes": { "type": "array", "items": { "type": "string" } },
+          "decision_id": { "type": ["string", "null"] },
+          "bootstrap_scope": { "type": ["string", "null"] },
+          "target_path": { "type": ["string", "null"] },
+          "stop_conditions": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "expected_outputs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "verification": { "type": "string" },
+          "state": { "enum": ["READY", "IN_PROGRESS", "COMPLETED", "BLOCKED"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

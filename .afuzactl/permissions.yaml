@@ -1,0 +1,33 @@
+levels:
+  - id: L0
+    name: READ/INSPECT
+    autonomous: true
+  - id: L1
+    name: EDIT SOURCE/DOCS
+    autonomous: true
+  - id: L2
+    name: TEST/BUILD/DEPENDENCIES
+    autonomous: true
+  - id: L3
+    name: DEV/STAGING CHANGES
+    autonomous: true
+  - id: L4
+    name: DEPLOY/RESTART STAGING
+    autonomous: true
+  - id: L5
+    name: PRODUCTION CHANGES
+    autonomous: false
+  - id: L6
+    name: EXTERNAL/FINANCIAL ACTIONS
+    autonomous: false
+external_actions:
+  - send_real_whatsapp_or_email
+  - incur_real_ad_spend
+  - purchase_or_payment
+  - destructive_customer_data_action
+  - irreversible_third_party_action
+approval_policy:
+  require_human_for_levels: [L5, L6]
+  production_deployment_requires_human: true
+  outbound_customer_communication_requires_human: true
+  never_store_secrets: true

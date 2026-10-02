@@ -1,0 +1,1 @@
+{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["schema_version","planning_only","items"],"properties":{"schema_version":{"const":1},"planning_only":{"const":true},"items":{"type":"array","items":{"$ref":"execution-item.schema.json"}}},"additionalProperties":false}

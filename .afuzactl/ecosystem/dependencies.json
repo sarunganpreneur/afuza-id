@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "edges": [
+    {"id":"dep-ops-core","from_type":"project","from_id":"ops.afuza.id","to_type":"project","to_id":"afuza.id","kind":"implemented-in-monolith","status":"CONFIRMED","blocking":true,"evidence":"Nginx ops.afuza.id routes to the AFUZA.ID app; ops source is under apps/afuza-id/src/app/ops.","confidence":"HIGH"},
+    {"id":"dep-acq-core","from_type":"project","from_id":"shared-acquisition-engine","to_type":"project","to_id":"afuza.id","kind":"current-code-host","status":"CONFIRMED","blocking":true,"evidence":"Current lead-engine, acquisition, and lead-discovery implementation artifacts are in engineering/repos/afuza-id; that worktree is dirty and was inspected read-only.","confidence":"HIGH"},
+    {"id":"dep-ai-core","from_type":"project","from_id":"afuza-ai","to_type":"project","to_id":"afuza.id","kind":"control-center-integration","status":"CANDIDATE","blocking":true,"evidence":"AFUZA AI architecture identifies afuza.id as its control center and names an internal AFUZA AI API boundary; deployed integration remains unverified.","confidence":"MEDIUM"},
+    {"id":"dep-lead-acq","from_type":"project","from_id":"ai-lead-finder","to_type":"project","to_id":"shared-acquisition-engine","kind":"workstream-parent","status":"CANDIDATE","blocking":true,"evidence":"Lead discovery module and specs are classified under acquisition, but independent product boundary is not approved.","confidence":"MEDIUM"},
+    {"id":"dep-lp100-acq","from_type":"project","from_id":"lp100","to_type":"project","to_id":"shared-acquisition-engine","kind":"campaign-uses-acquisition","status":"CANDIDATE","blocking":true,"evidence":"LP100 is listed as a revenue-engine campaign and its code stores campaign attribution; shared-engine boundary needs approval.","confidence":"MEDIUM"},
+    {"id":"dep-lp100-core","from_type":"project","from_id":"lp100","to_type":"project","to_id":"afuza.id","kind":"campaign-uses-product","status":"CANDIDATE","blocking":true,"evidence":"Revenue Engine defines a landing-page offer; current AFUZA.ID is the deployed site-generation product. Fulfillment contract not consolidated.","confidence":"MEDIUM"},
+    {"id":"dep-revenue-acq","from_type":"project","from_id":"afuza-revenue-engine","to_type":"project","to_id":"shared-acquisition-engine","kind":"workstream-parent","status":"CANDIDATE","blocking":true,"evidence":"Revenue Engine docs and current lead-engine implementation overlap acquisition capabilities.","confidence":"HIGH"},
+    {"id":"dep-factory-core","from_type":"project","from_id":"afuza-lp-system","to_type":"project","to_id":"afuza.id","kind":"potential-product-reuse","status":"CANDIDATE","blocking":true,"evidence":"Product Factory blueprint overlaps AFUZA.ID generation/publishing scope; no approved replacement or decomposition decision found.","confidence":"MEDIUM"},
+    {"id":"dep-creative-auth","from_type":"project","from_id":"afuza-creative-os","to_type":"capability","to_id":"authentication","kind":"possible-shared-auth","status":"UNRESOLVED","blocking":false,"evidence":"Creative OS README requires an owner-managed environment but does not identify an AFUZA.ID auth dependency.","confidence":"LOW"},
+    {"id":"dep-omnivora-isolated","from_type":"project","from_id":"omnivora","to_type":"project","to_id":"afuza.id","kind":"shared-host-only","status":"UNRESOLVED","blocking":false,"evidence":"Omnivora docs state a separate production boundary/database/Redis; no runtime dependency on afuza.id was evidenced.","confidence":"LOW"}
+    ,{"id":"dep-rev-acq-003-score","from_type":"requirement","from_id":"REV-ACQ-003","to_type":"requirement","to_id":"REV-ACQ-001","kind":"requirement-dependency","status":"CANDIDATE","blocking":true,"evidence":"Source golden rules require qualified leads before outreach; exact dependency is a normalized interpretation of the documented flow.","confidence":"MEDIUM"}
+    ,{"id":"dep-rev-acq-003-approval","from_type":"requirement","from_id":"REV-ACQ-003","to_type":"requirement","to_id":"REV-ACQ-002","kind":"requirement-dependency","status":"CONFIRMED","blocking":true,"evidence":"Documented Stage 1 flow requires human message review before send.","confidence":"HIGH"}
+    ,{"id":"dep-queue-product-boundary","from_type":"task","from_id":"queue-lp-factory-boundary","to_type":"task","to_id":"queue-portfolio-source-sync","kind":"planning-prerequisite","status":"CANDIDATE","blocking":true,"evidence":"Reconcile external source authority before deciding product boundary.","confidence":"MEDIUM"}
+    ,{"id":"dep-queue-creative-criteria","from_type":"task","from_id":"queue-creative-os-acceptance","to_type":"task","to_id":"queue-portfolio-source-sync","kind":"planning-prerequisite","status":"CANDIDATE","blocking":true,"evidence":"Source intake precedes scope/acceptance reconciliation.","confidence":"MEDIUM"}
+    ,{"id":"dep-queue-omnivora-source","from_type":"task","from_id":"queue-omnivora-reconcile","to_type":"task","to_id":"queue-portfolio-source-sync","kind":"planning-prerequisite","status":"CANDIDATE","blocking":true,"evidence":"Source intake precedes portfolio source reconciliation.","confidence":"MEDIUM"}
+  ],
+  "cycles": [],
+  "requirement_cycles": [],
+  "queue_cycles": [],
+  "requirement_cycles": [],
+  "queue_cycles": [],
+  "orphan_projects": ["chalwa.id","pasok.in","klodhost","marketing-agency","hiksas","konsultanhalal","afuza-creative-os","omnivora"],
+  "unowned_capabilities": ["outreach","whatsapp","email","payments-billing","notifications","scheduling","observability"]
+}

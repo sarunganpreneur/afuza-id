@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "project", "source_path", "document_type", "status", "confidence", "reason", "conflicts_with", "supersedes", "superseded_by", "external_source_required"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "source_path": { "type": "string", "minLength": 1 },
+    "document_type": { "enum": ["PRD", "MASTER_BLUEPRINT", "ARCHITECTURE", "IMPLEMENTATION_PLAN", "WORKFLOW", "DATA_MODEL", "API_CONTRACT", "ACCEPTANCE_CRITERIA", "DECISION_LOG", "DEPLOYMENT_RUNBOOK", "DISCOVERY_PACKET", "CODE", "TESTS", "README", "UNKNOWN"] },
+    "status": { "enum": ["AUTHORITATIVE", "CANDIDATE", "SUPPORTING", "IMPLEMENTATION_EVIDENCE", "STALE", "CONFLICTING", "UNKNOWN"] },
+    "confidence": { "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"] },
+    "reason": { "type": "string", "minLength": 1 },
+    "conflicts_with": { "type": "array", "items": { "type": "string" } },
+    "supersedes": { "type": ["string", "null"] },
+    "superseded_by": { "type": ["string", "null"] },
+    "external_source_required": { "type": "boolean" },
+    "source_type": { "enum": ["local_path", "google_drive_document", "google_drive_folder", "google_drive_search", "external_reference"] },
+    "external_document_id": { "type": ["string", "null"] },
+    "document_title": { "type": "string", "minLength": 1 },
+    "version": { "type": ["string", "null"] },
+    "authority_classification": { "enum": ["AUTHORITATIVE", "CANDIDATE", "SUPPORTING", "IMPLEMENTATION_EVIDENCE", "STALE", "CONFLICTING", "UNKNOWN"] },
+    "last_known_metadata": { "type": "object" },
+    "reconciliation_status": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "source_type": { "enum": ["google_drive_document", "google_drive_folder", "google_drive_search"] } }, "required": ["source_type"] },
+      "then": {
+        "required": ["source_type", "external_document_id", "document_title", "version", "authority_classification", "last_known_metadata", "reconciliation_status"],
+        "properties": {
+          "source_type": { "enum": ["google_drive_document", "google_drive_folder", "google_drive_search"] },
+          "external_document_id": { "type": ["string", "null"] },
+          "document_title": { "type": "string", "minLength": 1 },
+          "version": { "type": ["string", "null"] },
+          "authority_classification": { "enum": ["AUTHORITATIVE", "CANDIDATE", "SUPPORTING", "IMPLEMENTATION_EVIDENCE", "STALE", "CONFLICTING", "UNKNOWN"] },
+          "last_known_metadata": {
+            "type": "object",
+            "required": ["verified_at", "verification_basis", "document_id_status", "contents_copied_to_repository"],
+            "properties": {
+              "verified_at": { "type": "string", "format": "date" },
+              "verification_basis": { "type": "string", "minLength": 1 },
+              "drive_folder": { "type": ["string", "null"] },
+              "inspected_subfolders": { "type": "array", "items": { "type": "string" } },
+              "document_id_status": { "enum": ["AVAILABLE", "NOT_PROVIDED", "NOT_APPLICABLE"] },
+              "contents_copied_to_repository": { "const": false }
+            },
+            "additionalProperties": true
+          },
+          "reconciliation_status": { "enum": ["REFERENCE_IDENTIFIED_ID_UNAVAILABLE", "DOCUMENT_ID_PROVIDED_CONTENT_UNAVAILABLE", "FOLDER_IDENTIFIED_CONTENTS_PARTIALLY_INSPECTED", "INSPECTED_FOLDERS_EMPTY", "NO_AUTHORITATIVE_REFERENCE_IDENTIFIED", "NOT_RECONCILED", "ID_VERIFIED", "METADATA_VERIFIED", "CONTENT_NOT_INSPECTED", "CONTENT_RECONCILED"] }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

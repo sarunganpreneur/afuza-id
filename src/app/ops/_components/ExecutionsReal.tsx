@@ -497,7 +497,9 @@ export default function ExecutionsReal() {
 
 
   useEffect(() => {
-    void load();
+    const initialLoad = window.setTimeout(() => {
+      void load();
+    }, 0);
 
     const timer =
       window.setInterval(
@@ -508,6 +510,7 @@ export default function ExecutionsReal() {
       );
 
     return () => {
+      window.clearTimeout(initialLoad);
       window.clearInterval(
         timer,
       );

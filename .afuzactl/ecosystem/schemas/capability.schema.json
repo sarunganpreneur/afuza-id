@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "classification", "provider_project", "consuming_projects", "existing_implementation", "duplication_risks", "consolidation_opportunities", "owner_status", "confidence"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "classification": { "enum": ["SHARED_CORE", "PROJECT_SPECIFIC", "CANDIDATE_SHARED", "UNKNOWN"] },
+    "provider_project": { "type": ["string", "null"] },
+    "consuming_projects": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "existing_implementation": { "type": "array", "items": { "type": "string" } },
+    "duplication_risks": { "type": "array", "items": { "type": "string" } },
+    "consolidation_opportunities": { "type": "array", "items": { "type": "string" } },
+    "owner_status": { "enum": ["CLEAR", "UNCLEAR", "UNASSIGNED"] },
+    "confidence": { "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"] }
+  },
+  "additionalProperties": false
+}

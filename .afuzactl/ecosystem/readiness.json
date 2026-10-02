@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "project_id": "afuza.ecosystem",
+      "status": "DISCOVERED",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": true,
+      "testability": "TESTED",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": true,
+      "external_source_required": true,
+      "blockers": [
+        "Portfolio registry built from mounted sources; external Google Drive inventory is unavailable."
+      ],
+      "evidence": [
+        "apps/afuza-id/.afuzactl/ecosystem"
+      ]
+    },
+    {
+      "project_id": "afuza.id",
+      "status": "IMPLEMENTATION_IN_PROGRESS",
+      "source_of_truth_quality": "STRONG",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "TESTED",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": false,
+      "blockers": [
+        "AX-01 foundation passes; future product requirements remain uncompiled."
+      ],
+      "evidence": [
+        "apps/afuza-id/.afuzactl/state.json",
+        "apps/afuza-id/AGENTS.md",
+        "apps/afuza-id/docs/releases/AFUZA_V1_BASELINE.md"
+      ]
+    },
+    {
+      "project_id": "ops.afuza.id",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "PARTIAL",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": true,
+      "blockers": [
+        "Dedicated PRD is draft; product says distinct control plane while current route is delivered by AFUZA.ID monolith."
+      ],
+      "evidence": [
+        "web/ops.afuza.id/docs/prd/AFUZA_OPS_COMMAND_CENTER_V1_PRD.md",
+        "apps/afuza-id/src/app/ops",
+        "/etc/nginx/sites-enabled/ops.afuza.id"
+      ]
+    },
+    {
+      "project_id": "shared-acquisition-engine",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "CONFLICTING",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "PARTIAL",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "No consolidated approved PRD.",
+        "Scoring and outbound policy conflicts unresolved.",
+        "Implementation evidence is in a dirty worktree."
+      ],
+      "evidence": [
+        "projects/afuza-revenue-engine-v1/docs",
+        "engineering/repos/afuza-id/src/app/api/internal/lead-engine/v1"
+      ]
+    },
+    {
+      "project_id": "ai-lead-finder",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "PARTIAL",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "Discovery evidence requirements and project boundary are not approved."
+      ],
+      "evidence": [
+        "projects/afuza-revenue-engine-v1/docs/03-STAGE-1-PIPELINE.md",
+        "engineering/repos/afuza-id/src/lib/lead-discovery"
+      ]
+    },
+    {
+      "project_id": "lp100",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": false,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "PARTIAL",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "Local campaign entry and attribution implementation exists; campaign success criteria and current offer authority are unresolved."
+      ],
+      "evidence": [
+        "projects/afuza-revenue-engine-v1/docs/01-MVP-REVENUE-ENGINE.md",
+        "engineering/repos/afuza-id/src/app/lp100"
+      ]
+    },
+    {
+      "project_id": "afuza-lp-system",
+      "status": "PRD_DRAFT",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "NOT_READY",
+      "implementation_evidence": "NONE",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "Architecture/plan docs exist; implementation and isolated product boundary are not evidenced."
+      ],
+      "evidence": [
+        "projects/afuza-lp-system/docs/01-MASTER-BLUEPRINT.md",
+        "projects/afuza-lp-system/docs/18-IMPLEMENTATION-MASTER-PLAN.md"
+      ]
+    },
+    {
+      "project_id": "afuza-creative-os",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "MISSING_LOCAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": true,
+      "environment_ready": false,
+      "testability": "NOT_READY",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": true,
+      "external_source_required": true,
+      "blockers": [
+        "Infrastructure bootstrap says production services/databases/workers are not provisioned."
+      ],
+      "evidence": [
+        "apps/afuza-creative-os/README.md",
+        "apps/afuza-creative-os/README-INFRASTRUCTURE.md"
+      ]
+    },
+    {
+      "project_id": "afuza-ai",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "STRONG",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": true,
+      "environment_ready": false,
+      "testability": "PARTIAL",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": true,
+      "external_source_required": true,
+      "blockers": [
+        "Locked architecture, implementation plan, and accepted stack ADR exist; PRD/business acceptance criteria are partial, deployed API/environment is not ready, and verification strategy is not fully evidenced."
+      ],
+      "evidence": [
+        "ai/afuza-ai/docs/architecture/AFUZA-AI-AGENT-ARCHITECTURE-V1.md",
+        "ai/afuza-ai/docs/architecture/10-IMPLEMENTATION-PLAN.md",
+        "ai/afuza-ai/docs/decisions/ADR-0001-afuza-ai-runtime-technology-stack.md"
+      ]
+    },
+    {
+      "project_id": "omnivora",
+      "status": "IMPLEMENTATION_IN_PROGRESS",
+      "source_of_truth_quality": "PARTIAL",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "PARTIAL",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": true,
+      "blockers": [
+        "Production shell and CRM sprint docs exist; external communication is explicitly disabled and business acceptance scope is partial."
+      ],
+      "evidence": [
+        "apps/omnivora/README.md",
+        "apps/omnivora/docs/ARCHITECTURE.md"
+      ]
+    },
+    {
+      "project_id": "afuza-revenue-engine",
+      "status": "SPEC_INCOMPLETE",
+      "source_of_truth_quality": "CONFLICTING",
+      "prd_completeness": "PARTIAL",
+      "architecture_available": true,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "PARTIAL",
+      "implementation_evidence": "PARTIAL",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "Numbered workflow generations overlap; current code and policy differ from send-oriented workflow docs."
+      ],
+      "evidence": [
+        "projects/afuza-revenue-engine-v1/docs/00-DOCUMENT-INDEX.md",
+        "engineering/repos/afuza-id/src/app/api/internal/lead-engine/v1"
+      ]
+    },
+    {
+      "project_id": "chalwa.id",
+      "previous_status": "EXECUTION_SPEC_READY",
+      "status": "AUTONOMOUS_BUILD_READY",
+      "source_of_truth_quality": "STRONG",
+      "prd_completeness": "COMPLETE",
+      "authoritative_specification_available": true,
+      "architecture_available": true,
+      "acceptance_criteria_complete": true,
+      "implementation_sequence_available": true,
+      "repository_runtime_verified": true,
+      "staging_path_available": true,
+      "ownership_conflict_status": "NONE",
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "STRATEGY_DEFINED",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": false,
+      "blockers": [],
+      "evidence": [
+        "AX-03 adjudication: AUTONOMOUS_BUILD_READY",
+        "AX-04 Bundle 1 PASS",
+        "AX-04 Bundle 2 PASS",
+        "bundle evidence: lint/typecheck/tests/build PASS",
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+      ]
+    },
+    {
+      "project_id": "pasok.in",
+      "previous_status": "PRD_MISSING_EXTERNAL",
+      "status": "PRD_MISSING_EXTERNAL",
+      "source_of_truth_quality": "UNKNOWN",
+      "prd_completeness": "UNKNOWN",
+      "architecture_available": false,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "UNKNOWN",
+      "implementation_evidence": "UNKNOWN",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "Drive folder is known; the inspected Business & Strategy and Product & Technology folders are empty. No authoritative PRD/spec identified."
+      ],
+      "evidence": [
+        "external source inventory: pasok-drive-folder"
+      ]
+    },
+    {
+      "project_id": "klodhost",
+      "previous_status": "EXECUTION_SPEC_READY",
+      "status": "AUTONOMOUS_BUILD_READY",
+      "source_of_truth_quality": "STRONG",
+      "prd_completeness": "COMPLETE",
+      "authoritative_specification_available": true,
+      "architecture_available": true,
+      "acceptance_criteria_complete": true,
+      "implementation_sequence_available": true,
+      "repository_runtime_verified": true,
+      "staging_path_available": true,
+      "ownership_conflict_status": "NONE",
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "STRATEGY_DEFINED",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": false,
+      "blockers": [],
+      "evidence": [
+        "AX-03 adjudication: AUTONOMOUS_BUILD_READY",
+        "AX-04 Bundle 1 PASS",
+        "AX-04 Bundle 2 PASS",
+        "bundle evidence: lint/typecheck/tests/build PASS",
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+      ]
+    },
+    {
+      "project_id": "marketing-agency",
+      "status": "AUTONOMOUS_BUILD_READY",
+      "previous_status": "EXECUTION_SPEC_READY",
+      "source_of_truth_quality": "STRONG",
+      "prd_completeness": "COMPLETE",
+      "authoritative_specification_available": true,
+      "architecture_available": true,
+      "acceptance_criteria_complete": true,
+      "implementation_sequence_available": true,
+      "repository_runtime_verified": true,
+      "staging_path_available": true,
+      "ownership_conflict_status": "NONE",
+      "dependencies_resolved": true,
+      "environment_ready": true,
+      "testability": "STRATEGY_DEFINED",
+      "implementation_evidence": "STRONG",
+      "permission_policy_ready": true,
+      "external_source_required": false,
+      "blockers": [],
+      "evidence": [
+        "AX-03 adjudication: AUTONOMOUS_BUILD_READY",
+        "AX-04 Bundle 1 PASS",
+        "AX-04 Bundle 2 PASS",
+        "bundle evidence: lint/typecheck/tests/build PASS",
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+      ]
+    },
+    {
+      "project_id": "hiksas",
+      "previous_status": "PRD_MISSING_EXTERNAL",
+      "status": "PRD_MISSING_EXTERNAL",
+      "source_of_truth_quality": "UNKNOWN",
+      "prd_completeness": "UNKNOWN",
+      "architecture_available": false,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "UNKNOWN",
+      "implementation_evidence": "UNKNOWN",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "No authoritative Drive PRD/spec reference identified."
+      ],
+      "evidence": [
+        "external source inventory: hiksas-drive-search"
+      ]
+    },
+    {
+      "project_id": "konsultanhalal",
+      "previous_status": "PRD_MISSING_EXTERNAL",
+      "status": "PRD_MISSING_EXTERNAL",
+      "source_of_truth_quality": "UNKNOWN",
+      "prd_completeness": "UNKNOWN",
+      "architecture_available": false,
+      "acceptance_criteria_complete": false,
+      "dependencies_resolved": false,
+      "environment_ready": false,
+      "testability": "UNKNOWN",
+      "implementation_evidence": "UNKNOWN",
+      "permission_policy_ready": false,
+      "external_source_required": true,
+      "blockers": [
+        "No authoritative project PRD package identified."
+      ],
+      "evidence": [
+        "external source inventory: konsultanhalal-drive-search"
+      ]
+    }
+  ]
+}

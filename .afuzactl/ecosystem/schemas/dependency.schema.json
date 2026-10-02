@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "from_type", "from_id", "to_type", "to_id", "kind", "status", "blocking", "evidence", "confidence"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "from_type": { "enum": ["project", "requirement", "task", "capability"] },
+    "from_id": { "type": "string", "minLength": 1 },
+    "to_type": { "enum": ["project", "requirement", "task", "capability"] },
+    "to_id": { "type": "string", "minLength": 1 },
+    "kind": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["CONFIRMED", "CANDIDATE", "UNRESOLVED"] },
+    "blocking": { "type": "boolean" },
+    "evidence": { "type": "string", "minLength": 1 },
+    "confidence": { "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"] }
+  },
+  "additionalProperties": false
+}

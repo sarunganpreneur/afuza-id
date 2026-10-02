@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "id": "afuza.ecosystem",
+      "name": "Afuza Ecosystem Portfolio",
+      "category": "PORTFOLIO",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/afuza-id/.afuzactl/ecosystem",
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "PLANNING",
+      "documentation_sources": [
+        "apps/afuza-id/.afuzactl/ecosystem/ecosystem.yaml"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "DISCOVERED",
+      "blockers": [
+        "Registry is discovery/planning metadata only; AX-02 does not authorize portfolio project execution."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "afuza.id",
+      "name": "AFUZA.ID Core",
+      "category": "CORE_PLATFORM",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/afuza-id",
+      "related_paths": [
+        "/home/afuzaid/apps/afuza-id-staging",
+        "/home/afuzaid/engineering/repos/afuza-id",
+        "/home/afuzaid/shared/afuza-id"
+      ],
+      "development_domain": null,
+      "production_domain": "https://afuza.id",
+      "lifecycle_status": "PRODUCTION",
+      "documentation_sources": [
+        "apps/afuza-id/AGENTS.md",
+        "apps/afuza-id/docs/AFUZA_MASTER_BLUEPRINT.md",
+        "apps/afuza-id/docs/ROADMAP.md",
+        "apps/afuza-id/docs/releases/AFUZA_V1_BASELINE.md"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [
+        "authentication",
+        "agent-runtime",
+        "ai-generation",
+        "asset-storage",
+        "publishing",
+        "audit-trail"
+      ],
+      "capabilities_provided": [
+        "authentication",
+        "execution-control",
+        "landing-page-generation",
+        "publishing",
+        "ai-generation",
+        "asset-storage"
+      ],
+      "autonomous_build_readiness": "IMPLEMENTATION_IN_PROGRESS",
+      "blockers": [
+        "AX-01 execution foundation is complete; product requirements for future work must still be compiled from an approved specification."
+      ],
+      "external_source_required": false,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "ops.afuza.id",
+      "name": "AFUZA OPS Command Center",
+      "category": "CONTROL_PLANE",
+      "parent": "afuza.id",
+      "repository_path": "/home/afuzaid/apps/afuza-id/src/app/ops",
+      "related_paths": [
+        "/home/afuzaid/web/ops.afuza.id",
+        "/home/afuzaid/engineering/repos/afuza-id/src/app/ops"
+      ],
+      "development_domain": null,
+      "production_domain": "https://ops.afuza.id",
+      "lifecycle_status": "PRODUCTION",
+      "documentation_sources": [
+        "web/ops.afuza.id/docs/prd/AFUZA_OPS_COMMAND_CENTER_V1_PRD.md",
+        "web/ops.afuza.id/docs/architecture/SYSTEM_ARCHITECTURE.md",
+        "apps/afuza-id/src/app/ops",
+        "apps/afuza-id/src/lib/ops/approvals-registry.ts"
+      ],
+      "dependencies": [
+        "afuza.id"
+      ],
+      "capabilities_consumed": [
+        "authentication",
+        "audit-trail",
+        "agent-runtime"
+      ],
+      "capabilities_provided": [
+        "approval-queue"
+      ],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "PRD is draft for implementation and defines Ops as a distinct control plane; deployed route currently serves the AFUZA.ID monolith. Resolve target product/repository boundary."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "shared-acquisition-engine",
+      "name": "Shared Acquisition Engine",
+      "category": "SHARED_CAPABILITY_WORKSTREAM",
+      "parent": "afuza.id",
+      "repository_path": "/home/afuzaid/engineering/repos/afuza-id/src/lib/acquisition",
+      "related_paths": [
+        "/home/afuzaid/engineering/repos/afuza-id/src/app/api/internal/lead-engine",
+        "/home/afuzaid/engineering/repos/afuza-id/scripts/acquisition",
+        "/home/afuzaid/engineering/repos/afuza-id/scripts/lead-discovery"
+      ],
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "projects/afuza-revenue-engine-v1/docs/01-MVP-REVENUE-ENGINE.md",
+        "projects/afuza-revenue-engine-v1/docs/08-SCORING-V2-CHANNEL-INTELLIGENCE.md",
+        "engineering/repos/afuza-id/src/lib/acquisition"
+      ],
+      "dependencies": [
+        "afuza.id"
+      ],
+      "capabilities_consumed": [
+        "lead-discovery",
+        "lead-scoring",
+        "qualification",
+        "approval-queue",
+        "outreach",
+        "whatsapp",
+        "acquisition-analytics"
+      ],
+      "capabilities_provided": [
+        "lead-discovery",
+        "lead-scoring",
+        "qualification",
+        "acquisition-analytics"
+      ],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "No consolidated authoritative acquisition PRD identified.",
+        "Scoring policy conflicts across source docs and implementation.",
+        "Outbound approval/send policy conflicts across workflow docs and implementation."
+      ],
+      "external_source_required": true,
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "ai-lead-finder",
+      "name": "AI Lead Finder / Lead Discovery",
+      "category": "ACQUISITION_WORKSTREAM",
+      "parent": "shared-acquisition-engine",
+      "repository_path": "/home/afuzaid/engineering/repos/afuza-id/src/lib/lead-discovery",
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "projects/afuza-revenue-engine-v1/docs/03-STAGE-1-PIPELINE.md",
+        "engineering/repos/afuza-id/src/lib/lead-discovery"
+      ],
+      "dependencies": [
+        "shared-acquisition-engine"
+      ],
+      "capabilities_consumed": [
+        "lead-discovery",
+        "qualification"
+      ],
+      "capabilities_provided": [
+        "lead-discovery"
+      ],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "Discovery source policy, acceptable evidence, and business acceptance thresholds need an approved consolidated specification."
+      ],
+      "external_source_required": true,
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "lp100",
+      "name": "LP100 Campaign",
+      "category": "CAMPAIGN",
+      "parent": "shared-acquisition-engine",
+      "repository_path": "/home/afuzaid/engineering/repos/afuza-id/src/app/lp100",
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "projects/afuza-revenue-engine-v1/docs/01-MVP-REVENUE-ENGINE.md",
+        "engineering/repos/afuza-id/src/app/lp100/acquisition.ts"
+      ],
+      "dependencies": [
+        "afuza.id",
+        "shared-acquisition-engine"
+      ],
+      "capabilities_consumed": [
+        "landing-page-generation",
+        "outreach",
+        "acquisition-analytics"
+      ],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "Campaign implementation evidence exists, but target segments, campaign acceptance metrics, and offer-policy authority require reconciliation."
+      ],
+      "external_source_required": true,
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "afuza-lp-system",
+      "name": "AFUZA Landing Page Production System / Product Factory",
+      "category": "PRODUCT_FACTORY",
+      "parent": "afuza.id",
+      "repository_path": "/home/afuzaid/projects/afuza-lp-system",
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "PLANNING",
+      "documentation_sources": [
+        "projects/afuza-lp-system/README.md",
+        "projects/afuza-lp-system/docs/01-MASTER-BLUEPRINT.md",
+        "projects/afuza-lp-system/docs/18-IMPLEMENTATION-MASTER-PLAN.md"
+      ],
+      "dependencies": [
+        "afuza.id"
+      ],
+      "capabilities_consumed": [
+        "authentication",
+        "ai-generation",
+        "asset-storage",
+        "publishing"
+      ],
+      "capabilities_provided": [
+        "landing-page-generation"
+      ],
+      "autonomous_build_readiness": "PRD_DRAFT",
+      "blockers": [
+        "Architecture and implementation plan are present; approved product acceptance scope and boundary with existing AFUZA.ID generator need confirmation."
+      ],
+      "external_source_required": true,
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "afuza-creative-os",
+      "name": "AFUZA Creative OS / video.afuza.id",
+      "category": "PLATFORM",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/afuza-creative-os",
+      "development_domain": null,
+      "production_domain": "https://video.afuza.id",
+      "lifecycle_status": "PLANNING",
+      "documentation_sources": [
+        "apps/afuza-creative-os/README.md",
+        "apps/afuza-creative-os/README-INFRASTRUCTURE.md"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "asset-storage",
+        "scheduling",
+        "observability"
+      ],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "Infrastructure bootstrap explicitly says services/databases/workers are not provisioned; domain ownership and first product acceptance criteria need confirmation."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "afuza-ai",
+      "name": "AFUZA AI Workforce Platform",
+      "category": "SHARED_PLATFORM",
+      "parent": "afuza.id",
+      "repository_path": "/home/afuzaid/ai/afuza-ai",
+      "related_paths": [
+        "/home/afuzaid/shared/afuza-id"
+      ],
+      "development_domain": "http://127.0.0.1:4200 (documented private API target)",
+      "production_domain": null,
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "ai/afuza-ai/docs/architecture/AFUZA-AI-AGENT-ARCHITECTURE-V1.md",
+        "ai/afuza-ai/docs/architecture/10-IMPLEMENTATION-PLAN.md",
+        "ai/afuza-ai/docs/decisions/ADR-0001-afuza-ai-runtime-technology-stack.md"
+      ],
+      "dependencies": [
+        "afuza.id"
+      ],
+      "capabilities_consumed": [
+        "authentication",
+        "audit-trail"
+      ],
+      "capabilities_provided": [
+        "agent-runtime",
+        "ai-generation",
+        "scheduling"
+      ],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "Locked architecture, implementation plan, and accepted stack ADR exist; PRD/business acceptance criteria are partial, deployed API/environment is not ready, and verification strategy is not fully evidenced."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "omnivora",
+      "name": "OMNIVORA",
+      "category": "BUSINESS_PLATFORM",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/omnivora",
+      "related_paths": [
+        "/home/afuzaid/shared/omnivora"
+      ],
+      "development_domain": null,
+      "production_domain": "https://omni.afuza.id",
+      "lifecycle_status": "PRODUCTION",
+      "documentation_sources": [
+        "apps/omnivora/README.md",
+        "apps/omnivora/docs/ARCHITECTURE.md",
+        "apps/omnivora/knowledge"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [
+        "authentication",
+        "approval-queue",
+        "audit-trail",
+        "lead-scoring"
+      ],
+      "capabilities_provided": [
+        "organization-user-management",
+        "audit-trail"
+      ],
+      "autonomous_build_readiness": "IMPLEMENTATION_IN_PROGRESS",
+      "blockers": [
+        "README describes a bounded sprint foundation, not a complete portfolio-level PRD; external communication is intentionally disabled."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "afuza-revenue-engine",
+      "name": "AFUZA Revenue Engine V1",
+      "category": "REVENUE_OPERATIONS",
+      "parent": "shared-acquisition-engine",
+      "repository_path": "/home/afuzaid/projects/afuza-revenue-engine-v1",
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "projects/afuza-revenue-engine-v1/docs/00-DOCUMENT-INDEX.md",
+        "projects/afuza-revenue-engine-v1/docs/01-MVP-REVENUE-ENGINE.md",
+        "projects/afuza-revenue-engine-v1/docs/02-DATA-MODEL.md",
+        "projects/afuza-revenue-engine-v1/docs/03-STAGE-1-PIPELINE.md"
+      ],
+      "dependencies": [
+        "shared-acquisition-engine"
+      ],
+      "capabilities_consumed": [
+        "lead-discovery",
+        "lead-scoring",
+        "qualification",
+        "approval-queue",
+        "outreach",
+        "whatsapp",
+        "acquisition-analytics"
+      ],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "SPEC_INCOMPLETE",
+      "blockers": [
+        "Multiple workflow generations and scoring versions overlap; policy decisions are unresolved."
+      ],
+      "external_source_required": true,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "chalwa.id",
+      "name": "CHALWA.id",
+      "category": "SUBHOLDING",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/chalwa",
+      "development_domain": "chalwa.afuza.id",
+      "production_domain": "chalwa.id",
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "external://Google Drive/CHALWA.id/Master Blueprint V1",
+        "external://Google Drive/CHALWA.id/PRD V1",
+        "external://Google Drive/CHALWA.id/Technical Architecture V1",
+        "external://Google Drive/CHALWA.id/Database & Entity Model V1",
+        "external://Google Drive/CHALWA.id/Development Implementation Plan V1",
+        "/home/afuzaid/apps/chalwa/README.md"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [
+        "authentication",
+        "ai-generation",
+        "publishing"
+      ],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "blockers": [],
+      "external_source_required": false,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "pasok.in",
+      "name": "PASOK.IN",
+      "category": "SUBHOLDING",
+      "parent": null,
+      "repository_path": null,
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "UNKNOWN",
+      "documentation_sources": [
+        "external://Google Drive/PASOK.IN project folder"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "PRD_MISSING_EXTERNAL",
+      "blockers": [
+        "Drive project folder is known; inspected Business & Strategy and Product & Technology folders are empty. No completed PRD/spec is inferred; other folders have not been established as authoritative requirements."
+      ],
+      "external_source_required": true,
+      "confidence": "MEDIUM"
+    },
+    {
+      "id": "klodhost",
+      "name": "KlodHost",
+      "category": "SUBHOLDING",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/klodhost",
+      "development_domain": "klodhost.afuza.id",
+      "production_domain": "klodhost.com",
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "external://Google Drive/KlodHost/KLODHOST PLATFORM \u2014 MASTER PRD V1",
+        "external://Google Drive/KlodHost/Architecture V1",
+        "external://Google Drive/KlodHost/Security Model V1",
+        "external://Google Drive/KlodHost/Data Model V1",
+        "external://Google Drive/KlodHost/Provisioning V1",
+        "external://Google Drive/KlodHost/Node Agent V1",
+        "external://Google Drive/KlodHost/Provider Abstraction V1",
+        "external://Google Drive/KlodHost/Billing V1",
+        "external://Google Drive/KlodHost/AFUZA Integration V1",
+        "external://Google Drive/KlodHost/Domain Migration V1",
+        "external://Google Drive/KlodHost/Roadmap & Phase 0 Execution Plan",
+        "/home/afuzaid/apps/klodhost/README.md"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [
+        "payments-billing",
+        "observability"
+      ],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "blockers": [],
+      "external_source_required": false,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "marketing-agency",
+      "name": "Marketing Agency",
+      "category": "BUSINESS_LINE",
+      "parent": null,
+      "repository_path": "/home/afuzaid/apps/marketing-agency",
+      "development_domain": "marketingagency.afuza.id",
+      "production_domain": "marketingagency.afuza.id",
+      "lifecycle_status": "DEVELOPMENT",
+      "documentation_sources": [
+        "external://Google Drive/Marketing Agency/Business Blueprint",
+        "external://Google Drive/Marketing Agency/Service Catalog & Packaging",
+        "external://Google Drive/Marketing Agency/Business Model & Unit Economics",
+        "external://Google Drive/Marketing Agency/Product Requirements Document (PRD)",
+        "external://Google Drive/Marketing Agency/System Architecture",
+        "external://Google Drive/Marketing Agency/AI Agents & Automation Architecture",
+        "external://Google Drive/Marketing Agency/Data Model & Multi-Tenant Design",
+        "external://Google Drive/Marketing Agency/MVP Development Plan",
+        "/home/afuzaid/apps/marketing-agency/README.md"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [
+        "authentication",
+        "agent-runtime",
+        "lead-discovery",
+        "lead-scoring",
+        "qualification",
+        "approval-queue",
+        "outreach",
+        "whatsapp",
+        "acquisition-analytics",
+        "landing-page-generation",
+        "ai-generation"
+      ],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "blockers": [],
+      "external_source_required": false,
+      "confidence": "HIGH"
+    },
+    {
+      "id": "hiksas",
+      "name": "HIKSAS",
+      "category": "SUBHOLDING",
+      "parent": null,
+      "repository_path": null,
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "UNKNOWN",
+      "documentation_sources": [
+        "external://Google Drive/HIKSAS/authoritative PRD or specification (not identified)"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "PRD_MISSING_EXTERNAL",
+      "blockers": [
+        "No authoritative Drive PRD/spec reference identified."
+      ],
+      "external_source_required": true,
+      "confidence": "LOW"
+    },
+    {
+      "id": "konsultanhalal",
+      "name": "KonsultanHalal",
+      "category": "BUSINESS_LINE",
+      "parent": null,
+      "repository_path": null,
+      "development_domain": null,
+      "production_domain": null,
+      "lifecycle_status": "UNKNOWN",
+      "documentation_sources": [
+        "external://Google Drive/KonsultanHalal/authoritative project PRD (not identified)"
+      ],
+      "dependencies": [],
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "autonomous_build_readiness": "PRD_MISSING_EXTERNAL",
+      "blockers": [
+        "No authoritative project PRD package identified."
+      ],
+      "external_source_required": true,
+      "confidence": "LOW"
+    }
+  ]
+}

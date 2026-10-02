@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "project_id": "chalwa.id",
+  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "repository": {
+    "classification": "EXISTING_PARTIAL",
+    "path": "/home/afuzaid/apps/chalwa",
+    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
+    "framework": "None; repository skeleton only.",
+    "runtime": "UNKNOWN",
+    "package_manager": "UNKNOWN",
+    "scripts": [],
+    "structure": [
+      "README.md records approved project ownership and domain boundaries.",
+      ".gitignore excludes dependency/build outputs and environment files.",
+      "No app source, lockfile, database, migrations, auth code, tests, or service definitions.",
+      "Separate Git metadata exists with initial branch main and no commit."
+    ]
+  },
+  "classification": "EXISTING_PARTIAL",
+  "environment": {
+    "development": "NOT_FOUND_OR_NOT_REGISTERED",
+    "staging": "NOT_FOUND_OR_NOT_REGISTERED",
+    "production": "NOT_FOUND_OR_NOT_REGISTERED",
+    "environment_variable_names": []
+  },
+  "services": [],
+  "dependencies": [
+    {
+      "name": "Afuza authentication",
+      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:authentication"
+      ]
+    },
+    {
+      "name": "Afuza AI generation",
+      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:ai-generation"
+      ]
+    },
+    {
+      "name": "Afuza asset storage",
+      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:asset-storage"
+      ]
+    },
+    {
+      "name": "Afuza publishing",
+      "status": "CANDIDATE_SHARED_CAPABILITY; CHALWA contract unresolved",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:publishing"
+      ]
+    }
+  ],
+  "shared_capabilities": [
+    {
+      "capability": "authentication",
+      "status": "CANDIDATE; ownership/reuse boundary unclear",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json"
+      ]
+    },
+    {
+      "capability": "ai-generation",
+      "status": "CANDIDATE; provider/workflow contract unverified",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json"
+      ]
+    },
+    {
+      "capability": "asset-storage",
+      "status": "CANDIDATE; tenant/storage boundary unverified",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json"
+      ]
+    },
+    {
+      "capability": "publishing",
+      "status": "SHARED_CORE in AFUZA.ID; CHALWA integration unverified",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json"
+      ]
+    }
+  ],
+  "implementation_evidence": [
+    {
+      "area": "CHALWA repository skeleton",
+      "status": "PARTIAL",
+      "evidence": [
+        "/home/afuzaid/apps/chalwa is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+      ]
+    },
+    {
+      "area": "Database, migrations, authentication, tests, and build",
+      "status": "MISSING",
+      "evidence": [
+        "No CHALWA repository was found; no project-local configuration or test commands were available."
+      ]
+    },
+    {
+      "area": "Product and order workflow",
+      "status": "MISSING",
+      "evidence": [
+        "No CHALWA-specific implementation found; adjacent AFUZA.ID capabilities are not counted as CHALWA implementation."
+      ]
+    },
+    {
+      "area": "Verification gates",
+      "status": "MISSING",
+      "evidence": [
+        "No CHALWA test/build environment available; gates were not run."
+      ]
+    }
+  ],
+  "gaps": [
+    "Framework/runtime/package manager and app scripts not selected or installed.",
+    "No application, database/auth setup, tests, or build exists yet.",
+    "Shared-service contracts and development/staging runtime/domain remain unverified."
+  ],
+  "conflicts": [],
+  "blockers": [],
+  "required_approvals": [],
+  "recommended_next_action": "Bundle 2 execution remains the current proven lifecycle state; no human-test promotion or production rollout is claimed.",
+  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY"
+}

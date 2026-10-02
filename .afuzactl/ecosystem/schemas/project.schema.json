@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "category", "parent", "repository_path", "development_domain", "production_domain", "lifecycle_status", "documentation_sources", "dependencies", "capabilities_consumed", "capabilities_provided", "autonomous_build_readiness", "blockers", "external_source_required", "confidence"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "parent": { "type": ["string", "null"] },
+    "repository_path": { "type": ["string", "null"] },
+    "related_paths": { "type": "array", "items": { "type": "string" } },
+    "development_domain": { "type": ["string", "null"] },
+    "production_domain": { "type": ["string", "null"] },
+    "lifecycle_status": { "enum": ["DISCOVERED", "PLANNING", "DEVELOPMENT", "STAGING", "PRODUCTION", "PAUSED", "UNKNOWN"] },
+    "documentation_sources": { "type": "array", "items": { "type": "string" } },
+    "dependencies": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "capabilities_consumed": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "capabilities_provided": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "autonomous_build_readiness": { "enum": ["DISCOVERED", "PRD_MISSING_EXTERNAL", "PRD_DRAFT", "PRD_READY", "SPEC_INCOMPLETE", "EXECUTION_SPEC_READY", "DEPENDENCY_BLOCKED", "AUTONOMOUS_BUILD_READY", "IMPLEMENTATION_IN_PROGRESS", "READY_FOR_HUMAN_TEST", "PRODUCTION"] },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "external_source_required": { "type": "boolean" },
+    "confidence": { "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"] }
+  },
+  "additionalProperties": false
+}

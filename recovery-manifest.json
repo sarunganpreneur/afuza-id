@@ -1,0 +1,377 @@
+{
+  "recovered_from": "transcript execution evidence",
+  "original_git_source_unavailable": true,
+  "unmatched_replay_hunks": 122,
+  "recovery_scope": "isolated recovery followed by controlled canonical engineering promotion",
+  "production_modified": false,
+  "canonical_merge_approved": true,
+  "canonicalization": {
+    "canonical_control_root": "/home/afuzaid/engineering/repos/afuza-id",
+    "integration_branch": "recovery/ax-control-plane-canonical-20261003",
+    "safety_reference": "backup/pre-ax-control-promotion-20261003",
+    "original_dirty_worktree_preserved": true,
+    "source_checkout_before_integration": "feature/lp100-cashflow-sprint at dc975281f745e96a5140143270bd96a611ed3d17",
+    "remote_backup": "REMOTE_BACKUP_PENDING: no Git remote configured",
+    "promotion_commit_description": "AX control-plane recovery + canonicalization"
+  },
+  "control_plane_operations": {
+    "runtime_state_snapshot_policy": "docs/AX-CONTROL-SNAPSHOT-POLICY.md",
+    "launcher": "/home/afuzaid/bin/afuzactl",
+    "AFUZA_CONTROL_ROOT": "/home/afuzaid/engineering/repos/afuza-id",
+    "profile_export": "/home/afuzaid/.profile",
+    "production_runtime": "/home/afuzaid/apps/afuza-id",
+    "production_runtime_owns_ax_state": false
+  },
+  "evidence_model": {
+    "authority_order": [
+      "current verified project repository evidence",
+      "transcript-recorded successful AX command/output",
+      "recovered AX schemas/contracts/tests",
+      "recovered state artifacts",
+      "inferred normalization only when required to satisfy an already proven state"
+    ],
+    "ax_phase_history": [
+      "AX-01 PASS",
+      "AX-02 PASS",
+      "AX-02X PASS",
+      "AX-03 PASS",
+      "AX-04 Bundle 1 PASS",
+      "AX-04 Bundle 2 PASS"
+    ],
+    "project_evidence": {
+      "chalwa.id": {
+        "bundle_1": "PASS",
+        "bundle_2": "PASS",
+        "lint": "PASS",
+        "typecheck": "PASS",
+        "tests": "7/7 PASS",
+        "build": "PASS",
+        "target_status": "BUNDLE_2_READY",
+        "normalized_spec_readiness": "EXECUTION_SPEC_READY",
+        "normalized_autonomous_readiness": "AUTONOMOUS_BUILD_READY",
+        "normalized_execution_state": "BUNDLE_2_READY"
+      },
+      "klodhost": {
+        "bundle_1": "PASS",
+        "bundle_2": "PASS",
+        "lint": "PASS",
+        "typecheck": "PASS",
+        "tests": "5/5 PASS",
+        "build": "PASS",
+        "target_status": "BUNDLE_2_READY",
+        "normalized_spec_readiness": "EXECUTION_SPEC_READY",
+        "normalized_autonomous_readiness": "AUTONOMOUS_BUILD_READY",
+        "normalized_execution_state": "BUNDLE_2_READY"
+      },
+      "marketing-agency": {
+        "bundle_1": "PASS",
+        "bundle_2": "PASS",
+        "lint": "PASS",
+        "typecheck": "PASS",
+        "tests": "6/6 PASS",
+        "build": "PASS",
+        "target_status": "BUNDLE_2_READY",
+        "normalized_spec_readiness": "EXECUTION_SPEC_READY",
+        "normalized_autonomous_readiness": "AUTONOMOUS_BUILD_READY",
+        "normalized_execution_state": "BUNDLE_2_READY"
+      }
+    }
+  },
+  "reconciled_records": {
+    "projects.json": "normalized to BUNDLE_2_READY target states for recovered evidence set",
+    "readiness.json": "normalized to match the observed project evidence set; doctor confirms registry and readiness matrix consistency",
+    "portfolio-state.json": "restored minimum lifecycle state for AX-03 inventory and AX-04 bundle flow, incomplete due to missing authoritative decisions",
+    "execution-plan.json": "restored minimum execution scaffolding for recovered environment set",
+    "execution-queue.json": "restored minimum queue state for recovered axis",
+    "active-batch.json": "restored active_batch_id=ax03-inventory-batch-001, but not fully authoritative",
+    "inbox": "schema objects recovered; imported AX-02X work only if proven in transcript evidence; current state remains schematic",
+    "capability_authentication_consumer_fix": "CHALWA.id explicitly declares authentication as consumed so the recovered capability registry and project record agree under the recovered control contract"
+  },
+  "normalized_repairs": [
+    {
+      "invariant": "capability producer/consumer mirror",
+      "affected_files": [
+        ".afuzactl/ecosystem/projects.json",
+        ".afuzactl/ecosystem/capabilities.json"
+      ],
+      "previous_value": "CHALWA.id capabilities_consumed=[] while authentication capability listed chalwa.id as consumer",
+      "normalized_value": "CHALWA.id capabilities_consumed=[\"authentication\"]",
+      "authority_evidence_basis": "recovered capability registry + explicit architecture decision: CHALWA may consume shared Afuza identity/auth through explicit contract/API boundaries",
+      "classification": "ARCHITECTURE_DECISION",
+      "validation_result": "doctor rerun passed for CHALWA"
+    },
+    {
+      "invariant": "capability producer/consumer mirror",
+      "affected_files": [
+        ".afuzactl/ecosystem/projects.json",
+        ".afuzactl/ecosystem/capabilities.json"
+      ],
+      "previous_value": "Marketing Agency capabilities_consumed=[] while authentication capability listed marketing-agency as consumer",
+      "normalized_value": "Marketing Agency capabilities_consumed=[\"authentication\"]",
+      "authority_evidence_basis": "recovered capability registry + explicit architecture decision: Marketing Agency consumes shared Afuza identity/auth through explicit contract/API boundaries",
+      "classification": "ARCHITECTURE_DECISION",
+      "validation_result": "doctor rerun passed for Marketing Agency authentication"
+    },
+    {
+      "invariant": "capability producer/consumer mirror",
+      "affected_files": [
+        ".afuzactl/ecosystem/projects.json",
+        ".afuzactl/ecosystem/capabilities.json"
+      ],
+      "previous_value": "Marketing Agency capabilities_consumed=[\"authentication\"] while agent-runtime capability listed marketing-agency as consumer",
+      "normalized_value": "Marketing Agency capabilities_consumed=[\"authentication\", \"agent-runtime\"]",
+      "authority_evidence_basis": "recovered capability registry + architecture decision: Marketing Agency consumes the shared agent runtime/orchestration capability through explicit AFUZA AI contract boundaries",
+      "classification": "ARCHITECTURE_DECISION",
+      "validation_result": "doctor rerun passed for agent-runtime"
+    },
+    {
+      "invariant": "capability producer/consumer mirror",
+      "affected_files": [
+        ".afuzactl/ecosystem/projects.json",
+        ".afuzactl/ecosystem/capabilities.json"
+      ],
+      "previous_value": "Marketing Agency capabilities_consumed=[\"authentication\", \"agent-runtime\"] while lead-discovery capability listed marketing-agency as consumer",
+      "normalized_value": "Marketing Agency capabilities_consumed=[\"authentication\", \"agent-runtime\", \"lead-discovery\"]",
+      "authority_evidence_basis": "recovered capability registry + shared acquisition architecture decision: Marketing Agency consumes lead discovery through the shared acquisition engine contract",
+      "classification": "ARCHITECTURE_DECISION",
+      "validation_result": "pending doctor rerun"
+    }
+  ],
+  "historical_gaps": [
+    "122 transcript replay hunks remained unmatched during isolated recovery",
+    "project registry and readiness matrix previously disagreed; corrected and verified by doctor",
+    "portfolio decisions/completed actions are incomplete",
+    "recovered candidate is not a canonical historical snapshot",
+    "current repository evidence wins over earlier transcript if materially contradictory"
+  ],
+  "lint_attribution": {
+    "initial_recovery_result": {
+      "errors": 10,
+      "warnings": 2,
+      "findings": [
+        {
+          "file": "scripts/afuza.cjs",
+          "locations": ["4:12", "5:14", "6:23", "7:14", "8:13", "9:81", "10:25"],
+          "rule": "@typescript-eslint/no-require-imports",
+          "classification": "RECOVERY_EXPOSED_BY_CONFIG",
+          "recovery_only_in_current_lint": true,
+          "file_modified_by_recovery_attribution_time": true,
+          "resolution": "CJS-scoped rule override in eslint.config.mjs"
+        },
+        {
+          "file": "scripts/afuza.cjs",
+          "locations": ["641:9", "649:9"],
+          "rule": "@typescript-eslint/no-unused-vars",
+          "classification": "WARNING_ONLY",
+          "recovery_only_in_current_lint": true,
+          "file_modified_by_recovery_attribution_time": true,
+          "resolution": "Removed unused statusCounts and knownStatuses declarations"
+        },
+        {
+          "file": "src/app/ops/_components/AccessTeam.tsx",
+          "locations": ["203:7"],
+          "rule": "react-hooks/set-state-in-effect",
+          "classification": "BASELINE_EXISTING",
+          "baseline_head_has_same_finding": true,
+          "baseline_current_worktree_has_same_finding": false,
+          "baseline_worktree_repair": "Uncommitted zero-delay initial-load timer with cleanup",
+          "file_modified_by_recovery_attribution_time": false,
+          "file_modified_by_recovery_as_baseline_lint_repair": true
+        },
+        {
+          "file": "src/app/ops/_components/ApprovalsReal.tsx",
+          "locations": ["213:5"],
+          "rule": "react-hooks/set-state-in-effect",
+          "classification": "BASELINE_EXISTING",
+          "baseline_head_has_same_finding": true,
+          "baseline_current_worktree_has_same_finding": false,
+          "baseline_worktree_repair": "Uncommitted zero-delay initial-load timer with cleanup",
+          "file_modified_by_recovery_attribution_time": false,
+          "file_modified_by_recovery_as_baseline_lint_repair": true
+        },
+        {
+          "file": "src/app/ops/_components/ExecutionsReal.tsx",
+          "locations": ["500:10"],
+          "rule": "react-hooks/set-state-in-effect",
+          "classification": "BASELINE_EXISTING",
+          "baseline_head_has_same_finding": true,
+          "baseline_current_worktree_has_same_finding": false,
+          "baseline_worktree_repair": "Uncommitted zero-delay initial-load timer with cleanup",
+          "file_modified_by_recovery_attribution_time": false,
+          "file_modified_by_recovery_as_baseline_lint_repair": true
+        }
+      ]
+    },
+    "baseline_current_worktree_result": {
+      "errors": 4,
+      "warnings": 18,
+      "findings": [
+        {
+          "file": "sample/Auto Tools/selenium/webdriver/remote/findElements.js",
+          "locations": ["1:8"],
+          "rule": "parsing error: Identifier expected",
+          "classification": "BASELINE_EXISTING",
+          "file_modified_by_recovery": false
+        },
+        {
+          "file": "sample/Auto Tools/selenium/webdriver/remote/getAttribute.js",
+          "locations": ["1:8"],
+          "rule": "parsing error: Identifier expected",
+          "classification": "BASELINE_EXISTING",
+          "file_modified_by_recovery": false
+        },
+        {
+          "file": "sample/Auto Tools/selenium/webdriver/remote/isDisplayed.js",
+          "locations": ["1:8"],
+          "rule": "parsing error: Identifier expected",
+          "classification": "BASELINE_EXISTING",
+          "file_modified_by_recovery": false
+        },
+        {
+          "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
+          "locations": ["203:17"],
+          "rule": "@next/next/no-assign-module-variable",
+          "severity": "ERROR",
+          "classification": "BASELINE_EXISTING",
+          "file_modified_by_recovery": false
+        },
+        {
+          "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
+          "locations": ["483:13", "1084:9", "1127:9", "1791:9"],
+          "rule": "@typescript-eslint/no-unused-expressions",
+          "severity": "WARNING",
+          "classification": "WARNING_ONLY",
+          "file_modified_by_recovery": false
+        },
+        {
+          "file": "sample/Auto Tools/webwhatsapi/js/wapi.js",
+          "locations": ["635:59", "967:14", "1048:63", "1239:18", "1509:10", "1628:18", "1640:18", "1653:43", "1681:43", "1782:13", "1898:30", "1954:40", "1954:52", "2368:14"],
+          "rule": "@typescript-eslint/no-unused-vars",
+          "severity": "WARNING",
+          "classification": "WARNING_ONLY",
+          "file_modified_by_recovery": false
+        }
+      ],
+      "same_eslint_and_react_hooks_versions": "eslint 9.39.5; eslint-plugin-react-hooks 7.1.1; @typescript-eslint/eslint-plugin 8.70.0",
+      "baseline_checkout_was_dirty": true
+    }
+  },
+  "validation": {
+    "lint": "PASS; zero errors and zero warnings",
+    "doctor": "PASS",
+    "ecosystem_readiness": "PASS",
+    "ecosystem_report": "PASS; three canonical projects remain EXECUTION_SPEC_READY / AUTONOMOUS_BUILD_READY / BUNDLE_2_READY",
+    "portfolio_status": "PASS",
+    "portfolio_readiness": "PASS",
+    "portfolio_plan": "PASS; planning only, zero collisions",
+    "portfolio_inventory": "PASS",
+    "inbox_status": "PASS; zero processed artifacts, decisions, external evidence, or rejections",
+    "portfolio_regressions": "PASS: 3 files, 36/36 tests",
+    "full_verify": "PASS: lint, TypeScript, Vitest, Next.js build, and staging smoke",
+    "local_toolchain": "Installed in this recovery worktree with npm ci from package-lock.json; no NODE_PATH fallback",
+    "dependency_drift": "No package-lock change or dependency-version drift; package.json recovery script change predated installation",
+    "drive_evidence": "PASS: synthetic IDs removed, 24 IDs explicitly unavailable, 3 supplied IDs retained, zero unsupported CONTENT_RECONCILED records, no Google credentials found",
+    "promotion_gate": "READY_TO_PROMOTE=YES; all required candidate gates pass; not promoted"
+  },
+  "drift_audit": {
+    "tracked_changes": [
+      { "file": "eslint.config.mjs", "classification": "LINT_CONFIG" },
+      { "file": "package.json", "classification": "AX_RECOVERY", "detail": "Recovery CLI script entry predated this lint task" },
+      { "file": "src/app/ops/_components/AccessTeam.tsx", "classification": "BASELINE_LINT_REPAIR" },
+      { "file": "src/app/ops/_components/ApprovalsReal.tsx", "classification": "BASELINE_LINT_REPAIR" },
+      { "file": "src/app/ops/_components/ExecutionsReal.tsx", "classification": "BASELINE_LINT_REPAIR" }
+    ],
+    "untracked_recovery_artifacts": {
+      "AX_RECOVERY": [".afuzactl/**", "afuza", "docs/ECOSYSTEM-REGISTRY.md", "scripts/afuza.cjs", "scripts/portfolio-inbox.cjs", "scripts/portfolio-planner.cjs"],
+      "AX_TEST_MIGRATION": ["src/lib/afuza-control.test.ts", "src/lib/afuza-ecosystem.test.ts", "src/lib/afuza-portfolio.test.ts"],
+      "RECOVERY_MANIFEST": ["recovery-manifest.json"]
+    },
+    "package_lock": "UNCHANGED",
+    "unexplained_changes": [],
+    "production_modified": false
+  },
+  "files_changed_during_reconciliation": [
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/afuza",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/package.json",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/scripts/afuza.cjs",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/scripts/portfolio-planner.cjs",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/scripts/portfolio-inbox.cjs",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/lib/afuza-control.test.ts",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/lib/afuza-ecosystem.test.ts",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/lib/afuza-portfolio.test.ts",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/eslint.config.mjs",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/app/ops/_components/AccessTeam.tsx",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/app/ops/_components/ApprovalsReal.tsx",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/src/app/ops/_components/ExecutionsReal.tsx",
+    "/home/afuzaid/engineering/worktrees/recovery-ax-control-plane-20261002-ordered/.afuzactl/**"
+  ],
+  "checksums": {
+    "afuza": "b92cabe7f400d683e611c7ae39a53e5cfc0f9142b966be74cb22a2cedfa9e799",
+    "scripts/afuza.cjs": "2154ff180f8e7e07f4e7a0a0f5387d579af7b12e37e152d65896bca9bc06906f",
+    "scripts/portfolio-planner.cjs": "373aa0b91a283e0d93d56d806f6ab11821580e6ca78774f84389bd5a087a44b2",
+    "scripts/portfolio-inbox.cjs": "57a904ba57300aaa40ef1faa94345deef7b97c6636ddce15e118949c1cd3c876",
+    ".afuzactl/ecosystem/projects.json": "6ad4226c9c87d86a6fa7c0eeed852767457e4205b68aa30f27af19b118641f9c",
+    ".afuzactl/ecosystem/readiness.json": "fbe5e6baab79e58eb9bef39f6410310f1d44fb3812e10dc363cc6aa984af7bb9",
+    ".afuzactl/ecosystem/portfolio-state.json": "5fdba6fbd4eb889b1d3e2b888e900a0442e12bc72742dd8f1ed67abb627e52bd",
+    ".afuzactl/ecosystem/execution-queue.json": "1bd552cac5978496d496dfb2e906b940fdd2cd9ad964171adf35d41ac434a9a8",
+    ".afuzactl/ecosystem/execution-plan.json": "30d2bf7dcb1fdd77fafa9ff160bb2fd793d0a01514912c9c7bd1fb7b0b17ae8f",
+    ".afuzactl/ecosystem/active-batch.json": "77f24ad3e959a740442d238ebaa5f9ef9897a57b922c96ef8aab6ffd51ae50f9",
+    ".afuzactl/ecosystem/source-inventory.json": "d7a6098de4c3764912415c09b69750951e4c41fd33f1e4ce406c24a1f477a808",
+    "src/lib/afuza-ecosystem.test.ts": "46a2496b3afb97f59e47aae202f05e725b4658914fe8e9b1123421dc451a619a",
+    "eslint.config.mjs": "1d1fb4f9e1565f3b000909c37adcf2ab7794dcd91943bc6438e0694b368f3b16",
+    "package.json": "60549d49f9cd4323c45dcc6d96d45ab1f744f5e3a9a18346e1dfff19f56a561e",
+    "src/app/ops/_components/AccessTeam.tsx": "3704aa7d822d278c4a5a60c1c0975d700cb1ea6d7a663e1fcc63d0396b2a1660",
+    "src/app/ops/_components/ApprovalsReal.tsx": "80520b49902575279bed5820f63940ed4f7653441b65fbc0039e3481f073d70b",
+    "src/app/ops/_components/ExecutionsReal.tsx": "13a46e3957b0839f5229801d1dceddfc4b6a146e15d780258571f3e7669cd8c4",
+    "docs/AX-CONTROL-SNAPSHOT-POLICY.md": "5208b947ba0cdc9196191bb96d049722cacaabc6b23424fb3a9111f762bb7293",
+    ".afuzactl/ecosystem/report.md": "e0bebc9837dc2bdb5ec437af02e50008206dafaa15d20bf33a7f9603745b978a"
+  },
+  "canonical_state": {
+    "chalwa.id": {
+      "spec": "EXECUTION_SPEC_READY",
+      "autonomous": "AUTONOMOUS_BUILD_READY",
+      "execution": "BUNDLE_2_READY"
+    },
+    "klodhost": {
+      "spec": "EXECUTION_SPEC_READY",
+      "autonomous": "AUTONOMOUS_BUILD_READY",
+      "execution": "BUNDLE_2_READY"
+    },
+    "marketing-agency": {
+      "spec": "EXECUTION_SPEC_READY",
+      "autonomous": "AUTONOMOUS_BUILD_READY",
+      "execution": "BUNDLE_2_READY"
+    }
+  },
+  "post_promotion_state": {
+    "chalwa.id": "BUNDLE_2_READY",
+    "klodhost": "BUNDLE_2_READY",
+    "marketing-agency": "BUNDLE_2_READY",
+    "ready_for_human_test_projects": [],
+    "bundle_3_executed": false
+  },
+  "recovery_decision": {
+    "stale_fixture_summary": "Recovered tests initially reflected the old AX-02/AX-03 snapshot and temporarily downgraded project state to satisfy those expectations.",
+    "authoritative_recovery_basis": "Later execution evidence proves AX-04 bundle states for CHALWA.id, KlodHost, and Marketing Agency; this pass restores that evidence as authoritative.",
+    "fixture_migration": "COMPLETED: fixtures and assertions reflect AX-04 multi-dimensional state without weakening architectural invariants.",
+    "synthetic_drive_ids_removed": true,
+    "semantic_normalization": "PASS",
+    "commonjs_lint_resolution": "CJS-scoped eslint.config.mjs override disables only @typescript-eslint/no-require-imports for **/*.cjs; all other rules remain active",
+    "baseline_react_lint_repair": "BASELINE_LINT_REPAIR: AccessTeam, ApprovalsReal, and ExecutionsReal defer initial load with a zero-delay timer and clear it on unmount; matches the repair present in the dirty baseline checkout",
+    "warnings_resolution": "Removed unused recovery CLI declarations and redundant file-level disable; final lint reports zero warnings",
+    "final_lint_result": "PASS: npm run lint, zero errors and zero warnings",
+    "ax_regressions": "PASS: 3 test files, 36/36",
+    "local_toolchain_installation": "npm ci from package-lock.json, installed only in this recovery worktree; local eslint, vitest, next, and tsc binaries verified",
+    "full_verify_result": "PASS: doctor, lint, TypeScript, Vitest, Next.js build, and staging smoke",
+    "canonical_state_unchanged": true,
+    "dependency_drift": "No package-lock changes or dependency-version drift from installation",
+    "drive_evidence_safety": "Synthetic IDs removed; 24 unavailable IDs remain explicit; 3 supplied IDs retained; CONTENT_RECONCILED count is zero because referenced content is uninspected; no Google credentials found",
+    "original_git_ax_source_unavailable": true,
+    "unmatched_transcript_hunks": 122,
+    "controlled_reconciliation_not_historical_snapshot": true,
+    "production_modified": false,
+    "ready_to_promote": "YES",
+    "promotion_blocker": null,
+    "promoted": false
+  }
+}

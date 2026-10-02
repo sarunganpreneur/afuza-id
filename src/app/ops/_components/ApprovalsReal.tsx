@@ -210,14 +210,17 @@ export default function ApprovalsReal() {
   );
 
   useEffect(() => {
-    load().catch(
-      (err) =>
+    const timer = window.setTimeout(() => {
+      load().catch((err) =>
         setError(
-          err instanceof Error
-            ? err.message
-            : "APPROVAL_DATA_ERROR",
+          err instanceof Error ? err.message : "APPROVAL_DATA_ERROR",
         ),
-    );
+      );
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
   }, [load]);
 
   const selected =

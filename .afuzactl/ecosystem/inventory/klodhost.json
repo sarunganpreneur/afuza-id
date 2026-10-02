@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "project_id": "klodhost",
+  "inventory_timestamp": "2026-10-02T04:35:00.000Z",
+  "repository": {
+    "classification": "EXISTING_PARTIAL",
+    "path": "/home/afuzaid/apps/klodhost",
+    "git_state": "Separate afuzaid-owned Git repository on main; no commits; only README.md and .gitignore, both uncommitted.",
+    "framework": "None; provider-agnostic repository skeleton only.",
+    "runtime": "UNKNOWN",
+    "package_manager": "UNKNOWN",
+    "scripts": [],
+    "structure": [
+      "README.md records approved separate platform ownership and provider-agnostic boundary.",
+      ".gitignore excludes dependency/build outputs and environment files.",
+      "No app source, provider adapters, Node Agent, billing/provisioning code, database, tests, or services.",
+      "Separate Git metadata exists with initial branch main and no commit."
+    ]
+  },
+  "classification": "EXISTING_PARTIAL",
+  "environment": {
+    "development": "NOT_FOUND_OR_NOT_REGISTERED",
+    "staging": "NOT_FOUND_OR_NOT_REGISTERED",
+    "production": "NOT_FOUND_OR_NOT_REGISTERED",
+    "environment_variable_names": []
+  },
+  "services": [],
+  "dependencies": [
+    {
+      "name": "KlodHost provider abstraction",
+      "status": "NOT_FOUND",
+      "evidence": [
+        "No KlodHost-specific provider/infrastructure source tree found."
+      ]
+    },
+    {
+      "name": "Contabo integration",
+      "status": "NOT_FOUND_LOCALLY; coupling risk unassessed",
+      "evidence": [
+        "No KlodHost or Contabo-specific implementation found in registered project roots."
+      ]
+    },
+    {
+      "name": "KlodHost Node Agent, billing, provisioning",
+      "status": "NOT_FOUND",
+      "evidence": [
+        "No project repository, service definition, schema, or provider implementation found."
+      ]
+    }
+  ],
+  "shared_capabilities": [
+    {
+      "capability": "payments-billing",
+      "status": "UNKNOWN / UNASSIGNED in portfolio capability registry",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:payments-billing"
+      ]
+    },
+    {
+      "capability": "observability",
+      "status": "UNKNOWN / UNASSIGNED in portfolio capability registry",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:observability"
+      ]
+    },
+    {
+      "capability": "authentication",
+      "status": "AFUZA.ID implementation exists; KlodHost reuse not established",
+      "evidence": [
+        ".afuzactl/ecosystem/capabilities.json:authentication"
+      ]
+    }
+  ],
+  "implementation_evidence": [
+    {
+      "area": "KlodHost repository skeleton",
+      "status": "PARTIAL",
+      "evidence": [
+        "/home/afuzaid/apps/klodhost is an afuzaid-owned Git repository on main with README.md and .gitignore only."
+      ]
+    },
+    {
+      "area": "Provider abstraction, Contabo provider, and Node Agent",
+      "status": "MISSING",
+      "evidence": [
+        "No KlodHost-specific provider code or Node Agent found."
+      ]
+    },
+    {
+      "area": "Billing, provisioning, database, and services",
+      "status": "MISSING",
+      "evidence": [
+        "No KlodHost-specific schema/migrations, service definitions, or provisioning code found."
+      ]
+    },
+    {
+      "area": "Staging domain/runtime and test/build",
+      "status": "MISSING",
+      "evidence": [
+        "No KlodHost environment, Nginx host, unit, package manifest, or tests found."
+      ]
+    }
+  ],
+  "gaps": [
+    "Framework/runtime/package manager and app scripts not selected or installed.",
+    "No KlodHost runtime/tooling, service, database, or staging configuration found.",
+    "Provider abstraction and Contabo coupling cannot be assessed without source code.",
+    "Billing, provisioning, Node Agent, and deployment tests are absent locally."
+  ],
+  "conflicts": [],
+  "blockers": [],
+  "required_approvals": [],
+  "recommended_next_action": "Bundle 2 execution remains the current proven lifecycle state; no human-test promotion or production rollout is claimed.",
+  "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY"
+}

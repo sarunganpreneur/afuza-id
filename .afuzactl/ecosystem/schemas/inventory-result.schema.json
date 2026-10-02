@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "project_id", "inventory_timestamp", "repository", "classification", "environment", "services", "dependencies", "shared_capabilities", "implementation_evidence", "gaps", "conflicts", "blockers", "required_approvals", "recommended_next_action", "autonomous_build_readiness"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project_id": { "type": "string" },
+    "inventory_timestamp": { "type": "string", "format": "date-time" },
+    "repository": {
+      "type": "object",
+      "required": ["classification", "path", "git_state", "framework", "runtime", "package_manager", "scripts", "structure"],
+      "properties": {
+        "classification": { "enum": ["GREENFIELD", "EXISTING_PARTIAL", "EXISTING_COMPATIBLE", "EXISTING_CONFLICTING", "NOT_FOUND"] },
+        "path": { "type": ["string", "null"] },
+        "git_state": { "type": "string" },
+        "framework": { "type": "string" },
+        "runtime": { "type": "string" },
+        "package_manager": { "type": "string" },
+        "scripts": { "type": "array", "items": { "type": "string" } },
+        "structure": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "classification": { "enum": ["GREENFIELD", "EXISTING_PARTIAL", "EXISTING_COMPATIBLE", "EXISTING_CONFLICTING", "NOT_FOUND"] },
+    "environment": {
+      "type": "object",
+      "required": ["development", "staging", "production", "environment_variable_names"],
+      "properties": {
+        "development": { "type": "string" },
+        "staging": { "type": "string" },
+        "production": { "type": "string" },
+        "environment_variable_names": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "services": { "type": "array", "items": { "type": "object", "required": ["name", "state", "evidence"], "properties": { "name": { "type": "string" }, "state": { "type": "string" }, "evidence": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+    "dependencies": { "type": "array", "items": { "type": "object", "required": ["name", "status", "evidence"], "properties": { "name": { "type": "string" }, "status": { "type": "string" }, "evidence": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+    "shared_capabilities": { "type": "array", "items": { "type": "object", "required": ["capability", "status", "evidence"], "properties": { "capability": { "type": "string" }, "status": { "type": "string" }, "evidence": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+    "implementation_evidence": { "type": "array", "items": { "type": "object", "required": ["area", "status", "evidence"], "properties": { "area": { "type": "string" }, "status": { "enum": ["DONE", "PARTIAL", "MISSING", "CONFLICT", "UNKNOWN"] }, "evidence": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } },
+    "gaps": { "type": "array", "items": { "type": "string" } },
+    "conflicts": { "type": "array", "items": { "type": "string" } },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "required_approvals": { "type": "array", "items": { "type": "string" } },
+    "recommended_next_action": { "type": "string" },
+    "autonomous_build_readiness": { "enum": ["EXECUTION_SPEC_READY", "AUTONOMOUS_BUILD_READY"] },
+    "phase0_answers": { "type": "array", "items": { "type": "object", "required": ["question", "status", "answer", "evidence"], "properties": { "question": { "type": "string" }, "status": { "enum": ["VERIFIED", "INFERRED", "UNKNOWN"] }, "answer": { "type": "string" }, "evidence": { "type": "array", "items": { "type": "string" } } }, "additionalProperties": false } }
+  },
+  "additionalProperties": false
+}

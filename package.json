@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "afuza": "node scripts/afuza.cjs",
     "generation:worker": "tsx scripts/generation-worker.ts",
     "generation:worker:dry-run": "tsx scripts/generation-dry-run.ts",
     "test": "vitest"

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["levels", "external_actions", "approval_policy"],
+  "properties": {
+    "levels": { "type": "array", "minItems": 7, "items": { "type": "object", "required": ["id", "name", "autonomous"], "properties": { "id": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5", "L6"] }, "name": { "type": "string" }, "autonomous": { "type": "boolean" } }, "additionalProperties": false } },
+    "external_actions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "approval_policy": { "type": "object", "required": ["require_human_for_levels", "production_deployment_requires_human", "outbound_customer_communication_requires_human", "never_store_secrets"], "properties": { "require_human_for_levels": { "type": "array", "items": { "enum": ["L5", "L6"] }, "minItems": 2, "uniqueItems": true }, "production_deployment_requires_human": { "const": true }, "outbound_customer_communication_requires_human": { "const": true }, "never_store_secrets": { "const": true } }, "additionalProperties": false }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "tasks"],
+  "properties": { "schema_version": { "const": 1 }, "tasks": { "type": "array", "items": { "$ref": "task.schema.json" }, "uniqueItems": true } },
+  "additionalProperties": false
+}

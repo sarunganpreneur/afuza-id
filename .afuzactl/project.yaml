@@ -1,0 +1,34 @@
+project:
+  id: afuza.id
+  name: AFUZA.ID
+repository:
+  path: .
+  source_control: git
+  remote_url: null
+  default_branch: null
+source_of_truth:
+  - docs/AFUZA_MASTER_BLUEPRINT.md
+  - docs/ROADMAP.md
+  - docs/releases/AFUZA_V1_BASELINE.md
+  - docs/STALE_DOCUMENTS.md
+targets:
+  default: staging
+  definitions:
+    local:
+      environment: local
+      autonomous: true
+    staging:
+      environment: staging
+      autonomous: true
+    production:
+      environment: production
+      autonomous: false
+execution:
+  autonomous_through: L4
+  max_safe_retries: 2
+  require_acceptance_evidence: true
+  never_deploy_production: true
+deployment:
+  staging_approval_required: false
+  production_approval_required: true
+  external_actions_approval_required: true

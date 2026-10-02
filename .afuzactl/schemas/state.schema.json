@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schema_version", "project", "target", "status", "active_workstream", "current_task", "completed_tasks", "total_tasks", "quality_gates", "blockers", "approvals_required", "last_execution", "updated_at"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "target": { "enum": ["local", "staging", "production"] },
+    "status": { "enum": ["PRD_DRAFT", "PRD_READY", "EXECUTION_SPEC_READY", "AUTONOMOUS_BUILD_READY", "BUILDING", "VERIFYING", "STAGING_READY", "READY_FOR_HUMAN_TEST", "EXECUTION_FOUNDATION_COMPLETE", "BLOCKED", "APPROVED", "PRODUCTION_READY", "PRODUCTION"] },
+    "active_workstream": { "type": ["string", "null"] },
+    "current_task": { "type": ["string", "null"] },
+    "completed_tasks": { "type": "integer", "minimum": 0 },
+    "total_tasks": { "type": "integer", "minimum": 0 },
+    "quality_gates": { "type": "object", "required": ["configuration_schema", "lint", "typecheck", "tests", "build", "staging_smoke"], "properties": { "configuration_schema": { "$ref": "#/definitions/gate" }, "lint": { "$ref": "#/definitions/gate" }, "typecheck": { "$ref": "#/definitions/gate" }, "tests": { "$ref": "#/definitions/gate" }, "build": { "$ref": "#/definitions/gate" }, "staging_smoke": { "$ref": "#/definitions/stagingGate" } }, "additionalProperties": false },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "approvals_required": { "type": "array", "items": { "enum": ["L5", "L6"] }, "uniqueItems": true },
+    "last_execution": { "type": ["object", "null"], "required": ["command", "result", "started_at", "finished_at"], "properties": { "command": { "type": "string" }, "result": { "enum": ["PASS", "FAIL"] }, "started_at": { "type": "string", "format": "date-time" }, "finished_at": { "type": "string", "format": "date-time" } }, "additionalProperties": false },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "definitions": { "gate": { "enum": ["NOT_RUN", "PASS", "FAIL", "SKIPPED"] }, "stagingGate": { "enum": ["NOT_RUN", "PASS", "FAIL", "SKIPPED_NOT_CONFIGURED", "SKIPPED_NOT_REQUESTED"] } },
+  "additionalProperties": false
+}
