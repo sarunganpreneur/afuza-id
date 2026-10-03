@@ -261,7 +261,8 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
+        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
       ]
     },
     {
@@ -310,7 +311,8 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
+        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
       ]
     },
     {
@@ -338,7 +340,8 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST"
+        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
+        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
       ]
     },
     {
