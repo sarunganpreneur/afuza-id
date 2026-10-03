@@ -37,6 +37,53 @@ Key reuse decisions:
 - UI: reuse existing Next.js app shell and design system patterns; no parallel storefront shell.
 - API: use server actions and Route Handlers in the App Router, with server-only auth checks and validation.
 
+## Shared Capability Reuse
+
+This DPF contract does not assume a standalone product architecture. The following ecosystem capabilities were audited read-only and mapped to the DPF design.
+
+### Reuse matrix
+
+| Capability | Source project | Classification | Evidence | Proposed DPF integration | Coupling risk |
+| --- | --- | --- | --- | --- | --- |
+| Product lifecycle + SKU uniqueness + approval gate | CHALWA (`/home/afuzaid/apps/chalwa`) | REUSE_PATTERN | `apps/chalwa/src/domain.ts` contains `Design/Product` status models, `ProductVariant`, `sku` uniqueness checks, and approval gates | Reuse validation pattern for product lifecycle and uniqueness rules; map DPF statuses to existing state semantics but do not import CHALWA DB state | Medium: lifecycle semantics are valuable, but the CHALWA repo is not the canonical product writer for DPF |
+| Workflow/orchestration state machine + retry/idempotency pattern | KlodHost (`/home/afuzaid/apps/klodhost`) | REUSE_PATTERN | `apps/klodhost/src/contracts.ts` defines provider adapter, ordered lifecycle states, and provider-neutral contract models | Reuse request/state semantics for checkout workflow, retries, and idempotent processing boundaries | Medium: provider-agnostic pattern is safe, but not a direct runtime dependency |
+| Approval / execution guardrail policy | AFUZA OPS (`/home/afuzaid/engineering/repos/afuza-id/src/lib/ops/approvals-registry.ts`) | REUSE_DIRECT | approval policy registry sets `requires_human_approval` and `execution_enabled = false` for risky actions | Reuse the same approval policy pattern for catalog publish, pricing changes, payment confirmation, and entitlement actions | Low-to-medium: safe if using only registry semantics and not direct ops DB writes |
+| Lead ingestion + idempotency + validation | Shared Acquisition Engine (`/home/afuzaid/engineering/repos/afuza-id/src/app/api/internal/lead-engine/v1/leads/upsert/route.ts`) | REUSE_PATTERN | route performs auth, `idempotency-key`, validation, and duplicate-contact handling | Reuse the lead ingestion contract pattern for catalog import validation, deduplication, and request replay safety | Medium: acquisition flow is not DPF business logic but is a good request-contract template |
+| Tenant scoping / entitlement / membership guardrails | Marketing Agency (`/home/afuzaid/apps/marketing-agency/src/agency-domain.ts`) | REUSE_PATTERN | tenant scope enforcement and entitlement checks exist; `assertTenantScope`, `assertEntitled`, `resolveEntitlement` | Reuse pattern for user entitlement checks, tenant ownership, and feature gating | Medium: business semantics are analogous but not directly interchangeable |
+| AI orchestration / control-center pattern | AFUZA AI (`/home/afuzaid/ai/afuza-ai/README.md`) | REUSE_PATTERN | locked architecture defines `afuza.id` as control center and AI workers as specialist services | Reuse the control-center separation model, but keep DPF as a business module inside `afuza.id` | Low: architecture pattern only |
+| Creative generation / asset pipeline | AFUZA Creative OS (`/home/afuzaid/apps/afuza-creative-os/README.md`) | REUSE_PATTERN | reads as a bounded creative platform with worker/scheduler boundaries and storage concerns isolated to owning packages | Reuse the worker/scheduler packaging pattern for asset workflows; do not reuse creative infra as a DPF dependency | Medium: the platform is not yet a production service and should remain a consumer contract |
+| Shared acquisition analytics / campaign pipeline | Shared Acquisition Engine in `afuza-id` | REUSE_PATTERN | `.afuzactl/ecosystem/projects.json` lists `shared-acquisition-engine` and `acquisition-analytics` | Reuse event naming and funnel semantics for `product_view`, `search`, and `purchase_completed` if a shared metrics contract is later approved | Medium: growth analytics is important but not yet owned by a stable shared API |
+
+### Architecture rule: no direct cross-project database writes
+
+The DPF must not implement direct cross-project writes to CHALWA, KlodHost, or Marketing Agency data stores. The preferred integration order is:
+
+1. shared package/library when a proven generic utility already exists
+2. explicit internal API contract within the existing `afuza.id` boundary
+3. explicit event/job contract for async work
+4. copy only small generic utility code as a last resort, and keep it isolated from domain-specific data access
+
+The canonical writer remains the owning domain. DPF is a consumer of shared contracts, not a second write-surface.
+
+### Lane responsibility update
+
+- Product/Catalog Lane: prioritize CHALWA lifecycle and SKU validation patterns only as a reference model. The product catalog schema remains owned by DPF, but the lifecycle semantics and uniqueness checks are adapted rather than copied wholesale.
+- Commerce Lane: prioritize KlodHost-style state-machine discipline, idempotency keys, and request replay handling for checkout and payment processing. However, DPF must not call KlodHost domain code or write KlodHost tables.
+- Content/Growth Lane: prioritize Marketing Agency and shared acquisition patterns for content pipeline metadata, funnel semantics, and event naming, but only through approved cross-domain contracts.
+
+### Proposed safe parallel worktree plan
+
+This should be treated as a proposal only; no worktrees are created in this revision phase.
+
+- Base repository: `/home/afuzaid/engineering/repos/afuza-id`
+- Base branch: `canonical/ax-control-plane-20261003`
+- Integration branch: `feature/dpf-launch-v1` (current contract freeze branch)
+- Commerce worktree path: `/home/afuzaid/engineering/repos/afuza-id-commerce/feature/dpf-commerce-v1`
+- Storefront worktree path: `/home/afuzaid/engineering/repos/afuza-id-storefront/feature/dpf-storefront-v1`
+- Rule: each parallel worktree must branch from `feature/dpf-launch-v1` and must not share the same dirty working directory as the main repo
+
+This keeps Person 2 and Person 3 isolated from each other while preserving the single contract source-of-truth in the main repo.
+
 ## 3. Canonical entity contracts
 
 ### 3.1 Product
