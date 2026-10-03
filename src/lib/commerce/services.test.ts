@@ -66,7 +66,8 @@ function makeUserClient() {
 beforeEach(() => {
   vi.clearAllMocks();
   vi.stubEnv("NODE_ENV", "test");
-  vi.stubEnv("DPF_ENABLE_TEST_PAYMENTS", "true");
+  vi.stubEnv("AFUZA_RUNTIME_ENV", "test");
+  vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "true");
   const userClient = makeUserClient();
   mocks.createClient.mockResolvedValue(userClient.client);
   const serviceRpc = vi.fn().mockResolvedValue({ data: { ok: true, orderId: mocks.order.id, status: "PAID" }, error: null });
@@ -135,6 +136,16 @@ describe("commerce service boundaries", () => {
       p_amount: 38000,
       p_status: "PENDING",
     }));
+  });
+
+  it("denies TEST payment service calls in production despite an enabled flag", async () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "production");
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "true");
+
+    await expect(startTestPayment(mocks.order.id)).rejects.toThrow("TEST_PAYMENT_DISABLED");
+    await expect(confirmPayment({ provider: "test", event: {} })).rejects.toThrow("TEST_PAYMENT_DISABLED");
+    expect(mocks.getServiceRoleClient).not.toHaveBeenCalled();
   });
 
   it("rejects forged payment callbacks before privileged database access", async () => {

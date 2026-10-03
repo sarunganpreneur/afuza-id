@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { DPF_COMMERCE_FIXTURE_V1 } from "./test-fixtures";
-import { getEnabledTestPaymentAdapter, createTestPaymentAdapter } from "./payment-adapter";
+import { getEnabledTestPaymentAdapter, createTestPaymentAdapter, isTestPaymentEnabled } from "./payment-adapter";
 import { calculateCheckoutPrice } from "./pricing";
 
 const fixture = DPF_COMMERCE_FIXTURE_V1;
@@ -46,14 +46,29 @@ describe("DPF commerce V1", () => {
     })).toBeNull();
   });
 
-  it("keeps the test payment adapter disabled unless explicitly enabled outside production", () => {
+  it.each([
+    ["production with flag disabled", { AFUZA_RUNTIME_ENV: "production", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "false" }, false],
+    ["production with flag enabled", { AFUZA_RUNTIME_ENV: "production", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "true" }, false],
+    ["staging production build with flag disabled", { AFUZA_RUNTIME_ENV: "staging", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "false" }, false],
+    ["staging production build with flag missing", { AFUZA_RUNTIME_ENV: "staging", NODE_ENV: "production" }, false],
+    ["staging production build with flag enabled", { AFUZA_RUNTIME_ENV: "staging", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "true" }, true],
+    ["local development with explicit flag", { AFUZA_RUNTIME_ENV: "local", NODE_ENV: "development", DPF_TEST_PAYMENT_ENABLED: "true" }, true],
+    ["test runtime with explicit flag", { AFUZA_RUNTIME_ENV: "test", NODE_ENV: "test", DPF_TEST_PAYMENT_ENABLED: "true" }, true],
+    ["development without flag", { AFUZA_RUNTIME_ENV: "development", NODE_ENV: "development", DPF_TEST_PAYMENT_ENABLED: "false" }, false],
+    ["local deployment marked production by mistake", { AFUZA_RUNTIME_ENV: "local", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "true" }, false],
+    ["unknown deployment with flag enabled", { AFUZA_RUNTIME_ENV: "preview", NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "true" }, false],
+    ["missing deployment identity with flag enabled", { NODE_ENV: "production", DPF_TEST_PAYMENT_ENABLED: "true" }, false],
+  ] as const)("test payment policy: %s", (_name, environment, expected) => {
+    expect(isTestPaymentEnabled(environment)).toBe(expected);
+  });
+
+  it("exposes the adapter only when the centralized policy allows it", () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "production");
     vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("DPF_ENABLE_TEST_PAYMENTS", "true");
+    vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "true");
     expect(getEnabledTestPaymentAdapter()).toBeNull();
-    vi.stubEnv("NODE_ENV", "test");
-    vi.stubEnv("DPF_ENABLE_TEST_PAYMENTS", "false");
-    expect(getEnabledTestPaymentAdapter()).toBeNull();
-    vi.stubEnv("DPF_ENABLE_TEST_PAYMENTS", "true");
+
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "staging");
     expect(getEnabledTestPaymentAdapter()?.provider).toBe("test");
   });
 

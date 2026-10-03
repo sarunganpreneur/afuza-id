@@ -29,7 +29,8 @@ describe("storefront TEST payment endpoint", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.stubEnv("NODE_ENV", "test");
-    vi.stubEnv("DPF_ENABLE_TEST_PAYMENTS", "true");
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "test");
+    vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "true");
     vi.mocked(createClient).mockResolvedValue({
       auth: { getUser: vi.fn().mockResolvedValue({ data: { user: { id: userId } } }) },
     } as never);
@@ -80,9 +81,52 @@ describe("storefront TEST payment endpoint", () => {
   });
 
   it("cannot expose TEST payment in production even when its flag is enabled", async () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "production");
     vi.stubEnv("NODE_ENV", "production");
     const response = await POST(request());
     expect(response.status).toBe(404);
+    expect(startTestPayment).not.toHaveBeenCalled();
+  });
+
+  it("allows explicitly enabled staging TEST payment in a production Next.js build", async () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "staging");
+    vi.stubEnv("NODE_ENV", "production");
+    const response = await POST(request());
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({ status: "PAID", replayed: false });
+    expect(startTestPayment).toHaveBeenCalledWith(orderId);
+  });
+
+  it("denies staging when its explicit TEST payment flag is disabled", async () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "staging");
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "false");
+    const response = await POST(request());
+    expect(response.status).toBe(404);
+    expect(startTestPayment).not.toHaveBeenCalled();
+  });
+
+  it("denies staging when its explicit TEST payment flag is missing", async () => {
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "staging");
+    vi.stubEnv("NODE_ENV", "production");
+    vi.unstubAllEnvs();
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "staging");
+    vi.stubEnv("NODE_ENV", "production");
+    const response = await POST(request());
+    expect(response.status).toBe(404);
+    expect(startTestPayment).not.toHaveBeenCalled();
+  });
+
+  it("fails closed when deployment identity is missing or unknown", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("DPF_TEST_PAYMENT_ENABLED", "true");
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "preview");
+    const unknownResponse = await POST(request());
+    expect(unknownResponse.status).toBe(404);
+
+    vi.stubEnv("AFUZA_RUNTIME_ENV", "");
+    const missingResponse = await POST(request());
+    expect(missingResponse.status).toBe(404);
     expect(startTestPayment).not.toHaveBeenCalled();
   });
 });

@@ -1,6 +1,7 @@
 import type { PaymentEvent, PaymentIntent, PaymentProviderAdapter } from "./types";
 
 const TEST_PROVIDER = "test";
+type PaymentEnvironment = Record<string, string | undefined>;
 
 export function createTestPaymentAdapter(): PaymentProviderAdapter {
   return {
@@ -43,7 +44,18 @@ export function createTestPaymentAdapter(): PaymentProviderAdapter {
   };
 }
 
+export function isTestPaymentEnabled(environment: PaymentEnvironment = process.env): boolean {
+  if (environment.DPF_TEST_PAYMENT_ENABLED !== "true") return false;
+
+  const deploymentEnvironment = environment.AFUZA_RUNTIME_ENV?.trim().toLowerCase();
+  if (deploymentEnvironment === "production") return false;
+  if (deploymentEnvironment === "staging") return true;
+
+  if (!["local", "development", "test"].includes(deploymentEnvironment ?? "")) return false;
+  return environment.NODE_ENV?.trim().toLowerCase() !== "production";
+}
+
 export function getEnabledTestPaymentAdapter(): PaymentProviderAdapter | null {
-  if (process.env.NODE_ENV === "production" || process.env.DPF_ENABLE_TEST_PAYMENTS !== "true") return null;
+  if (!isTestPaymentEnabled()) return null;
   return createTestPaymentAdapter();
 }
