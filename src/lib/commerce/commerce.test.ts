@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { DPF_COMMERCE_FIXTURE_V1 } from "./fixture";
+import { DPF_COMMERCE_FIXTURE_V1 } from "./test-fixtures";
 import { getEnabledTestPaymentAdapter, createTestPaymentAdapter } from "./payment-adapter";
 import { calculateCheckoutPrice } from "./pricing";
 
@@ -61,17 +61,27 @@ describe("DPF commerce V1", () => {
     const migration = readFileSync(new URL("../../../supabase/migrations/20261004_dpf_commerce_v1.sql", import.meta.url), "utf8");
     expect(migration).toMatch(/price integer not null check \(price >= 10000\)/);
     expect(migration).toMatch(/unique \(customer_user_id, checkout_idempotency_key\)/);
+    expect(migration).toMatch(/create table public\.(products|product_addons|orders|order_items|payments|customer_entitlements|delivery_assets)/);
+    expect(migration).not.toMatch(/create table public\.dpf_/);
     expect(migration).toMatch(/revoke all on function public\.dpf_record_payment\([^;]+ from public, anon, authenticated;/);
     expect(migration).toMatch(/grant execute on function public\.dpf_record_payment\([^;]+ to service_role;/);
-    expect(migration).toMatch(/if p_status = 'PAID' then[\s\S]*?insert into public\.dpf_customer_entitlements/);
+    expect(migration).toMatch(/if p_status = 'PAID' then[\s\S]*?insert into public\.customer_entitlements/);
     expect(migration).toMatch(/customer_user_id = \(select auth\.uid\(\)\)/);
     expect(migration).toMatch(/unique \(order_item_id\)/);
     expect(migration).toMatch(/on conflict \(order_item_id\) do nothing/);
     expect(migration).not.toMatch(/unique \(user_id, product_id\)/);
-    expect(migration).toMatch(/dpf_products_entitled_read/);
-    expect(migration).not.toMatch(/delivery_assets text\[\]/);
+    expect(migration).toMatch(/products_entitled_read/);
+    expect(migration).toMatch(/addon_id uuid references public\.product_addons/);
+    expect(migration).not.toMatch(/insert into public\.products/);
+    expect(migration).not.toMatch(/entitlement_id\.is\.null/);
     expect(migration).toMatch(/order by a\.id for share/);
     expect(migration).toMatch(/coalesce\(v_addons\.addon_product_id, v_product\.id\)/);
     expect(migration).toMatch(/values \('dpf-delivery-v1', 'dpf-delivery-v1', false\)/);
+    expect(migration.match(/alter table public\.(products|product_addons|orders|order_items|payments|customer_entitlements|delivery_assets) enable row level security/g)).toHaveLength(7);
+    expect(migration).toMatch(/create policy orders_owner_read/);
+    expect(migration).toMatch(/create policy order_items_owner_read/);
+    expect(migration).toMatch(/create policy entitlements_owner_read/);
+    expect(migration).toMatch(/revoke all on public\.products, public\.product_addons, public\.orders,[\s\S]*?public\.delivery_assets from public, anon, authenticated/);
+    expect(migration.match(/set search_path = pg_catalog\n/g)).toHaveLength(4);
   });
 });

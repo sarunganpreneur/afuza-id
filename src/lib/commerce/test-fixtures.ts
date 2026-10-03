@@ -1,0 +1,25 @@
+export const DPF_COMMERCE_FIXTURE_V1 = {
+  product: {
+    id: "d0f00000-0000-4000-8000-000000000001",
+    sku: "AFZ-SPR-HPP-001",
+    slug: "kalkulator-hpp-harga-jual-umkm",
+    title: "Kalkulator HPP & Harga Jual UMKM",
+    headline: "Hitung HPP dan harga jual untuk usaha mikro dan kecil.",
+    category: "Bisnis & UMKM",
+    subcategory: "Keuangan",
+    niche: "UMKM",
+    buyer: "Pemilik usaha",
+    problem: "Sulit menghitung HPP dan harga jual yang tepat.",
+    useCase: "Membantu pemilik usaha menentukan harga jual yang sehat.",
+    productType: "Spreadsheet",
+    format: ["XLSX"],
+    price: 19000,
+    trafficRole: "ACQUISITION",
+    status: "PUBLISHED",
+    keywords: ["hpp", "harga jual", "umkm"],
+  },
+  addons: [
+    { id: "d0f00000-0000-4000-8000-000000000011", title: "Pembukuan Usaha", description: "Template pembukuan usaha harian.", price: 19000, active: true, sortOrder: 1 },
+    { id: "d0f00000-0000-4000-8000-000000000012", title: "Inventory Tracker", description: "Tracker stok barang dan omzet.", price: 15000, active: true, sortOrder: 2 },
+  ],
+} as const;

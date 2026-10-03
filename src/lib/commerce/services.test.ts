@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   createClient: vi.fn(),
   getServiceRoleClient: vi.fn(),
-  getActiveEntitlementIds: vi.fn(),
+  getActiveEntitlements: vi.fn(),
   serviceRpc: vi.fn(),
   user: { id: "11111111-1111-4111-8111-111111111111" },
   order: {
@@ -33,7 +33,7 @@ const mocks = vi.hoisted(() => ({
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/supabase/server", () => ({ createClient: mocks.createClient }));
 vi.mock("@/lib/supabase/service-role", () => ({ getServiceRoleClient: mocks.getServiceRoleClient }));
-vi.mock("./entitlements", () => ({ getActiveEntitlementIds: mocks.getActiveEntitlementIds }));
+vi.mock("./entitlements", () => ({ getActiveEntitlements: mocks.getActiveEntitlements }));
 
 import { createCheckout, getOrder } from "./checkout";
 import { getProductDownloadAccess } from "./delivery";
@@ -136,31 +136,63 @@ describe("commerce service boundaries", () => {
   });
 
   it("does not access storage when the user has no active entitlement", async () => {
-    mocks.getActiveEntitlementIds.mockResolvedValue([]);
+    mocks.getActiveEntitlements.mockResolvedValue([]);
     const result = await getProductDownloadAccess(mocks.user.id, mocks.order.id);
     expect(result).toEqual({ allowed: false, reason: "NOT_ENTITLED" });
     expect(mocks.getServiceRoleClient).not.toHaveBeenCalled();
   });
 
-  it("returns only a short-lived signed URL after entitlement validation", async () => {
-    mocks.getActiveEntitlementIds.mockResolvedValue(["44444444-4444-4444-8444-444444444444"]);
-    const sign = vi.fn().mockResolvedValue({ data: { signedUrl: "https://storage.test/signed" }, error: null });
-    const assetQuery = {
-      select: vi.fn().mockReturnThis(),
-      eq: vi.fn().mockReturnThis(),
-      or: vi.fn().mockResolvedValue({
-        data: [{ storage_bucket: "dpf-delivery-v1", storage_key: "product/file.xlsx", file_name: "file.xlsx", signed_url_expiry_seconds: 180 }],
-        error: null,
-      }),
-    };
+  it("allows core assets for a core purchase but denies fallback add-on assets", async () => {
+    mocks.getActiveEntitlements.mockResolvedValue([{ id: "ent-core", addonId: null }]);
+    const sign = vi.fn(async (key: string) => ({ data: { signedUrl: `https://storage.test/signed/${key.split("/").pop()}` }, error: null }));
     mocks.getServiceRoleClient.mockResolvedValue({
-      from: vi.fn().mockReturnValue(assetQuery),
+      from: vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnThis(),
+        eq: vi.fn().mockResolvedValue({ data: [
+          { storage_bucket: "dpf-delivery-v1", storage_key: "core/private.xlsx", file_name: "core.xlsx", signed_url_expiry_seconds: 180, addon_id: null },
+          { storage_bucket: "dpf-delivery-v1", storage_key: "addon-a/private.xlsx", file_name: "addon-a.xlsx", signed_url_expiry_seconds: 180, addon_id: "addon-a" },
+        ], error: null }),
+      }),
       storage: { from: vi.fn().mockReturnValue({ createSignedUrl: sign }) },
     });
     const result = await getProductDownloadAccess(mocks.user.id, mocks.order.id);
-    expect(result).toEqual({ allowed: true, assetUrls: ["https://storage.test/signed"] });
-    expect(assetQuery.or).toHaveBeenCalledWith("entitlement_id.is.null,entitlement_id.in.(44444444-4444-4444-8444-444444444444)");
-    expect(sign).toHaveBeenCalledWith("product/file.xlsx", 180, { download: "file.xlsx" });
-    expect(JSON.stringify(result)).not.toContain("product/file.xlsx");
+    expect(result).toEqual({ allowed: true, assetUrls: ["https://storage.test/signed/private.xlsx"] });
+    expect(sign).toHaveBeenCalledTimes(1);
+    expect(sign).toHaveBeenCalledWith("core/private.xlsx", 180, { download: "core.xlsx" });
+    expect(JSON.stringify(result)).not.toContain("storage_key");
+    expect(JSON.stringify(result)).not.toContain("addon-a/private.xlsx");
+  });
+
+  it("allows core and purchased add-on A while denying unpurchased add-on B", async () => {
+    mocks.getActiveEntitlements.mockResolvedValue([
+      { id: "ent-core", addonId: null },
+      { id: "ent-addon-a", addonId: "addon-a" },
+    ]);
+    const sign = vi.fn(async (key: string) => ({ data: { signedUrl: `https://storage.test/signed/${key.split("/").pop()}` }, error: null }));
+    mocks.getServiceRoleClient.mockResolvedValue({
+      from: vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnThis(),
+        eq: vi.fn().mockResolvedValue({ data: [
+          { storage_bucket: "dpf-delivery-v1", storage_key: "core/core.xlsx", file_name: "core.xlsx", signed_url_expiry_seconds: 180, addon_id: null },
+          { storage_bucket: "dpf-delivery-v1", storage_key: "addon-a/a.xlsx", file_name: "a.xlsx", signed_url_expiry_seconds: 180, addon_id: "addon-a" },
+          { storage_bucket: "dpf-delivery-v1", storage_key: "addon-b/b.xlsx", file_name: "b.xlsx", signed_url_expiry_seconds: 180, addon_id: "addon-b" },
+        ], error: null }),
+      }),
+      storage: { from: vi.fn().mockReturnValue({ createSignedUrl: sign }) },
+    });
+    const result = await getProductDownloadAccess(mocks.user.id, mocks.order.id);
+    expect(result).toEqual({ allowed: true, assetUrls: [
+      "https://storage.test/signed/core.xlsx",
+      "https://storage.test/signed/a.xlsx",
+    ] });
+    expect(sign).toHaveBeenCalledTimes(2);
+    expect(JSON.stringify(result)).not.toContain("addon-b/b.xlsx");
+  });
+
+  it("denies user B access to user A entitlement-bound assets", async () => {
+    mocks.getActiveEntitlements.mockResolvedValue([]);
+    const result = await getProductDownloadAccess("99999999-9999-4999-8999-999999999999", mocks.order.id);
+    expect(result).toEqual({ allowed: false, reason: "NOT_ENTITLED" });
+    expect(mocks.getServiceRoleClient).not.toHaveBeenCalled();
   });
 });
