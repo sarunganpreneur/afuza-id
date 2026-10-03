@@ -29,7 +29,7 @@ The current KlodHost HTTP API has no deterministic failure-creation operation. T
 ## Verification
 
 - App gates: CHALWA lint/typecheck/build/diff check PASS, 26/26 tests; KlodHost PASS, 23/23 tests; Marketing Agency PASS, 19/19 tests.
-- App heads: CHALWA `224b0700b24e62021eadeeeb29b3afadd89d6c3e`; KlodHost `d6d315388ffdee62f70c875ba26f2688be905ea8`; Marketing Agency `6443121d1c6d5d9b3019834721ee520b28883e45`.
+- App heads: CHALWA `dcaa36ea006f561412a76f6c24a95d68dbc7677e`; KlodHost `d6d315388ffdee62f70c875ba26f2688be905ea8`; Marketing Agency `6443121d1c6d5d9b3019834721ee520b28883e45`.
 - Canonical control: `afuzactl doctor`, ecosystem readiness, portfolio readiness, and `afuzactl verify` PASS. Verify included control lint, typecheck, tests, build, and AFUZA.ID staging health smoke.
 - Production remains untouched; KlodHost remains fake provider/fake node agent; Marketing Agency remains fake-stub; no live external action was invoked.
 
