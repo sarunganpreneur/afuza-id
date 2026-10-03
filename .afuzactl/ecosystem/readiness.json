@@ -238,8 +238,8 @@
     },
     {
       "project_id": "chalwa.id",
-      "previous_status": "EXECUTION_SPEC_READY",
-      "status": "AUTONOMOUS_BUILD_READY",
+      "previous_status": "AUTONOMOUS_BUILD_READY",
+      "status": "READY_FOR_HUMAN_TEST",
       "source_of_truth_quality": "STRONG",
       "prd_completeness": "COMPLETE",
       "authoritative_specification_available": true,
@@ -251,7 +251,7 @@
       "ownership_conflict_status": "NONE",
       "dependencies_resolved": true,
       "environment_ready": true,
-      "testability": "STRATEGY_DEFINED",
+      "testability": "TESTED",
       "implementation_evidence": "STRONG",
       "permission_policy_ready": true,
       "external_source_required": false,
@@ -261,8 +261,8 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
-        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
+        "AX-05-B0 tester auth activation: public fixture login/session/logout and security checks PASS; .afuzactl/ecosystem/ax05-b0-tester-auth-activation-report.md",
+        "AX-05-E machine verification and project-owner human acceptance PASS: tester-designer, tester-product_manager, tester-admin, tester-customer; logout PASS; .afuzactl/ecosystem/ax05e-browser-human-acceptance-prep-report.md"
       ]
     },
     {
@@ -288,8 +288,8 @@
     },
     {
       "project_id": "klodhost",
-      "previous_status": "EXECUTION_SPEC_READY",
-      "status": "AUTONOMOUS_BUILD_READY",
+      "previous_status": "AUTONOMOUS_BUILD_READY",
+      "status": "READY_FOR_HUMAN_TEST",
       "source_of_truth_quality": "STRONG",
       "prd_completeness": "COMPLETE",
       "authoritative_specification_available": true,
@@ -301,7 +301,7 @@
       "ownership_conflict_status": "NONE",
       "dependencies_resolved": true,
       "environment_ready": true,
-      "testability": "STRATEGY_DEFINED",
+      "testability": "TESTED",
       "implementation_evidence": "STRONG",
       "permission_policy_ready": true,
       "external_source_required": false,
@@ -311,14 +311,15 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
-        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
+        "AX-05-B0 tester auth activation: public fixture login/session/logout and security checks PASS; .afuzactl/ecosystem/ax05-b0-tester-auth-activation-report.md",
+        "AX-05-E machine verification and project-owner human acceptance PASS: tester-tenant-a, tester-tenant-b, tester-worker; logout PASS; .afuzactl/ecosystem/ax05e-browser-human-acceptance-prep-report.md",
+        "Known limitation: current HTTP API has no deterministic failed-job creation; retry is present, but failure-to-retry was not exercised."
       ]
     },
     {
       "project_id": "marketing-agency",
-      "status": "AUTONOMOUS_BUILD_READY",
-      "previous_status": "EXECUTION_SPEC_READY",
+      "status": "READY_FOR_HUMAN_TEST",
+      "previous_status": "AUTONOMOUS_BUILD_READY",
       "source_of_truth_quality": "STRONG",
       "prd_completeness": "COMPLETE",
       "authoritative_specification_available": true,
@@ -330,7 +331,7 @@
       "ownership_conflict_status": "NONE",
       "dependencies_resolved": true,
       "environment_ready": true,
-      "testability": "STRATEGY_DEFINED",
+      "testability": "TESTED",
       "implementation_evidence": "STRONG",
       "permission_policy_ready": true,
       "external_source_required": false,
@@ -340,8 +341,8 @@
         "AX-04 Bundle 1 PASS",
         "AX-04 Bundle 2 PASS",
         "bundle evidence: lint/typecheck/tests/build PASS",
-        "current portfolio state preserves AX-04 autonomous readiness while avoiding READY_FOR_HUMAN_TEST",
-        "HUMAN_TEST_UI_REQUIRED: API_ONLY; see .afuzactl/ecosystem/human-acceptance-report.md"
+        "AX-05-B0 tester auth activation: public fixture login/session/logout and security checks PASS; .afuzactl/ecosystem/ax05-b0-tester-auth-activation-report.md",
+        "AX-05-E machine verification and project-owner human acceptance PASS: tester-operator, tester-owner-a, tester-owner-b, tester-member-a; logout PASS; tenant isolation PASS; .afuzactl/ecosystem/ax05e-browser-human-acceptance-prep-report.md"
       ]
     },
     {

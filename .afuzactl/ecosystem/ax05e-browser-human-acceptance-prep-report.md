@@ -1,6 +1,14 @@
 # AX-05-E Browser Human Acceptance Preparation
 
-Verified on `afuza-core-01`, 2026-10-04. This report records preparation and machine-verifiable checks only; it does not promote readiness.
+Verified on `afuza-core-01`, 2026-10-04. Project-owner human acceptance results were supplied on 2026-10-04 and recorded at `2026-10-04T05:12:23+07:00` server time; the owner did not specify a separate completion timestamp.
+
+## Owner Human Acceptance
+
+- CHALWA: `tester-designer` PASS; `tester-product_manager` PASS; `tester-admin` PASS; `tester-customer` PASS; logout PASS.
+- KlodHost: `tester-tenant-a` PASS; `tester-tenant-b` PASS; `tester-worker` PASS; logout PASS.
+- Marketing Agency: `tester-operator` PASS; `tester-owner-a` PASS; `tester-owner-b` PASS; `tester-member-a` PASS; logout PASS.
+- The project owner supplied these results as the final manual browser acceptance. The browser tabs used for machine verification remained signed out; no fixture secrets were passed through browser automation.
+- KlodHost deterministic failure creation remains unavailable through its current HTTP API. Retry is present, but failure-to-retry was not exercised. This is a documented limitation, not a PASS, and no synthetic failure mechanism was added.
 
 ## Live State And Safety
 
@@ -16,11 +24,11 @@ Verified on `afuza-core-01`, 2026-10-04. This report records preparation and mac
 
 | App | Fixtures | Machine-verifiable PASS | Human browser pass still needed |
 | --- | --- | --- | --- |
-| CHALWA | `tester-designer`, `tester-product_manager`, `tester-admin`, `tester-customer` | Auth/session identity for all four; forged-header resistance; logout/revocation; role rules present in served UI; lifecycle from draft through published; invalid transition; duplicate SKU; unauthorized customer denial; audit API; no secret persistence/leak | Sign in separately as each role; visually confirm designer write controls, product-manager review/approve/reject, admin publish/audit, and customer read-only restrictions; exercise reject/unpublish and inspect audit screen |
-| KlodHost | `tester-tenant-a`, `tester-tenant-b`, `tester-worker` | Auth/session identity for all three; forged-header resistance; logout/revocation; tenant A job reaches ACTIVE through fake worker actions; tenant B receives 404 for tenant A job; fake-mode indicators and retry control in served UI | Sign in as both tenants and worker; visually verify tenant scoping, worker-only controls, idempotency feedback, retry/cancel affordances, and event history |
-| Marketing Agency | `tester-operator`, `tester-owner-a`, `tester-owner-b`, `tester-member-a` | Auth/session identity for all four; forged-header resistance; logout/revocation; tenant-bound owner A/B sessions; owner A/B and member A own-portal 200 / cross-tenant 403; operator has no implicit tenant scope; operator tenant bootstrap; owner activation, client, entitlement, approved fake capability, denied approval, and scoped portal; role navigation rules present in served UI | Sign in as operator, each owner, and member; visually confirm role navigation/form restrictions and active-tenant clarity; exercise tenant B and member workflows, entitlement denial, and tenant portal/audit |
+| CHALWA | `tester-designer`, `tester-product_manager`, `tester-admin`, `tester-customer` | Machine checks PASS; owner reports PASS for all four roles and logout | None reported by owner |
+| KlodHost | `tester-tenant-a`, `tester-tenant-b`, `tester-worker` | Machine checks PASS; owner reports PASS for all three roles and logout; fake-mode checks PASS | Deterministic failure-to-retry remains untested because no failure-creation API exists |
+| Marketing Agency | `tester-operator`, `tester-owner-a`, `tester-owner-b`, `tester-member-a` | Machine checks PASS; owner reports PASS for all four roles and logout; own-tenant access PASS and cross-tenant denial PASS | None reported by owner |
 
-The browser tabs were intentionally left signed out. Fixture secrets were never entered into browser-tool source, terminal output, DOM, or storage. Therefore role-specific visibility is statically verified in served markup/security tests and application behavior is verified through public fixture-authenticated API requests; final visual confirmation after each browser login remains a human step.
+The shared browser tabs were intentionally left signed out during machine verification. Fixture secrets were never entered into browser-tool source, terminal output, DOM, or storage. Role-specific UI rules are covered by served markup/security tests, and the project owner subsequently supplied the signed-in role and logout PASS results above.
 
 ## KlodHost Limitation
 
@@ -35,7 +43,7 @@ The current KlodHost HTTP API has no deterministic failure-creation operation. T
 
 ## Readiness
 
-- CHALWA: `execution_state=STAGING_READY`
-- KlodHost: `execution_state=STAGING_READY`
-- Marketing Agency: `execution_state=STAGING_READY`
-- `READY_FOR_HUMAN_TEST=NONE` pending the manual browser checks above and subsequent human acceptance decision.
+- CHALWA: readiness `READY_FOR_HUMAN_TEST`; `execution_state=STAGING_READY`.
+- KlodHost: readiness `READY_FOR_HUMAN_TEST`; `execution_state=STAGING_READY`.
+- Marketing Agency: readiness `READY_FOR_HUMAN_TEST`; `execution_state=STAGING_READY`.
+- No other project is promoted. These states do not imply production readiness.

@@ -400,7 +400,7 @@
         "publishing"
       ],
       "capabilities_provided": [],
-      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "autonomous_build_readiness": "READY_FOR_HUMAN_TEST",
       "spec_readiness": "EXECUTION_SPEC_READY",
       "execution_state": "STAGING_READY",
       "execution_transitions": [
@@ -475,7 +475,7 @@
         "observability"
       ],
       "capabilities_provided": [],
-      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "autonomous_build_readiness": "READY_FOR_HUMAN_TEST",
       "spec_readiness": "EXECUTION_SPEC_READY",
       "execution_state": "STAGING_READY",
       "execution_transitions": [
@@ -534,7 +534,7 @@
         "ai-generation"
       ],
       "capabilities_provided": [],
-      "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
+      "autonomous_build_readiness": "READY_FOR_HUMAN_TEST",
       "spec_readiness": "EXECUTION_SPEC_READY",
       "execution_state": "STAGING_READY",
       "execution_transitions": [
