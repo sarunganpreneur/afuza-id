@@ -141,9 +141,9 @@ export type CheckoutPreviewResult =
 export type OrderStatusReadModel = {
   id: string;
   reference: string;
-  state: "PREVIEW_ONLY";
+  state: "PREVIEW_ONLY" | "PENDING" | "AWAITING_PAYMENT" | "PAID" | "FAILED" | "CANCELLED";
   message: string;
-  isFixture: true;
+  isFixture: boolean;
 };
 
 export type OwnedProductReadModel = {

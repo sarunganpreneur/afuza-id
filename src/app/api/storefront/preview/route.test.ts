@@ -1,8 +1,16 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
+
+vi.mock("server-only", () => ({}));
 import { POST } from "./route";
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
 
 describe("storefront checkout preview route", () => {
   it("resolves estimated display totals from product and addon IDs", async () => {
+    vi.stubEnv("NODE_ENV", "test");
+    vi.stubEnv("DPF_ENABLE_FIXTURE_CATALOG", "true");
     const response = await POST(new Request("http://localhost/api/storefront/preview", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -13,6 +21,8 @@ describe("storefront checkout preview route", () => {
   });
 
   it("rejects client-supplied prices instead of treating them as transaction input", async () => {
+    vi.stubEnv("NODE_ENV", "test");
+    vi.stubEnv("DPF_ENABLE_FIXTURE_CATALOG", "true");
     const response = await POST(new Request("http://localhost/api/storefront/preview", {
       method: "POST",
       headers: { "content-type": "application/json" },

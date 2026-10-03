@@ -1,4 +1,4 @@
-import { fixtureStorefrontAdapters } from "./fixture-adapter";
+import { storefrontAdapters as commerceStorefrontAdapters } from "./commerce-adapter";
 
-export const storefrontAdapters = fixtureStorefrontAdapters;
+export const storefrontAdapters = commerceStorefrontAdapters;
 export * from "./types";
