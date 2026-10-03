@@ -8,7 +8,8 @@ feature/dpf-commerce-v1
 
 ## COMMIT/HEAD
 IMPLEMENTATION_COMMIT: 21b00a6d29f45b12607f22a31b8639e483ab0400
-FINAL_HANDOFF_HEAD: the Git HEAD commit containing this handoff; resolve with `git rev-parse HEAD`. Its own hash is not embedded because a commit cannot contain its self-referential hash.
+SAME_NICHE_HOTFIX_COMMIT: this Commerce hotfix commit; resolve with `git rev-parse HEAD` after the hotfix commit.
+FINAL_HANDOFF_HEAD: resolve with `git rev-parse HEAD`; the self-referential commit hash is intentionally not embedded.
 
 ## BASE CONTRACT
 - base revision: 385306b
@@ -33,11 +34,11 @@ FINAL_HANDOFF_HEAD: the Git HEAD commit containing this handoff; resolve with `g
 - Test fixture: `src/lib/commerce/test-fixtures.ts`; disposable database setup/assertions: `supabase/tests/dpf_commerce_v1.sql`. Neither is automatically applied by the migration.
 
 ## TEST RESULTS
-- Focused commerce tests: PASS, 14 tests across 2 files.
+- Focused commerce tests: PASS, 15 tests across 2 files.
 - Disposable PostgreSQL verification: PASS, via `bash scripts/test-dpf-commerce-postgres.sh`.
 - `npm run lint`: PASS.
 - `npx tsc --noEmit --pretty false`: PASS.
-- `npm run test -- --run`: PASS, 496 tests across 44 files.
+- `npm run test -- --run`: PASS, 497 tests across 44 files.
 - `npm run build`: PASS.
 - `git diff --check`: PASS.
 
@@ -59,6 +60,9 @@ PRIVATE_STORAGE_PATH_PROTECTION: PASS
 RPC_PRIVILEGE_BOUNDARY: PASS
 TEST_PAYMENT_DISABLED_IN_PRODUCTION: PASS
 FIXTURE_TOTALS_19000_38000_53000: PASS
+SAME-NICHE ADDON: PASS
+
+Same-niche enforcement: `supabase/migrations/20261004_dpf_commerce_v1.sql`, inside `dpf_create_checkout`, locks referenced add-on product rows and rejects `addon_product.niche IS DISTINCT FROM core_product.niche` before creating the order. `src/lib/commerce/checkout.ts` maps that SQL rejection to `ADDON_NICHE_MISMATCH`. Evidence: `supabase/tests/dpf_commerce_v1.sql` proves Cafe-to-Cafe checkout succeeds, an active Cafe-to-Laundry relation is rejected, and no order or entitlement is created for the invalid relation. The disposable PostgreSQL runner passed this regression.
 
 ## INTEGRATION POINTS
 - Catalog: `listPublishedProducts`, `getProductBySlug`, and `getProductAddons` from `src/lib/commerce/catalog.ts`.

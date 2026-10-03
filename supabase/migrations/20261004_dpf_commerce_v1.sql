@@ -267,6 +267,22 @@ begin
     raise exception 'One or more add-ons are not available';
   end if;
 
+  perform p.id from public.products p
+    join public.product_addons a on a.addon_product_id = p.id
+    where a.product_id = p_product_id and a.active and a.id = any(v_addon_ids)
+    order by p.id for share of p;
+  if exists (
+    select 1
+    from public.product_addons a
+    join public.products addon_product on addon_product.id = a.addon_product_id
+    where a.product_id = p_product_id
+      and a.active
+      and a.id = any(v_addon_ids)
+      and addon_product.niche is distinct from v_product.niche
+  ) then
+    raise exception 'Add-on product must match the core product niche';
+  end if;
+
   v_total := (v_product.price * p_quantity) + v_addon_total;
   insert into public.orders(customer_user_id, subtotal, addon_total, total, checkout_idempotency_key, checkout_snapshot)
     values (v_user_id, v_product.price * p_quantity, v_addon_total, v_total, p_idempotency_key, v_request)

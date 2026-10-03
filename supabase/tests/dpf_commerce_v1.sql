@@ -29,13 +29,27 @@ insert into public.products (
   ('d0f00000-0000-4000-8000-000000000003', 'AFZ-SPR-DRAFT-001', 'produk-draft',
    'Produk Draft', 'Produk yang belum diterbitkan.', 'Bisnis & UMKM', 'Keuangan', 'UMKM',
    'Pemilik usaha', 'Problem', 'Use case', 'Spreadsheet', array['XLSX'],
-   19000, 'ACQUISITION', 'DRAFT', array['test']);
+    19000, 'ACQUISITION', 'DRAFT', array['test']),
+    ('d0f00000-0000-4000-8000-000000000021', 'AFZ-HPP-CAF-001', 'cafe-hpp',
+    'Cafe HPP', 'Cafe core product.', 'Bisnis & UMKM', 'Keuangan', 'Cafe',
+    'Pemilik cafe', 'Problem', 'Use case', 'Spreadsheet', array['XLSX'],
+    19000, 'ACQUISITION', 'PUBLISHED', array['cafe']),
+    ('d0f00000-0000-4000-8000-000000000022', 'AFZ-BOOK-CAF-001', 'cafe-bookkeeping',
+    'Cafe Bookkeeping', 'Cafe addon product.', 'Bisnis & UMKM', 'Keuangan', 'Cafe',
+    'Pemilik cafe', 'Problem', 'Use case', 'Spreadsheet', array['XLSX'],
+    19000, 'ADD_ON', 'PUBLISHED', array['cafe']),
+    ('d0f00000-0000-4000-8000-000000000023', 'AFZ-BOOK-LDY-001', 'laundry-bookkeeping',
+    'Laundry Bookkeeping', 'Laundry addon product.', 'Bisnis & UMKM', 'Keuangan', 'Laundry',
+    'Pemilik laundry', 'Problem', 'Use case', 'Spreadsheet', array['XLSX'],
+    19000, 'ADD_ON', 'PUBLISHED', array['laundry']);
 
-insert into public.product_addons (id, product_id, title, description, price, active, sort_order)
+insert into public.product_addons (id, product_id, addon_product_id, title, description, price, active, sort_order)
 values
-  ('d0f00000-0000-4000-8000-000000000011', 'd0f00000-0000-4000-8000-000000000001', 'Pembukuan Usaha', 'Template pembukuan usaha harian.', 19000, true, 1),
-  ('d0f00000-0000-4000-8000-000000000012', 'd0f00000-0000-4000-8000-000000000001', 'Inventory Tracker', 'Tracker stok barang dan omzet.', 15000, true, 2),
-  ('d0f00000-0000-4000-8000-000000000013', 'd0f00000-0000-4000-8000-000000000001', 'Disabled Add-on', 'Inactive test item.', 5000, false, 3);
+  ('d0f00000-0000-4000-8000-000000000011', 'd0f00000-0000-4000-8000-000000000001', null, 'Pembukuan Usaha', 'Template pembukuan usaha harian.', 19000, true, 1),
+  ('d0f00000-0000-4000-8000-000000000012', 'd0f00000-0000-4000-8000-000000000001', null, 'Inventory Tracker', 'Tracker stok barang dan omzet.', 15000, true, 2),
+  ('d0f00000-0000-4000-8000-000000000013', 'd0f00000-0000-4000-8000-000000000001', null, 'Disabled Add-on', 'Inactive test item.', 5000, false, 3),
+  ('d0f00000-0000-4000-8000-000000000031', 'd0f00000-0000-4000-8000-000000000021', 'd0f00000-0000-4000-8000-000000000022', 'Cafe same-niche addon', 'Valid Cafe addon relation.', 19000, true, 1),
+  ('d0f00000-0000-4000-8000-000000000032', 'd0f00000-0000-4000-8000-000000000021', 'd0f00000-0000-4000-8000-000000000023', 'Laundry wrong-niche addon', 'Misconfigured cross-niche relation.', 19000, true, 2);
 
 insert into public.delivery_assets(product_id, addon_id, storage_key, file_name)
 values
@@ -56,6 +70,9 @@ declare
   v_entitlement_count integer;
   v_asset_count integer;
   v_core_order_item_id uuid;
+  v_cafe_checkout jsonb;
+  v_order_count integer;
+  v_cross_niche_addon_id uuid := 'd0f00000-0000-4000-8000-000000000032';
 begin
   perform set_config('request.jwt.claim.sub', '11111111-1111-4111-8111-111111111111', true);
 
@@ -182,6 +199,39 @@ begin
         and e.order_id = (v_addon_a_only->>'orderId')::uuid
     );
   if v_asset_count <> 2 then raise exception 'Core + add-on A must see only two matching assets, got %', v_asset_count; end if;
+
+  v_cafe_checkout := public.dpf_create_checkout(
+    'd0f00000-0000-4000-8000-000000000021',
+    array['d0f00000-0000-4000-8000-000000000031']::uuid[],
+    1, 'cafe-same-niche-01'
+  );
+  if (v_cafe_checkout->>'total')::integer <> 38000 then
+    raise exception 'Same-niche Cafe add-on checkout should succeed at 38000, got %', v_cafe_checkout;
+  end if;
+
+  if not exists (
+    select 1 from public.product_addons a
+    join public.products core_product on core_product.id = a.product_id
+    join public.products addon_product on addon_product.id = a.addon_product_id
+    where a.id = v_cross_niche_addon_id and a.active
+      and core_product.sku = 'AFZ-HPP-CAF-001' and core_product.niche = 'Cafe'
+      and addon_product.sku = 'AFZ-BOOK-LDY-001' and addon_product.niche = 'Laundry'
+  ) then
+    raise exception 'Cross-niche regression setup is not the expected active Cafe-to-Laundry relation';
+  end if;
+  perform pg_temp.assert_throws(
+    $$select public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000021', array['d0f00000-0000-4000-8000-000000000032']::uuid[], 1, 'cafe-laundry-bad-01')$$,
+    'Add-on product must match the core product niche'
+  );
+  select count(*) into v_order_count from public.orders where checkout_idempotency_key = 'cafe-laundry-bad-01';
+  if v_order_count <> 0 then raise exception 'Cross-niche checkout created an order'; end if;
+  if exists (
+    select 1 from public.customer_entitlements e
+    join public.order_items i on i.id = e.order_item_id
+    where i.addon_id = v_cross_niche_addon_id
+  ) then
+    raise exception 'Cross-niche checkout created an entitlement for the invalid add-on';
+  end if;
 
   if (select count(*) from pg_class c join pg_namespace n on n.oid = c.relnamespace
       where n.nspname = 'public' and c.relname in ('products','product_addons','orders','order_items','payments','customer_entitlements','delivery_assets') and c.relrowsecurity) <> 7 then

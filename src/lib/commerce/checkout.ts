@@ -32,7 +32,13 @@ export async function createCheckout(input: {
     p_quantity: input.quantity ?? 1,
     p_idempotency_key: input.idempotencyKey,
   });
-  if (error || !data || typeof data !== "object") throw new Error("CHECKOUT_FAILED");
+  if (error) {
+    if (error.message.includes("Add-on product must match the core product niche")) {
+      throw new Error("ADDON_NICHE_MISMATCH");
+    }
+    throw new Error("CHECKOUT_FAILED");
+  }
+  if (!data || typeof data !== "object") throw new Error("CHECKOUT_FAILED");
   const result = data as Record<string, unknown>;
   return {
     orderId: String(result.orderId), orderNumber: String(result.orderNumber), status: result.status as CheckoutResult["status"],

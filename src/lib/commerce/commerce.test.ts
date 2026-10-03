@@ -76,6 +76,8 @@ describe("DPF commerce V1", () => {
     expect(migration).not.toMatch(/entitlement_id\.is\.null/);
     expect(migration).toMatch(/order by a\.id for share/);
     expect(migration).toMatch(/coalesce\(v_addons\.addon_product_id, v_product\.id\)/);
+    expect(migration).toMatch(/addon_product\.niche is distinct from v_product\.niche/);
+    expect(migration).toMatch(/raise exception 'Add-on product must match the core product niche'/);
     expect(migration).toMatch(/values \('dpf-delivery-v1', 'dpf-delivery-v1', false\)/);
     expect(migration.match(/alter table public\.(products|product_addons|orders|order_items|payments|customer_entitlements|delivery_assets) enable row level security/g)).toHaveLength(7);
     expect(migration).toMatch(/create policy orders_owner_read/);

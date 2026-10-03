@@ -93,6 +93,20 @@ describe("commerce service boundaries", () => {
     expect(client.rpc.mock.calls[0][1]).not.toHaveProperty("price");
   });
 
+  it("returns an explicit error code for cross-niche product add-ons rejected by the checkout RPC", async () => {
+    const userClient = makeUserClient();
+    userClient.rpc.mockResolvedValue({
+      data: null,
+      error: { message: "Add-on product must match the core product niche" },
+    });
+    mocks.createClient.mockResolvedValue(userClient.client);
+    await expect(createCheckout({
+      productId: mocks.order.id,
+      addonIds: ["33333333-3333-4333-8333-333333333333"],
+      idempotencyKey: "checkout-niche-123",
+    })).rejects.toThrow("ADDON_NICHE_MISMATCH");
+  });
+
   it("does not return an order when the caller-supplied user differs from auth", async () => {
     const userClient = makeUserClient();
     userClient.client.auth.getUser.mockResolvedValue({ data: { user: { id: "99999999-9999-4999-8999-999999999999" } } });
