@@ -4,7 +4,6 @@ import type {
   CatalogQuery,
   CheckoutPreviewRequest,
   CheckoutPreviewResult,
-  OrderStatusReadModel,
   Product,
   ProductCardViewModel,
   ProductDetailViewModel,
@@ -21,14 +20,6 @@ function searchableText(product: Product) {
     .join(" ")
     .toLocaleLowerCase("id-ID");
 }
-
-const previewOrder: OrderStatusReadModel = {
-  id: "preview",
-  reference: "Contoh status pesanan",
-  state: "PREVIEW_ONLY",
-  message: "Halaman ini hanya contoh tampilan. Pembuatan pesanan dan status Commerce belum terhubung.",
-  isFixture: true,
-};
 
 export type FixtureStorefrontCatalog = {
   products: Product[];
@@ -129,8 +120,8 @@ export function createFixtureStorefrontAdapters(
       },
     },
     orders: {
-      async getOrderStatus(id) {
-        return id === previewOrder.id ? previewOrder : null;
+      async getOrderStatus() {
+        return null;
       },
     },
     myProducts: {

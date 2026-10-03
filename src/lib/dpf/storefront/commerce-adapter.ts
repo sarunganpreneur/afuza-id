@@ -4,7 +4,6 @@ import { createClient } from "@/lib/supabase/server";
 import { getMyProducts } from "@/lib/commerce/entitlements";
 import { getOrder } from "@/lib/commerce/checkout";
 import { getProductAddons, getProductBySlug as getCommerceProductBySlug, listPublishedProducts } from "@/lib/commerce/catalog";
-import { createFixtureStorefrontAdapters } from "./fixture-adapter";
 import type {
   CatalogPage,
   CatalogQuery,
@@ -57,20 +56,22 @@ type CommerceProduct = {
   updatedAt: string;
 };
 
-const fallbackStorefrontAdapters = createFixtureStorefrontAdapters();
-const previewOrder: OrderStatusReadModel = {
-  id: "preview",
-  reference: "Preview status",
-  state: "PREVIEW_ONLY",
-  message: "Halaman ini hanya contoh status preview untuk pengujian UI.",
-  isFixture: true,
-};
-
 export function shouldUseFixtureCatalogFallback() {
   const rawMode = process.env.DPF_ENABLE_FIXTURE_CATALOG ?? process.env.NEXT_PUBLIC_DPF_ENABLE_FIXTURE_CATALOG ?? "false";
   const enabled = ["1", "true", "yes", "on"].includes(rawMode.trim().toLowerCase());
   const runtime = (process.env.NODE_ENV ?? "development").trim().toLowerCase();
   return enabled && (runtime === "test" || runtime === "development");
+}
+
+let fixtureFallbackAdapters: StorefrontAdapters | null = null;
+
+async function getFixtureFallbackAdapters(): Promise<StorefrontAdapters | null> {
+  if (!shouldUseFixtureCatalogFallback()) return null;
+  if (!fixtureFallbackAdapters) {
+    const { createFixtureStorefrontAdapters } = await import("./fixture-adapter");
+    fixtureFallbackAdapters = createFixtureStorefrontAdapters();
+  }
+  return fixtureFallbackAdapters;
 }
 
 function emptyCatalogPage(page: number, pageSize: number): CatalogPage {
@@ -149,7 +150,6 @@ export function createCommerceStorefrontAdapters(): StorefrontAdapters {
       async listProducts(query: CatalogQuery = {}): Promise<CatalogPage> {
         const page = Number.isInteger(query.page) && (query.page ?? 1) > 0 ? query.page! : 1;
         const pageSize = Number.isInteger(query.pageSize) && (query.pageSize ?? 0) > 0 ? Math.min(query.pageSize!, 48) : 12;
-        const fallback = await fallbackStorefrontAdapters.catalog.listProducts(query);
         try {
           const liveProducts = await listPublishedProducts({ q: query.q, category: query.category });
           const filtered = liveProducts.filter((product) => !query.niche || product.niche === query.niche);
@@ -162,72 +162,83 @@ export function createCommerceStorefrontAdapters(): StorefrontAdapters {
             pageCount: Math.max(1, Math.ceil(filtered.length / pageSize || 1)),
           };
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallback;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.listProducts(query);
           return emptyCatalogPage(page, pageSize);
         }
       },
       async getProductBySlug(slug: string): Promise<ProductDetailViewModel | null> {
-        const fallbackResult = await fallbackStorefrontAdapters.catalog.getProductBySlug(slug);
         try {
           const product = await getCommerceProductBySlug(slug);
-          if (!product) return shouldUseFixtureCatalogFallback() ? fallbackResult : null;
+          if (!product) {
+            const fallback = await getFixtureFallbackAdapters();
+            return fallback ? fallback.catalog.getProductBySlug(slug) : null;
+          }
           return productToDetail(product);
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.getProductBySlug(slug);
           return null;
         }
       },
       async getRelatedProducts(productId: string, limit = 4): Promise<ProductCardViewModel[]> {
-        const fallbackResult = await fallbackStorefrontAdapters.catalog.getRelatedProducts(productId, limit);
         try {
           const products = await listPublishedProducts();
           const product = products.find((item) => item.id === productId);
-          if (!product || limit <= 0) return shouldUseFixtureCatalogFallback() ? fallbackResult : [];
+          if (!product || limit <= 0) {
+            const fallback = await getFixtureFallbackAdapters();
+            return fallback ? fallback.catalog.getRelatedProducts(productId, limit) : [];
+          }
           const sameCategory = products.filter((item) => item.id !== productId && item.category === product.category);
           const related = sameCategory.length >= limit
             ? sameCategory
             : [...sameCategory, ...products.filter((item) => item.id !== productId && item.category !== product.category)];
           return related.slice(0, Math.min(limit, 48)).map(productToCard);
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.getRelatedProducts(productId, limit);
           return [];
         }
       },
       async getVisibleAddons(productId: string): Promise<VisibleAddonViewModel[]> {
-        const fallbackResult = await fallbackStorefrontAdapters.catalog.getVisibleAddons(productId);
         try {
           const addons = await getProductAddons(productId);
           return addons.map(addonToVisible);
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.getVisibleAddons(productId);
           return [];
         }
       },
       async getCategories(): Promise<ProductCategory[]> {
-        const fallbackResult = await fallbackStorefrontAdapters.catalog.getCategories();
         try {
           const products = await listPublishedProducts();
           return [...new Set(products.map((product) => product.category as ProductCategory))].sort() as ProductCategory[];
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.getCategories();
           return [];
         }
       },
       async getNiches(): Promise<string[]> {
-        const fallbackResult = await fallbackStorefrontAdapters.catalog.getNiches();
         try {
           const products = await listPublishedProducts();
           return [...new Set(products.map((product) => product.niche))].sort();
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.catalog.getNiches();
           return [];
         }
       },
     },
     checkoutPreview: {
       async resolveSelection(request: CheckoutPreviewRequest): Promise<CheckoutPreviewResult> {
-        const fallbackResult = await fallbackStorefrontAdapters.checkoutPreview.resolveSelection(request);
-        if (request.selectedAddonIds.length > 12) return fallbackResult;
+        if (request.selectedAddonIds.length > 12) {
+          const fallback = await getFixtureFallbackAdapters();
+          return fallback
+            ? fallback.checkoutPreview.resolveSelection(request)
+            : { ok: false, reason: "ADDON_UNAVAILABLE" };
+        }
 
         try {
           const publishedProducts = await listPublishedProducts();
@@ -259,14 +270,14 @@ export function createCommerceStorefrontAdapters(): StorefrontAdapters {
             estimateOnly: true,
           };
         } catch {
-          if (shouldUseFixtureCatalogFallback()) return fallbackResult;
+          const fallback = await getFixtureFallbackAdapters();
+          if (fallback) return fallback.checkoutPreview.resolveSelection(request);
           return { ok: false, reason: "PRODUCT_UNAVAILABLE" };
         }
       },
     },
     orders: {
       async getOrderStatus(id: string): Promise<OrderStatusReadModel | null> {
-        if (id === "preview") return previewOrder;
         const supabase = await createClient();
         const { data: { user } } = await supabase.auth.getUser();
         if (!user) return null;
@@ -283,8 +294,8 @@ export function createCommerceStorefrontAdapters(): StorefrontAdapters {
             id: order.id,
             reference: order.orderNumber,
             state,
+            total: order.total,
             message,
-            isFixture: false,
           };
         } catch {
           return null;

@@ -115,6 +115,17 @@ describe("commerce service boundaries", () => {
     expect(userClient.client.from).not.toHaveBeenCalled();
   });
 
+  it("returns the canonical order to its authenticated purchaser", async () => {
+    const result = await getOrder(mocks.order.id, mocks.user.id);
+    expect(result).toMatchObject({
+      id: mocks.order.id,
+      customerUserId: mocks.user.id,
+      status: "AWAITING_PAYMENT",
+      total: 38000,
+      items: [{ titleSnapshot: "Kalkulator HPP & Harga Jual UMKM", priceSnapshot: 19000 }],
+    });
+  });
+
   it("records a simulated payment only for an authenticated owner's order", async () => {
     const intent = await startTestPayment(mocks.order.id);
     expect(intent).toMatchObject({ provider: "test", amount: 38000, status: "PENDING" });
@@ -154,6 +165,20 @@ describe("commerce service boundaries", () => {
     const result = await getProductDownloadAccess(mocks.user.id, mocks.order.id);
     expect(result).toEqual({ allowed: false, reason: "NOT_ENTITLED" });
     expect(mocks.getServiceRoleClient).not.toHaveBeenCalled();
+  });
+
+  it("fails safely when an entitled product has no provisioned delivery asset", async () => {
+    mocks.getActiveEntitlements.mockResolvedValue([{ id: "ent-core", addonId: null }]);
+    mocks.getServiceRoleClient.mockResolvedValue({
+      from: vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnThis(),
+        eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+      }),
+    });
+    await expect(getProductDownloadAccess(mocks.user.id, mocks.order.id)).resolves.toEqual({
+      allowed: false,
+      reason: "NO_DELIVERY_ASSETS",
+    });
   });
 
   it("allows core assets for a core purchase but denies fallback add-on assets", async () => {

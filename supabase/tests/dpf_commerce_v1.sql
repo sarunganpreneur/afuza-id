@@ -48,6 +48,7 @@ values
   ('d0f00000-0000-4000-8000-000000000011', 'd0f00000-0000-4000-8000-000000000001', null, 'Pembukuan Usaha', 'Template pembukuan usaha harian.', 19000, true, 1),
   ('d0f00000-0000-4000-8000-000000000012', 'd0f00000-0000-4000-8000-000000000001', null, 'Inventory Tracker', 'Tracker stok barang dan omzet.', 15000, true, 2),
   ('d0f00000-0000-4000-8000-000000000013', 'd0f00000-0000-4000-8000-000000000001', null, 'Disabled Add-on', 'Inactive test item.', 5000, false, 3),
+  ('d0f00000-0000-4000-8000-000000000014', 'd0f00000-0000-4000-8000-000000000002', null, 'Other product add-on', 'Belongs to a different core product.', 7000, true, 1),
   ('d0f00000-0000-4000-8000-000000000031', 'd0f00000-0000-4000-8000-000000000021', 'd0f00000-0000-4000-8000-000000000022', 'Cafe same-niche addon', 'Valid Cafe addon relation.', 19000, true, 1),
   ('d0f00000-0000-4000-8000-000000000032', 'd0f00000-0000-4000-8000-000000000021', 'd0f00000-0000-4000-8000-000000000023', 'Laundry wrong-niche addon', 'Misconfigured cross-niche relation.', 19000, true, 2);
 
@@ -66,6 +67,7 @@ declare
   v_second_full jsonb;
   v_paid jsonb;
   v_paid_replay jsonb;
+  v_failed_order jsonb;
   v_payment_id uuid;
   v_entitlement_count integer;
   v_asset_count integer;
@@ -82,11 +84,19 @@ begin
     'products_price_check'
   );
   perform pg_temp.assert_throws(
+    $$select public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000099', '{}'::uuid[], 1, 'unknown-product-01')$$,
+    'Product is not available'
+  );
+  perform pg_temp.assert_throws(
     $$select public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000003', '{}'::uuid[], 1, 'unpublished-001')$$,
     'Product is not available'
   );
   perform pg_temp.assert_throws(
     $$select public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000001', array['d0f00000-0000-4000-8000-000000000013']::uuid[], 1, 'disabled-addon-01')$$,
+    'One or more add-ons are not available'
+  );
+  perform pg_temp.assert_throws(
+    $$select public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000001', array['d0f00000-0000-4000-8000-000000000014']::uuid[], 1, 'wrong-parent-001')$$,
     'One or more add-ons are not available'
   );
 
@@ -135,8 +145,19 @@ begin
     raise exception 'Expected core + add-on A total 38000';
   end if;
 
+  v_failed_order := public.dpf_create_checkout('d0f00000-0000-4000-8000-000000000001', '{}'::uuid[], 1, 'failed-transition-01');
+  perform public.dpf_record_payment((v_failed_order->>'orderId')::uuid, 'test', 'test-reference-failed-01', 19000, 'FAILED', '{"status":"FAILED"}');
+  perform pg_temp.assert_throws(
+    format('select public.dpf_record_payment(%L, %L, %L, %s, %L, %L::jsonb)', v_failed_order->>'orderId', 'test', 'test-reference-failed-01', 19000, 'PENDING', '{}'),
+    'Payment status transition is invalid'
+  );
+
   perform pg_temp.assert_throws(
     format('select public.dpf_record_payment(%L, %L, %L, %s, %L, %L::jsonb)', v_full->>'orderId', 'test', 'test-reference-main-001', 53001, 'PAID', '{}'),
+    'Order is not available'
+  );
+  perform pg_temp.assert_throws(
+    $$select public.dpf_record_payment('d0f00000-0000-4000-8000-000000000099', 'test', 'test-reference-missing-001', 19000, 'PAID', '{}')$$,
     'Order is not available'
   );
   perform pg_temp.assert_throws(

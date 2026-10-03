@@ -41,7 +41,7 @@ export function ProductDetailActions({ product, addons }: { product: ProductDeta
         ))}
       </div>
       <div className="dpf-estimate-row"><span>Estimasi total tampilan</span><strong>{formatRupiah(estimate)}</strong></div>
-      <p className="dpf-estimate-note">Estimasi untuk pratinjau. Total transaksi akan ditentukan Commerce saat integrasi tersedia.</p>
+      <p className="dpf-estimate-note">Estimasi katalog. Total transaksi final dihitung Commerce saat checkout.</p>
       {added ? (
         <div className="dpf-added-state" role="status"><span>Produk tersimpan di keranjang.</span><Link href="/cart">Lihat keranjang →</Link></div>
       ) : <button className="dpf-button dpf-button-wide" type="button" onClick={addToCart}>Tambah ke keranjang <span aria-hidden="true">→</span></button>}

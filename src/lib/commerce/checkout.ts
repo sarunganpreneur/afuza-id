@@ -36,6 +36,12 @@ export async function createCheckout(input: {
     if (error.message.includes("Add-on product must match the core product niche")) {
       throw new Error("ADDON_NICHE_MISMATCH");
     }
+    if (error.message.includes("Checkout idempotency conflict")) {
+      throw new Error("CHECKOUT_IDEMPOTENCY_CONFLICT");
+    }
+    if (error.message.includes("Product is not available")) throw new Error("PRODUCT_UNAVAILABLE");
+    if (error.message.includes("One or more add-ons are not available")) throw new Error("ADDON_UNAVAILABLE");
+    if (error.message.includes("Checkout request is invalid")) throw new Error("INVALID_CHECKOUT_INPUT");
     throw new Error("CHECKOUT_FAILED");
   }
   if (!data || typeof data !== "object") throw new Error("CHECKOUT_FAILED");

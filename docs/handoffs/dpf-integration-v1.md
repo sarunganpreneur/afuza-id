@@ -1,59 +1,68 @@
 # DPF Integration V1 Handoff
 
 ## STATUS
-INTEGRATION_READY
+WRITE_SIDE_INTEGRATION_COMPLETE
 
-## BRANCH
-feature/dpf-integration-v1
+## BRANCH / BASE
+- Branch: `feature/dpf-integration-v1`
+- Implementation base: `146ffc7f9fff839bcbd76ff7aa3f32d67c6a204a`
+- Source lanes: Commerce `3d045f52d42535cb4e999a8861b75ac48fd44a89`; Storefront `eb73f62c4f2c067c0b32054dcd8036639c8358cb`
+- Source of truth: `docs/digital-product-factory-v1.md`
 
-## BASE CONTRACT
-- base revision: 385306b
-- source of truth: docs/digital-product-factory-v1.md
-- source lanes: `dpf-commerce-v1` and `dpf-storefront-v1`
+## TRANSACTION FLOW
+- `POST /api/storefront/checkout` requires an authenticated user, resolves a published product by Commerce UUID/slug/SKU and active child add-ons server-side, then calls Commerce `createCheckout`. It accepts no price or quantity and returns the canonical order summary and item snapshots.
+- `/cart` to `/checkout` submits the stored identifiers and a session-persisted idempotency key. The UI displays Commerce's returned canonical total and links to `/order/[id]`.
+- `POST /api/storefront/test-payment` is a controlled simulation only. It requires an authenticated owner order, `DPF_ENABLE_TEST_PAYMENTS=true`, and a runtime other than `NODE_ENV=production`; the route calls the existing TEST payment start/confirmation services.
+- `POST /api/storefront/delivery` requires authentication and delegates entitlement checks and signed-link creation to Commerce `getProductDownloadAccess`. Only signed URLs are returned; storage keys and service-role credentials are not.
+- `/order/[id]` reads owner-scoped Commerce order state and total. `/akun/produk` reads authenticated active entitlements and exposes the delivery route through the access control.
 
-## INTEGRATION SUMMARY
-- Storefront root export is now wired to the Commerce-backed adapter instead of the fixture adapter.
-- Live catalog reads, product preview, product-detail resolution, addon visibility, order status, and owned-products reads all flow through the canonical Commerce services.
-- Fixture catalog fallback remains intentionally gated to explicit test/dev mode only; production-like runtime is fail-closed and does not silently invent catalog or customer data.
-- Order status and my-products pages now require an authenticated user and render data from the real Commerce boundary instead of preview-only placeholders.
-- Client-controlled prices are still rejected; server totals remain authoritative when the transactional flow is used.
+## ACCEPTANCE EVIDENCE
+- CHECKOUT: PASS. Route tests cover anonymous rejection, server identifier resolution, unknown/unpublished product, disabled/wrong-parent/cross-niche add-ons, price-field rejection, canonical service-total propagation, and idempotency key reuse. Disposable PostgreSQL tests exercise the actual checkout RPC.
+- TEST PAYMENT: PASS. Route tests cover authentication, owner-only lookup, production disablement, and already-paid replay. Commerce service and disposable PostgreSQL tests cover signature verification and payment recording.
+- ENTITLEMENT: PASS. Disposable PostgreSQL tests prove pending payment creates zero entitlements and PAID creates exactly one per order item; entitlement service tests prove authenticated-user scoping.
+- PAYMENT REPLAY: PASS. Disposable PostgreSQL tests replay PAID and assert stable PAID state and unchanged entitlement count; the customer route returns a stable replay response for an already-paid order.
+- ORDER OWNERSHIP: PASS. Commerce service tests cover purchaser read and mismatched user denial; PostgreSQL tests verify order and item RLS hides another user's rows.
+- MY PRODUCTS: PASS. Entitlement service tests verify purchaser products and deny caller/user mismatch; PostgreSQL tests verify cross-user entitlement RLS.
+- SECURE DELIVERY: PASS. Route tests cover signed URL-only success, unauthorized and missing-asset safe denial, and internal failure privacy. Commerce service tests cover entitlement scope and add-on asset isolation.
+- Totals in disposable PostgreSQL contract: core `19000`; core + BOOK `38000`; core + BOOK + INV `53000`.
+- Price tampering: route rejects any client `price` field with HTTP 400 before calling Commerce. Checkout service passes identifiers only; the database calculates and snapshots totals.
+- Negative SQL cases include unknown/unpublished product, disabled add-on, wrong-parent add-on, cross-niche add-on, incorrect payment amount, missing payment order, invalid payment transition, idempotency conflict, and cross-user RLS.
+- No real payment provider is implemented or enabled.
 
-## IMPLEMENTED
-- `src/lib/dpf/storefront/commerce-adapter.ts`
-  - real Product catalog reads via Commerce services
-  - real product-detail and related/addon resolution
-  - guarded fallback logic using `DPF_ENABLE_FIXTURE_CATALOG` and `NEXT_PUBLIC_DPF_ENABLE_FIXTURE_CATALOG`
-- `src/lib/dpf/storefront/index.ts`
-  - points the storefront adapter export at the Commerce adapter
-- `src/app/order/[id]/page.tsx`
-  - authenticated, real order lookup with runtime-safe rendering
-- `src/app/akun/produk/page.tsx`
-  - real owned-product flow with outcome messaging aligned to actual entitlements
-- `src/app/api/storefront/preview/route.test.ts`
-  - explicit test-mode fixture stub for preview route validation
-- `src/lib/dpf/storefront/commerce-adapter.test.ts`
-  - verifies fail-closed behavior in production-like runtime and explicit fixture mode in local/test mode
+## ROUTE / FIXTURE CLASSIFICATION
+- `/api/storefront/checkout`, `/api/storefront/test-payment`, `/api/storefront/delivery`: customer transaction routes; TEST route disabled under production `NODE_ENV`.
+- `/api/storefront/selection-summary`: runtime display-only estimate from Commerce-published records; it does not create or mutate an order and does not gate checkout submission.
+- `/api/storefront/preview`: DEV_ONLY / TEST_ONLY. Returns 404 unless explicit fixture fallback is enabled in `development` or `test`; the customer UI no longer calls it.
+- `fixture-adapter.ts`, `fixture-catalog.ts`: TEST_ONLY for catalog validation/tests; runtime Commerce fallback dynamically imports fixture data only under the explicit dev/test gate.
+- Fake preview order: REMOVE_FROM_RUNTIME. The active adapter and fixture adapter no longer synthesize a preview order.
+- No empty fixture-backed My Products or mock order is used by the active customer flow.
 
-## SECURITY / RUNTIME GATES
-- NO production migration applied.
-- NO production deploy performed.
-- NO real payment provider enabled.
-- Fixture fallback is only allowed when `NODE_ENV` is `test` or `development` and the fixture flag is explicitly enabled.
-- Fail-closed behavior is enforced whenever the runtime is production-like or the fallback flag is absent.
-- Storefront order-status and account views require authenticated session ownership before returning data.
+## STAGING DATABASE PREFLIGHT
+No migration was applied by this change. Before a future staging migration, independently verify the exact non-production database target, migration state, and available backup/recovery posture. The DPF migration uses `ON CONFLICT (id) DO NOTHING` for the storage bucket, so it does not repair an existing public bucket. Before applying it, run this read-only query against the confirmed staging database:
+
+```sql
+select id, public
+from storage.buckets
+where id = 'dpf-delivery-v1';
+```
+
+Require exactly one row with `public = false`. If the row is missing or public is true, stop and use a separately reviewed staging-only remediation; do not assume the migration changed existing bucket privacy. Verify RLS, tables, RPC privileges, and bucket privacy again after the migration.
 
 ## VERIFICATION
-Command run:
-`cd /home/afuzaid/engineering/worktrees/dpf-integration && npm run lint && npx tsc --noEmit --pretty false && npm run test -- --run && npm run build && git diff --check`
+- Focused customer routes/services: PASS, 35 tests at focused run.
+- Disposable local PostgreSQL contract: PASS (`bash scripts/test-dpf-commerce-postgres.sh`); scratch cluster is stopped and removed by the runner.
+- Fresh `npm run lint`: PASS.
+- Fresh `npx tsc --noEmit --pretty false`: PASS.
+- Fresh `npm run test -- --run`: PASS, 52 files / 537 tests.
+- `npm run build`: PASS after temporarily activating an additional 6 GiB `/tmp` swap file; the file was deactivated and removed. No `/etc/fstab` or persistent swap configuration was changed.
+- `git diff --check`: run before commit.
 
-Result:
-- lint: PASS
-- typecheck: PASS
-- tests: PASS, 47 files / 511 tests
-- build: PASS
-- diff check: PASS
+## ENVIRONMENT LIMITS / NEXT GATES
+- No staging or production database was contacted or migrated.
+- No staging or production application was deployed.
+- For safety, a standard production-mode Next.js staging runtime (`NODE_ENV=production`) cannot use the TEST payment adapter. TEST payment is available only in explicitly enabled non-production runtimes.
+- Future staging work must verify the target database, migration state/backup posture, private bucket flag, and deploy checkout commit before operations. This handoff does not authorize those actions.
+- No real payment provider, Product Factory 50 SKU import, production migration, or production deployment is included.
 
-## NEXT ACTIONS
-1. Merge or continue on `feature/dpf-integration-v1` only in an authorized non-production worktree.
-2. If a later environment-specific rollout is approved, apply the Commerce migration only in that environment and then provision any private delivery assets required.
-3. Keep real payment-provider integration, production migration, and environment deployment as separate, explicit work streams outside this branch.
+## PRE-STAGING READINESS
+READY for a separately approved staging review, conditional on the staging database/bucket preflight and a deployment target review. This classification is not a staging deployment, migration approval, or production authorization.
