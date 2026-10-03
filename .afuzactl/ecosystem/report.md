@@ -22,8 +22,8 @@ Autonomous readiness:
 - SPEC_INCOMPLETE: 7
 
 Execution lifecycle:
-- BUNDLE_4_READY: 3
 - NOT_RECORDED: 14
+- STAGING_READY: 3
 
 Project state:
 - Afuza Ecosystem Portfolio: Spec: NOT_RECORDED; Autonomous: DISCOVERED; Execution: NOT_RECORDED
@@ -37,10 +37,10 @@ Project state:
 - AFUZA AI Workforce Platform: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
 - OMNIVORA: Spec: NOT_RECORDED; Autonomous: IMPLEMENTATION_IN_PROGRESS; Execution: NOT_RECORDED
 - AFUZA Revenue Engine V1: Spec: NOT_RECORDED; Autonomous: SPEC_INCOMPLETE; Execution: NOT_RECORDED
-- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY
+- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY
 - PASOK.IN: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
-- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY
-- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: BUNDLE_4_READY
+- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY
+- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY
 - HIKSAS: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
 - KonsultanHalal: Spec: NOT_RECORDED; Autonomous: PRD_MISSING_EXTERNAL; Execution: NOT_RECORDED
 
@@ -48,6 +48,7 @@ Project state:
 
 - BUNDLE_2_READY | BUNDLE_3_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)
 - BUNDLE_3_READY | BUNDLE_4_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)
+- BUNDLE_4_READY | STAGING_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)
 
 | Project | Readiness | External source required | Blockers / gaps |
 | --- | --- | --- | --- |

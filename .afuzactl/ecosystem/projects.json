@@ -402,7 +402,7 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_4_READY",
+      "execution_state": "STAGING_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
@@ -413,6 +413,11 @@
           "from_state": "BUNDLE_3_READY",
           "to_state": "BUNDLE_4_READY",
           "evidence": [".afuzactl/ecosystem/bundle4-report.md", "da24609dc1a1fa718e93af5b3589ffcc03858fd8"]
+        },
+        {
+          "from_state": "BUNDLE_4_READY",
+          "to_state": "STAGING_READY",
+          "evidence": [".afuzactl/ecosystem/staging-runtime-report.md", "chalwa-staging.service", "127.0.0.1:4511", "CHALWA_APPLICATION_INTEGRATION_READY", "42dd8cef4b757c61891ae332a7b57fe9022bda52"]
         }
       ],
       "blockers": [],
@@ -472,7 +477,7 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_4_READY",
+      "execution_state": "STAGING_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
@@ -483,6 +488,11 @@
           "from_state": "BUNDLE_3_READY",
           "to_state": "BUNDLE_4_READY",
           "evidence": [".afuzactl/ecosystem/bundle4-report.md", "0adec56f4f937039c18e751924102c68683ec953"]
+        },
+        {
+          "from_state": "BUNDLE_4_READY",
+          "to_state": "STAGING_READY",
+          "evidence": [".afuzactl/ecosystem/staging-runtime-report.md", "klodhost-staging.service", "127.0.0.1:4512", "PROVISIONING_APPLICATION_INTEGRATION_READY", "b48a87f6a72f011f80d3f43b28f69764c30a6f66"]
         }
       ],
       "blockers": [],
@@ -526,7 +536,7 @@
       "capabilities_provided": [],
       "autonomous_build_readiness": "AUTONOMOUS_BUILD_READY",
       "spec_readiness": "EXECUTION_SPEC_READY",
-      "execution_state": "BUNDLE_4_READY",
+      "execution_state": "STAGING_READY",
       "execution_transitions": [
         {
           "from_state": "BUNDLE_2_READY",
@@ -537,6 +547,11 @@
           "from_state": "BUNDLE_3_READY",
           "to_state": "BUNDLE_4_READY",
           "evidence": [".afuzactl/ecosystem/bundle4-report.md", "3ef8cadc46e4576bd9b20be6ac31aca57de3cc1f"]
+        },
+        {
+          "from_state": "BUNDLE_4_READY",
+          "to_state": "STAGING_READY",
+          "evidence": [".afuzactl/ecosystem/staging-runtime-report.md", "marketing-agency-staging.service", "127.0.0.1:4513", "TENANT_APPLICATION_INTEGRATION_READY", "3d9e9bbc5d34ba2daac5584118a1347a8953ec2a"]
         }
       ],
       "blockers": [],
