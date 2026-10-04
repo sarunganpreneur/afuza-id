@@ -278,23 +278,23 @@ describe("Afuza ecosystem registry", () => {
     const data = ecosystemFixture();
     for (const id of ["chalwa.id", "klodhost", "marketing-agency"]) {
       const readiness = data.readiness.projects.find((item) => item.project_id === id);
-      expect(readiness?.status).toBe("AUTONOMOUS_BUILD_READY");
+      expect(readiness?.status).toBe("READY_FOR_HUMAN_TEST");
       expect(readiness?.authoritative_specification_available).toBe(true);
       expect(readiness?.acceptance_criteria_complete).toBe(true);
       expect(readiness?.architecture_available).toBe(true);
       expect(readiness?.implementation_sequence_available).toBe(true);
-      expect(readiness?.testability).toBe("STRATEGY_DEFINED");
+      expect(readiness?.testability).toBe("TESTED");
       expect(readiness?.repository_runtime_verified).toBe(true);
       expect(readiness?.environment_ready).toBe(true);
       expect(readiness?.dependencies_resolved).toBe(true);
       expect(readiness?.implementation_evidence).toBe("STRONG");
-      expect(data.projects.projects.find((item) => item.id === id)?.autonomous_build_readiness).toBe("AUTONOMOUS_BUILD_READY");
+      expect(data.projects.projects.find((item) => item.id === id)?.autonomous_build_readiness).toBe("READY_FOR_HUMAN_TEST");
     }
     for (const id of ["pasok.in", "hiksas", "konsultanhalal"]) {
       expect(data.readiness.projects.find((item) => item.project_id === id)?.external_source_required).toBe(true);
       expect(data.projects.projects.find((item) => item.id === id)?.autonomous_build_readiness).toBe("PRD_MISSING_EXTERNAL");
     }
-    expect(data.projects.projects.filter((project) => project.id === "chalwa.id" || project.id === "klodhost" || project.id === "marketing-agency").every((project) => project.autonomous_build_readiness === "AUTONOMOUS_BUILD_READY")).toBe(true);
+    expect(data.projects.projects.filter((project) => project.id === "chalwa.id" || project.id === "klodhost" || project.id === "marketing-agency").every((project) => project.autonomous_build_readiness === "READY_FOR_HUMAN_TEST")).toBe(true);
   });
 
   it("records the three AX-02X next safe inventory actions at the head of the queue", () => {
@@ -310,15 +310,15 @@ describe("Afuza ecosystem registry", () => {
   it("reports readiness buckets, source-ID gaps and per-project transitions", () => {
     const ecosystem = control.loadContext().ecosystem as Parameters<EcosystemControlApi["createEcosystemReport"]>[0];
     const report = control.createEcosystemReport(ecosystem);
-    expect(report).toContain("AUTONOMOUS_BUILD_READY: 3");
+    expect(report).toContain("READY_FOR_HUMAN_TEST: 3");
     expect(report).toContain("EXECUTION_SPEC_READY: 3");
     expect(report).toContain("STAGING_READY: 3");
     expect(report).toContain("BUNDLE_2_READY | BUNDLE_3_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)");
     expect(report).toContain("BUNDLE_3_READY | BUNDLE_4_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)");
     expect(report).toContain("BUNDLE_4_READY | STAGING_READY: 3 (CHALWA.id, KlodHost, Marketing Agency)");
-    expect(report).toContain("- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY");
-    expect(report).toContain("- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY");
-    expect(report).toContain("- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: AUTONOMOUS_BUILD_READY; Execution: STAGING_READY");
+    expect(report).toContain("- CHALWA.id: Spec: EXECUTION_SPEC_READY; Autonomous: READY_FOR_HUMAN_TEST; Execution: STAGING_READY");
+    expect(report).toContain("- KlodHost: Spec: EXECUTION_SPEC_READY; Autonomous: READY_FOR_HUMAN_TEST; Execution: STAGING_READY");
+    expect(report).toContain("- Marketing Agency: Spec: EXECUTION_SPEC_READY; Autonomous: READY_FOR_HUMAN_TEST; Execution: STAGING_READY");
     expect(report).toContain("Drive document IDs supplied: 3");
     expect(report).toContain("Contents unavailable pending Google sign-in: 21");
     expect(report).toContain("PASOK.IN");

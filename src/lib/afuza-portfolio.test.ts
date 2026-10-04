@@ -137,13 +137,13 @@ describe("AX-03 portfolio planner", () => {
     const plan = planner.buildPortfolioPlan(input);
     for (const id of ["chalwa.id", "klodhost", "marketing-agency"]) {
       const readiness = input.ecosystem.readiness.projects.find((entry) => entry.project_id === id);
-      expect(readiness?.status).toBe("AUTONOMOUS_BUILD_READY");
+      expect(readiness?.status).toBe("READY_FOR_HUMAN_TEST");
       expect(readiness?.repository_runtime_verified).toBe(true);
       expect(readiness?.environment_ready).toBe(true);
       expect(readiness?.dependencies_resolved).toBe(true);
-      expect(plan.entries.find((entry) => entry.project_id === id)?.readiness).toBe("AUTONOMOUS_BUILD_READY");
+      expect(plan.entries.find((entry) => entry.project_id === id)?.readiness).toBe("READY_FOR_HUMAN_TEST");
     }
-    expect(input.ecosystem.readiness.projects.filter((entry) => entry.project_id === "chalwa.id" || entry.project_id === "klodhost" || entry.project_id === "marketing-agency").every((entry) => entry.status === "AUTONOMOUS_BUILD_READY")).toBe(true);
+    expect(input.ecosystem.readiness.projects.filter((entry) => entry.project_id === "chalwa.id" || entry.project_id === "klodhost" || entry.project_id === "marketing-agency").every((entry) => entry.status === "READY_FOR_HUMAN_TEST")).toBe(true);
   });
 
   it("guards read-only batch start and completion transitions", () => {

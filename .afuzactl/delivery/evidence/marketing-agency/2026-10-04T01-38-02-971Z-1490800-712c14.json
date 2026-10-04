@@ -1,0 +1,233 @@
+{
+  "run_id": "2026-10-04T01-38-02-971Z-1490800-712c14",
+  "mode": "DRY_RUN",
+  "schema_version": 1,
+  "project_id": "marketing-agency",
+  "task": "AX-06 milestone selection",
+  "status": "AWAITING_APPROVAL",
+  "approval_required": true,
+  "updated_at": "2026-10-04T01:38:06.016Z",
+  "last_commit": "6443121d1c6d5d9b3019834721ee520b28883e45",
+  "test_result": "NOT_RUN (dry-run checks command availability only)",
+  "staging_status": "PASS",
+  "checks": {
+    "git_clean": {
+      "name": "git_clean",
+      "status": "PASS",
+      "detail": "Working tree clean"
+    },
+    "app_head": {
+      "name": "app_head",
+      "status": "PASS",
+      "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+    },
+    "diff_check": {
+      "name": "diff_check",
+      "status": "PASS",
+      "detail": "git diff --check passed"
+    },
+    "secret_scan": {
+      "name": "secret_scan",
+      "status": "PASS",
+      "detail": "No tracked secret indicators"
+    },
+    "canonical_secret_scan": {
+      "name": "canonical_secret_scan",
+      "status": "PASS",
+      "detail": "No tracked secret indicators"
+    },
+    "commands": {
+      "name": "commands",
+      "status": "PASS",
+      "detail": "lint:available, typecheck:available, test:available, build:available; npm:available"
+    },
+    "service": {
+      "name": "service",
+      "status": "PASS",
+      "detail": "active"
+    },
+    "health": {
+      "name": "health",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    "ready": {
+      "name": "ready",
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    "listener": {
+      "name": "listener",
+      "status": "PASS",
+      "detail": "Port 4513 is loopback-only"
+    },
+    "fake_mode": {
+      "name": "fake_mode",
+      "status": "PASS",
+      "detail": "missing=none; live-markers=none"
+    },
+    "milestone": {
+      "name": "milestone",
+      "status": "FAIL",
+      "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+    },
+    "production": {
+      "name": "production",
+      "status": "PASS",
+      "detail": "afuza-id.service identity unchanged"
+    },
+    "postflight": {
+      "name": "postflight",
+      "status": "PASS",
+      "detail": "Postflight checks passed"
+    }
+  },
+  "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
+  "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
+  "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T01-38-02-971Z-1490800-712c14.json",
+  "preflight": {
+    "status": "AWAITING_APPROVAL",
+    "checks": {
+      "git_clean": {
+        "name": "git_clean",
+        "status": "PASS",
+        "detail": "Working tree clean"
+      },
+      "app_head": {
+        "name": "app_head",
+        "status": "PASS",
+        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+      },
+      "diff_check": {
+        "name": "diff_check",
+        "status": "PASS",
+        "detail": "git diff --check passed"
+      },
+      "secret_scan": {
+        "name": "secret_scan",
+        "status": "PASS",
+        "detail": "No tracked secret indicators"
+      },
+      "canonical_secret_scan": {
+        "name": "canonical_secret_scan",
+        "status": "PASS",
+        "detail": "No tracked secret indicators"
+      },
+      "commands": {
+        "name": "commands",
+        "status": "PASS",
+        "detail": "lint:available, typecheck:available, test:available, build:available; npm:available"
+      },
+      "service": {
+        "name": "service",
+        "status": "PASS",
+        "detail": "active"
+      },
+      "health": {
+        "name": "health",
+        "status": "PASS",
+        "detail": "HTTP 200"
+      },
+      "ready": {
+        "name": "ready",
+        "status": "PASS",
+        "detail": "HTTP 200"
+      },
+      "listener": {
+        "name": "listener",
+        "status": "PASS",
+        "detail": "Port 4513 is loopback-only"
+      },
+      "fake_mode": {
+        "name": "fake_mode",
+        "status": "PASS",
+        "detail": "missing=none; live-markers=none"
+      },
+      "milestone": {
+        "name": "milestone",
+        "status": "FAIL",
+        "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+      },
+      "production": {
+        "name": "production",
+        "status": "PASS",
+        "detail": "afuza-id.service identity unchanged"
+      }
+    }
+  },
+  "postflight": {
+    "status": "AWAITING_APPROVAL",
+    "checks": {
+      "git_clean": {
+        "name": "git_clean",
+        "status": "PASS",
+        "detail": "Working tree clean"
+      },
+      "app_head": {
+        "name": "app_head",
+        "status": "PASS",
+        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+      },
+      "diff_check": {
+        "name": "diff_check",
+        "status": "PASS",
+        "detail": "git diff --check passed"
+      },
+      "secret_scan": {
+        "name": "secret_scan",
+        "status": "PASS",
+        "detail": "No tracked secret indicators"
+      },
+      "canonical_secret_scan": {
+        "name": "canonical_secret_scan",
+        "status": "PASS",
+        "detail": "No tracked secret indicators"
+      },
+      "commands": {
+        "name": "commands",
+        "status": "PASS",
+        "detail": "lint:available, typecheck:available, test:available, build:available; npm:available"
+      },
+      "service": {
+        "name": "service",
+        "status": "PASS",
+        "detail": "active"
+      },
+      "health": {
+        "name": "health",
+        "status": "PASS",
+        "detail": "HTTP 200"
+      },
+      "ready": {
+        "name": "ready",
+        "status": "PASS",
+        "detail": "HTTP 200"
+      },
+      "listener": {
+        "name": "listener",
+        "status": "PASS",
+        "detail": "Port 4513 is loopback-only"
+      },
+      "fake_mode": {
+        "name": "fake_mode",
+        "status": "PASS",
+        "detail": "missing=none; live-markers=none"
+      },
+      "milestone": {
+        "name": "milestone",
+        "status": "FAIL",
+        "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+      },
+      "production": {
+        "name": "production",
+        "status": "PASS",
+        "detail": "afuza-id.service identity unchanged"
+      },
+      "postflight": {
+        "name": "postflight",
+        "status": "PASS",
+        "detail": "Postflight checks passed"
+      }
+    }
+  }
+}

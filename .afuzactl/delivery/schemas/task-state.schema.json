@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Delivery task state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "task", "status", "approval_required", "updated_at", "checks", "blocker", "next_action"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "project_id": { "type": "string", "enum": ["chalwa.id", "klodhost", "marketing-agency"] },
+    "task": { "type": "string" },
+    "status": { "enum": ["PLANNED", "READY", "RUNNING", "BLOCKED", "AWAITING_APPROVAL", "FAILED", "COMPLETED"] },
+    "approval_required": { "type": "boolean" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "last_commit": { "type": ["string", "null"] },
+    "test_result": { "type": "string" },
+    "staging_status": { "type": "string" },
+    "checks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "status", "detail"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "enum": ["PASS", "FAIL"] },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "blocker": { "type": ["string", "null"] },
+    "next_action": { "type": "string" },
+    "evidence_file": { "type": ["string", "null"] }
+    ,"preflight": { "$ref": "#/definitions/check_run" }
+    ,"postflight": { "$ref": "#/definitions/check_run" }
+  },
+  "definitions": {
+    "check_run": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["AWAITING_APPROVAL", "FAILED", "BLOCKED", "NOT_RUN"] },
+        "reason": { "type": "string" },
+        "checks": { "$ref": "#/definitions/checks" }
+      },
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "status", "detail"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "enum": ["PASS", "FAIL"] },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

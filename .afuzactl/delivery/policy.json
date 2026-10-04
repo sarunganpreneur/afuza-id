@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "task_states": ["PLANNED", "READY", "RUNNING", "BLOCKED", "AWAITING_APPROVAL", "FAILED", "COMPLETED"],
+  "approval_required_actions": ["production-change", "real-payment", "real-provider", "outbound-message", "destructive-migration", "credential-rotation", "dns-change", "cross-project-architecture", "readiness-promotion", "go-live", "force-push", "production-data-deletion"],
+  "dry_run_only_until_ax06_authorized": true,
+  "production_service": "afuza-id.service",
+  "production_readiness": "READY_FOR_HUMAN_TEST",
+  "max_parallel_lanes": 3,
+  "canonical_writes_serialized": true,
+  "required_pre_and_post_checks": ["production-service-identity", "loopback-listener", "staging-health", "staging-ready", "fake-mode", "no-tracked-secrets", "git-diff-check"]
+}

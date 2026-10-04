@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "lanes": [
+    {
+      "id": "chalwa.id",
+      "name": "CHALWA",
+      "repository": "/home/afuzaid/apps/chalwa",
+      "staging_service": "chalwa-staging.service",
+      "staging_url": "https://chalwa.afuza.id",
+      "health_url": "https://chalwa.afuza.id/health",
+      "ready_url": "https://chalwa.afuza.id/ready",
+      "port": 4511,
+      "checks": { "lint": "npm run lint", "typecheck": "npm run typecheck", "test": "npm test", "build": "npm run build" },
+      "allowed_actions": ["inspect", "edit-source", "add-tests", "lint", "typecheck", "test", "build", "staging-deploy", "staging-restart", "staging-smoke", "update-evidence", "focused-commit", "normal-push"],
+      "prohibited_actions": ["production-change", "real-payment", "real-provider", "outbound-message", "destructive-migration", "credential-rotation", "dns-change", "cross-project-architecture", "readiness-promotion", "go-live", "force-push", "production-data-deletion"],
+      "approval_boundaries": ["production or irreversible action", "AX-06 milestone authorization", "readiness promotion beyond READY_FOR_HUMAN_TEST"],
+      "evidence_directory": ".afuzactl/delivery/evidence/chalwa.id",
+      "current_milestone": null,
+      "next_task_source": "docs/AX-06-BACKLOG.md",
+      "required_mode_markers": ["staging / tester console", "staging only"],
+      "forbidden_live_markers": ["live provider enabled", "real payment enabled", "outbound messaging enabled"]
+    },
+    {
+      "id": "klodhost",
+      "name": "KlodHost",
+      "repository": "/home/afuzaid/apps/klodhost",
+      "staging_service": "klodhost-staging.service",
+      "staging_url": "https://klodhost.afuza.id",
+      "health_url": "https://klodhost.afuza.id/health",
+      "ready_url": "https://klodhost.afuza.id/ready",
+      "port": 4512,
+      "checks": { "lint": "npm run lint", "typecheck": "npm run typecheck", "test": "npm test", "build": "npm run build" },
+      "allowed_actions": ["inspect", "edit-source", "add-tests", "lint", "typecheck", "test", "build", "staging-deploy", "staging-restart", "staging-smoke", "update-evidence", "focused-commit", "normal-push"],
+      "prohibited_actions": ["production-change", "real-payment", "real-provider", "outbound-message", "destructive-migration", "credential-rotation", "dns-change", "cross-project-architecture", "readiness-promotion", "go-live", "force-push", "production-data-deletion"],
+      "approval_boundaries": ["production or irreversible action", "AX-06 milestone authorization", "real provider/payment action", "readiness promotion beyond READY_FOR_HUMAN_TEST"],
+      "evidence_directory": ".afuzactl/delivery/evidence/klodhost",
+      "current_milestone": null,
+      "next_task_source": "docs/AX-06-BACKLOG.md",
+      "required_mode_markers": ["staging / tester console", "fake provider", "fake node agent"],
+      "forbidden_live_markers": ["live provider enabled", "real payment enabled", "production node action enabled"]
+    },
+    {
+      "id": "marketing-agency",
+      "name": "Marketing Agency",
+      "repository": "/home/afuzaid/apps/marketing-agency",
+      "staging_service": "marketing-agency-staging.service",
+      "staging_url": "https://marketingagency.afuza.id",
+      "health_url": "https://marketingagency.afuza.id/health",
+      "ready_url": "https://marketingagency.afuza.id/ready",
+      "port": 4513,
+      "checks": { "lint": "npm run lint", "typecheck": "npm run typecheck", "test": "npm test", "build": "npm run build" },
+      "allowed_actions": ["inspect", "edit-source", "add-tests", "lint", "typecheck", "test", "build", "staging-deploy", "staging-restart", "staging-smoke", "update-evidence", "focused-commit", "normal-push"],
+      "prohibited_actions": ["production-change", "real-payment", "real-provider", "outbound-message", "destructive-migration", "credential-rotation", "dns-change", "cross-project-architecture", "readiness-promotion", "go-live", "force-push", "production-data-deletion"],
+      "approval_boundaries": ["production or irreversible action", "AX-06 milestone authorization", "real payment or outbound messaging", "readiness promotion beyond READY_FOR_HUMAN_TEST"],
+      "evidence_directory": ".afuzactl/delivery/evidence/marketing-agency",
+      "current_milestone": null,
+      "next_task_source": "docs/AX-06-BACKLOG.md",
+      "required_mode_markers": ["staging / tester console", "fake capabilities only", "no outbound execution"],
+      "forbidden_live_markers": ["live provider enabled", "real payment enabled", "outbound messaging enabled"]
+    }
+  ]
+}

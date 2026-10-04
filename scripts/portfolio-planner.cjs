@@ -76,7 +76,7 @@ function buildPortfolioPlan({ ecosystem, permissions, environments, portfolioSta
         classification = "RUN_NOW";
         reason = `Authorized by ${approvedDecision.decision_id}; bounded repository-skeleton preparation only.`;
       }
-    } else if (["AUTONOMOUS_BUILD_READY", "EXECUTION_SPEC_READY"].includes(status?.status) && item.classification === "READY_TO_PLAN") {
+    } else if (["AUTONOMOUS_BUILD_READY", "EXECUTION_SPEC_READY", "READY_FOR_HUMAN_TEST"].includes(status?.status) && item.classification === "READY_TO_PLAN") {
       if (!READ_ONLY_ACTIONS.has(actionType) && !environmentReady) {
         classification = "WAITING_DEPENDENCY";
         reason = "Project repository/runtime environment is not verified and available.";

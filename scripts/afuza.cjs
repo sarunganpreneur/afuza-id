@@ -8,6 +8,7 @@ const yaml = require("js-yaml");
 const Ajv = require("ajv");
 const { buildPortfolioPlan, createBatch, inventoryFileName, transitionBatch } = require("./portfolio-planner.cjs");
 const { createInbox } = require("./portfolio-inbox.cjs");
+const delivery = require("./delivery-orchestrator.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTROL = path.join(ROOT, ".afuzactl");
@@ -1128,11 +1129,50 @@ function doctor(context) {
 }
 
 function usage() {
-  console.log("Usage: ./afuza <status|doctor|plan|verify|report|run|resume|ecosystem|portfolio|inbox> [options]");
+  console.log("Usage: ./afuza <status|doctor|plan|verify|report|run|resume|ecosystem|portfolio|inbox|delivery> [options]");
+}
+
+async function runDeliveryCommand(args) {
+  const deliveryRoot = path.join(ECOSYSTEM_ROOT, "..", "delivery");
+  const lanes = delivery.loadLanes(deliveryRoot);
+  const [subcommand, projectId, ...options] = args;
+  if (subcommand === "status") {
+    delivery.printTable(delivery.loadState(deliveryRoot));
+    return 0;
+  }
+  if (subcommand === "plan") {
+    for (const lane of lanes) {
+      const selection = delivery.selectNextTask(lane);
+      console.log(`${lane.id}\t${selection.status}\t${selection.task}\t${selection.blocker}`);
+    }
+    return 0;
+  }
+  if (subcommand === "report") {
+    process.stdout.write(fs.readFileSync(path.join(deliveryRoot, "report.md"), "utf8"));
+    return 0;
+  }
+  if (subcommand === "run" || subcommand === "run-all") {
+    const dryRun = options.includes("--dry-run") || (subcommand === "run-all" && projectId === "--dry-run");
+    if (!dryRun) {
+      console.error("Delivery execution is dry-run only until approved AX-06 authorization and lane backlogs exist.");
+      return 2;
+    }
+    const selectedProject = subcommand === "run" ? projectId : null;
+    const result = await delivery.runDryRun(lanes, selectedProject, {
+      controlRoot: CONTROL,
+      deliveryRoot,
+      canonicalRepo: ROOT,
+    });
+    console.log(JSON.stringify(result, null, 2));
+    return result.results.some((item) => ["FAILED", "BLOCKED"].includes(item.status)) ? 1 : 0;
+  }
+  console.log("Usage: ./afuza delivery <status|plan|run <project> --dry-run|run-all --dry-run|report>");
+  return 2;
 }
 
 async function main(argv) {
   const [command, ...args] = argv;
+  if (command === "delivery") return runDeliveryCommand(args);
   if (command === "ecosystem") {
     const context = loadContext();
     return runEcosystemCommand(context.ecosystem, args[0]);
