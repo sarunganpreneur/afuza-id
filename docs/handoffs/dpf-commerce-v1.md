@@ -55,10 +55,12 @@ FINAL_HANDOFF_HEAD: resolve with `git rev-parse HEAD`; the self-referential comm
 - Test fixture: `src/lib/commerce/test-fixtures.ts`; disposable database setup/assertions: `supabase/tests/dpf_commerce_v1.sql`. Neither is automatically applied by the migration.
 
 ## TEST RESULTS
+- Final verification run: 2026-10-04; migration tested only on disposable local PostgreSQL.
 - Focused commerce tests: PASS, 16 tests across 2 files.
 - Disposable PostgreSQL verification: PASS, via `bash scripts/test-dpf-commerce-postgres.sh`.
-- Namespace collision contract: PASS; incompatible generic `public.orders`, `public.order_items`, and `public.payments` with RLS, policies, index, trigger, and sentinel rows remain unchanged while DPF tables are created.
+- Namespace collision contract: PASS; incompatible generic `public.orders`, `public.order_items`, and `public.payments` retain their sentinel schema/data, RLS, each table's index, trigger, and policy while DPF tables are created.
 - PostgREST relation selector: PASS; `dpf_order_items` uses `dpf_product_addons(addon_product_id)`, backed by the migration FK and asserted by SQL/service regressions.
+- Bucket checks: PASS; missing bucket created private, existing private bucket accepted, existing public bucket rejected with full migration rollback and public visibility preserved.
 - `npm run lint`: PASS.
 - `npx tsc --noEmit --pretty false`: PASS.
 - `npm run test -- --run`: PASS, 498 tests across 44 files.
