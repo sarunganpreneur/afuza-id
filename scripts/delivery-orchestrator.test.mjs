@@ -9,6 +9,7 @@ const {
   classifyChecks,
   discoverLanes,
   markdownReport,
+  parseBacklogMarkdown,
   runDryRun,
   runIndependentLanes,
   selectNextTask,
@@ -50,6 +51,19 @@ describe("delivery orchestrator", () => {
 
   it("keeps task selection awaiting approval without both approved sources", () => {
     expect(selectNextTask(lane)).toMatchObject({ status: "AWAITING_APPROVAL", approval_required: true });
+  });
+
+  it("parses an approved Markdown backlog and selects only its declared task", () => {
+    const backlog = parseBacklogMarkdown(`---\nproject_id: chalwa.id\napproval_id: AX06-001\ntasks:\n  - id: AX06-CHALWA-001\n    status: READY\n---\n\n# Approved AX-06 backlog\n`);
+    expect(selectNextTask(lane, {
+      authorization: { status: "APPROVED", decision_id: "AX06-001", approving_authority: "Portfolio owner" },
+      backlog,
+    })).toMatchObject({ status: "READY", task: "AX06-CHALWA-001", approval_required: false });
+  });
+
+  it("rejects an unstructured Markdown backlog", () => {
+    expect(() => parseBacklogMarkdown("# AX-06 Backlog\nNo approved metadata."))
+      .toThrow(/YAML front matter/);
   });
 
   it("blocks production actions", () => {

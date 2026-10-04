@@ -5,6 +5,7 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const crypto = require("node:crypto");
 const Ajv = require("ajv");
+const yaml = require("js-yaml");
 
 const PROJECTS = ["chalwa.id", "klodhost", "marketing-agency"];
 const PROJECT_ALIASES = { chalwa: "chalwa.id" };
@@ -17,6 +18,16 @@ const BLOCKED_ACTIONS = new Set([
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function parseBacklogMarkdown(markdown) {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(markdown);
+  if (!match) throw new Error("AX-06 backlog must declare YAML front matter");
+  const backlog = yaml.load(match[1], { schema: yaml.JSON_SCHEMA });
+  if (!backlog || typeof backlog !== "object" || Array.isArray(backlog)) {
+    throw new Error("AX-06 backlog front matter must be a mapping");
+  }
+  return backlog;
 }
 
 function discoverLanes(registry) {
@@ -164,7 +175,7 @@ async function inspectLane(lane, options = {}) {
   let authorization = null;
   let backlog = null;
   try { authorization = readJson(authorizationPath); } catch { /* Missing approval is the expected initial state. */ }
-  try { backlog = readJson(sourcePath); } catch { /* Missing backlog is the expected initial state. */ }
+  try { backlog = parseBacklogMarkdown(fs.readFileSync(sourcePath, "utf8")); } catch { /* Missing or invalid backlog is the expected initial state. */ }
   const selection = selectNextTask(lane, { authorization, backlog });
   checks.milestone = check("milestone", selection.status !== "AWAITING_APPROVAL", selection.blocker || "Approved backlog available");
 
@@ -315,6 +326,7 @@ module.exports = {
   loadLanes,
   loadState,
   markdownReport,
+  parseBacklogMarkdown,
   persistResults,
   printTable,
   runDryRun,

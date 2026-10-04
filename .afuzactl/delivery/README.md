@@ -21,7 +21,7 @@ Dry-run checks repo cleanliness and HEAD, script availability, `git diff --check
 For task selection to move beyond `AWAITING_APPROVAL`, create and approve both:
 
 1. Canonical decision: `.afuzactl/delivery/authorizations/AX-06.json`, containing decision ID, approving authority, date, scope, allowed lanes/actions, and explicit exclusions.
-2. One lane backlog in each authorized app repo: `docs/AX-06-BACKLOG.md`, with milestone, ordered tasks, acceptance criteria, dependencies, verification gates, and a reference to the canonical decision ID.
+2. One lane backlog in each authorized app repo: `docs/AX-06-BACKLOG.md`, with YAML front matter containing `project_id`, `approval_id`, and a non-empty `tasks` list (`id` and `status`), followed by Markdown documenting the milestone, ordered tasks, acceptance criteria, dependencies, verification gates, and reference to the canonical decision ID.
 
 The canonical decision and lane backlog must agree on project scope and approval. A file's presence alone is not authorization. Until the selector validates both, no AX-06 task is selected.
 
