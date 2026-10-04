@@ -10,6 +10,9 @@
     "afuza": "node scripts/afuza.cjs",
     "generation:worker": "tsx scripts/generation-worker.ts",
     "generation:worker:dry-run": "tsx scripts/generation-dry-run.ts",
+    "dpf:generate": "tsx scripts/dpf-launch-batch.ts generate",
+    "dpf:validate": "tsx scripts/dpf-launch-batch.ts validate",
+    "dpf:dry-run": "tsx scripts/dpf-launch-batch.ts dry-run",
     "test": "vitest"
   },
   "dependencies": {

@@ -1,0 +1,3300 @@
+{
+  "batchId": "DPF-LAUNCH-BATCH-01",
+  "factoryVersion": "1.0.0",
+  "generatedAt": "2026-10-04T00:00:00.000Z",
+  "masterVersions": {
+    "HPP": "V1",
+    "BOOK": "V1",
+    "INV": "V1",
+    "ADMIN": "V1",
+    "MKT": "V1"
+  },
+  "nicheVersions": {
+    "KUL": "V1",
+    "CAF": "V1",
+    "RTL": "V1",
+    "FAS": "V1",
+    "LND": "V1",
+    "SAL": "V1",
+    "BNG": "V1",
+    "ONL": "V1",
+    "BAK": "V1",
+    "PRO": "V1"
+  },
+  "products": [
+    {
+      "sku": "DPF-KUL-HPP-V1",
+      "slug": "dpf-kul-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "KUL",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk kuliner / warung / resto dan menggunakan bahan baku dan hasil produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "bahan baku utama",
+        "bumbu dan pelengkap",
+        "promo menu favorit",
+        "upsell tambahan"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "kul",
+        "kuliner",
+        "warung",
+        "resto"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-KUL-BOOK-V1",
+          "DPF-KUL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-CAF-HPP-V1",
+      "slug": "dpf-caf-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "CAF",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk cafe / coffee shop dan menggunakan biji kopi dan susu dan hasil recipe yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "biji kopi",
+        "susu dan sirup",
+        "promo signature drink",
+        "bundling pastry"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "caf",
+        "cafe",
+        "coffee",
+        "shop"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-CAF-BOOK-V1",
+          "DPF-CAF-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 75
+      }
+    },
+    {
+      "sku": "DPF-RTL-HPP-V1",
+      "slug": "dpf-rtl-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "RTL",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk retail / toko kelontong dan menggunakan barang dagangan dan turnover item yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "harga beli barang",
+        "biaya pengiriman",
+        "promo kebutuhan pokok",
+        "bundle harian"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "rtl",
+        "retail",
+        "toko",
+        "kelontong"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-RTL-BOOK-V1",
+          "DPF-RTL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-FAS-HPP-V1",
+      "slug": "dpf-fas-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "FAS",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk fashion / clothing dan menggunakan blank product dan jumlah produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "blank product",
+        "biaya produksi",
+        "lookbook",
+        "promo size"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "fas",
+        "fashion",
+        "clothing"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-FAS-BOOK-V1",
+          "DPF-FAS-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-LND-HPP-V1",
+      "slug": "dpf-lnd-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "LND",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk laundry dan menggunakan detergen dan pewangi dan kg cucian yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "detergen",
+        "pewangi",
+        "promo per kg",
+        "paket langganan"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "lnd",
+        "laundry"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-LND-BOOK-V1",
+          "DPF-LND-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-SAL-HPP-V1",
+      "slug": "dpf-sal-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "SAL",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk salon / barbershop dan menggunakan bahan perawatan dan durasi sesi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "bahan perawatan",
+        "pelayanan tenaga ahli",
+        "promo paket baru",
+        "member loyalty"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "sal",
+        "salon",
+        "barbershop"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-SAL-BOOK-V1",
+          "DPF-SAL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-BNG-HPP-V1",
+      "slug": "dpf-bng-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "BNG",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk bengkel dan menggunakan spare part dan consumable dan service job yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "spare part",
+        "oli dan consumable",
+        "promo servis berkala",
+        "paket tune-up"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "bng",
+        "bengkel"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BNG-BOOK-V1",
+          "DPF-BNG-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-ONL-HPP-V1",
+      "slug": "dpf-onl-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "ONL",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk toko online / reseller dan menggunakan produk utama dan order volume yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "harga beli produk",
+        "ongkir",
+        "promo produk",
+        "copy katalog"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "onl",
+        "toko",
+        "online",
+        "reseller"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-ONL-BOOK-V1",
+          "DPF-ONL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-BAK-HPP-V1",
+      "slug": "dpf-bak-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "BAK",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk bakery / snack dan menggunakan bahan kue dan snack dan hasil batch yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "bahan baku",
+        "kemasan",
+        "produk favorit",
+        "promo kemasan"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "bak",
+        "bakery",
+        "snack"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BAK-BOOK-V1",
+          "DPF-BAK-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-PRO-HPP-V1",
+      "slug": "dpf-pro-hpp-v1",
+      "masterId": "HPP",
+      "nicheId": "PRO",
+      "price": 19000,
+      "description": "Menghitung komponen biaya, margin, dan harga jual yang realistis untuk niche tertentu. Variasi ini dibuat khusus untuk jasa profesional dan menggunakan waktu dan sumber daya dan durasi jasa yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "perhitungan HPP",
+        "simulasi margin",
+        "rekomendasi harga jual",
+        "alokasi biaya operasional",
+        "waktu kerja",
+        "komunikasi",
+        "portfolio kerja",
+        "paket jasa"
+      ],
+      "tags": [
+        "dpf",
+        "hpp",
+        "pro",
+        "jasa",
+        "profesional"
+      ],
+      "assetContract": [
+        "calculator workbook",
+        "sample cost data",
+        "pricing guide",
+        "preview metadata",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-PRO-BOOK-V1",
+          "DPF-PRO-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 75
+      }
+    },
+    {
+      "sku": "DPF-KUL-BOOK-V1",
+      "slug": "dpf-kul-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "KUL",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk kuliner / warung / resto dan menggunakan bahan baku dan hasil produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "bahan baku utama",
+        "bumbu dan pelengkap",
+        "promo menu favorit",
+        "upsell tambahan"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "kul",
+        "kuliner",
+        "warung",
+        "resto"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-KUL-HPP-V1",
+          "DPF-KUL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-CAF-BOOK-V1",
+      "slug": "dpf-caf-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "CAF",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk cafe / coffee shop dan menggunakan biji kopi dan susu dan hasil recipe yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "biji kopi",
+        "susu dan sirup",
+        "promo signature drink",
+        "bundling pastry"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "caf",
+        "cafe",
+        "coffee",
+        "shop"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-CAF-HPP-V1",
+          "DPF-CAF-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-RTL-BOOK-V1",
+      "slug": "dpf-rtl-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "RTL",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk retail / toko kelontong dan menggunakan barang dagangan dan turnover item yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "harga beli barang",
+        "biaya pengiriman",
+        "promo kebutuhan pokok",
+        "bundle harian"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "rtl",
+        "retail",
+        "toko",
+        "kelontong"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-RTL-HPP-V1",
+          "DPF-RTL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 75
+      }
+    },
+    {
+      "sku": "DPF-FAS-BOOK-V1",
+      "slug": "dpf-fas-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "FAS",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk fashion / clothing dan menggunakan blank product dan jumlah produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "blank product",
+        "biaya produksi",
+        "lookbook",
+        "promo size"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "fas",
+        "fashion",
+        "clothing"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-FAS-HPP-V1",
+          "DPF-FAS-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-LND-BOOK-V1",
+      "slug": "dpf-lnd-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "LND",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk laundry dan menggunakan detergen dan pewangi dan kg cucian yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "detergen",
+        "pewangi",
+        "promo per kg",
+        "paket langganan"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "lnd",
+        "laundry"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-LND-HPP-V1",
+          "DPF-LND-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-SAL-BOOK-V1",
+      "slug": "dpf-sal-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "SAL",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk salon / barbershop dan menggunakan bahan perawatan dan durasi sesi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "bahan perawatan",
+        "pelayanan tenaga ahli",
+        "promo paket baru",
+        "member loyalty"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "sal",
+        "salon",
+        "barbershop"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-SAL-HPP-V1",
+          "DPF-SAL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-BNG-BOOK-V1",
+      "slug": "dpf-bng-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "BNG",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk bengkel dan menggunakan spare part dan consumable dan service job yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "spare part",
+        "oli dan consumable",
+        "promo servis berkala",
+        "paket tune-up"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "bng",
+        "bengkel"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BNG-HPP-V1",
+          "DPF-BNG-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 75
+      }
+    },
+    {
+      "sku": "DPF-ONL-BOOK-V1",
+      "slug": "dpf-onl-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "ONL",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk toko online / reseller dan menggunakan produk utama dan order volume yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "harga beli produk",
+        "ongkir",
+        "promo produk",
+        "copy katalog"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "onl",
+        "toko",
+        "online",
+        "reseller"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-ONL-HPP-V1",
+          "DPF-ONL-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-BAK-BOOK-V1",
+      "slug": "dpf-bak-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "BAK",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk bakery / snack dan menggunakan bahan kue dan snack dan hasil batch yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "bahan baku",
+        "kemasan",
+        "produk favorit",
+        "promo kemasan"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "bak",
+        "bakery",
+        "snack"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BAK-HPP-V1",
+          "DPF-BAK-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-PRO-BOOK-V1",
+      "slug": "dpf-pro-book-v1",
+      "masterId": "BOOK",
+      "nicheId": "PRO",
+      "price": 29000,
+      "description": "Mencatat transaksi, pendapatan, pengeluaran, dan ringkasan finansial operasional bisnis. Variasi ini dibuat khusus untuk jasa profesional dan menggunakan waktu dan sumber daya dan durasi jasa yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "transaksi harian",
+        "laporan bulanan",
+        "ringkasan laba rugi",
+        "analisis biaya",
+        "waktu kerja",
+        "komunikasi",
+        "portfolio kerja",
+        "paket jasa"
+      ],
+      "tags": [
+        "dpf",
+        "book",
+        "pro",
+        "jasa",
+        "profesional"
+      ],
+      "assetContract": [
+        "transaction workbook",
+        "monthly summary",
+        "sample transaction data",
+        "usage guide",
+        "version metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "INV"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "INV"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-PRO-HPP-V1",
+          "DPF-PRO-INV-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-KUL-INV-V1",
+      "slug": "dpf-kul-inv-v1",
+      "masterId": "INV",
+      "nicheId": "KUL",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk kuliner / warung / resto dan menggunakan bahan baku dan hasil produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "bahan baku utama",
+        "bumbu dan pelengkap",
+        "promo menu favorit",
+        "upsell tambahan"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "kul",
+        "kuliner",
+        "warung",
+        "resto"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-KUL-HPP-V1",
+          "DPF-KUL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-CAF-INV-V1",
+      "slug": "dpf-caf-inv-v1",
+      "masterId": "INV",
+      "nicheId": "CAF",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk cafe / coffee shop dan menggunakan biji kopi dan susu dan hasil recipe yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "biji kopi",
+        "susu dan sirup",
+        "promo signature drink",
+        "bundling pastry"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "caf",
+        "cafe",
+        "coffee",
+        "shop"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-CAF-HPP-V1",
+          "DPF-CAF-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-RTL-INV-V1",
+      "slug": "dpf-rtl-inv-v1",
+      "masterId": "INV",
+      "nicheId": "RTL",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk retail / toko kelontong dan menggunakan barang dagangan dan turnover item yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "harga beli barang",
+        "biaya pengiriman",
+        "promo kebutuhan pokok",
+        "bundle harian"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "rtl",
+        "retail",
+        "toko",
+        "kelontong"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-RTL-HPP-V1",
+          "DPF-RTL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-FAS-INV-V1",
+      "slug": "dpf-fas-inv-v1",
+      "masterId": "INV",
+      "nicheId": "FAS",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk fashion / clothing dan menggunakan blank product dan jumlah produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "blank product",
+        "biaya produksi",
+        "lookbook",
+        "promo size"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "fas",
+        "fashion",
+        "clothing"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-FAS-HPP-V1",
+          "DPF-FAS-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-LND-INV-V1",
+      "slug": "dpf-lnd-inv-v1",
+      "masterId": "INV",
+      "nicheId": "LND",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk laundry dan menggunakan detergen dan pewangi dan kg cucian yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "detergen",
+        "pewangi",
+        "promo per kg",
+        "paket langganan"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "lnd",
+        "laundry"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-LND-HPP-V1",
+          "DPF-LND-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-SAL-INV-V1",
+      "slug": "dpf-sal-inv-v1",
+      "masterId": "INV",
+      "nicheId": "SAL",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk salon / barbershop dan menggunakan bahan perawatan dan durasi sesi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "bahan perawatan",
+        "pelayanan tenaga ahli",
+        "promo paket baru",
+        "member loyalty"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "sal",
+        "salon",
+        "barbershop"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-SAL-HPP-V1",
+          "DPF-SAL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-BNG-INV-V1",
+      "slug": "dpf-bng-inv-v1",
+      "masterId": "INV",
+      "nicheId": "BNG",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk bengkel dan menggunakan spare part dan consumable dan service job yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "spare part",
+        "oli dan consumable",
+        "promo servis berkala",
+        "paket tune-up"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "bng",
+        "bengkel"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BNG-HPP-V1",
+          "DPF-BNG-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-ONL-INV-V1",
+      "slug": "dpf-onl-inv-v1",
+      "masterId": "INV",
+      "nicheId": "ONL",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk toko online / reseller dan menggunakan produk utama dan order volume yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "harga beli produk",
+        "ongkir",
+        "promo produk",
+        "copy katalog"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "onl",
+        "toko",
+        "online",
+        "reseller"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-ONL-HPP-V1",
+          "DPF-ONL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-BAK-INV-V1",
+      "slug": "dpf-bak-inv-v1",
+      "masterId": "INV",
+      "nicheId": "BAK",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk bakery / snack dan menggunakan bahan kue dan snack dan hasil batch yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "bahan baku",
+        "kemasan",
+        "produk favorit",
+        "promo kemasan"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "bak",
+        "bakery",
+        "snack"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BAK-HPP-V1",
+          "DPF-BAK-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-PRO-INV-V1",
+      "slug": "dpf-pro-inv-v1",
+      "masterId": "INV",
+      "nicheId": "PRO",
+      "price": 25000,
+      "description": "Memonitor stok barang, pergerakan persediaan, dan pemesanan ulang sederhana. Variasi ini dibuat khusus untuk jasa profesional dan menggunakan waktu dan sumber daya dan durasi jasa yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "item master",
+        "low-stock alert",
+        "stok per kategori",
+        "nilai persediaan",
+        "waktu kerja",
+        "komunikasi",
+        "portfolio kerja",
+        "paket jasa"
+      ],
+      "tags": [
+        "dpf",
+        "inv",
+        "pro",
+        "jasa",
+        "profesional"
+      ],
+      "assetContract": [
+        "stock workbook",
+        "item master",
+        "movement log",
+        "sample inventory data",
+        "preview metadata"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "HPP",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "HPP",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-PRO-HPP-V1",
+          "DPF-PRO-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-KUL-ADMIN-V1",
+      "slug": "dpf-kul-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "KUL",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk kuliner / warung / resto dan menggunakan bahan baku dan hasil produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "bahan baku utama",
+        "bumbu dan pelengkap",
+        "promo menu favorit",
+        "upsell tambahan"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "kul",
+        "kuliner",
+        "warung",
+        "resto"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-KUL-BOOK-V1",
+          "DPF-KUL-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-CAF-ADMIN-V1",
+      "slug": "dpf-caf-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "CAF",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk cafe / coffee shop dan menggunakan biji kopi dan susu dan hasil recipe yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "biji kopi",
+        "susu dan sirup",
+        "promo signature drink",
+        "bundling pastry"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "caf",
+        "cafe",
+        "coffee",
+        "shop"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-CAF-BOOK-V1",
+          "DPF-CAF-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-RTL-ADMIN-V1",
+      "slug": "dpf-rtl-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "RTL",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk retail / toko kelontong dan menggunakan barang dagangan dan turnover item yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "harga beli barang",
+        "biaya pengiriman",
+        "promo kebutuhan pokok",
+        "bundle harian"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "rtl",
+        "retail",
+        "toko",
+        "kelontong"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-RTL-BOOK-V1",
+          "DPF-RTL-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-FAS-ADMIN-V1",
+      "slug": "dpf-fas-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "FAS",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk fashion / clothing dan menggunakan blank product dan jumlah produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "blank product",
+        "biaya produksi",
+        "lookbook",
+        "promo size"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "fas",
+        "fashion",
+        "clothing"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-FAS-BOOK-V1",
+          "DPF-FAS-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-LND-ADMIN-V1",
+      "slug": "dpf-lnd-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "LND",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk laundry dan menggunakan detergen dan pewangi dan kg cucian yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "detergen",
+        "pewangi",
+        "promo per kg",
+        "paket langganan"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "lnd",
+        "laundry"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-LND-BOOK-V1",
+          "DPF-LND-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-SAL-ADMIN-V1",
+      "slug": "dpf-sal-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "SAL",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk salon / barbershop dan menggunakan bahan perawatan dan durasi sesi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "bahan perawatan",
+        "pelayanan tenaga ahli",
+        "promo paket baru",
+        "member loyalty"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "sal",
+        "salon",
+        "barbershop"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-SAL-BOOK-V1",
+          "DPF-SAL-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-BNG-ADMIN-V1",
+      "slug": "dpf-bng-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "BNG",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk bengkel dan menggunakan spare part dan consumable dan service job yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "spare part",
+        "oli dan consumable",
+        "promo servis berkala",
+        "paket tune-up"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "bng",
+        "bengkel"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BNG-BOOK-V1",
+          "DPF-BNG-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-ONL-ADMIN-V1",
+      "slug": "dpf-onl-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "ONL",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk toko online / reseller dan menggunakan produk utama dan order volume yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "harga beli produk",
+        "ongkir",
+        "promo produk",
+        "copy katalog"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "onl",
+        "toko",
+        "online",
+        "reseller"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-ONL-BOOK-V1",
+          "DPF-ONL-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-BAK-ADMIN-V1",
+      "slug": "dpf-bak-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "BAK",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk bakery / snack dan menggunakan bahan kue dan snack dan hasil batch yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "bahan baku",
+        "kemasan",
+        "produk favorit",
+        "promo kemasan"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "bak",
+        "bakery",
+        "snack"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BAK-BOOK-V1",
+          "DPF-BAK-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-PRO-ADMIN-V1",
+      "slug": "dpf-pro-admin-v1",
+      "masterId": "ADMIN",
+      "nicheId": "PRO",
+      "price": 29000,
+      "description": "Menyediakan template administrasi operasional, dokumentasi kerja, dan tugas harian yang relevan dengan bisnis. Variasi ini dibuat khusus untuk jasa profesional dan menggunakan waktu dan sumber daya dan durasi jasa yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "operasional checklist",
+        "template dokumen",
+        "jadwal kerja",
+        "catatan pelanggan/mitra",
+        "waktu kerja",
+        "komunikasi",
+        "portfolio kerja",
+        "paket jasa"
+      ],
+      "tags": [
+        "dpf",
+        "admin",
+        "pro",
+        "jasa",
+        "profesional"
+      ],
+      "assetContract": [
+        "operational workbook",
+        "template set",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "BOOK",
+          "MKT"
+        ],
+        "allowed_master_ids": [
+          "BOOK",
+          "MKT"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-PRO-BOOK-V1",
+          "DPF-PRO-MKT-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-KUL-MKT-V1",
+      "slug": "dpf-kul-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "KUL",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk kuliner / warung / resto dan menggunakan bahan baku dan hasil produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "bahan baku utama",
+        "bumbu dan pelengkap",
+        "promo menu favorit",
+        "upsell tambahan"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "kul",
+        "kuliner",
+        "warung",
+        "resto"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-KUL-ADMIN-V1",
+          "DPF-KUL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-CAF-MKT-V1",
+      "slug": "dpf-caf-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "CAF",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk cafe / coffee shop dan menggunakan biji kopi dan susu dan hasil recipe yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "biji kopi",
+        "susu dan sirup",
+        "promo signature drink",
+        "bundling pastry"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "caf",
+        "cafe",
+        "coffee",
+        "shop"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-CAF-ADMIN-V1",
+          "DPF-CAF-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-RTL-MKT-V1",
+      "slug": "dpf-rtl-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "RTL",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk retail / toko kelontong dan menggunakan barang dagangan dan turnover item yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "harga beli barang",
+        "biaya pengiriman",
+        "promo kebutuhan pokok",
+        "bundle harian"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "rtl",
+        "retail",
+        "toko",
+        "kelontong"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-RTL-ADMIN-V1",
+          "DPF-RTL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 75
+      }
+    },
+    {
+      "sku": "DPF-FAS-MKT-V1",
+      "slug": "dpf-fas-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "FAS",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk fashion / clothing dan menggunakan blank product dan jumlah produksi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "blank product",
+        "biaya produksi",
+        "lookbook",
+        "promo size"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "fas",
+        "fashion",
+        "clothing"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-FAS-ADMIN-V1",
+          "DPF-FAS-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-LND-MKT-V1",
+      "slug": "dpf-lnd-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "LND",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk laundry dan menggunakan detergen dan pewangi dan kg cucian yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "detergen",
+        "pewangi",
+        "promo per kg",
+        "paket langganan"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "lnd",
+        "laundry"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-LND-ADMIN-V1",
+          "DPF-LND-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-SAL-MKT-V1",
+      "slug": "dpf-sal-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "SAL",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk salon / barbershop dan menggunakan bahan perawatan dan durasi sesi yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "bahan perawatan",
+        "pelayanan tenaga ahli",
+        "promo paket baru",
+        "member loyalty"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "sal",
+        "salon",
+        "barbershop"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-SAL-ADMIN-V1",
+          "DPF-SAL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 67
+      }
+    },
+    {
+      "sku": "DPF-BNG-MKT-V1",
+      "slug": "dpf-bng-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "BNG",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk bengkel dan menggunakan spare part dan consumable dan service job yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "spare part",
+        "oli dan consumable",
+        "promo servis berkala",
+        "paket tune-up"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "bng",
+        "bengkel"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BNG-ADMIN-V1",
+          "DPF-BNG-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-ONL-MKT-V1",
+      "slug": "dpf-onl-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "ONL",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk toko online / reseller dan menggunakan produk utama dan order volume yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "harga beli produk",
+        "ongkir",
+        "promo produk",
+        "copy katalog"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "onl",
+        "toko",
+        "online",
+        "reseller"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-ONL-ADMIN-V1",
+          "DPF-ONL-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-BAK-MKT-V1",
+      "slug": "dpf-bak-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "BAK",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk bakery / snack dan menggunakan bahan kue dan snack dan hasil batch yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "bahan baku",
+        "kemasan",
+        "produk favorit",
+        "promo kemasan"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "bak",
+        "bakery",
+        "snack"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-BAK-ADMIN-V1",
+          "DPF-BAK-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    },
+    {
+      "sku": "DPF-PRO-MKT-V1",
+      "slug": "dpf-pro-mkt-v1",
+      "masterId": "MKT",
+      "nicheId": "PRO",
+      "price": 39000,
+      "description": "Menyediakan materi promosi, konten, dan ide campaign yang sesuai dengan karakter usaha niche. Variasi ini dibuat khusus untuk jasa profesional dan menggunakan waktu dan sumber daya dan durasi jasa yang sesuai dengan pola bisnis tersebut.",
+      "features": [
+        "headline produk",
+        "5–10 konsep konten",
+        "promo dan CTA",
+        "kalender aktifitas pemasaran",
+        "waktu kerja",
+        "komunikasi",
+        "portfolio kerja",
+        "paket jasa"
+      ],
+      "tags": [
+        "dpf",
+        "mkt",
+        "pro",
+        "jasa",
+        "profesional"
+      ],
+      "assetContract": [
+        "campaign planning workbook",
+        "content templates",
+        "usage guide",
+        "preview metadata",
+        "license text"
+      ],
+      "compatibility": {
+        "sameNicheOnly": true,
+        "same_niche_only": true,
+        "allowedMasterIds": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "allowed_master_ids": [
+          "ADMIN",
+          "BOOK"
+        ],
+        "offerMatrix": {
+          "HPP": 19000,
+          "BOOK": 19000,
+          "INV": 15000,
+          "ADMIN": 19000,
+          "MKT": 29000
+        },
+        "relatedSkus": [
+          "DPF-PRO-ADMIN-V1",
+          "DPF-PRO-BOOK-V1"
+        ]
+      },
+      "validation": {
+        "nicheSpecificityScore": 71
+      }
+    }
+  ],
+  "validationSummary": {
+    "masterCount": 5,
+    "nicheCount": 10,
+    "productCount": 50,
+    "validProductCount": 50,
+    "invalidProductCount": 0,
+    "offerMatrix": {
+      "HPP": {
+        "BOOK": 19000,
+        "INV": 15000
+      },
+      "BOOK": {
+        "INV": 15000,
+        "ADMIN": 19000,
+        "MKT": 29000
+      },
+      "INV": {
+        "BOOK": 19000,
+        "ADMIN": 19000,
+        "MKT": 29000
+      },
+      "ADMIN": {
+        "BOOK": 19000,
+        "MKT": 29000
+      },
+      "MKT": {
+        "BOOK": 19000,
+        "ADMIN": 19000
+      }
+    },
+    "nicheSpecificityThreshold": 60,
+    "avgNicheSpecificity": 70.6,
+    "assetCompleteness": 1,
+    "deterministic": true
+  },
+  "validationResults": [
+    {
+      "productSku": "DPF-KUL-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-CAF-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 75,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-RTL-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-FAS-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-LND-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-SAL-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BNG-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-ONL-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BAK-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-PRO-HPP-V1",
+      "valid": true,
+      "nicheSpecificityScore": 75,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-KUL-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-CAF-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-RTL-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 75,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-FAS-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-LND-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-SAL-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BNG-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 75,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-ONL-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BAK-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-PRO-BOOK-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-KUL-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-CAF-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-RTL-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-FAS-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-LND-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-SAL-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BNG-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-ONL-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BAK-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-PRO-INV-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-KUL-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-CAF-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-RTL-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-FAS-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-LND-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-SAL-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BNG-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-ONL-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BAK-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-PRO-ADMIN-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-KUL-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-CAF-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-RTL-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 75,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-FAS-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-LND-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-SAL-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 67,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BNG-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-ONL-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-BAK-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    },
+    {
+      "productSku": "DPF-PRO-MKT-V1",
+      "valid": true,
+      "nicheSpecificityScore": 71,
+      "issues": []
+    }
+  ],
+  "compatibilityMetadata": {
+    "sameNicheOnly": true,
+    "offerMatrix": {
+      "HPP": {
+        "BOOK": 19000,
+        "INV": 15000
+      },
+      "BOOK": {
+        "INV": 15000,
+        "ADMIN": 19000,
+        "MKT": 29000
+      },
+      "INV": {
+        "BOOK": 19000,
+        "ADMIN": 19000,
+        "MKT": 29000
+      },
+      "ADMIN": {
+        "BOOK": 19000,
+        "MKT": 29000
+      },
+      "MKT": {
+        "BOOK": 19000,
+        "ADMIN": 19000
+      }
+    }
+  }
+}
