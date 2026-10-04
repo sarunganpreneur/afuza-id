@@ -171,7 +171,7 @@ async function inspectLane(lane, options = {}) {
   }
 
   const sourcePath = path.join(repo, lane.next_task_source);
-  const authorizationPath = path.join(options.controlRoot || ".", "authorizations", "AX-06.json");
+  const authorizationPath = path.join(options.deliveryRoot || options.controlRoot || ".", "authorizations", "AX-06.json");
   let authorization = null;
   let backlog = null;
   try { authorization = readJson(authorizationPath); } catch { /* Missing approval is the expected initial state. */ }

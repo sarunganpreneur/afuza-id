@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-04T01:47:37.271Z",
+  "updated_at": "2026-10-04T01:53:07.590Z",
   "lanes": {
     "chalwa.id": {
       "schema_version": 1,
@@ -8,7 +8,7 @@
       "task": "AX-06 milestone selection",
       "status": "AWAITING_APPROVAL",
       "approval_required": true,
-      "updated_at": "2026-10-04T01:47:37.164Z",
+      "updated_at": "2026-10-04T01:53:07.483Z",
       "last_commit": "dcaa36ea006f561412a76f6c24a95d68dbc7677e",
       "test_result": "NOT_RUN (dry-run checks command availability only)",
       "staging_status": "PASS",
@@ -86,7 +86,7 @@
       },
       "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
       "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
-      "evidence_file": "delivery/evidence/chalwa.id/2026-10-04T01-47-35-585Z-1495574-221ecc.json",
+      "evidence_file": "delivery/evidence/chalwa.id/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
       "preflight": {
         "status": "AWAITING_APPROVAL",
         "checks": {
@@ -239,7 +239,7 @@
       "task": "AX-06 milestone selection",
       "status": "AWAITING_APPROVAL",
       "approval_required": true,
-      "updated_at": "2026-10-04T01:47:36.903Z",
+      "updated_at": "2026-10-04T01:53:07.503Z",
       "last_commit": "d6d315388ffdee62f70c875ba26f2688be905ea8",
       "test_result": "NOT_RUN (dry-run checks command availability only)",
       "staging_status": "PASS",
@@ -317,7 +317,7 @@
       },
       "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
       "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
-      "evidence_file": "delivery/evidence/klodhost/2026-10-04T01-47-35-585Z-1495574-221ecc.json",
+      "evidence_file": "delivery/evidence/klodhost/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
       "preflight": {
         "status": "AWAITING_APPROVAL",
         "checks": {
@@ -470,7 +470,7 @@
       "task": "AX-06 milestone selection",
       "status": "AWAITING_APPROVAL",
       "approval_required": true,
-      "updated_at": "2026-10-04T01:47:37.196Z",
+      "updated_at": "2026-10-04T01:53:07.519Z",
       "last_commit": "6443121d1c6d5d9b3019834721ee520b28883e45",
       "test_result": "NOT_RUN (dry-run checks command availability only)",
       "staging_status": "PASS",
@@ -548,7 +548,7 @@
       },
       "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
       "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
-      "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T01-47-35-585Z-1495574-221ecc.json",
+      "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
       "preflight": {
         "status": "AWAITING_APPROVAL",
         "checks": {

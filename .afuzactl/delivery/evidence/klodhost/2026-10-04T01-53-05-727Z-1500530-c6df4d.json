@@ -1,11 +1,13 @@
 {
+  "run_id": "2026-10-04T01-53-05-727Z-1500530-c6df4d",
+  "mode": "DRY_RUN",
   "schema_version": 1,
-  "project_id": "marketing-agency",
+  "project_id": "klodhost",
   "task": "AX-06 milestone selection",
   "status": "AWAITING_APPROVAL",
   "approval_required": true,
-  "updated_at": "2026-10-04T01:53:07.519Z",
-  "last_commit": "6443121d1c6d5d9b3019834721ee520b28883e45",
+  "updated_at": "2026-10-04T01:53:07.503Z",
+  "last_commit": "d6d315388ffdee62f70c875ba26f2688be905ea8",
   "test_result": "NOT_RUN (dry-run checks command availability only)",
   "staging_status": "PASS",
   "checks": {
@@ -17,7 +19,7 @@
     "app_head": {
       "name": "app_head",
       "status": "PASS",
-      "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+      "detail": "d6d315388ffdee62f70c875ba26f2688be905ea8"
     },
     "diff_check": {
       "name": "diff_check",
@@ -57,7 +59,7 @@
     "listener": {
       "name": "listener",
       "status": "PASS",
-      "detail": "Port 4513 is loopback-only"
+      "detail": "Port 4512 is loopback-only"
     },
     "fake_mode": {
       "name": "fake_mode",
@@ -82,7 +84,7 @@
   },
   "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
   "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
-  "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
+  "evidence_file": "delivery/evidence/klodhost/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
   "preflight": {
     "status": "AWAITING_APPROVAL",
     "checks": {
@@ -94,7 +96,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+        "detail": "d6d315388ffdee62f70c875ba26f2688be905ea8"
       },
       "diff_check": {
         "name": "diff_check",
@@ -134,7 +136,7 @@
       "listener": {
         "name": "listener",
         "status": "PASS",
-        "detail": "Port 4513 is loopback-only"
+        "detail": "Port 4512 is loopback-only"
       },
       "fake_mode": {
         "name": "fake_mode",
@@ -164,7 +166,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+        "detail": "d6d315388ffdee62f70c875ba26f2688be905ea8"
       },
       "diff_check": {
         "name": "diff_check",
@@ -204,7 +206,7 @@
       "listener": {
         "name": "listener",
         "status": "PASS",
-        "detail": "Port 4513 is loopback-only"
+        "detail": "Port 4512 is loopback-only"
       },
       "fake_mode": {
         "name": "fake_mode",
