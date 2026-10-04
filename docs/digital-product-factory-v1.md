@@ -546,7 +546,7 @@ Preferred pattern: extend the current Supabase schema with new additive tables. 
 - it avoids parallel security and RLS logic
 - it keeps product/order/payment state in one source of truth
 
-Proposed minimal tables:
+Conceptual table names:
 - `products`
 - `product_addons`
 - `carts`
@@ -555,6 +555,17 @@ Proposed minimal tables:
 - `payments`
 - `customer_entitlements`
 - `delivery_assets`
+
+Physical PostgreSQL persistence names for the Commerce-owned entities:
+- `products` -> `dpf_products`
+- `product_addons` -> `dpf_product_addons`
+- `orders` -> `dpf_orders`
+- `order_items` -> `dpf_order_items`
+- `payments` -> `dpf_payments`
+- `customer_entitlements` -> `dpf_customer_entitlements`
+- `delivery_assets` -> `dpf_delivery_assets`
+
+The `dpf_` physical namespace is required for preventive shared-schema isolation and ownership clarity in Afuza's shared PostgreSQL `public` schema. Conceptual entities and business semantics do not change. `carts` remains a conceptual contract only; no physical cart table is introduced by this V1 migration.
 
 ### 7.2 Recommended schema plan
 

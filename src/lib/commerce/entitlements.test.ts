@@ -28,7 +28,7 @@ function installClient(authenticatedUserId: string | null) {
     select: vi.fn().mockReturnThis(),
     in: vi.fn().mockResolvedValue({ data: [{ id: "22222222-2222-4222-8222-222222222222" }], error: null }),
   };
-  const from = vi.fn((table: string) => table === "customer_entitlements" ? entitlementQuery : productQuery);
+  const from = vi.fn((table: string) => table === "dpf_customer_entitlements" ? entitlementQuery : productQuery);
   mocks.createClient.mockResolvedValue({
     auth: { getUser: vi.fn().mockResolvedValue({ data: { user: authenticatedUserId ? { id: authenticatedUserId } : null } }) },
     from,
@@ -47,8 +47,8 @@ describe("customer entitlement reads", () => {
     await expect(getMyProducts(userId)).resolves.toEqual([
       { id: "22222222-2222-4222-8222-222222222222", title: "Kalkulator HPP" },
     ]);
-    expect(from).toHaveBeenCalledWith("customer_entitlements");
-    expect(from).toHaveBeenCalledWith("products");
+    expect(from).toHaveBeenCalledWith("dpf_customer_entitlements");
+    expect(from).toHaveBeenCalledWith("dpf_products");
   });
 
   it("does not read or return another user's entitlements", async () => {

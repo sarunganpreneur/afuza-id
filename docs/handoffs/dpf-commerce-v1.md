@@ -25,20 +25,45 @@ FINAL_HANDOFF_HEAD: resolve with `git rev-parse HEAD`; the self-referential comm
 - The HPP product and two add-ons exist only as test fixtures, not migration catalog seed data.
 
 ## SCHEMA/MIGRATIONS
+- SCHEMA_NAMESPACE_DECISION: DPF_PREFIXED
+- NAMESPACE_POLICY: PREVENTIVE_SHARED_SCHEMA_ISOLATION
+- CONCEPTUAL_TABLES:
+	- products
+	- product_addons
+	- orders
+	- order_items
+	- payments
+	- customer_entitlements
+	- delivery_assets
+- PHYSICAL_TABLES:
+	- dpf_products
+	- dpf_product_addons
+	- dpf_orders
+	- dpf_order_items
+	- dpf_payments
+	- dpf_customer_entitlements
+	- dpf_delivery_assets
+- NAMESPACE_REASON: Prevent ownership ambiguity and future table collisions in Afuza shared PostgreSQL schema. Conceptual Commerce names and business semantics are unchanged.
 - Migration: `supabase/migrations/20261004_dpf_commerce_v1.sql`.
-- Physical tables: `products`, `product_addons`, `orders`, `order_items`, `payments`, `customer_entitlements`, `delivery_assets`.
+- Physical tables: `dpf_products`, `dpf_product_addons`, `dpf_orders`, `dpf_order_items`, `dpf_payments`, `dpf_customer_entitlements`, `dpf_delivery_assets`. Generic Afuza `orders`, `order_items`, and `payments` are not used or modified.
 - RPCs: `dpf_create_checkout(uuid, uuid[], integer, text)` and `dpf_record_payment(uuid, text, text, integer, text, jsonb)`.
 - Guard triggers: `dpf_guard_order_update()` makes order totals/snapshot immutable and PAID terminal; `dpf_guard_order_item_update()` protects order-item snapshots.
 - Private Storage bucket: `dpf-delivery-v1`.
+- DPF-owned indexes, policies, triggers, and functions use the `dpf_` prefix. Commerce statuses remain checked text columns; this migration introduces no PostgreSQL enum types.
+- Bucket behavior is fail-closed: absent is created private, an existing private bucket is accepted, and an existing public bucket aborts/rolls back the migration.
 - PRODUCTION_MIGRATION_APPLIED: NO. The migration was applied only to a disposable local PostgreSQL cluster for verification; no Supabase/staging/production database was changed.
 - Test fixture: `src/lib/commerce/test-fixtures.ts`; disposable database setup/assertions: `supabase/tests/dpf_commerce_v1.sql`. Neither is automatically applied by the migration.
 
 ## TEST RESULTS
-- Focused commerce tests: PASS, 15 tests across 2 files.
+- Final verification run: 2026-10-04; migration tested only on disposable local PostgreSQL.
+- Focused commerce tests: PASS, 16 tests across 2 files.
 - Disposable PostgreSQL verification: PASS, via `bash scripts/test-dpf-commerce-postgres.sh`.
+- Namespace collision contract: PASS; incompatible generic `public.orders`, `public.order_items`, and `public.payments` retain their sentinel schema/data, RLS, each table's index, trigger, and policy while DPF tables are created.
+- PostgREST relation selector: PASS; `dpf_order_items` uses `dpf_product_addons(addon_product_id)`, backed by the migration FK and asserted by SQL/service regressions.
+- Bucket checks: PASS; missing bucket created private, existing private bucket accepted, existing public bucket rejected with full migration rollback and public visibility preserved.
 - `npm run lint`: PASS.
 - `npx tsc --noEmit --pretty false`: PASS.
-- `npm run test -- --run`: PASS, 497 tests across 44 files.
+- `npm run test -- --run`: PASS, 498 tests across 44 files.
 - `npm run build`: PASS.
 - `git diff --check`: PASS.
 

@@ -57,15 +57,15 @@ export async function getOrder(orderId: string, userId: string): Promise<(Order 
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user || user.id !== userId) return null;
-  const { data, error } = await supabase.from("orders").select("*").eq("id", orderId).eq("customer_user_id", user.id).maybeSingle();
+  const { data, error } = await supabase.from("dpf_orders").select("*").eq("id", orderId).eq("customer_user_id", user.id).maybeSingle();
   if (error || !data) return null;
-  const { data: items, error: itemError } = await supabase.from("order_items").select("*, product_addons(addon_product_id)").eq("order_id", orderId).order("created_at");
+  const { data: items, error: itemError } = await supabase.from("dpf_order_items").select("*, dpf_product_addons(addon_product_id)").eq("order_id", orderId).order("created_at");
   if (itemError) return null;
   return {
     ...mapOrder(data as OrderRow),
     items: (items ?? []).map((row) => {
       const item = row as Record<string, unknown>;
-      const addon = item.product_addons as Record<string, unknown> | null;
+      const addon = item.dpf_product_addons as Record<string, unknown> | null;
       return {
         id: String(item.id), orderId: String(item.order_id), productId: String(item.product_id),
         skuSnapshot: String(item.sku_snapshot), titleSnapshot: String(item.title_snapshot),

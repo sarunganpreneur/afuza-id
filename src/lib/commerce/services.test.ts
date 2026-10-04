@@ -127,6 +127,27 @@ describe("commerce service boundaries", () => {
     });
   });
 
+  it("reads DPF orders through the FK-backed DPF add-on PostgREST relation", async () => {
+    const userClient = makeUserClient();
+    userClient.itemQuery.order.mockResolvedValue({
+      data: [{
+        ...mocks.orderItem,
+        item_type: "ADD_ON",
+        addon_id: "33333333-3333-4333-8333-333333333333",
+        dpf_product_addons: { addon_product_id: "55555555-5555-4555-8555-555555555555" },
+      }],
+      error: null,
+    });
+    mocks.createClient.mockResolvedValue(userClient.client);
+
+    const result = await getOrder(mocks.order.id, mocks.user.id);
+
+    expect(userClient.client.from).toHaveBeenNthCalledWith(1, "dpf_orders");
+    expect(userClient.client.from).toHaveBeenNthCalledWith(2, "dpf_order_items");
+    expect(userClient.itemQuery.select).toHaveBeenCalledWith("*, dpf_product_addons(addon_product_id)");
+    expect(result?.items[0].addonProductId).toBe("55555555-5555-4555-8555-555555555555");
+  });
+
   it("records a simulated payment only for an authenticated owner's order", async () => {
     const intent = await startTestPayment(mocks.order.id);
     expect(intent).toMatchObject({ provider: "test", amount: 38000, status: "PENDING" });

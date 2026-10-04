@@ -19,7 +19,7 @@ export async function getProductDownloadAccess(userId: string, productId: string
   if (!entitlements.length) return { allowed: false as const, reason: "NOT_ENTITLED" };
   const serviceRole = await getServiceRoleClient();
   if (!serviceRole) return { allowed: false as const, reason: "DELIVERY_UNAVAILABLE" };
-  const { data, error } = await serviceRole.from("delivery_assets").select("storage_bucket, storage_key, file_name, signed_url_expiry_seconds, addon_id")
+  const { data, error } = await serviceRole.from("dpf_delivery_assets").select("storage_bucket, storage_key, file_name, signed_url_expiry_seconds, addon_id")
     .eq("product_id", productId);
   const assets = data as DeliveryAssetRow[] | null;
   if (error || !assets?.length) return { allowed: false as const, reason: "NO_DELIVERY_ASSETS" };

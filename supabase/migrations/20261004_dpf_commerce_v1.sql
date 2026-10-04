@@ -3,7 +3,7 @@
 
 begin;
 
-create table public.products (
+create table public.dpf_products (
   id uuid primary key default gen_random_uuid(),
   sku text not null unique,
   slug text not null unique,
@@ -34,12 +34,12 @@ create table public.products (
   constraint dpf_products_slug_format check (slug ~ '^[a-z0-9]+(?:-[a-z0-9]+)*$')
 );
 
-create index products_catalog_idx on public.products(status, category, subcategory);
+create index dpf_products_catalog_idx on public.dpf_products(status, category, subcategory);
 
-create table public.product_addons (
+create table public.dpf_product_addons (
   id uuid primary key default gen_random_uuid(),
-  product_id uuid not null references public.products(id) on delete restrict,
-  addon_product_id uuid references public.products(id) on delete restrict,
+  product_id uuid not null references public.dpf_products(id) on delete restrict,
+  addon_product_id uuid references public.dpf_products(id) on delete restrict,
   title text not null,
   description text,
   price integer not null check (price >= 0),
@@ -50,14 +50,14 @@ create table public.product_addons (
   constraint dpf_addons_not_self check (addon_product_id is null or addon_product_id <> product_id)
 );
 
-create unique index product_addons_product_ref_unique
-  on public.product_addons(product_id, addon_product_id)
+create unique index dpf_product_addons_product_ref_unique
+  on public.dpf_product_addons(product_id, addon_product_id)
   where addon_product_id is not null;
-create unique index product_addons_title_unique
-  on public.product_addons(product_id, lower(title));
-create index product_addons_active_idx on public.product_addons(product_id, active, sort_order);
+create unique index dpf_product_addons_title_unique
+  on public.dpf_product_addons(product_id, lower(title));
+create index dpf_product_addons_active_idx on public.dpf_product_addons(product_id, active, sort_order);
 
-create table public.orders (
+create table public.dpf_orders (
   id uuid primary key default gen_random_uuid(),
   order_number text not null unique default ('DFP-' || upper(substr(replace(gen_random_uuid()::text, '-', ''), 1, 12))),
   customer_user_id uuid not null references auth.users(id) on delete restrict,
@@ -71,7 +71,7 @@ create table public.orders (
   paid_at timestamptz,
   unique (customer_user_id, checkout_idempotency_key)
 );
-create index orders_customer_created_idx on public.orders(customer_user_id, created_at desc);
+create index dpf_orders_customer_created_idx on public.dpf_orders(customer_user_id, created_at desc);
 
 create or replace function public.dpf_guard_order_update()
 returns trigger
@@ -96,15 +96,15 @@ begin
 end;
 $$;
 revoke all on function public.dpf_guard_order_update() from public, anon, authenticated;
-create trigger orders_guard_update
-  before update on public.orders
+create trigger dpf_orders_guard_update
+  before update on public.dpf_orders
   for each row execute function public.dpf_guard_order_update();
 
-create table public.order_items (
+create table public.dpf_order_items (
   id uuid primary key default gen_random_uuid(),
-  order_id uuid not null references public.orders(id) on delete restrict,
-  product_id uuid not null references public.products(id) on delete restrict,
-  addon_id uuid references public.product_addons(id) on delete restrict,
+  order_id uuid not null references public.dpf_orders(id) on delete restrict,
+  product_id uuid not null references public.dpf_products(id) on delete restrict,
+  addon_id uuid references public.dpf_product_addons(id) on delete restrict,
   sku_snapshot text not null,
   title_snapshot text not null,
   price_snapshot integer not null check (price_snapshot >= 0),
@@ -113,7 +113,7 @@ create table public.order_items (
   created_at timestamptz not null default now(),
   constraint dpf_order_items_addon_shape check ((item_type = 'CORE' and addon_id is null) or (item_type = 'ADD_ON' and addon_id is not null) or item_type = 'BUNDLE')
 );
-create index order_items_order_idx on public.order_items(order_id);
+create index dpf_order_items_order_idx on public.dpf_order_items(order_id);
 
 create or replace function public.dpf_guard_order_item_update()
 returns trigger
@@ -125,13 +125,13 @@ begin
 end;
 $$;
 revoke all on function public.dpf_guard_order_item_update() from public, anon, authenticated;
-create trigger order_items_guard_update
-  before update on public.order_items
+create trigger dpf_order_items_guard_update
+  before update on public.dpf_order_items
   for each row execute function public.dpf_guard_order_item_update();
 
-create table public.payments (
+create table public.dpf_payments (
   id uuid primary key default gen_random_uuid(),
-  order_id uuid not null references public.orders(id) on delete restrict,
+  order_id uuid not null references public.dpf_orders(id) on delete restrict,
   provider text not null,
   provider_reference text not null,
   status text not null check (status in ('INITIATED','PENDING','PAID','FAILED','CANCELLED')),
@@ -145,23 +145,23 @@ create table public.payments (
   unique (provider, provider_reference)
 );
 
-create table public.customer_entitlements (
+create table public.dpf_customer_entitlements (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete restrict,
-  product_id uuid not null references public.products(id) on delete restrict,
-  order_id uuid not null references public.orders(id) on delete restrict,
-  order_item_id uuid not null references public.order_items(id) on delete restrict,
+  product_id uuid not null references public.dpf_products(id) on delete restrict,
+  order_id uuid not null references public.dpf_orders(id) on delete restrict,
+  order_item_id uuid not null references public.dpf_order_items(id) on delete restrict,
   granted_at timestamptz not null default now(),
   revoked_at timestamptz,
   status text not null default 'ACTIVE' check (status in ('ACTIVE','REVOKED','EXPIRED')),
   unique (order_item_id)
 );
-create index customer_entitlements_user_status_idx on public.customer_entitlements(user_id, status);
+create index dpf_customer_entitlements_user_status_idx on public.dpf_customer_entitlements(user_id, status);
 
-create table public.delivery_assets (
+create table public.dpf_delivery_assets (
   id uuid primary key default gen_random_uuid(),
-  product_id uuid not null references public.products(id) on delete restrict,
-  addon_id uuid references public.product_addons(id) on delete restrict,
+  product_id uuid not null references public.dpf_products(id) on delete restrict,
+  addon_id uuid references public.dpf_product_addons(id) on delete restrict,
   storage_bucket text not null default 'dpf-delivery-v1',
   storage_key text not null,
   mime_type text,
@@ -170,42 +170,42 @@ create table public.delivery_assets (
   created_at timestamptz not null default now(),
   unique (storage_bucket, storage_key)
 );
-create index delivery_assets_product_scope_idx on public.delivery_assets(product_id, addon_id);
+create index dpf_delivery_assets_product_scope_idx on public.dpf_delivery_assets(product_id, addon_id);
 
-alter table public.products enable row level security;
-alter table public.product_addons enable row level security;
-alter table public.orders enable row level security;
-alter table public.order_items enable row level security;
-alter table public.payments enable row level security;
-alter table public.customer_entitlements enable row level security;
-alter table public.delivery_assets enable row level security;
+alter table public.dpf_products enable row level security;
+alter table public.dpf_product_addons enable row level security;
+alter table public.dpf_orders enable row level security;
+alter table public.dpf_order_items enable row level security;
+alter table public.dpf_payments enable row level security;
+alter table public.dpf_customer_entitlements enable row level security;
+alter table public.dpf_delivery_assets enable row level security;
 
-revoke all on public.products, public.product_addons, public.orders,
-  public.order_items, public.payments, public.customer_entitlements,
-  public.delivery_assets from public, anon, authenticated;
-grant select on public.products, public.product_addons to anon, authenticated;
-grant select on public.orders, public.order_items, public.customer_entitlements to authenticated;
+revoke all on public.dpf_products, public.dpf_product_addons, public.dpf_orders,
+  public.dpf_order_items, public.dpf_payments, public.dpf_customer_entitlements,
+  public.dpf_delivery_assets from public, anon, authenticated;
+grant select on public.dpf_products, public.dpf_product_addons to anon, authenticated;
+grant select on public.dpf_orders, public.dpf_order_items, public.dpf_customer_entitlements to authenticated;
 
-create policy products_published_read on public.products
+create policy dpf_products_published_read on public.dpf_products
   for select to anon, authenticated using (status = 'PUBLISHED');
-create policy products_entitled_read on public.products
+create policy dpf_products_entitled_read on public.dpf_products
   for select to authenticated using (
     exists (
-      select 1 from public.customer_entitlements e
+      select 1 from public.dpf_customer_entitlements e
       where e.product_id = id and e.user_id = (select auth.uid()) and e.status = 'ACTIVE'
     )
   );
-create policy product_addons_published_read on public.product_addons
+create policy dpf_product_addons_published_read on public.dpf_product_addons
   for select to anon, authenticated using (
-    active and exists (select 1 from public.products p where p.id = product_id and p.status = 'PUBLISHED')
+    active and exists (select 1 from public.dpf_products p where p.id = product_id and p.status = 'PUBLISHED')
   );
-create policy orders_owner_read on public.orders
+create policy dpf_orders_owner_read on public.dpf_orders
   for select to authenticated using (customer_user_id = (select auth.uid()));
-create policy order_items_owner_read on public.order_items
+create policy dpf_order_items_owner_read on public.dpf_order_items
   for select to authenticated using (
-    exists (select 1 from public.orders o where o.id = order_id and o.customer_user_id = (select auth.uid()))
+    exists (select 1 from public.dpf_orders o where o.id = order_id and o.customer_user_id = (select auth.uid()))
   );
-create policy entitlements_owner_read on public.customer_entitlements
+create policy dpf_entitlements_owner_read on public.dpf_customer_entitlements
   for select to authenticated using (user_id = (select auth.uid()));
 
 create or replace function public.dpf_create_checkout(
@@ -221,10 +221,10 @@ set search_path = pg_catalog
 as $$
 declare
   v_user_id uuid := auth.uid();
-  v_product public.products%rowtype;
-  v_addons public.product_addons%rowtype;
-  v_existing public.orders%rowtype;
-  v_order public.orders%rowtype;
+  v_product public.dpf_products%rowtype;
+  v_addons public.dpf_product_addons%rowtype;
+  v_existing public.dpf_orders%rowtype;
+  v_order public.dpf_orders%rowtype;
   v_addon_ids uuid[] := coalesce(p_addon_ids, '{}');
   v_request jsonb;
   v_addon_total integer := 0;
@@ -245,36 +245,36 @@ begin
     from unnest(v_addon_ids) as requested(addon_id);
   v_request := jsonb_build_object('product_id', p_product_id, 'addon_ids', to_jsonb(v_addon_ids), 'quantity', p_quantity);
   perform pg_advisory_xact_lock(hashtextextended(v_user_id::text || ':' || p_idempotency_key, 0));
-  select o.* into v_existing from public.orders o
+  select o.* into v_existing from public.dpf_orders o
     where o.customer_user_id = v_user_id and o.checkout_idempotency_key = p_idempotency_key for update;
   if found then
     if v_existing.checkout_snapshot <> v_request then raise exception 'Checkout idempotency conflict'; end if;
     return jsonb_build_object('orderId', v_existing.id, 'orderNumber', v_existing.order_number, 'status', v_existing.status, 'subtotal', v_existing.subtotal, 'addonTotal', v_existing.addon_total, 'total', v_existing.total);
   end if;
 
-  select p.* into v_product from public.products p where p.id = p_product_id for share;
+  select p.* into v_product from public.dpf_products p where p.id = p_product_id for share;
   if not found or v_product.status <> 'PUBLISHED' or v_product.price < 10000 then
     raise exception 'Product is not available';
   end if;
 
-  perform a.id from public.product_addons a
+  perform a.id from public.dpf_product_addons a
     where a.product_id = p_product_id and a.active and a.id = any(v_addon_ids)
     order by a.id for share;
   select coalesce(sum(a.price), 0), count(*) into v_addon_total, v_addon_count
-  from public.product_addons a
+  from public.dpf_product_addons a
   where a.product_id = p_product_id and a.active and a.id = any(v_addon_ids);
   if v_addon_count <> cardinality(v_addon_ids) then
     raise exception 'One or more add-ons are not available';
   end if;
 
-  perform p.id from public.products p
-    join public.product_addons a on a.addon_product_id = p.id
+  perform p.id from public.dpf_products p
+    join public.dpf_product_addons a on a.addon_product_id = p.id
     where a.product_id = p_product_id and a.active and a.id = any(v_addon_ids)
     order by p.id for share of p;
   if exists (
     select 1
-    from public.product_addons a
-    join public.products addon_product on addon_product.id = a.addon_product_id
+    from public.dpf_product_addons a
+    join public.dpf_products addon_product on addon_product.id = a.addon_product_id
     where a.product_id = p_product_id
       and a.active
       and a.id = any(v_addon_ids)
@@ -284,25 +284,25 @@ begin
   end if;
 
   v_total := (v_product.price * p_quantity) + v_addon_total;
-  insert into public.orders(customer_user_id, subtotal, addon_total, total, checkout_idempotency_key, checkout_snapshot)
+  insert into public.dpf_orders(customer_user_id, subtotal, addon_total, total, checkout_idempotency_key, checkout_snapshot)
     values (v_user_id, v_product.price * p_quantity, v_addon_total, v_total, p_idempotency_key, v_request)
     returning * into v_order;
-  insert into public.order_items(order_id, product_id, sku_snapshot, title_snapshot, price_snapshot, item_type, quantity)
+  insert into public.dpf_order_items(order_id, product_id, sku_snapshot, title_snapshot, price_snapshot, item_type, quantity)
     values (v_order.id, v_product.id, v_product.sku, v_product.title, v_product.price, 'CORE', p_quantity);
-  for v_addons in select a.* from public.product_addons a where a.id = any(v_addon_ids) order by a.sort_order, a.id loop
-    insert into public.order_items(order_id, product_id, addon_id, sku_snapshot, title_snapshot, price_snapshot, item_type, quantity)
+  for v_addons in select a.* from public.dpf_product_addons a where a.id = any(v_addon_ids) order by a.sort_order, a.id loop
+    insert into public.dpf_order_items(order_id, product_id, addon_id, sku_snapshot, title_snapshot, price_snapshot, item_type, quantity)
         values (
           v_order.id,
           coalesce(v_addons.addon_product_id, v_product.id),
           v_addons.id,
-          coalesce((select p.sku from public.products p where p.id = v_addons.addon_product_id), v_product.sku),
+          coalesce((select p.sku from public.dpf_products p where p.id = v_addons.addon_product_id), v_product.sku),
           v_addons.title,
           v_addons.price,
           'ADD_ON',
           1
         );
   end loop;
-  update public.orders set status = 'AWAITING_PAYMENT' where id = v_order.id returning * into v_order;
+  update public.dpf_orders set status = 'AWAITING_PAYMENT' where id = v_order.id returning * into v_order;
   return jsonb_build_object('orderId', v_order.id, 'orderNumber', v_order.order_number, 'status', v_order.status, 'subtotal', v_order.subtotal, 'addonTotal', v_order.addon_total, 'total', v_order.total);
 end;
 $$;
@@ -321,8 +321,8 @@ security definer
 set search_path = pg_catalog
 as $$
 declare
-  v_order public.orders%rowtype;
-  v_payment public.payments%rowtype;
+  v_order public.dpf_orders%rowtype;
+  v_payment public.dpf_payments%rowtype;
 begin
   if p_order_id is null or p_provider is null or p_provider !~ '^[a-z][a-z0-9_-]{1,40}$'
      or p_provider_reference is null or length(p_provider_reference) not between 8 and 200
@@ -331,11 +331,11 @@ begin
      or (p_raw_provider_data is not null and jsonb_typeof(p_raw_provider_data) <> 'object') then
     raise exception 'Payment request is invalid';
   end if;
-  select o.* into v_order from public.orders o where o.id = p_order_id for update;
+  select o.* into v_order from public.dpf_orders o where o.id = p_order_id for update;
   if not found or v_order.total <> p_amount then raise exception 'Order is not available'; end if;
 
   perform pg_advisory_xact_lock(hashtextextended(p_provider || ':' || p_provider_reference, 0));
-  select p.* into v_payment from public.payments p
+  select p.* into v_payment from public.dpf_payments p
     where p.provider = p_provider and p.provider_reference = p_provider_reference for update;
   if found then
     if v_payment.order_id <> p_order_id then raise exception 'Payment reference conflicts with existing payment'; end if;
@@ -353,24 +353,24 @@ begin
     raise exception 'Order is already paid';
   end if;
 
-  insert into public.payments(order_id, provider, provider_reference, status, amount, raw_provider_data)
+  insert into public.dpf_payments(order_id, provider, provider_reference, status, amount, raw_provider_data)
     values (p_order_id, p_provider, p_provider_reference, p_status, p_amount, p_raw_provider_data)
     on conflict (order_id, provider) do nothing;
-  select p.* into v_payment from public.payments p where p.order_id = p_order_id and p.provider = p_provider for update;
+  select p.* into v_payment from public.dpf_payments p where p.order_id = p_order_id and p.provider = p_provider for update;
   if v_payment.provider_reference <> p_provider_reference or v_payment.amount <> p_amount then
     raise exception 'Payment reference conflicts with existing payment';
   end if;
-  update public.payments set status = p_status, raw_provider_data = p_raw_provider_data,
+  update public.dpf_payments set status = p_status, raw_provider_data = p_raw_provider_data,
     updated_at = now(), confirmed_at = case when p_status = 'PAID' then coalesce(confirmed_at, now()) else confirmed_at end
     where id = v_payment.id returning * into v_payment;
   if p_status = 'PAID' then
-    update public.orders set status = 'PAID', paid_at = coalesce(paid_at, now()) where id = v_order.id returning * into v_order;
-    insert into public.customer_entitlements(user_id, product_id, order_id, order_item_id)
+    update public.dpf_orders set status = 'PAID', paid_at = coalesce(paid_at, now()) where id = v_order.id returning * into v_order;
+    insert into public.dpf_customer_entitlements(user_id, product_id, order_id, order_item_id)
       select v_order.customer_user_id, i.product_id, v_order.id, i.id
-      from public.order_items i where i.order_id = v_order.id
+      from public.dpf_order_items i where i.order_id = v_order.id
       on conflict (order_item_id) do nothing;
   elsif v_order.status <> 'PAID' then
-    update public.orders set status = case when p_status = 'CANCELLED' then 'CANCELLED' when p_status = 'FAILED' then 'FAILED' else 'AWAITING_PAYMENT' end where id = v_order.id returning * into v_order;
+    update public.dpf_orders set status = case when p_status = 'CANCELLED' then 'CANCELLED' when p_status = 'FAILED' then 'FAILED' else 'AWAITING_PAYMENT' end where id = v_order.id returning * into v_order;
   end if;
   return jsonb_build_object('ok', true, 'orderId', v_order.id, 'status', v_order.status);
 end;
@@ -384,5 +384,15 @@ grant execute on function public.dpf_record_payment(uuid, text, text, integer, t
 insert into storage.buckets (id, name, public)
 values ('dpf-delivery-v1', 'dpf-delivery-v1', false)
 on conflict (id) do nothing;
+
+do $$
+begin
+  if not exists (
+    select 1 from storage.buckets where id = 'dpf-delivery-v1' and public = false
+  ) then
+    raise exception 'DPF delivery bucket must be private';
+  end if;
+end;
+$$;
 
 commit;
