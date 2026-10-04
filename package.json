@@ -13,6 +13,7 @@
     "dpf:generate": "tsx scripts/dpf-launch-batch.ts generate",
     "dpf:validate": "tsx scripts/dpf-launch-batch.ts validate",
     "dpf:dry-run": "tsx scripts/dpf-launch-batch.ts dry-run",
+    "dpf:integration": "tsx scripts/dpf-integration-plan.ts",
     "test": "vitest"
   },
   "dependencies": {
