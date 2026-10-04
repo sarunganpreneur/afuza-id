@@ -35,7 +35,7 @@ function mapAddon(row: AddonRow): ProductAddon {
 
 export async function listPublishedProducts(input: { category?: string; q?: string } = {}): Promise<Product[]> {
   const supabase = await createClient();
-  let query = supabase.from("products").select("*").eq("status", "PUBLISHED").order("title");
+  let query = supabase.from("dpf_products").select("*").eq("status", "PUBLISHED").order("title");
   if (input.category) query = query.eq("category", input.category);
   if (input.q?.trim()) query = query.ilike("title", `%${input.q.trim().replace(/[,%_]/g, " ")}%`);
   const { data, error } = await query;
@@ -46,14 +46,14 @@ export async function listPublishedProducts(input: { category?: string; q?: stri
 export async function getProductBySlug(slug: string): Promise<Product | null> {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
   const supabase = await createClient();
-  const { data, error } = await supabase.from("products").select("*").eq("slug", slug).eq("status", "PUBLISHED").maybeSingle();
+  const { data, error } = await supabase.from("dpf_products").select("*").eq("slug", slug).eq("status", "PUBLISHED").maybeSingle();
   if (error || !data) return null;
   return mapProduct(data as ProductRow);
 }
 
 export async function getProductAddons(productId: string): Promise<ProductAddon[]> {
   const supabase = await createClient();
-  const { data, error } = await supabase.from("product_addons").select("*").eq("product_id", productId).eq("active", true).order("sort_order");
+  const { data, error } = await supabase.from("dpf_product_addons").select("*").eq("product_id", productId).eq("active", true).order("sort_order");
   if (error) throw new Error("PRODUCT_ADDONS_UNAVAILABLE");
   return (data ?? []).map((row) => mapAddon(row as AddonRow));
 }
