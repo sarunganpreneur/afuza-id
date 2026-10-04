@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
   "project_id": "marketing-agency",
-  "task": "AX-06 milestone selection",
-  "status": "AWAITING_APPROVAL",
-  "approval_required": true,
-  "updated_at": "2026-10-04T01:53:07.519Z",
-  "last_commit": "6443121d1c6d5d9b3019834721ee520b28883e45",
+  "task": "MKT-06-01",
+  "status": "READY",
+  "approval_required": false,
+  "updated_at": "2026-10-04T11:01:34.781Z",
+  "last_commit": "afa54c11c2cd7920ada093283f43145cace0d917",
   "test_result": "NOT_RUN (dry-run checks command availability only)",
+  "implementation_result": "NOT_RUN",
   "staging_status": "PASS",
   "checks": {
     "git_clean": {
@@ -17,7 +18,7 @@
     "app_head": {
       "name": "app_head",
       "status": "PASS",
-      "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+      "detail": "afa54c11c2cd7920ada093283f43145cace0d917"
     },
     "diff_check": {
       "name": "diff_check",
@@ -66,8 +67,8 @@
     },
     "milestone": {
       "name": "milestone",
-      "status": "FAIL",
-      "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+      "status": "PASS",
+      "detail": "Approved backlog available"
     },
     "production": {
       "name": "production",
@@ -80,11 +81,11 @@
       "detail": "Postflight checks passed"
     }
   },
-  "blocker": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md",
-  "next_action": "Create and approve AX-06 canonical authorization and lane backlog.",
-  "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T01-53-05-727Z-1500530-c6df4d.json",
+  "blocker": null,
+  "next_action": "Task is eligible; dry-run did not execute source mutation or deployment.",
+  "evidence_file": "delivery/evidence/marketing-agency/2026-10-04T11-01-32-819Z-1551463-6eeadf.json",
   "preflight": {
-    "status": "AWAITING_APPROVAL",
+    "status": "READY",
     "checks": {
       "git_clean": {
         "name": "git_clean",
@@ -94,7 +95,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+        "detail": "afa54c11c2cd7920ada093283f43145cace0d917"
       },
       "diff_check": {
         "name": "diff_check",
@@ -143,8 +144,8 @@
       },
       "milestone": {
         "name": "milestone",
-        "status": "FAIL",
-        "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+        "status": "PASS",
+        "detail": "Approved backlog available"
       },
       "production": {
         "name": "production",
@@ -154,7 +155,7 @@
     }
   },
   "postflight": {
-    "status": "AWAITING_APPROVAL",
+    "status": "READY",
     "checks": {
       "git_clean": {
         "name": "git_clean",
@@ -164,7 +165,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6443121d1c6d5d9b3019834721ee520b28883e45"
+        "detail": "afa54c11c2cd7920ada093283f43145cace0d917"
       },
       "diff_check": {
         "name": "diff_check",
@@ -213,8 +214,8 @@
       },
       "milestone": {
         "name": "milestone",
-        "status": "FAIL",
-        "detail": "Approved AX-06 milestone/backlog missing: docs/AX-06-BACKLOG.md"
+        "status": "PASS",
+        "detail": "Approved backlog available"
       },
       "production": {
         "name": "production",

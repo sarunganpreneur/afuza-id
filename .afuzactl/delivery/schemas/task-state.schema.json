@@ -13,6 +13,7 @@
     "updated_at": { "type": "string", "format": "date-time" },
     "last_commit": { "type": ["string", "null"] },
     "test_result": { "type": "string" },
+    "implementation_result": { "type": "string", "enum": ["NOT_RUN"] },
     "staging_status": { "type": "string" },
     "checks": {
       "type": "object",
@@ -38,7 +39,7 @@
       "type": "object",
       "required": ["status"],
       "properties": {
-        "status": { "enum": ["AWAITING_APPROVAL", "FAILED", "BLOCKED", "NOT_RUN"] },
+        "status": { "enum": ["READY", "AWAITING_APPROVAL", "FAILED", "BLOCKED", "NOT_RUN"] },
         "reason": { "type": "string" },
         "checks": { "$ref": "#/definitions/checks" }
       },

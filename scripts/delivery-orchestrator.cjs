@@ -42,11 +42,11 @@ function discoverLanes(registry) {
 function selectNextTask(lane, sources = {}) {
   const authorization = sources.authorization;
   const backlog = sources.backlog;
-    if (!authorization || authorization.status !== "APPROVED" || authorization.decision_id !== "AX-06" ||
-        !authorization.approving_authority || !authorization.authorized_project_ids?.includes(lane.id) ||
-        !backlog || backlog.approval_id !== authorization.decision_id || backlog.status !== "APPROVED" ||
-        backlog.execution_mode !== "autonomous_staging" || backlog.source_of_truth !== true ||
-        backlog.project_id !== lane.id || !Array.isArray(backlog.tasks) || backlog.tasks.length === 0) {
+  if (!authorization || authorization.status !== "APPROVED" || authorization.decision_id !== "AX-06" ||
+      !authorization.approving_authority || !authorization.authorized_project_ids?.includes(lane.id) ||
+      !backlog || backlog.approval_id !== authorization.decision_id || backlog.status !== "APPROVED" ||
+      backlog.execution_mode !== "autonomous_staging" || backlog.source_of_truth !== true ||
+      backlog.project_id !== lane.id || !Array.isArray(backlog.tasks) || backlog.tasks.length === 0) {
     return {
       status: "AWAITING_APPROVAL",
       task: "AX-06 milestone selection",
@@ -54,9 +54,32 @@ function selectNextTask(lane, sources = {}) {
       approval_required: true,
     };
   }
-  const candidate = backlog.tasks.find((task) => ["PLANNED", "READY"].includes(task.status));
+
+  const tasks = new Map(backlog.tasks.map((task) => [task.id, task]));
+  const candidates = backlog.tasks.filter((task) => ["PLANNED", "READY"].includes(task.status));
+  const candidate = candidates.find((task) => (task.dependencies || []).every((dependency) =>
+    ["DONE", "COMPLETE", "COMPLETED"].includes(tasks.get(dependency)?.status)));
+  if (!candidate && candidates.length) {
+    const task = candidates[0];
+    const pending = (task.dependencies || []).filter((dependency) =>
+      !["DONE", "COMPLETE", "COMPLETED"].includes(tasks.get(dependency)?.status));
+    return {
+      status: "BLOCKED",
+      task: task.id,
+      blocker: `Task dependencies are not complete: ${pending.join(", ")}`,
+      approval_required: false,
+    };
+  }
   if (!candidate) return { status: "COMPLETED", task: "No eligible task", blocker: null, approval_required: false };
-  return { status: candidate.status, task: candidate.id, blocker: null, approval_required: false };
+  if (candidate.approval_boundary_triggered === true || candidate.requires_approval === true) {
+    return {
+      status: "AWAITING_APPROVAL",
+      task: candidate.id,
+      blocker: `Task approval boundary: ${candidate.approval_boundary || candidate.id}`,
+      approval_required: true,
+    };
+  }
+  return { status: "READY", task: candidate.id, blocker: null, approval_required: false };
 }
 
 function loadTaskSources(lane, deliveryRoot) {
@@ -75,12 +98,34 @@ function authorizeAction(action) {
     : { allowed: true, status: "READY", approval_required: false, blocker: null };
 }
 
-function classifyChecks(checks) {
+function classifyChecks(checks, selection) {
   const entries = Object.entries(checks).filter(([name]) => name !== "milestone");
   const failed = entries.filter(([, result]) => result.status !== "PASS");
-  if (!failed.length) return "AWAITING_APPROVAL";
   if (failed.some(([name]) => ["health", "ready", "service", "listener", "production", "fake_mode", "secret_scan", "canonical_secret_scan", "git_clean", "diff_check"].includes(name))) return "FAILED";
-  return "BLOCKED";
+  if (failed.length) return "BLOCKED";
+  if (selection) return selection.status;
+  return checks.milestone?.status === "FAIL" || !checks.milestone ? "AWAITING_APPROVAL" : "READY";
+}
+
+function dryRunState(selection, checks) {
+  const status = classifyChecks(checks, selection);
+  const safetyFailures = Object.entries(checks)
+    .filter(([name, result]) => name !== "milestone" && result.status !== "PASS")
+    .map(([name, result]) => `${name}: ${result.detail}`);
+  const blocker = safetyFailures.join("; ") || selection.blocker;
+  return {
+    status,
+    approval_required: status === "AWAITING_APPROVAL",
+    implementation_result: "NOT_RUN",
+    blocker: status === "READY" || status === "COMPLETED" ? null : blocker,
+    next_action: status === "READY"
+      ? "Task is eligible; dry-run did not execute source mutation or deployment."
+      : status === "AWAITING_APPROVAL"
+        ? "Resolve the task approval boundary before dispatch."
+        : status === "COMPLETED"
+          ? "No eligible task remains."
+          : "Resolve failed safety or dependency checks; no task was executed.",
+  };
 }
 
 function command(commandName, args, cwd, timeout = 15000) {
@@ -183,22 +228,22 @@ async function inspectLane(lane, options = {}) {
   }
 
   const selection = selectNextTask(lane, loadTaskSources(lane, options.deliveryRoot || options.controlRoot || "."));
-  checks.milestone = check("milestone", selection.status !== "AWAITING_APPROVAL", selection.blocker || "Approved backlog available");
-
-  const status = classifyChecks(checks);
+  checks.milestone = check("milestone", !["AWAITING_APPROVAL", "BLOCKED"].includes(selection.status), selection.blocker || "Approved backlog available");
+  const state = dryRunState(selection, checks);
   return {
     schema_version: 1,
     project_id: lane.id,
-    task: selection.status === "AWAITING_APPROVAL" ? "AX-06 milestone selection" : selection.task,
-    status: status === "AWAITING_APPROVAL" ? selection.status : status,
-    approval_required: selection.approval_required || status !== "AWAITING_APPROVAL",
+    task: selection.task,
+    status: state.status,
+    approval_required: state.approval_required,
     updated_at: new Date().toISOString(),
     last_commit: checks.app_head.status === "PASS" ? checks.app_head.detail : null,
     test_result: "NOT_RUN (dry-run checks command availability only)",
+    implementation_result: state.implementation_result,
     staging_status: [checks.service, checks.health, checks.ready, checks.listener].every((item) => item.status === "PASS") ? "PASS" : "FAIL",
     checks,
-    blocker: status === "AWAITING_APPROVAL" ? selection.blocker : Object.entries(checks).filter(([, value]) => value.status !== "PASS").map(([name, value]) => `${name}: ${value.detail}`).join("; "),
-    next_action: status === "AWAITING_APPROVAL" ? "Create and approve AX-06 canonical authorization and lane backlog." : "Resolve failed preflight checks; do not deploy.",
+    blocker: state.blocker,
+    next_action: state.next_action,
     evidence_file: null,
   };
 }
@@ -270,11 +315,8 @@ async function executeLane(lane, options) {
   const pre = await inspectLane(lane, { controlRoot: options.deliveryRoot, canonicalRepo: options.canonicalRepo });
   const preProductionCheck = check("production", Boolean(preProduction), preProduction ? "afuza-id.service active identity captured" : "Production unit unavailable");
   pre.checks.production = preProductionCheck;
-  pre.status = classifyChecks(pre.checks);
-  if (pre.status !== "AWAITING_APPROVAL") {
-    pre.approval_required = true;
-    pre.blocker = Object.entries(pre.checks).filter(([, value]) => value.status !== "PASS").map(([name, value]) => `${name}: ${value.detail}`).join("; ");
-    pre.next_action = "Resolve failed preflight checks; no source mutation or deployment was run.";
+  pre.status = classifyChecks(pre.checks, pre.status === "READY" ? { status: "READY", blocker: null } : { status: pre.status, blocker: pre.blocker });
+  if (!["READY", "AWAITING_APPROVAL"].includes(pre.status)) {
     pre.preflight = { checks: pre.checks, status: pre.status };
     pre.postflight = { status: "NOT_RUN", reason: "Stopped on preflight failure" };
     return pre;
@@ -284,14 +326,15 @@ async function executeLane(lane, options) {
   pre.checks.production = check("production", Boolean(preProduction && postProduction && JSON.stringify(preProduction) === JSON.stringify(postProduction)),
     preProduction && postProduction && JSON.stringify(preProduction) === JSON.stringify(postProduction) ? "afuza-id.service identity unchanged" : "Production unit unavailable or changed during dry-run");
   post.checks.production = pre.checks.production;
-  post.status = classifyChecks(post.checks);
-  post.approval_required = post.status === "AWAITING_APPROVAL" || post.status === "BLOCKED";
+  const selection = { status: post.status, blocker: post.blocker };
+  post.status = classifyChecks(post.checks, selection);
+  post.approval_required = post.status === "AWAITING_APPROVAL";
   post.preflight = { status: pre.status, checks: pre.checks };
   post.postflight = { status: post.status, checks: post.checks };
-  post.checks.postflight = check("postflight", post.status === "AWAITING_APPROVAL", post.status === "AWAITING_APPROVAL" ? "Postflight checks passed" : `Postflight status ${post.status}`);
-  if (post.status !== "AWAITING_APPROVAL") {
+  post.checks.postflight = check("postflight", ["READY", "AWAITING_APPROVAL"].includes(post.status), ["READY", "AWAITING_APPROVAL"].includes(post.status) ? "Postflight checks passed" : `Postflight status ${post.status}`);
+  if (!["READY", "AWAITING_APPROVAL"].includes(post.status)) {
     post.blocker = Object.entries(post.checks).filter(([, value]) => value.status !== "PASS").map(([name, value]) => `${name}: ${value.detail}`).join("; ");
-    post.next_action = "Resolve failed safety/preflight checks; no source mutation or deployment was run.";
+    post.next_action = "Resolve failed safety/preflight checks; no task was executed.";
   }
   return post;
 }
@@ -338,6 +381,7 @@ module.exports = {
   printTable,
   runDryRun,
   runIndependentLanes,
+  dryRunState,
   selectNextTask,
   validateAction,
   PROJECT_ALIASES,

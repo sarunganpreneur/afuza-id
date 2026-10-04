@@ -8,6 +8,7 @@ const {
   authorizeAction,
   classifyChecks,
   discoverLanes,
+  dryRunState,
   markdownReport,
   parseBacklogMarkdown,
   runDryRun,
@@ -25,21 +26,36 @@ function passingState(projectId = "chalwa.id") {
   return {
     schema_version: 1,
     project_id: projectId,
-    task: "AX-06 milestone selection",
-    status: "AWAITING_APPROVAL",
-    approval_required: true,
+    task: "CHW-06-01",
+    status: "READY",
+    approval_required: false,
     updated_at: "2026-10-04T00:00:00.000Z",
     last_commit: "a".repeat(40),
     test_result: "NOT_RUN",
     staging_status: "PASS",
     checks: {},
-    blocker: "Approved milestone/backlog missing",
-    next_action: "Approve AX-06 source",
+    blocker: null,
+    next_action: "Task is eligible; dry-run did not execute source mutation or deployment.",
     evidence_file: null,
   };
 }
 
 describe("delivery orchestrator", () => {
+  const authorization = {
+    status: "APPROVED",
+    decision_id: "AX-06",
+    approving_authority: "Portfolio owner",
+    authorized_project_ids: ["chalwa.id"],
+  };
+  const approvedBacklog = (tasks = [{ id: "CHW-06-01", status: "READY", dependencies: [] }]) => ({
+    project_id: "chalwa.id",
+    approval_id: "AX-06",
+    status: "APPROVED",
+    execution_mode: "autonomous_staging",
+    source_of_truth: true,
+    tasks,
+  });
+
   it("discovers exactly the three authorized lanes", () => {
     expect(discoverLanes({ lanes: [lane, { id: "klodhost" }, { id: "marketing-agency" }] })).toHaveLength(3);
   });
@@ -53,10 +69,44 @@ describe("delivery orchestrator", () => {
     expect(selectNextTask(lane)).toMatchObject({ status: "AWAITING_APPROVAL", approval_required: true });
   });
 
-  it("parses an approved Markdown backlog and selects only its declared task", () => {
+  it("selects READY when authorization and matching backlog are approved", () => {
+    expect(selectNextTask(lane, { authorization, backlog: approvedBacklog() }))
+      .toMatchObject({ status: "READY", task: "CHW-06-01", blocker: null, approval_required: false });
+  });
+
+  it("keeps missing authorization at AWAITING_APPROVAL", () => {
+    expect(selectNextTask(lane, { backlog: approvedBacklog() }))
+      .toMatchObject({ status: "AWAITING_APPROVAL", approval_required: true });
+  });
+
+  it("keeps an unapproved backlog at AWAITING_APPROVAL", () => {
+    expect(selectNextTask(lane, { authorization, backlog: { ...approvedBacklog(), status: "DRAFT" } }))
+      .toMatchObject({ status: "AWAITING_APPROVAL", approval_required: true });
+  });
+
+  it("awaits approval when the selected task triggers an approval boundary", () => {
+    expect(selectNextTask(lane, {
+      authorization,
+      backlog: approvedBacklog([{ id: "CHW-06-01", status: "READY", dependencies: [], approval_boundary_triggered: true }]),
+    })).toMatchObject({ status: "AWAITING_APPROVAL", task: "CHW-06-01", approval_required: true });
+  });
+
+  it("blocks tasks with unsatisfied dependencies and readies them when dependencies complete", () => {
+    const tasks = [
+      { id: "CHW-06-01", status: "PLANNED", dependencies: ["CHW-06-00"] },
+      { id: "CHW-06-00", status: "BLOCKED", dependencies: [] },
+    ];
+    expect(selectNextTask(lane, { authorization, backlog: approvedBacklog(tasks) }))
+      .toMatchObject({ status: "BLOCKED", task: "CHW-06-01", approval_required: false });
+    tasks[1].status = "COMPLETED";
+    expect(selectNextTask(lane, { authorization, backlog: approvedBacklog(tasks) }))
+      .toMatchObject({ status: "READY", task: "CHW-06-01", approval_required: false });
+  });
+
+  it("parses an approved Markdown backlog and selects its declared task", () => {
     const backlog = parseBacklogMarkdown(`---\nproject_id: chalwa.id\napproval_id: AX-06\nstatus: APPROVED\nexecution_mode: autonomous_staging\nsource_of_truth: true\ntasks:\n  - id: AX06-CHALWA-001\n    status: READY\n---\n\n# Approved AX-06 backlog\n`);
     expect(selectNextTask(lane, {
-      authorization: { status: "APPROVED", decision_id: "AX-06", approving_authority: "Portfolio owner", authorized_project_ids: ["chalwa.id"] },
+      authorization,
       backlog,
     })).toMatchObject({ status: "READY", task: "AX06-CHALWA-001", approval_required: false });
   });
@@ -82,17 +132,34 @@ describe("delivery orchestrator", () => {
   });
 
   it("marks failed health checks FAILED", () => {
-    expect(classifyChecks({ health: { status: "FAIL", detail: "HTTP 503" } })).toBe("FAILED");
+    expect(classifyChecks({ health: { status: "FAIL", detail: "HTTP 503" } }, { status: "READY" })).toBe("FAILED");
   });
 
-  it("does not treat a missing approved milestone as a failed safety check", () => {
-    expect(classifyChecks({ milestone: { status: "FAIL", detail: "approval missing" } })).toBe("AWAITING_APPROVAL");
+  it("returns a READY dry-run result without executing task implementation", () => {
+    const result = dryRunState({ status: "READY", task: "CHW-06-01", blocker: null }, {
+      milestone: { status: "PASS", detail: "Approved backlog available" },
+      health: { status: "PASS", detail: "HTTP 200" },
+    });
+    expect(result).toMatchObject({
+      status: "READY",
+      approval_required: false,
+      blocker: null,
+      implementation_result: "NOT_RUN",
+    });
+    expect(result.next_action).toMatch(/did not execute source mutation/);
+  });
+
+  it("keeps missing approval and failed safety checks distinct", () => {
+    expect(classifyChecks({ milestone: { status: "FAIL", detail: "approval missing" } }, { status: "AWAITING_APPROVAL" }))
+      .toBe("AWAITING_APPROVAL");
+    expect(classifyChecks({ health: { status: "FAIL", detail: "HTTP 503" } }, { status: "AWAITING_APPROVAL" }))
+      .toBe("FAILED");
   });
 
   it("serializes canonical human report rows", () => {
     const report = markdownReport({ updated_at: "2026-10-04T00:00:00.000Z", lanes: { "chalwa.id": passingState() } });
     expect(report).toContain("| Project | Task | Status | Last commit | Test result | Staging status | Blocker | Next action | Approval required |");
-    expect(report).toContain("| chalwa.id | AX-06 milestone selection | AWAITING_APPROVAL |");
+    expect(report).toContain("| chalwa.id | CHW-06-01 | READY |");
   });
 
   it("runs independent lanes concurrently and persists once", async () => {
@@ -105,12 +172,13 @@ describe("delivery orchestrator", () => {
       peak = Math.max(peak, active);
       await new Promise((resolve) => setTimeout(resolve, 10));
       active -= 1;
-      return item.id;
+      return { project_id: item.id, status: "READY", approval_required: false };
     }, async (values) => {
       persistCalls += 1;
-      expect(values).toHaveLength(3);
+      expect(values.map((value) => value.status)).toEqual(["READY", "READY", "READY"]);
     });
     expect(results).toHaveLength(3);
+    expect(results.map((result) => result.project_id)).toEqual(["chalwa.id", "klodhost", "marketing-agency"]);
     expect(peak).toBe(3);
     expect(persistCalls).toBe(1);
   });

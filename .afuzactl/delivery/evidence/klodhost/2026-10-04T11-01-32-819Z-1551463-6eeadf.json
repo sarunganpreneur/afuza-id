@@ -1,11 +1,13 @@
 {
+  "run_id": "2026-10-04T11-01-32-819Z-1551463-6eeadf",
+  "mode": "DRY_RUN",
   "schema_version": 1,
-  "project_id": "chalwa.id",
-  "task": "CHW-06-01",
+  "project_id": "klodhost",
+  "task": "KLO-06-01",
   "status": "READY",
   "approval_required": false,
-  "updated_at": "2026-10-04T11:01:34.762Z",
-  "last_commit": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+  "updated_at": "2026-10-04T11:01:34.729Z",
+  "last_commit": "6e142fd74040ba471ce9ae4ca2563b27130dfa01",
   "test_result": "NOT_RUN (dry-run checks command availability only)",
   "implementation_result": "NOT_RUN",
   "staging_status": "PASS",
@@ -18,7 +20,7 @@
     "app_head": {
       "name": "app_head",
       "status": "PASS",
-      "detail": "6abf36ec3f5bc6144570c31fde5f117228bb955e"
+      "detail": "6e142fd74040ba471ce9ae4ca2563b27130dfa01"
     },
     "diff_check": {
       "name": "diff_check",
@@ -58,7 +60,7 @@
     "listener": {
       "name": "listener",
       "status": "PASS",
-      "detail": "Port 4511 is loopback-only"
+      "detail": "Port 4512 is loopback-only"
     },
     "fake_mode": {
       "name": "fake_mode",
@@ -83,7 +85,7 @@
   },
   "blocker": null,
   "next_action": "Task is eligible; dry-run did not execute source mutation or deployment.",
-  "evidence_file": "delivery/evidence/chalwa.id/2026-10-04T11-01-32-819Z-1551463-6eeadf.json",
+  "evidence_file": "delivery/evidence/klodhost/2026-10-04T11-01-32-819Z-1551463-6eeadf.json",
   "preflight": {
     "status": "READY",
     "checks": {
@@ -95,7 +97,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6abf36ec3f5bc6144570c31fde5f117228bb955e"
+        "detail": "6e142fd74040ba471ce9ae4ca2563b27130dfa01"
       },
       "diff_check": {
         "name": "diff_check",
@@ -135,7 +137,7 @@
       "listener": {
         "name": "listener",
         "status": "PASS",
-        "detail": "Port 4511 is loopback-only"
+        "detail": "Port 4512 is loopback-only"
       },
       "fake_mode": {
         "name": "fake_mode",
@@ -165,7 +167,7 @@
       "app_head": {
         "name": "app_head",
         "status": "PASS",
-        "detail": "6abf36ec3f5bc6144570c31fde5f117228bb955e"
+        "detail": "6e142fd74040ba471ce9ae4ca2563b27130dfa01"
       },
       "diff_check": {
         "name": "diff_check",
@@ -205,7 +207,7 @@
       "listener": {
         "name": "listener",
         "status": "PASS",
-        "detail": "Port 4511 is loopback-only"
+        "detail": "Port 4512 is loopback-only"
       },
       "fake_mode": {
         "name": "fake_mode",
