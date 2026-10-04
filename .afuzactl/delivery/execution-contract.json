@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "worker_provider": "fake",
+  "supported_provider_ids": ["fake", "local-agent", "vscode-agent", "codex", "other"],
+  "production_forbidden": true,
+  "max_attempts": 2,
+  "lifecycle": ["READY", "PREPARING", "RUNNING", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED"],
+  "failure_states": ["BLOCKED", "FAILED", "AWAITING_APPROVAL"],
+  "source_branches": {
+    "chalwa.id": "feature/ax06-backlog-chalwa",
+    "klodhost": "feature/ax06-backlog-klodhost",
+    "marketing-agency": "feature/ax06-backlog-marketing-agency"
+  },
+  "remote_urls": {
+    "chalwa.id": "git@github-afuza-account:sarunganpreneur/chalwa.git",
+    "klodhost": "git@github-afuza-account:sarunganpreneur/klodhost.git",
+    "marketing-agency": "git@github-afuza-account:sarunganpreneur/marketing-agency.git"
+  },
+  "forbidden_paths": [
+    "**/.env",
+    "**/.env.*",
+    "**/*secret*",
+    "**/*.pem",
+    "**/*.key",
+    "**/*.p12",
+    "**/*.pfx",
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/systemd/**",
+    "**/nginx/**",
+    "**/deployment-credentials/**",
+    "**/production-config/**",
+    "../**",
+    "/**"
+  ],
+  "generic_quality_gates": {
+    "lint": { "type": "command", "command": "npm", "args": ["run", "lint"] },
+    "typecheck": { "type": "command", "command": "npm", "args": ["run", "typecheck"] },
+    "test": { "type": "command", "command": "npm", "args": ["test", "--", "--run"] },
+    "build": { "type": "command", "command": "npm", "args": ["run", "build"] },
+    "git_diff_check": { "type": "git_diff_check" }
+  },
+  "tasks": {
+    "CHW-06-01": {
+      "project_id": "chalwa.id",
+      "allowed_paths": ["src/catalog/**", "src/catalog.test.ts"],
+      "acceptance_gate_map": [
+        ["catalog-fields-test"],
+        ["catalog-states-test"],
+        ["catalog-invalid-input-test"]
+      ],
+      "acceptance_gates": {
+        "catalog-fields-test": { "type": "test_name", "file": "src/catalog.test.ts", "name": "validates product and variant fields" },
+        "catalog-states-test": { "type": "test_name", "file": "src/catalog.test.ts", "name": "keeps draft and active states separate from publication" },
+        "catalog-invalid-input-test": { "type": "test_name", "file": "src/catalog.test.ts", "name": "rejects invalid and duplicate catalog input" }
+      },
+      "verification_gate_map": {
+        "staging-health": { "type": "route_exists", "endpoint": "health_url", "path": "/health", "status": 200 },
+        "staging-ready": { "type": "route_exists", "endpoint": "ready_url", "path": "/ready", "status": 200 },
+        "catalog-api-check": { "type": "api_contract", "endpoint": "staging_url", "path": "/api/catalog", "method": "GET", "status": 200 }
+      }
+    },
+    "KLO-06-01": {
+      "project_id": "klodhost",
+      "allowed_paths": ["src/packages/**", "src/packages.test.ts"],
+      "acceptance_gate_map": [
+        ["package-identity-test"],
+        ["package-display-test"],
+        ["package-resource-bound-test"],
+        ["package-availability-test"],
+        ["package-validation-test"]
+      ],
+      "acceptance_gates": {
+        "package-identity-test": { "type": "test_name", "file": "src/packages.test.ts", "name": "defines stable package identifiers and display metadata" },
+        "package-display-test": { "type": "test_name", "file": "src/packages.test.ts", "name": "provides validated package display metadata" },
+        "package-resource-bound-test": { "type": "test_name", "file": "src/packages.test.ts", "name": "bounds package resource descriptions" },
+        "package-availability-test": { "type": "test_name", "file": "src/packages.test.ts", "name": "does not imply real capacity from package availability" },
+        "package-validation-test": { "type": "test_name", "file": "src/packages.test.ts", "name": "rejects invalid and duplicate packages" }
+      },
+      "verification_gate_map": {
+        "staging-health": { "type": "route_exists", "endpoint": "health_url", "path": "/health", "status": 200 },
+        "package-contract-check": { "type": "test_name", "file": "src/packages.test.ts", "name": "validates the hosting package contract" }
+      }
+    },
+    "MKT-06-01": {
+      "project_id": "marketing-agency",
+      "allowed_paths": ["src/clients/**", "src/clients.test.ts"],
+      "acceptance_gate_map": [
+        ["client-state-test"],
+        ["client-tenant-test"],
+        ["client-no-contact-test"]
+      ],
+      "acceptance_gates": {
+        "client-state-test": { "type": "test_name", "file": "src/clients.test.ts", "name": "models draft active and suspended client states" },
+        "client-tenant-test": { "type": "test_name", "file": "src/clients.test.ts", "name": "rejects duplicate and cross-tenant client ownership" },
+        "client-no-contact-test": { "type": "test_name", "file": "src/clients.test.ts", "name": "onboarding sends no external customer contact" }
+      },
+      "verification_gate_map": {
+        "staging-health": { "type": "route_exists", "endpoint": "health_url", "path": "/health", "status": 200 },
+        "tenant-isolation-check": { "type": "test_name", "file": "src/clients.test.ts", "name": "rejects cross-tenant client access" }
+      }
+    }
+  },
+  "staging_deployment": {
+    "enabled": false,
+    "required_after_future_publish": ["validation-pass", "deployment-command-defined", "health-200", "ready-200"],
+    "production_forbidden": true
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "execution_id": "a9f6f9e9-07fb-4a58-bc8b-7c35a657355c",
+  "project_id": "marketing-agency",
+  "task_id": "MKT-06-01",
+  "status": "COMPLETED",
+  "simulation": true,
+  "task_completed": false,
+  "started_at": "2026-10-04T17:04:22.106Z",
+  "completed_at": "2026-10-04T17:04:22.107Z",
+  "starting_sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+  "result_sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+  "evidence_path": "delivery/execution-evidence/marketing-agency/a9f6f9e9-07fb-4a58-bc8b-7c35a657355c.json",
+  "failure_reason": null,
+  "resume_from": null,
+  "retryable": false,
+  "attempt": 1,
+  "created_at": "2026-10-04T17:04:22.106Z",
+  "transitions": [
+    {
+      "state": "READY",
+      "at": "2026-10-04T17:04:22.106Z"
+    },
+    {
+      "state": "PREPARING",
+      "at": "2026-10-04T17:04:22.106Z"
+    },
+    {
+      "state": "RUNNING",
+      "at": "2026-10-04T17:04:22.106Z"
+    },
+    {
+      "state": "VALIDATING",
+      "at": "2026-10-04T17:04:22.106Z"
+    },
+    {
+      "state": "COMMITTING",
+      "at": "2026-10-04T17:04:22.106Z"
+    },
+    {
+      "state": "PUBLISHING",
+      "at": "2026-10-04T17:04:22.107Z"
+    },
+    {
+      "state": "COMPLETED",
+      "at": "2026-10-04T17:04:22.107Z"
+    }
+  ],
+  "checks": {
+    "prepare": {
+      "workspace_path": "/home/afuzaid/engineering/worktrees/ax06-execution/marketing-agency/MKT-06-01",
+      "created": false,
+      "detail": "Workspace plan only; no git worktree was created."
+    },
+    "execute": {
+      "changed_paths": [],
+      "source_mutation": false,
+      "detail": "Fake worker made no app source changes."
+    },
+    "validate": {
+      "contract_valid": true,
+      "gates_executed": false,
+      "detail": "Gate definitions validated; real app gates were not run."
+    },
+    "commit": {
+      "created": false,
+      "sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+      "detail": "Commit simulated; no Git commit was created."
+    },
+    "publish": {
+      "pushed": false,
+      "sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+      "detail": "Publish simulated; no network operation was performed."
+    },
+    "readiness": {
+      "contract": "VALID",
+      "repo_preflight": {
+        "clean": true,
+        "source_branch_checked_out": true,
+        "source_branch_exists": true,
+        "origin_matches": true,
+        "origin_reachable": true,
+        "source_sha_matches_remote": true,
+        "task_branch_available": true,
+        "task_worktree_available": true
+      },
+      "staging_safety": "READY",
+      "staging_status": "PASS"
+    },
+    "fake_worker": {
+      "status": "PASS",
+      "provider": "fake",
+      "task_completed": false
+    },
+    "source_unchanged": {
+      "status": "PASS",
+      "before_sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+      "after_sha": "afa54c11c2cd7920ada093283f43145cace0d917",
+      "worktree_unchanged": true
+    },
+    "staging_deployment": {
+      "status": "NOT_RUN",
+      "enabled": false
+    }
+  }
+}

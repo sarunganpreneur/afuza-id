@@ -13,7 +13,10 @@ const BLOCKED_ACTIONS = new Set([
   "production-change", "real-payment", "real-provider", "outbound-message",
   "destructive-migration", "credential-rotation", "dns-change",
   "cross-project-architecture", "readiness-promotion", "go-live",
-  "force-push", "production-data-deletion",
+  "force-push", "production-data-deletion", "production-deploy", "production-configuration-change",
+  "real-billing-charge", "real-provider-action", "real-node-provisioning", "real-whatsapp-outbound",
+  "real-email-outbound", "real-sms-outbound", "destructive-database-migration", "credential-or-key-rotation",
+  "dns-or-domain-change", "cross-project-architecture-change-without-approval",
 ]);
 
 function readJson(filePath) {

@@ -9,6 +9,7 @@ const Ajv = require("ajv");
 const { buildPortfolioPlan, createBatch, inventoryFileName, transitionBatch } = require("./portfolio-planner.cjs");
 const { createInbox } = require("./portfolio-inbox.cjs");
 const delivery = require("./delivery-orchestrator.cjs");
+const execution = require("./execution-contract.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTROL = path.join(ROOT, ".afuzactl");
@@ -1136,6 +1137,64 @@ async function runDeliveryCommand(args) {
   const deliveryRoot = path.join(ECOSYSTEM_ROOT, "..", "delivery");
   const lanes = delivery.loadLanes(deliveryRoot);
   const [subcommand, projectId, ...options] = args;
+  if (["execution-plan", "execution-inspect", "execution-test"].includes(subcommand)) {
+    const normalizedProject = projectId === "chalwa" ? "chalwa.id" : projectId;
+    const lane = lanes.find((item) => item.id === normalizedProject);
+    if (!lane) throw new Error(`Unknown delivery project: ${projectId || "(missing)"}`);
+    const contract = readJson(path.join(deliveryRoot, "execution-contract.json"));
+    if (subcommand === "execution-inspect") {
+      const previous = execution.getExecutionState(deliveryRoot, lane.id);
+      const current = delivery.loadState(deliveryRoot).lanes[lane.id];
+      console.log(JSON.stringify({ project_id: lane.id, task_state: current?.status || "UNKNOWN", execution: previous || { status: "NOT_RUN", task_completed: false } }, null, 2));
+      return 0;
+    }
+    const sources = delivery.loadTaskSources(lane, deliveryRoot);
+    const sourceBranch = contract.source_branches[lane.id];
+    const selection = delivery.selectNextTask(lane, sources);
+    const taskBranch = selection.status === "READY" ? execution.taskBranchName(lane.id, selection.task) : null;
+    const workspacePath = taskBranch ? execution.worktreePath(lane.id, selection.task) : null;
+    const repoCheck = execution.inspectSourceRepository(lane, sourceBranch, contract, undefined, { taskBranch, workspacePath });
+    const stagingCheck = await delivery.executeLane(lane, { deliveryRoot, canonicalRepo: ROOT });
+    const plan = execution.buildExecutionPlan({ lane, ...sources, contract, repoCheck, stagingCheck });
+    let schemaValid = false;
+    if (plan.spec) {
+      const specSchema = readJson(path.join(deliveryRoot, "schemas", "execution-spec.schema.json"));
+      schemaValid = new Ajv({ allErrors: true, schemaId: "auto" }).validate(specSchema, plan.spec);
+      if (!schemaValid) plan.blockers.push("EXECUTION_SPEC_SCHEMA_INVALID");
+    }
+    if (subcommand === "execution-plan") {
+      const result = {
+        contract_status: plan.blockers.length === 0 && schemaValid ? "VALID" : "BLOCKED",
+        worker_provider: contract.worker_provider,
+        repo_preflight: repoCheck,
+        staging_safety: stagingCheck,
+        blockers: plan.blockers,
+        spec: plan.spec,
+      };
+      console.log(JSON.stringify(result, null, 2));
+      return result.contract_status === "VALID" ? 0 : 1;
+    }
+    if (!options.includes("--fake")) throw new Error("execution-test requires --fake; no real worker provider is enabled");
+    if (plan.blockers.length || !schemaValid) {
+      console.log(JSON.stringify({ contract_status: "BLOCKED", blockers: plan.blockers, repo_preflight: repoCheck, staging_safety: stagingCheck }, null, 2));
+      return 1;
+    }
+    const beforeHead = execution.runGit(lane.repository, ["rev-parse", "HEAD"]);
+    const beforeStatus = execution.inspectUntrackedTaskStatus(lane.repository);
+    if (beforeHead.status !== 0 || beforeStatus === null) throw new Error("Unable to capture app repository invariants");
+    const run = await execution.simulateLifecycle(plan.spec, execution.createFakeWorker());
+    const afterHead = execution.runGit(lane.repository, ["rev-parse", "HEAD"]);
+    const afterStatus = execution.inspectUntrackedTaskStatus(lane.repository);
+    const unchanged = afterHead.status === 0 && afterHead.stdout.trim() === beforeHead.stdout.trim() && afterStatus === beforeStatus;
+    run.checks.readiness = { contract: "VALID", repo_preflight: repoCheck.checks, staging_safety: stagingCheck.status, staging_status: stagingCheck.staging_status };
+    run.checks.fake_worker = { status: run.status === "COMPLETED" ? "PASS" : run.status, provider: "fake", task_completed: false };
+    run.checks.source_unchanged = { status: unchanged ? "PASS" : "FAIL", before_sha: beforeHead.stdout.trim(), after_sha: afterHead.stdout.trim(), worktree_unchanged: unchanged };
+    run.checks.staging_deployment = { status: "NOT_RUN", enabled: contract.staging_deployment.enabled };
+    if (!unchanged || run.status !== "COMPLETED" || run.task_completed) throw new Error("Fake execution invariant failed; task was not completed");
+    await execution.persistExecutionRun(deliveryRoot, run);
+    console.log(JSON.stringify({ contract_status: "VALID", fake_worker: "PASS", task_status: "READY", task_completed: false, source_mutation: false, staging_deployment: "NOT_RUN", execution: run }, null, 2));
+    return 0;
+  }
   if (subcommand === "status") {
     delivery.printTable(delivery.loadState(deliveryRoot));
     return 0;
@@ -1166,7 +1225,7 @@ async function runDeliveryCommand(args) {
     console.log(JSON.stringify(result, null, 2));
     return result.results.some((item) => ["FAILED", "BLOCKED"].includes(item.status)) ? 1 : 0;
   }
-  console.log("Usage: ./afuza delivery <status|plan|run <project> --dry-run|run-all --dry-run|report>");
+  console.log("Usage: ./afuza delivery <status|plan|run <project> --dry-run|run-all --dry-run|execution-plan <project>|execution-inspect <project>|execution-test <project> --fake|report>");
   return 2;
 }
 

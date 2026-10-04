@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "execution_id": "6b5b041e-5808-4e12-8f83-77f38179b842",
+  "project_id": "chalwa.id",
+  "task_id": "CHW-06-01",
+  "status": "COMPLETED",
+  "simulation": true,
+  "task_completed": false,
+  "started_at": "2026-10-04T17:02:51.999Z",
+  "completed_at": "2026-10-04T17:02:51.999Z",
+  "starting_sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+  "result_sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+  "evidence_path": "delivery/execution-evidence/chalwa.id/6b5b041e-5808-4e12-8f83-77f38179b842.json",
+  "failure_reason": null,
+  "resume_from": null,
+  "retryable": false,
+  "attempt": 1,
+  "created_at": "2026-10-04T17:02:51.998Z",
+  "transitions": [
+    {
+      "state": "READY",
+      "at": "2026-10-04T17:02:51.998Z"
+    },
+    {
+      "state": "PREPARING",
+      "at": "2026-10-04T17:02:51.999Z"
+    },
+    {
+      "state": "RUNNING",
+      "at": "2026-10-04T17:02:51.999Z"
+    },
+    {
+      "state": "VALIDATING",
+      "at": "2026-10-04T17:02:51.999Z"
+    },
+    {
+      "state": "COMMITTING",
+      "at": "2026-10-04T17:02:51.999Z"
+    },
+    {
+      "state": "PUBLISHING",
+      "at": "2026-10-04T17:02:51.999Z"
+    },
+    {
+      "state": "COMPLETED",
+      "at": "2026-10-04T17:02:51.999Z"
+    }
+  ],
+  "checks": {
+    "prepare": {
+      "workspace_path": "/home/afuzaid/engineering/worktrees/ax06-execution/chalwa/CHW-06-01",
+      "created": false,
+      "detail": "Workspace plan only; no git worktree was created."
+    },
+    "execute": {
+      "changed_paths": [],
+      "source_mutation": false,
+      "detail": "Fake worker made no app source changes."
+    },
+    "validate": {
+      "contract_valid": true,
+      "gates_executed": false,
+      "detail": "Gate definitions validated; real app gates were not run."
+    },
+    "commit": {
+      "created": false,
+      "sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+      "detail": "Commit simulated; no Git commit was created."
+    },
+    "publish": {
+      "pushed": false,
+      "sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+      "detail": "Publish simulated; no network operation was performed."
+    },
+    "readiness": {
+      "contract": "VALID",
+      "repo_preflight": {
+        "clean": true,
+        "source_branch_checked_out": true,
+        "source_branch_exists": true,
+        "origin_matches": true,
+        "origin_reachable": true,
+        "source_sha_matches_remote": true,
+        "task_branch_available": true,
+        "task_worktree_available": true
+      },
+      "staging_safety": "READY",
+      "staging_status": "PASS"
+    },
+    "fake_worker": {
+      "status": "PASS",
+      "provider": "fake",
+      "task_completed": false
+    },
+    "source_unchanged": {
+      "status": "PASS",
+      "before_sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+      "after_sha": "6abf36ec3f5bc6144570c31fde5f117228bb955e",
+      "worktree_unchanged": true
+    },
+    "staging_deployment": {
+      "status": "NOT_RUN",
+      "enabled": false
+    }
+  }
+}

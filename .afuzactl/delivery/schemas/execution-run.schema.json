@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AX-06 execution run evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_id", "project_id", "task_id", "status", "simulation", "task_completed", "started_at", "completed_at", "starting_sha", "result_sha", "evidence_path", "failure_reason", "resume_from", "retryable", "attempt", "created_at", "transitions", "checks"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "execution_id": { "type": "string", "minLength": 1 },
+    "project_id": { "enum": ["chalwa.id", "klodhost", "marketing-agency"] },
+    "task_id": { "type": "string", "pattern": "^(CHW|KLO|MKT)-06-[0-9]{2}$" },
+    "status": { "enum": ["READY", "PREPARING", "RUNNING", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED", "BLOCKED", "FAILED", "AWAITING_APPROVAL"] },
+    "simulation": { "type": "boolean" },
+    "task_completed": { "type": "boolean" },
+    "started_at": { "type": ["string", "null"] },
+    "completed_at": { "type": ["string", "null"] },
+    "starting_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "result_sha": { "type": ["string", "null"] },
+    "evidence_path": { "type": ["string", "null"] },
+    "failure_reason": { "type": ["string", "null"] },
+    "resume_from": { "type": ["string", "null"] },
+    "retryable": { "type": "boolean" },
+    "attempt": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "transitions": { "type": "array", "items": { "type": "object", "required": ["state", "at"], "properties": { "state": { "type": "string" }, "at": { "type": "string", "format": "date-time" } }, "additionalProperties": false } },
+    "checks": { "type": "object" }
+  }
+}
