@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "decision_id": "AX-06",
+  "approval_id": "AX-06",
+  "status": "APPROVED",
+  "approving_authority": "Requesting project owner, by explicit AX-06 authorization instruction dated 2026-10-04",
+  "approved_at": "2026-10-04",
+  "source_of_truth": true,
+  "authorized_project_ids": ["chalwa.id", "klodhost", "marketing-agency"],
+  "scope": {
+    "name": "AX-06 business capability implementation",
+    "execution_mode": "autonomous_staging",
+    "description": "Implement the declared project-specific capabilities in isolated project feature branches or worktrees. Changes may be validated and deployed to staging only, with evidence and normal non-force feature-branch pushes.",
+    "source_mutation": "Allowed only within the three authorized project repositories and AX-06 backlog task scope.",
+    "readiness_state": "READY_FOR_HUMAN_TEST",
+    "execution_state": "STAGING_READY"
+  },
+  "allowed_actions": [
+    "inspect-project-source-and-backlog", "create-or-update-project-feature-code", "create-or-update-project-tests",
+    "lint", "typecheck", "test", "build", "deploy-staging", "restart-staging-service",
+    "verify-staging-health-and-ready", "run-safe-staging-api-and-browser-checks", "update-project-and-canonical-delivery-evidence",
+    "create-focused-feature-branch-commit", "push-normal-non-force-feature-branch"
+  ],
+  "prohibited_actions": [
+    "production-deploy", "production-configuration-change", "real-payment", "real-billing-charge",
+    "real-hosting-provisioning", "real-provider-action", "real-node-provisioning", "real-whatsapp-outbound",
+    "real-email-outbound", "real-sms-outbound", "destructive-database-migration", "credential-or-key-rotation",
+    "dns-or-domain-change", "go-live", "force-push", "persistent-production-data-deletion",
+    "cross-project-architecture-change-without-approval", "readiness-promotion-without-approval"
+  ],
+  "approval_boundaries": [
+    "Any production deployment, configuration, service, or data action", "Any real payment or billing charge",
+    "Any real hosting, provider, or node provisioning action", "Any real WhatsApp, email, or SMS outbound action",
+    "Any destructive or irreversible database migration", "Credential or key rotation", "DNS or domain changes",
+    "Cross-project architecture changes", "Readiness promotion beyond READY_FOR_HUMAN_TEST",
+    "Go-live, force-push, or persistent production data deletion"
+  ],
+  "authorization_constraints": {
+    "production_untouched": true,
+    "staging_only": true,
+    "canonical_writes_serialized": true,
+    "parallel_lanes": ["chalwa.id", "klodhost", "marketing-agency"],
+    "no_implicit_external_actions": true,
+    "feature_execution_requires_matching_approved_lane_backlog": true
+  },
+  "backlog_paths": {
+    "chalwa.id": "docs/AX-06-BACKLOG.md",
+    "klodhost": "docs/AX-06-BACKLOG.md",
+    "marketing-agency": "docs/AX-06-BACKLOG.md"
+  }
+}

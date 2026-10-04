@@ -1142,7 +1142,7 @@ async function runDeliveryCommand(args) {
   }
   if (subcommand === "plan") {
     for (const lane of lanes) {
-      const selection = delivery.selectNextTask(lane);
+      const selection = delivery.selectNextTask(lane, delivery.loadTaskSources(lane, deliveryRoot));
       console.log(`${lane.id}\t${selection.status}\t${selection.task}\t${selection.blocker}`);
     }
     return 0;

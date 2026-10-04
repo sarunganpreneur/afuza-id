@@ -54,11 +54,18 @@ describe("delivery orchestrator", () => {
   });
 
   it("parses an approved Markdown backlog and selects only its declared task", () => {
-    const backlog = parseBacklogMarkdown(`---\nproject_id: chalwa.id\napproval_id: AX06-001\ntasks:\n  - id: AX06-CHALWA-001\n    status: READY\n---\n\n# Approved AX-06 backlog\n`);
+    const backlog = parseBacklogMarkdown(`---\nproject_id: chalwa.id\napproval_id: AX-06\nstatus: APPROVED\nexecution_mode: autonomous_staging\nsource_of_truth: true\ntasks:\n  - id: AX06-CHALWA-001\n    status: READY\n---\n\n# Approved AX-06 backlog\n`);
     expect(selectNextTask(lane, {
-      authorization: { status: "APPROVED", decision_id: "AX06-001", approving_authority: "Portfolio owner" },
+      authorization: { status: "APPROVED", decision_id: "AX-06", approving_authority: "Portfolio owner", authorized_project_ids: ["chalwa.id"] },
       backlog,
     })).toMatchObject({ status: "READY", task: "AX06-CHALWA-001", approval_required: false });
+  });
+
+  it("requires a matching authorized project and approved source-of-truth backlog", () => {
+    const authorization = { status: "APPROVED", decision_id: "AX-06", approving_authority: "Portfolio owner", authorized_project_ids: ["klodhost"] };
+    const backlog = { project_id: "chalwa.id", approval_id: "AX-06", status: "APPROVED", execution_mode: "autonomous_staging", source_of_truth: true, tasks: [{ id: "CHW-06-01", status: "READY" }] };
+    expect(selectNextTask(lane, { authorization, backlog }).status).toBe("AWAITING_APPROVAL");
+    expect(selectNextTask(lane, { authorization: { ...authorization, authorized_project_ids: ["chalwa.id"] }, backlog: { ...backlog, source_of_truth: false } }).status).toBe("AWAITING_APPROVAL");
   });
 
   it("rejects an unstructured Markdown backlog", () => {

@@ -42,9 +42,11 @@ function discoverLanes(registry) {
 function selectNextTask(lane, sources = {}) {
   const authorization = sources.authorization;
   const backlog = sources.backlog;
-  if (!authorization || authorization.status !== "APPROVED" || !authorization.decision_id ||
-      !authorization.approving_authority || !backlog || backlog.approval_id !== authorization.decision_id ||
-      backlog.project_id !== lane.id || !Array.isArray(backlog.tasks) || backlog.tasks.length === 0) {
+    if (!authorization || authorization.status !== "APPROVED" || authorization.decision_id !== "AX-06" ||
+        !authorization.approving_authority || !authorization.authorized_project_ids?.includes(lane.id) ||
+        !backlog || backlog.approval_id !== authorization.decision_id || backlog.status !== "APPROVED" ||
+        backlog.execution_mode !== "autonomous_staging" || backlog.source_of_truth !== true ||
+        backlog.project_id !== lane.id || !Array.isArray(backlog.tasks) || backlog.tasks.length === 0) {
     return {
       status: "AWAITING_APPROVAL",
       task: "AX-06 milestone selection",
@@ -55,6 +57,16 @@ function selectNextTask(lane, sources = {}) {
   const candidate = backlog.tasks.find((task) => ["PLANNED", "READY"].includes(task.status));
   if (!candidate) return { status: "COMPLETED", task: "No eligible task", blocker: null, approval_required: false };
   return { status: candidate.status, task: candidate.id, blocker: null, approval_required: false };
+}
+
+function loadTaskSources(lane, deliveryRoot) {
+  const authorizationPath = path.join(deliveryRoot, "authorizations", "AX-06.json");
+  const backlogPath = path.join(lane.repository, lane.next_task_source);
+  let authorization = null;
+  let backlog = null;
+  try { authorization = readJson(authorizationPath); } catch { /* Missing authorization is an approval blocker. */ }
+  try { backlog = parseBacklogMarkdown(fs.readFileSync(backlogPath, "utf8")); } catch { /* Missing or invalid backlog is an approval blocker. */ }
+  return { authorization, backlog };
 }
 
 function authorizeAction(action) {
@@ -170,13 +182,7 @@ async function inspectLane(lane, options = {}) {
     checks.fake_mode = check("fake_mode", false, `${error.name === "TimeoutError" ? "timeout" : "request failed"}: staging page`);
   }
 
-  const sourcePath = path.join(repo, lane.next_task_source);
-  const authorizationPath = path.join(options.deliveryRoot || options.controlRoot || ".", "authorizations", "AX-06.json");
-  let authorization = null;
-  let backlog = null;
-  try { authorization = readJson(authorizationPath); } catch { /* Missing approval is the expected initial state. */ }
-  try { backlog = parseBacklogMarkdown(fs.readFileSync(sourcePath, "utf8")); } catch { /* Missing or invalid backlog is the expected initial state. */ }
-  const selection = selectNextTask(lane, { authorization, backlog });
+  const selection = selectNextTask(lane, loadTaskSources(lane, options.deliveryRoot || options.controlRoot || "."));
   checks.milestone = check("milestone", selection.status !== "AWAITING_APPROVAL", selection.blocker || "Approved backlog available");
 
   const status = classifyChecks(checks);
@@ -324,6 +330,7 @@ module.exports = {
   discoverLanes,
   executeLane,
   loadLanes,
+  loadTaskSources,
   loadState,
   markdownReport,
   parseBacklogMarkdown,
