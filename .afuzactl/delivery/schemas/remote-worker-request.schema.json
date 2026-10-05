@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AX-06 remote sandboxed worker request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_id", "project_id", "task_id", "approval_id", "repository", "workspace", "worker", "task", "limits", "security"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "execution_id": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$" },
+    "project_id": { "enum": ["chalwa.id", "klodhost", "marketing-agency"] },
+    "task_id": { "type": "string", "pattern": "^(CHW|KLO|MKT)-06-[0-9]{2}$" },
+    "approval_id": { "const": "AX-06" },
+    "repository": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clone_url", "source_branch", "starting_sha", "task_branch"],
+      "properties": {
+        "clone_url": { "type": "string", "minLength": 1, "pattern": "^(https://|ssh://|git@)" },
+        "source_branch": { "type": "string", "minLength": 1 },
+        "starting_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "task_branch": { "type": "string", "pattern": "^ax06/(chalwa|klodhost|marketing-agency)/(CHW|KLO|MKT)-06-[0-9]{2}$" }
+      }
+    },
+    "workspace": {
+      "type": "object", "additionalProperties": false,
+      "required": ["disposable", "mount_point", "allowed_paths", "forbidden_paths"],
+      "properties": {
+        "disposable": { "const": true },
+        "mount_point": { "const": "/workspace" },
+        "allowed_paths": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+        "forbidden_paths": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true }
+      }
+    },
+    "worker": {
+      "type": "object", "additionalProperties": false,
+      "required": ["provider", "sandbox_required", "runtime_target"],
+      "properties": {
+        "provider": { "const": "codex" },
+        "sandbox_required": { "const": true },
+        "runtime_target": { "const": "rootless-podman" }
+      }
+    },
+    "task": {
+      "type": "object", "additionalProperties": false,
+      "required": ["objective", "acceptance_criteria", "verification_gates"],
+      "properties": {
+        "objective": { "type": "string", "minLength": 1 },
+        "acceptance_criteria": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+        "verification_gates": { "type": "object" }
+      }
+    },
+    "limits": {
+      "type": "object", "additionalProperties": false,
+      "required": ["timeout_seconds", "memory_mb", "cpu_quota_percent", "pids", "retry_count"],
+      "properties": {
+        "timeout_seconds": { "type": "integer", "minimum": 1, "maximum": 7200 },
+        "memory_mb": { "type": "integer", "minimum": 128, "maximum": 65536 },
+        "cpu_quota_percent": { "type": "integer", "minimum": 1, "maximum": 6400 },
+        "pids": { "type": "integer", "minimum": 1, "maximum": 4096 },
+        "retry_count": { "type": "integer", "minimum": 0, "maximum": 3 }
+      }
+    },
+    "security": {
+      "type": "object", "additionalProperties": false,
+      "required": ["production_forbidden", "secrets_policy", "network_policy", "allowed_git_operations", "credential_profiles"],
+      "properties": {
+        "production_forbidden": { "const": true },
+        "secrets_policy": { "const": "no-task-secrets; dedicated-worker-identity-only" },
+        "network_policy": { "const": "outbound-https-via-restricted-egress; deny-inbound; deny-private-ranges" },
+        "allowed_git_operations": { "const": ["fetch-source-branch", "create-task-branch", "push-task-branch"] },
+        "credential_profiles": {
+          "type": "object", "additionalProperties": false,
+          "required": ["git", "codex", "control_plane"],
+          "properties": {
+            "git": { "const": "dedicated-repo-scoped-worker-identity" },
+            "codex": { "const": "worker-host-local-codex-auth" },
+            "control_plane": { "const": "short-lived-signed-request-and-result" }
+          }
+        }
+      }
+    }
+  }
+}

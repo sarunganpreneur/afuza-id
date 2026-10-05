@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AX-06 remote sandboxed worker result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_id", "worker_id", "provider", "starting_sha", "result_sha", "changed_paths", "worker_exit_code", "gate_results", "sandbox_attestation", "resource_usage", "warnings", "requested_approval", "failure_reason", "git_publication"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "execution_id": { "type": "string", "minLength": 1 },
+    "worker_id": { "type": "string", "minLength": 1 },
+    "provider": { "const": "remote-codex" },
+    "starting_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "result_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "changed_paths": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "worker_exit_code": { "type": "integer" },
+    "gate_results": { "type": "object", "additionalProperties": { "enum": ["PASS", "FAIL", "SKIPPED"] } },
+    "sandbox_attestation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sandbox_active", "uid", "workspace", "starting_sha", "forbidden_paths_excluded", "forbidden_capabilities_absent", "production_excluded", "privileged", "host_pid", "host_network", "cap_drop_all", "no_new_privileges", "readonly_rootfs", "writable_mounts", "tmpfs_tmp", "inbound_denied", "private_ranges_denied", "runtime", "timeout_enforced", "resource_policy"],
+      "properties": {
+        "sandbox_active": { "type": "boolean" },
+        "uid": { "type": "integer", "minimum": 1 },
+        "workspace": { "const": "/workspace" },
+        "starting_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "forbidden_paths_excluded": { "type": "boolean" },
+        "forbidden_capabilities_absent": { "type": "boolean" },
+        "production_excluded": { "type": "boolean" },
+        "privileged": { "type": "boolean" },
+        "host_pid": { "type": "boolean" },
+        "host_network": { "type": "boolean" },
+        "cap_drop_all": { "type": "boolean" },
+        "no_new_privileges": { "type": "boolean" },
+        "readonly_rootfs": { "type": "boolean" },
+        "writable_mounts": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+        "tmpfs_tmp": { "type": "boolean" },
+        "inbound_denied": { "type": "boolean" },
+        "private_ranges_denied": { "type": "boolean" },
+        "runtime": {
+          "type": "object", "additionalProperties": false,
+          "required": ["name", "mode", "image_digest", "container_id"],
+          "properties": {
+            "name": { "const": "podman" },
+            "mode": { "const": "rootless" },
+            "image_digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "container_id": { "type": "string", "minLength": 1 }
+          }
+        },
+        "timeout_enforced": { "type": "boolean" },
+        "resource_policy": {
+          "type": "object", "additionalProperties": false,
+          "required": ["memory_mb", "cpu_quota_percent", "pids"],
+          "properties": {
+            "memory_mb": { "type": "integer", "minimum": 1 },
+            "cpu_quota_percent": { "type": "integer", "minimum": 1 },
+            "pids": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "resource_usage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["elapsed_ms", "peak_memory_mb", "cpu_seconds", "peak_pids"],
+      "properties": {
+        "elapsed_ms": { "type": "number", "minimum": 0 },
+        "peak_memory_mb": { "type": "number", "minimum": 0 },
+        "cpu_seconds": { "type": "number", "minimum": 0 },
+        "peak_pids": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "requested_approval": { "type": "boolean" },
+    "failure_reason": { "type": ["string", "null"] },
+    "git_publication": {
+      "type": "object", "additionalProperties": false,
+      "required": ["branch", "pushed", "force_pushed", "merged", "target_branch"],
+      "properties": {
+        "branch": { "type": "string", "minLength": 1 },
+        "pushed": { "type": "boolean" },
+        "force_pushed": { "type": "boolean" },
+        "merged": { "type": "boolean" },
+        "target_branch": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

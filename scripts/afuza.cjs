@@ -11,6 +11,7 @@ const { createInbox } = require("./portfolio-inbox.cjs");
 const delivery = require("./delivery-orchestrator.cjs");
 const execution = require("./execution-contract.cjs");
 const workerAdapter = require("./real-worker-adapter.cjs");
+const remoteWorker = require("./remote-worker-contract.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTROL = path.join(ROOT, ".afuzactl");
@@ -1138,6 +1139,66 @@ async function runDeliveryCommand(args) {
   const deliveryRoot = path.join(ECOSYSTEM_ROOT, "..", "delivery");
   const lanes = delivery.loadLanes(deliveryRoot);
   const [subcommand, projectId, ...options] = args;
+  if (["remote-worker-plan", "remote-worker-inspect"].includes(subcommand)) {
+    const contract = readJson(path.join(deliveryRoot, "execution-contract.json"));
+    console.log(JSON.stringify({
+      ...remoteWorker.remoteWorkerPlanState(contract),
+      mode: "architecture-only",
+      network_dispatch_performed: false,
+      task_execution_performed: false,
+      production_forbidden: true,
+      ...(subcommand === "remote-worker-inspect" ? { worker_id: null, lifecycle_state: "NOT_PROVISIONED" } : {}),
+    }, null, 2));
+    return 0;
+  }
+  if (subcommand === "remote-worker-preflight") {
+    const normalizedProject = projectId === "chalwa" ? "chalwa.id" : projectId;
+    const lane = lanes.find((item) => item.id === normalizedProject);
+    if (!lane) throw new Error(`Unknown delivery project: ${projectId || "(missing)"}`);
+    const contract = readJson(path.join(deliveryRoot, "execution-contract.json"));
+    const sources = delivery.loadTaskSources(lane, deliveryRoot);
+    const selection = delivery.selectNextTask(lane, sources);
+    const task = sources.backlog?.tasks?.find((item) => item.id === selection.task);
+    const descriptor = contract.tasks?.[selection.task];
+    const sourceBranch = contract.source_branches?.[lane.id];
+    const sourceResult = sourceBranch
+      ? execution.runGit(lane.repository, ["rev-parse", "--verify", `refs/heads/${sourceBranch}`])
+      : { status: 1, stdout: "" };
+    const blockers = [];
+    if (selection.status !== "READY" || !task) blockers.push(selection.blocker || `TASK_${selection.status}`);
+    if (!sources.authorization || sources.authorization.status !== "APPROVED" || sources.authorization.approval_id !== "AX-06") blockers.push("AUTHORIZATION_INVALID");
+    if (!descriptor || descriptor.project_id !== lane.id) blockers.push("TASK_CONTRACT_MISSING");
+    if (sourceResult.status !== 0 || !/^[0-9a-f]{40}$/.test(sourceResult.stdout.trim())) blockers.push("LOCAL_SOURCE_SHA_UNAVAILABLE");
+    let request = null;
+    if (task && descriptor && sourceResult.status === 0) {
+      const spec = execution.createExecutionSpec({
+        lane,
+        authorization: sources.authorization,
+        backlog: sources.backlog,
+        task,
+        descriptor: { ...descriptor, generic_quality_gates: contract.generic_quality_gates, forbidden_paths: contract.forbidden_paths },
+        startingSha: sourceResult.stdout.trim(),
+        sourceBranch,
+      });
+      blockers.push(...execution.validateExecutionSpec(spec));
+      request = remoteWorker.createRemoteRequest(spec, contract.remote_urls?.[lane.id]);
+      blockers.push(...remoteWorker.validateRemoteRequest(request));
+    }
+    const uniqueBlockers = [...new Set(blockers)];
+    console.log(JSON.stringify({
+      project_id: lane.id,
+      preflight_status: uniqueBlockers.length === 0 ? "PASS_DESIGN_ONLY" : "BLOCKED",
+      selection,
+      request,
+      blockers: uniqueBlockers,
+      configured_provider: contract.worker_provider,
+      candidate_provider: null,
+      dispatch_enabled: false,
+      network_dispatch_performed: false,
+      task_execution_performed: false,
+    }, null, 2));
+    return uniqueBlockers.length === 0 ? 0 : 1;
+  }
   if (["worker-status", "worker-probe"].includes(subcommand)) {
     const contract = readJson(path.join(deliveryRoot, "execution-contract.json"));
     const runtime = workerAdapter.discoverWorkerCapabilities({ configuredProvider: contract.worker_provider });

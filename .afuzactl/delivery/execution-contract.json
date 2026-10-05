@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "worker_provider": "fake",
-  "supported_provider_ids": ["fake", "local-agent", "vscode-agent", "codex", "other"],
+  "supported_provider_ids": ["fake", "local-agent", "vscode-agent", "codex", "remote-codex", "other"],
   "provider_abstraction": {
     "enabled_provider": "fake",
     "candidate_provider": null,
     "implemented_adapters": ["fake", "local-agent"],
-    "future_provider_ids": ["vscode-agent", "codex", "other"],
+    "future_provider_ids": ["vscode-agent", "codex", "remote-codex", "other"],
     "task_dispatch_enabled": false
   },
   "production_forbidden": true,
