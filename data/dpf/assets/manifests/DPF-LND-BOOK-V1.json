@@ -1,0 +1,75 @@
+{
+  "sku": "DPF-LND-BOOK-V1",
+  "slug": "dpf-lnd-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "LND",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-LND-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16938,
+      "sha256": "3d23c72666fe75d3ad8f9d47e72382057d5fb88b134b0912d15cd3255797407d"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-LND-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2363,
+      "sha256": "6334ffe421e1218597d5a0ecd53f4bc0d4bca41874570bc5a944dc7ef68d425e"
+    }
+  ],
+  "package": {
+    "filename": "DPF-LND-BOOK-V1-V1.zip",
+    "bytes": 16213,
+    "sha256": "0ce284cdc82abecfa0785ef5b479a3d7d66b1d187f09006360a5b020bb1dc445",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 6,
+      "uniqueTerms": [
+        "Cuci Kering Lipat Reguler",
+        "Cuci Setrika Express",
+        "Cuci Sepatu Basic",
+        "Deterjen dan pewangi",
+        "Listrik mesin",
+        "Cuci sepatu basic"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16213"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

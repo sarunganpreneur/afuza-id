@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-RTL-INV-V1",
+  "slug": "dpf-rtl-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "RTL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-RTL-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16354,
+      "sha256": "ecfcba4c6af78f314299bd8d1639e1d04d33550372304fd3be239a40c211de0e"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-RTL-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2396,
+      "sha256": "3a99a017b726acd8a2fc3caff50759d7aa3a178d298db38928d8e85cd1c3c829"
+    }
+  ],
+  "package": {
+    "filename": "DPF-RTL-INV-V1-V1.zip",
+    "bytes": 15701,
+    "sha256": "84cd045e52fad5fa39082178cfad73bddb2aa29e6233edc94ebb7a87108530de",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Paket Sembako Hemat",
+        "Minyak goreng 1 L",
+        "Mi instan goreng",
+        "Baterai AA isi 2"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15701"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

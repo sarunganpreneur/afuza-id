@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-KUL-BOOK-V1",
+  "slug": "dpf-kul-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "KUL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-KUL-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16960,
+      "sha256": "f9cedfb8715985104575c7ee67f79e9428430374af487932f1c6bd27ec25acef"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-KUL-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2389,
+      "sha256": "0d3284664e9ea136e9c382abcd93bc89fd6533138202d8db637c22d4f393c384"
+    }
+  ],
+  "package": {
+    "filename": "DPF-KUL-BOOK-V1-V1.zip",
+    "bytes": 16240,
+    "sha256": "211663650c02dddfc0e06f02e58452f60b8d71fb1d12fb832e20bb017179cecf",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Nasi Goreng Ayam",
+        "Soto Ayam",
+        "Es Teh Lemon",
+        "Belanja bahan segar",
+        "Gas LPG"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16240"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

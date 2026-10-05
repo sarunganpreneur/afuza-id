@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 15,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Paket Sembako Hemat",
+      "Air Mineral 600 ml",
+      "Telur Ayam",
+      "Kulakan barang",
+      "Ongkos angkut"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:16284"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

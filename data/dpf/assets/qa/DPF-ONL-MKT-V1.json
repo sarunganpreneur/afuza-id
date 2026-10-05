@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:9",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 8,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 10,
+    "uniqueTerms": [
+      "Kemeja Casual Reseller",
+      "Paket Organizer Meja",
+      "Bundle Perawatan Sepatu",
+      "Kemeja casual warna navy",
+      "Kardus kirim ukuran M",
+      "Bubble wrap 50 cm",
+      "Packing",
+      "Bundle organizer meja dengan dua ukuran",
+      "Voucher repeat order terjadwal",
+      "Video proses packing pesanan rapuh"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:29055"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

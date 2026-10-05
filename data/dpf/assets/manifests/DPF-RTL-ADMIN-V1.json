@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-RTL-ADMIN-V1",
+  "slug": "dpf-rtl-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "RTL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-RTL-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17545,
+      "sha256": "edbaeaff26e264bf39ca19b2d0f4265fbe6c6cc4f4b48b56e4e890506eec804c"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-RTL-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10493,
+      "sha256": "d07a04d9da93f2c52b3b19312e7c2ed95239989ab3146814dce2f182f425e3ef"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-RTL-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2473,
+      "sha256": "c823017e6566357b49a99d09e39b04964136a91519a51952a7fad459be746f8e"
+    }
+  ],
+  "package": {
+    "filename": "DPF-RTL-ADMIN-V1-V1.zip",
+    "bytes": 26133,
+    "sha256": "e9e9aae59f82e91cf7027052ab4803539ba78c2934fc13f9921bc7ee30a517df",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Paket Sembako Hemat",
+        "Minyak goreng 1 L",
+        "Mi instan goreng",
+        "Baterai AA isi 2",
+        "Kulakan barang"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26133"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

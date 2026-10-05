@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 15,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Kaos Cotton Combed 24s",
+      "Kemeja Linen",
+      "Totebag Kanvas",
+      "Bahan kain dan blank",
+      "Jasa jahit"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:16222"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

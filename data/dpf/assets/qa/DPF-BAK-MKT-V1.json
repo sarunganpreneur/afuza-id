@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:9",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 8,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Brownies Cokelat Loyang 20 cm",
+      "Roti Sobek Keju",
+      "Cookies Oat 250 g",
+      "Tepung protein tinggi",
+      "Cokelat compound",
+      "Box brownies 20 cm",
+      "Brownies loyang untuk rapat",
+      "Roti sobek keju batch pagi",
+      "Hampers cookies dengan kartu ucapan"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:29064"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

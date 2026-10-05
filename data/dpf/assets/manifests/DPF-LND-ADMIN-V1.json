@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-LND-ADMIN-V1",
+  "slug": "dpf-lnd-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "LND",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-LND-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17520,
+      "sha256": "b8cb968da35aa599de5969c6d6cd275b9258769cf83c6603f8fdaa661c83a79d"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-LND-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10486,
+      "sha256": "d7c8d5ed18c8cc92967370e7b81604622456cf03819c45b926b4bdb2bfc92eb4"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-LND-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2439,
+      "sha256": "b163a6a3d53a52e38e553a98ed75bc9ba8fe95d6584ff4c91c3666c34849a110"
+    }
+  ],
+  "package": {
+    "filename": "DPF-LND-ADMIN-V1-V1.zip",
+    "bytes": 26083,
+    "sha256": "86f1c3562879bc232d45833593591bb6317a75f4085d72381979cf39578bb961",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Cuci Kering Lipat Reguler",
+        "Deterjen cair konsentrat",
+        "Pewangi floral",
+        "Plastik laundry 40 x 60",
+        "Deterjen dan pewangi"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26083"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

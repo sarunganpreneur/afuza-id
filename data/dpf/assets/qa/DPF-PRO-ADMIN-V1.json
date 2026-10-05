@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:7",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 6,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Konsultasi Operasional 90 Menit",
+      "Jam konsultasi tersedia",
+      "Lisensi desain bulanan",
+      "Slot proyek aktif",
+      "Jam kerja delivery"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:26178"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

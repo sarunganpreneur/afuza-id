@@ -1,0 +1,424 @@
+{
+  "scope": "KUL",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "generatorVersion": "1.0.0",
+  "productCount": 5,
+  "qaPassed": 5,
+  "qaFailed": 0,
+  "placeholderLeaks": 0,
+  "packageFailures": 0,
+  "byMaster": {
+    "HPP": 1,
+    "BOOK": 1,
+    "INV": 1,
+    "ADMIN": 1,
+    "MKT": 1
+  },
+  "byNiche": {
+    "KUL": 5,
+    "CAF": 0,
+    "RTL": 0,
+    "FAS": 0,
+    "LND": 0,
+    "SAL": 0,
+    "BNG": 0,
+    "ONL": 0,
+    "BAK": 0,
+    "PRO": 0
+  },
+  "humanReview": "HUMAN_REVIEW_PENDING",
+  "status": "PASS",
+  "products": [
+    {
+      "sku": "DPF-KUL-HPP-V1",
+      "slug": "dpf-kul-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14772,
+          "sha256": "670ee721e0f6405441b92d4da5185cde13c5442298003b1db3ef7925b5ce4213"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2381,
+          "sha256": "97a560703a76fa7b1e77b0bd68bc9427c2d03eae5f77a24c0f8650317e4f3051"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-HPP-V1-V1.zip",
+        "bytes": 15249,
+        "sha256": "0214d6ec0c893f6fa507a5b2c9dfbc5f47bea5be65be9c7473b43518925fbb5f",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Belanja bahan segar",
+            "Gas LPG",
+            "Kemasan pesan antar"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15249"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-BOOK-V1",
+      "slug": "dpf-kul-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16960,
+          "sha256": "d84478bd593886132c3972f02085e2e43f1706eca62511c154164ddbe2cc53ce"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2389,
+          "sha256": "0d3284664e9ea136e9c382abcd93bc89fd6533138202d8db637c22d4f393c384"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-BOOK-V1-V1.zip",
+        "bytes": 16240,
+        "sha256": "80da17c8cf02be4315798597c1a8ec8365a10e6b192628566069c6aa8cd6b71e",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Belanja bahan segar",
+            "Gas LPG"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16240"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-INV-V1",
+      "slug": "dpf-kul-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16334,
+          "sha256": "125049cd7a4009c9310a7b96ad5441cb8757a69a3ce1ddf03a88b3a3cec19884"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2372,
+          "sha256": "dc40b10ce205410736ed2f91eba33089f3d3dfa41f233c72611d0c99658dfcc9"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-INV-V1-V1.zip",
+        "bytes": 15639,
+        "sha256": "38f904803e4a45dadc239e939b2a161aa6f118ad89fb8f02779f6ec6f852da63",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15639"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-ADMIN-V1",
+      "slug": "dpf-kul-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17527,
+          "sha256": "a4b34a0cd6779772a691bdc6008b3b54bd7731e47b05e39802233c978d9fdf80"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-KUL-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10478,
+          "sha256": "4f3e5a733ff87b54e81326ca0bc1c4e71f06e05f73044183c571028c659cb1e8"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2450,
+          "sha256": "da4c3e493a9682d7b08a1dae29fcf9e127bf374919dcbede47ba122e2a6aea55"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-ADMIN-V1-V1.zip",
+        "bytes": 26097,
+        "sha256": "e357eb5c8cc12bc19dac2011916d0f731e189baf2094e9114f6794cd3deab032",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Belanja bahan segar"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26097"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-MKT-V1",
+      "slug": "dpf-kul-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20294,
+          "sha256": "5154c969e7faf6b52bb7edd238a8788bcf320730c24e3bb43a37f44a87cc8cb6"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-KUL-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10478,
+          "sha256": "eb0c37d16d18dbc40da08624de08189139d34ca17a4734772938322fc0261f57"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2409,
+          "sha256": "2ca75869c6b3ed6a574524b381b343b206e5cd90008ece8c7d3e0331c503b0b7"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-MKT-V1-V1.zip",
+        "bytes": 29038,
+        "sha256": "a6de43c8f8320c56f407522147753c68ed5e07bf28f0c69592c72564b24b3111",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Paket makan siang: nasi goreng ayam + es teh",
+            "Paket keluarga soto ayam 4 mangkuk",
+            "Tambah telur pada menu nasi goreng"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29038"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    }
+  ]
+}

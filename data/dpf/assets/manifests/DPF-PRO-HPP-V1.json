@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-PRO-HPP-V1",
+  "slug": "dpf-pro-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "PRO",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-PRO-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14825,
+      "sha256": "0f678d190c257271dd88f5d8714bc392d25ce0c2c4b202588883c9a089534861"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-PRO-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2458,
+      "sha256": "cbfc7766f1daef38e67a967b9b2dd2e9e997524d2b149ea397e6bd188d1b697b"
+    }
+  ],
+  "package": {
+    "filename": "DPF-PRO-HPP-V1-V1.zip",
+    "bytes": 15419,
+    "sha256": "df53a629fa1e97f00a09ba7af392345765542026ee57fc7bbb565b29bd96e73f",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Konsultasi Operasional 90 Menit",
+        "Paket Desain Identitas Dasar",
+        "Review Laporan Keuangan",
+        "Jam konsultasi tersedia",
+        "Lisensi desain bulanan",
+        "Slot proyek aktif",
+        "Jam kerja delivery",
+        "Lisensi software",
+        "Subkontraktor"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15419"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

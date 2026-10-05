@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:9",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 8,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Potong Rambut Pria",
+      "Hair Spa Basic",
+      "Paket Potong + Cuci",
+      "Shampoo salon 1 L",
+      "Sarung cape",
+      "Pomade retail 80 g",
+      "Paket potong dan cuci",
+      "Pengingat jadwal potong 3-4 minggu",
+      "Hair spa setelah konsultasi kondisi rambut"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:29027"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

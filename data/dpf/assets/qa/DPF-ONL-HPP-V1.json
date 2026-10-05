@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 10,
+    "uniqueTerms": [
+      "Kemeja Casual Reseller",
+      "Paket Organizer Meja",
+      "Bundle Perawatan Sepatu",
+      "Kemeja casual warna navy",
+      "Kardus kirim ukuran M",
+      "Bubble wrap 50 cm",
+      "Pembelian supplier",
+      "Biaya marketplace",
+      "Iklan produk",
+      "Packing"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15360"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

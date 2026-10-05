@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-KUL-INV-V1",
+  "slug": "dpf-kul-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "KUL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-KUL-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16334,
+      "sha256": "7dfb7f023ced28f310e85fe819c4ab936e63f170064b50a6435efd18c795b16d"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-KUL-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2372,
+      "sha256": "dc40b10ce205410736ed2f91eba33089f3d3dfa41f233c72611d0c99658dfcc9"
+    }
+  ],
+  "package": {
+    "filename": "DPF-KUL-INV-V1-V1.zip",
+    "bytes": 15639,
+    "sha256": "46a54259df7b2aa8cf43183e06e1e214de62bc56d9d6d12c48afed8b338420a3",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Nasi Goreng Ayam",
+        "Beras medium",
+        "Ayam fillet",
+        "Gelas 16 oz"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15639"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

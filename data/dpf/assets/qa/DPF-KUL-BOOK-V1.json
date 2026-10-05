@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 15,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Nasi Goreng Ayam",
+      "Soto Ayam",
+      "Es Teh Lemon",
+      "Belanja bahan segar",
+      "Gas LPG"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:16240"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

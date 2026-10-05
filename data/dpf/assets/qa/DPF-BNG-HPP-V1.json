@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Servis Berkala Motor Matic",
+      "Ganti Kampas Rem Depan",
+      "Tambal Ban Tubeless",
+      "Oli mesin 10W-40",
+      "Busi motor matic",
+      "Kampas rem depan",
+      "Suku cadang",
+      "Consumable bengkel",
+      "Upah mekanik"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15317"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

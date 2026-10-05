@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-CAF-INV-V1",
+  "slug": "dpf-caf-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "CAF",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-CAF-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16333,
+      "sha256": "91f140b3e64dbbeb05cdc3538c950c8b6a36a2ce6b0b8fd4b1287a557f73aeae"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-CAF-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2376,
+      "sha256": "df66a836108625421c2de8131bb230e8b38fd9797632b97a991dc6a99ee0b459"
+    }
+  ],
+  "package": {
+    "filename": "DPF-CAF-INV-V1-V1.zip",
+    "bytes": 15646,
+    "sha256": "7a056b33efb1d30e4f2fb16f9f6a30626372f83f6f85c6ed0ec79d09b12023cc",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Es Kopi Susu Gula Aren",
+        "Biji kopi house blend",
+        "Susu UHT",
+        "Cup 16 oz + lid"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15646"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

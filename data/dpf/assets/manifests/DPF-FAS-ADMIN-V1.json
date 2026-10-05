@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-FAS-ADMIN-V1",
+  "slug": "dpf-fas-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "FAS",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-FAS-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17548,
+      "sha256": "e314521a098b54aa24cd6754b8c25e243260bea720ea6259a142f26d1041f714"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-FAS-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10482,
+      "sha256": "051587f6442ae266f2998148c28a5abb7187cc69a893e7dd221d475dfd0c1abc"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-FAS-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2449,
+      "sha256": "00fd039689bbbeb47def66452bd7c804b47c1ba11b2af388d77357d0174cc81c"
+    }
+  ],
+  "package": {
+    "filename": "DPF-FAS-ADMIN-V1-V1.zip",
+    "bytes": 26115,
+    "sha256": "1421d1deab85c5ea77a9ecf7651159cdc0e1b6c459dcf3fdb511b99af8fb7c95",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Kaos Cotton Combed 24s",
+        "Kaos blank hitam ukuran M",
+        "Kain linen warna natural",
+        "Poly mailer ukuran M",
+        "Bahan kain dan blank"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26115"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

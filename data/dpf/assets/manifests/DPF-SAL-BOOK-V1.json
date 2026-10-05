@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-SAL-BOOK-V1",
+  "slug": "dpf-sal-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "SAL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-SAL-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16967,
+      "sha256": "29024c1fa217f79a7aec141f17a9f728419cf9b61f671cb45da7d8998a78f111"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-SAL-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2360,
+      "sha256": "c0b760f3f60c43a3cc1680c462ac526b7bfab273fc5f59d60f531e43bc253681"
+    }
+  ],
+  "package": {
+    "filename": "DPF-SAL-BOOK-V1-V1.zip",
+    "bytes": 16214,
+    "sha256": "db4a7ef35613c27e7d3edf04a4965498f8101879b5b9d9972c27f126b1039126",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Potong Rambut Pria",
+        "Hair Spa Basic",
+        "Paket Potong + Cuci",
+        "Bahan treatment",
+        "Laundry handuk"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16214"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-KUL-HPP-V1",
+  "slug": "dpf-kul-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "KUL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-KUL-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14772,
+      "sha256": "57754ea5f0825937919900ad3be456bb420fc8648b27d3ba6b1103b77cfeaf5a"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-KUL-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2381,
+      "sha256": "97a560703a76fa7b1e77b0bd68bc9427c2d03eae5f77a24c0f8650317e4f3051"
+    }
+  ],
+  "package": {
+    "filename": "DPF-KUL-HPP-V1-V1.zip",
+    "bytes": 15249,
+    "sha256": "7df07b37a88e620743918d5f29cf0b583290623c2edc62c6f0e3614a68dcfe2e",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Nasi Goreng Ayam",
+        "Soto Ayam",
+        "Es Teh Lemon",
+        "Beras medium",
+        "Ayam fillet",
+        "Gelas 16 oz",
+        "Belanja bahan segar",
+        "Gas LPG",
+        "Kemasan pesan antar"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15249"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

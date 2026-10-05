@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-BNG-INV-V1",
+  "slug": "dpf-bng-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "BNG",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BNG-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16319,
+      "sha256": "cb351f85d7dd71ba23ea102580b55c11593365e716e53d7945db70f43765a229"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BNG-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2397,
+      "sha256": "302572379f77d07200adbbbf63fc15b22ce9a6b42471eda9e1f841066f10b29f"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BNG-INV-V1-V1.zip",
+    "bytes": 15651,
+    "sha256": "d3a7cf85ff7cdb97040f07a82eca3383f6f0a51225efb18c56b62faa91d3ed60",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Servis Berkala Motor Matic",
+        "Oli mesin 10W-40",
+        "Busi motor matic",
+        "Kampas rem depan",
+        "Suku cadang"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15651"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

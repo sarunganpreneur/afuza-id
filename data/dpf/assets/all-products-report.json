@@ -1,0 +1,3952 @@
+{
+  "scope": "ALL",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "generatorVersion": "1.0.0",
+  "productCount": 50,
+  "qaPassed": 50,
+  "qaFailed": 0,
+  "placeholderLeaks": 0,
+  "packageFailures": 0,
+  "byMaster": {
+    "HPP": 10,
+    "BOOK": 10,
+    "INV": 10,
+    "ADMIN": 10,
+    "MKT": 10
+  },
+  "byNiche": {
+    "KUL": 5,
+    "CAF": 5,
+    "RTL": 5,
+    "FAS": 5,
+    "LND": 5,
+    "SAL": 5,
+    "BNG": 5,
+    "ONL": 5,
+    "BAK": 5,
+    "PRO": 5
+  },
+  "humanReview": "HUMAN_REVIEW_PENDING",
+  "status": "PASS",
+  "products": [
+    {
+      "sku": "DPF-KUL-HPP-V1",
+      "slug": "dpf-kul-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14772,
+          "sha256": "57754ea5f0825937919900ad3be456bb420fc8648b27d3ba6b1103b77cfeaf5a"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2381,
+          "sha256": "97a560703a76fa7b1e77b0bd68bc9427c2d03eae5f77a24c0f8650317e4f3051"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-HPP-V1-V1.zip",
+        "bytes": 15249,
+        "sha256": "7df07b37a88e620743918d5f29cf0b583290623c2edc62c6f0e3614a68dcfe2e",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Belanja bahan segar",
+            "Gas LPG",
+            "Kemasan pesan antar"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15249"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-CAF-HPP-V1",
+      "slug": "dpf-caf-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "CAF",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-CAF-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14793,
+          "sha256": "c3f331be9d6bb61db6a558f5d5fdf08ba5e41cc90abebbf9aef77c1e2b4d39e6"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-CAF-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2384,
+          "sha256": "30e080c0782035994e85d7dd295fdd69553250a7522478f38a45bbfc82c50db8"
+        }
+      ],
+      "package": {
+        "filename": "DPF-CAF-HPP-V1-V1.zip",
+        "bytes": 15319,
+        "sha256": "73a8506965326b173abfe5d05daa76241fc00c4035d65f3a750de65032c137fb",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Es Kopi Susu Gula Aren",
+            "Matcha Latte",
+            "Croissant Butter",
+            "Biji kopi house blend",
+            "Susu UHT",
+            "Cup 16 oz + lid",
+            "Biji kopi dan susu",
+            "Pastry titip jual",
+            "Biaya platform pesan"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15319"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-RTL-HPP-V1",
+      "slug": "dpf-rtl-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "RTL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-RTL-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14662,
+          "sha256": "a411425c9caecdb4b1fae3511725c14759ce2ff3cd1092d8c86f647e046067d8"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-RTL-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2412,
+          "sha256": "964ea89be65cdee79f22cf37592bdeea4194c6d2eff5cc27ff7accd8e1c53a25"
+        }
+      ],
+      "package": {
+        "filename": "DPF-RTL-HPP-V1-V1.zip",
+        "bytes": 15203,
+        "sha256": "38ad8c69e201b2b2ef800cd1a8b751bd0db08b0ecce1090df840e2126ba94ac8",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 36,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Paket Sembako Hemat",
+            "Air Mineral 600 ml",
+            "Telur Ayam",
+            "Minyak goreng 1 L",
+            "Mi instan goreng",
+            "Baterai AA isi 2",
+            "Kulakan barang",
+            "Ongkos angkut",
+            "Biaya QRIS"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15203"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-FAS-HPP-V1",
+      "slug": "dpf-fas-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "FAS",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-FAS-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14791,
+          "sha256": "fcc7d87250882b4fe44278c0bcf77e3db8c53f43cf879a367c6144396a73cf4a"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-FAS-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2390,
+          "sha256": "be6036161c9c84a2d0f08ac51ec4c9fa7efed07b4ac266d47723b9fa3ccb2fee"
+        }
+      ],
+      "package": {
+        "filename": "DPF-FAS-HPP-V1-V1.zip",
+        "bytes": 15317,
+        "sha256": "412b16cf0aab8cc1af0bfbc48b45a5721f3db82c972390b325ddebb32caeedd7",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Kaos Cotton Combed 24s",
+            "Kemeja Linen",
+            "Totebag Kanvas",
+            "Kaos blank hitam ukuran M",
+            "Kain linen warna natural",
+            "Poly mailer ukuran M",
+            "Bahan kain dan blank",
+            "Jasa jahit",
+            "Sablon atau bordir"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15317"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-LND-HPP-V1",
+      "slug": "dpf-lnd-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "LND",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-LND-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14788,
+          "sha256": "35d77ebf99c73e2c4606c0c66fa1495090f05bac4317d3217596453a25211902"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-LND-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2368,
+          "sha256": "6d5ec1415fe95cb27aacc584df4a9236d88de53d09ea0003fd96755defb45910"
+        }
+      ],
+      "package": {
+        "filename": "DPF-LND-HPP-V1-V1.zip",
+        "bytes": 15277,
+        "sha256": "ba684759564e86d8a48264507421173f0a02923908f69d83447b2b7e940938c0",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 11,
+          "uniqueTerms": [
+            "Cuci Kering Lipat Reguler",
+            "Cuci Setrika Express",
+            "Cuci Sepatu Basic",
+            "Deterjen cair konsentrat",
+            "Pewangi floral",
+            "Plastik laundry 40 x 60",
+            "Deterjen dan pewangi",
+            "Listrik mesin",
+            "Air sumur atau PAM",
+            "Plastik kemasan",
+            "Cuci sepatu basic"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15277"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-SAL-HPP-V1",
+      "slug": "dpf-sal-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "SAL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-SAL-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14803,
+          "sha256": "e6f9a04cf32eb126374228149bccb881c847ccae439440e1c30c7b1e08efc88f"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-SAL-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2367,
+          "sha256": "aeef3b3648054ae18101cbfbe4bb04d534030f549b093a1c43e4f8afec6f0d0e"
+        }
+      ],
+      "package": {
+        "filename": "DPF-SAL-HPP-V1-V1.zip",
+        "bytes": 15305,
+        "sha256": "d42b8d388c0abd5b313cb5c742900c800a282502cdeaead1a9ed4d2ad2979314",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Potong Rambut Pria",
+            "Hair Spa Basic",
+            "Paket Potong + Cuci",
+            "Shampoo salon 1 L",
+            "Sarung cape",
+            "Pomade retail 80 g",
+            "Bahan treatment",
+            "Laundry handuk",
+            "Komisi stylist"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15305"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BNG-HPP-V1",
+      "slug": "dpf-bng-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "BNG",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BNG-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14777,
+          "sha256": "3ce2671ea4a4b452fae6bad1696bf336f05c0b8cc7c507eca071cd65fbd53d01"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BNG-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2405,
+          "sha256": "6c65d13b9cfe3077796ee63b372332bed0fe0c7b2519b9081d9f558eeec7ac98"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BNG-HPP-V1-V1.zip",
+        "bytes": 15317,
+        "sha256": "b044ae0149b3cd7f1cbd2e4f2b7feef77e87fb93893bc1bcac81ad46ec4a1520",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Servis Berkala Motor Matic",
+            "Ganti Kampas Rem Depan",
+            "Tambal Ban Tubeless",
+            "Oli mesin 10W-40",
+            "Busi motor matic",
+            "Kampas rem depan",
+            "Suku cadang",
+            "Consumable bengkel",
+            "Upah mekanik"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15317"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-ONL-HPP-V1",
+      "slug": "dpf-onl-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "ONL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-ONL-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14794,
+          "sha256": "5ee056ffaa7ae60e846f2a3260971a8bb07e73a4ba15b4e06a3c915a14eed90f"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-ONL-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2435,
+          "sha256": "8303cbccb0d4c4396abdc74df6bd746cf353955632ab1af4f7091e5bc5cb7afb"
+        }
+      ],
+      "package": {
+        "filename": "DPF-ONL-HPP-V1-V1.zip",
+        "bytes": 15360,
+        "sha256": "72271358a5033e149b0a148dcb135085171cd476ff780d085c380c26434e32c4",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 10,
+          "uniqueTerms": [
+            "Kemeja Casual Reseller",
+            "Paket Organizer Meja",
+            "Bundle Perawatan Sepatu",
+            "Kemeja casual warna navy",
+            "Kardus kirim ukuran M",
+            "Bubble wrap 50 cm",
+            "Pembelian supplier",
+            "Biaya marketplace",
+            "Iklan produk",
+            "Packing"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15360"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BAK-HPP-V1",
+      "slug": "dpf-bak-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "BAK",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BAK-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14808,
+          "sha256": "ba6df294d84f116e08438105fa96fe4cd152038141eeb5a58771667bdcaa24b5"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BAK-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2410,
+          "sha256": "50ebecb9973cef8dddacb316169107e54138e0a1d9582a563ec5d1ddb3294a05"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BAK-HPP-V1-V1.zip",
+        "bytes": 15332,
+        "sha256": "ffaed21e0023d55aeb701e86ecc09f20f97f3edd95110549db094325f8d16549",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Brownies Cokelat Loyang 20 cm",
+            "Roti Sobek Keju",
+            "Cookies Oat 250 g",
+            "Tepung protein tinggi",
+            "Cokelat compound",
+            "Box brownies 20 cm",
+            "Tepung dan bahan resep",
+            "Gas oven",
+            "Kemasan dan label"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15332"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-PRO-HPP-V1",
+      "slug": "dpf-pro-hpp-v1",
+      "masterCode": "HPP",
+      "nicheCode": "PRO",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 19000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-PRO-HPP-V1-Kalkulator.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 14825,
+          "sha256": "0f678d190c257271dd88f5d8714bc392d25ce0c2c4b202588883c9a089534861"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-PRO-HPP-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2458,
+          "sha256": "cbfc7766f1daef38e67a967b9b2dd2e9e997524d2b149ea397e6bd188d1b697b"
+        }
+      ],
+      "package": {
+        "filename": "DPF-PRO-HPP-V1-V1.zip",
+        "bytes": 15419,
+        "sha256": "df53a629fa1e97f00a09ba7af392345765542026ee57fc7bbb565b29bd96e73f",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 39,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Konsultasi Operasional 90 Menit",
+            "Paket Desain Identitas Dasar",
+            "Review Laporan Keuangan",
+            "Jam konsultasi tersedia",
+            "Lisensi desain bulanan",
+            "Slot proyek aktif",
+            "Jam kerja delivery",
+            "Lisensi software",
+            "Subkontraktor"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15419"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-BOOK-V1",
+      "slug": "dpf-kul-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16960,
+          "sha256": "f9cedfb8715985104575c7ee67f79e9428430374af487932f1c6bd27ec25acef"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2389,
+          "sha256": "0d3284664e9ea136e9c382abcd93bc89fd6533138202d8db637c22d4f393c384"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-BOOK-V1-V1.zip",
+        "bytes": 16240,
+        "sha256": "211663650c02dddfc0e06f02e58452f60b8d71fb1d12fb832e20bb017179cecf",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Belanja bahan segar",
+            "Gas LPG"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16240"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-CAF-BOOK-V1",
+      "slug": "dpf-caf-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "CAF",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-CAF-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16964,
+          "sha256": "6be55ab556d05ab36f21017a6e12d769e426fe47fed86e7812b7512f73f8c350"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-CAF-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2375,
+          "sha256": "38640c9518406eebfab1c478b42c0bc045a01db456a6bd54115c962a7ca27edc"
+        }
+      ],
+      "package": {
+        "filename": "DPF-CAF-BOOK-V1-V1.zip",
+        "bytes": 16258,
+        "sha256": "14ccfc07b773891d20f53a696d96b33a8ba6a97e5f91511946d34d21ed43fce0",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Es Kopi Susu Gula Aren",
+            "Matcha Latte",
+            "Croissant Butter",
+            "Biji kopi dan susu",
+            "Pastry titip jual"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16258"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-RTL-BOOK-V1",
+      "slug": "dpf-rtl-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "RTL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-RTL-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16972,
+          "sha256": "ec22b290d97969240037865492e7a322c58cb9a677c7ceaeed46e2094be710af"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-RTL-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2405,
+          "sha256": "9b6b99fe06a40699c353038018d9718ee5a34313385479998c69dd48817a9d99"
+        }
+      ],
+      "package": {
+        "filename": "DPF-RTL-BOOK-V1-V1.zip",
+        "bytes": 16284,
+        "sha256": "ec5753ad8caf29e73305c9da99482496b8c06663d1618590a04ca20df0770163",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Paket Sembako Hemat",
+            "Air Mineral 600 ml",
+            "Telur Ayam",
+            "Kulakan barang",
+            "Ongkos angkut"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16284"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-FAS-BOOK-V1",
+      "slug": "dpf-fas-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "FAS",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-FAS-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16962,
+          "sha256": "2b2c4def35482570232a1de086776b6e90bd3f5204a7d4ee8752468109430514"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-FAS-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2380,
+          "sha256": "47ca2e186dc5f9a6e513934fa88486804966ad579972bb46802dbcda926dbe1c"
+        }
+      ],
+      "package": {
+        "filename": "DPF-FAS-BOOK-V1-V1.zip",
+        "bytes": 16222,
+        "sha256": "9a9b1534847e569a849f7f814752aa9b83695de0724c931d84a871f97e22ae05",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Kaos Cotton Combed 24s",
+            "Kemeja Linen",
+            "Totebag Kanvas",
+            "Bahan kain dan blank",
+            "Jasa jahit"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16222"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-LND-BOOK-V1",
+      "slug": "dpf-lnd-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "LND",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-LND-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16938,
+          "sha256": "3d23c72666fe75d3ad8f9d47e72382057d5fb88b134b0912d15cd3255797407d"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-LND-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2363,
+          "sha256": "6334ffe421e1218597d5a0ecd53f4bc0d4bca41874570bc5a944dc7ef68d425e"
+        }
+      ],
+      "package": {
+        "filename": "DPF-LND-BOOK-V1-V1.zip",
+        "bytes": 16213,
+        "sha256": "0ce284cdc82abecfa0785ef5b479a3d7d66b1d187f09006360a5b020bb1dc445",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 6,
+          "uniqueTerms": [
+            "Cuci Kering Lipat Reguler",
+            "Cuci Setrika Express",
+            "Cuci Sepatu Basic",
+            "Deterjen dan pewangi",
+            "Listrik mesin",
+            "Cuci sepatu basic"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16213"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-SAL-BOOK-V1",
+      "slug": "dpf-sal-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "SAL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-SAL-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16967,
+          "sha256": "29024c1fa217f79a7aec141f17a9f728419cf9b61f671cb45da7d8998a78f111"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-SAL-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2360,
+          "sha256": "c0b760f3f60c43a3cc1680c462ac526b7bfab273fc5f59d60f531e43bc253681"
+        }
+      ],
+      "package": {
+        "filename": "DPF-SAL-BOOK-V1-V1.zip",
+        "bytes": 16214,
+        "sha256": "db4a7ef35613c27e7d3edf04a4965498f8101879b5b9d9972c27f126b1039126",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Potong Rambut Pria",
+            "Hair Spa Basic",
+            "Paket Potong + Cuci",
+            "Bahan treatment",
+            "Laundry handuk"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16214"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BNG-BOOK-V1",
+      "slug": "dpf-bng-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "BNG",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BNG-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16958,
+          "sha256": "6bc23e0ab1930622f303598487eb129310f591eb13690c00a118a6affb6e309e"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BNG-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2411,
+          "sha256": "f9591ab1bb95e26a49dc36be8c91ad9e87075aa0923002f322a35742e042a10d"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BNG-BOOK-V1-V1.zip",
+        "bytes": 16277,
+        "sha256": "e5f9db93a6982b6e2016a6c64b8bbd351775d6c0e415140ad15ba2aba903fff2",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 6,
+          "uniqueTerms": [
+            "Servis Berkala Motor Matic",
+            "Ganti Kampas Rem Depan",
+            "Tambal Ban Tubeless",
+            "Kampas rem depan",
+            "Suku cadang",
+            "Consumable bengkel"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16277"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-ONL-BOOK-V1",
+      "slug": "dpf-onl-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "ONL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-ONL-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16968,
+          "sha256": "27d4be72f8eca3003bdab64600b94a1425525d2edcaba457a1274132213796cd"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-ONL-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2428,
+          "sha256": "d221d10b16404b485c061ac4566b65ed1992206a63f5a9a0244ae540757d1299"
+        }
+      ],
+      "package": {
+        "filename": "DPF-ONL-BOOK-V1-V1.zip",
+        "bytes": 16344,
+        "sha256": "a7a60ee87d355f7fbd4eacb4e72a0825a14f34f55c29b969e3ec38f2cf3bf6a8",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Kemeja Casual Reseller",
+            "Paket Organizer Meja",
+            "Bundle Perawatan Sepatu",
+            "Pembelian supplier",
+            "Biaya marketplace"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16344"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BAK-BOOK-V1",
+      "slug": "dpf-bak-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "BAK",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BAK-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16964,
+          "sha256": "747e2a43ed73ba0eaa3917eefdb61cf2c78a482942c5481c6fad70bc927dc7af"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BAK-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2401,
+          "sha256": "0025fa5b46dca587a3d506ba5573ca8bd99bf62d138f921c71dad3ac76f34a05"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BAK-BOOK-V1-V1.zip",
+        "bytes": 16255,
+        "sha256": "1247742ae9516efeeba361aafe3e0542c2b34253dee79237aec0d667fe45c5a3",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Brownies Cokelat Loyang 20 cm",
+            "Roti Sobek Keju",
+            "Cookies Oat 250 g",
+            "Tepung dan bahan resep",
+            "Gas oven"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16255"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-PRO-BOOK-V1",
+      "slug": "dpf-pro-book-v1",
+      "masterCode": "BOOK",
+      "nicheCode": "PRO",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-PRO-BOOK-V1-Pembukuan.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16995,
+          "sha256": "baea52de811cf6ffb1f4589ca8b8dac96ab3db70dde0ed742d9a0863e6f0813a"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-PRO-BOOK-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2444,
+          "sha256": "3bfa9408e70d9d6885ea716b7a90c5ab55fb81ebd7e631292f5d1dd94ff32e2a"
+        }
+      ],
+      "package": {
+        "filename": "DPF-PRO-BOOK-V1-V1.zip",
+        "bytes": 16348,
+        "sha256": "34824f458757d3964eed636fc0a1740b8542214be9551a514a14a37a759769f9",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:6",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 15,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Konsultasi Operasional 90 Menit",
+            "Paket Desain Identitas Dasar",
+            "Review Laporan Keuangan",
+            "Jam kerja delivery",
+            "Lisensi software"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:16348"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-INV-V1",
+      "slug": "dpf-kul-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16334,
+          "sha256": "7dfb7f023ced28f310e85fe819c4ab936e63f170064b50a6435efd18c795b16d"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2372,
+          "sha256": "dc40b10ce205410736ed2f91eba33089f3d3dfa41f233c72611d0c99658dfcc9"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-INV-V1-V1.zip",
+        "bytes": 15639,
+        "sha256": "46a54259df7b2aa8cf43183e06e1e214de62bc56d9d6d12c48afed8b338420a3",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15639"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-CAF-INV-V1",
+      "slug": "dpf-caf-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "CAF",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-CAF-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16333,
+          "sha256": "91f140b3e64dbbeb05cdc3538c950c8b6a36a2ce6b0b8fd4b1287a557f73aeae"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-CAF-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2376,
+          "sha256": "df66a836108625421c2de8131bb230e8b38fd9797632b97a991dc6a99ee0b459"
+        }
+      ],
+      "package": {
+        "filename": "DPF-CAF-INV-V1-V1.zip",
+        "bytes": 15646,
+        "sha256": "7a056b33efb1d30e4f2fb16f9f6a30626372f83f6f85c6ed0ec79d09b12023cc",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Es Kopi Susu Gula Aren",
+            "Biji kopi house blend",
+            "Susu UHT",
+            "Cup 16 oz + lid"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15646"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-RTL-INV-V1",
+      "slug": "dpf-rtl-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "RTL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-RTL-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16354,
+          "sha256": "ecfcba4c6af78f314299bd8d1639e1d04d33550372304fd3be239a40c211de0e"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-RTL-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2396,
+          "sha256": "3a99a017b726acd8a2fc3caff50759d7aa3a178d298db38928d8e85cd1c3c829"
+        }
+      ],
+      "package": {
+        "filename": "DPF-RTL-INV-V1-V1.zip",
+        "bytes": 15701,
+        "sha256": "84cd045e52fad5fa39082178cfad73bddb2aa29e6233edc94ebb7a87108530de",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Paket Sembako Hemat",
+            "Minyak goreng 1 L",
+            "Mi instan goreng",
+            "Baterai AA isi 2"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15701"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-FAS-INV-V1",
+      "slug": "dpf-fas-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "FAS",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-FAS-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16357,
+          "sha256": "502cc134ee72980f33588e762455f731275b911ff49f28fa98a9e631271fe6a8"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-FAS-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2368,
+          "sha256": "1fd9a33446f7b12bd22268136a8ec1ffd89db555c133c4f5ebde60ae5f22ddef"
+        }
+      ],
+      "package": {
+        "filename": "DPF-FAS-INV-V1-V1.zip",
+        "bytes": 15656,
+        "sha256": "0491ff5c32f2a8ddbd5e97ea48a64363d57e1316c911c983a9ffaead737f256f",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Kaos Cotton Combed 24s",
+            "Kaos blank hitam ukuran M",
+            "Kain linen warna natural",
+            "Poly mailer ukuran M"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15656"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-LND-INV-V1",
+      "slug": "dpf-lnd-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "LND",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-LND-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16326,
+          "sha256": "05c57e4b0f052134c4c261fb8d7a4ed85fd00febeb928df535170ee0994611b0"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-LND-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2353,
+          "sha256": "e5aa67bd5c7a686a1c96a1875197f2145d0b0b1efd3d893e075169754e75c30d"
+        }
+      ],
+      "package": {
+        "filename": "DPF-LND-INV-V1-V1.zip",
+        "bytes": 15602,
+        "sha256": "1cba155ccce1ca072baa7cf8460c8845f30e5a8e52c80fddb189c40471d2c182",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Cuci Kering Lipat Reguler",
+            "Deterjen cair konsentrat",
+            "Pewangi floral",
+            "Plastik laundry 40 x 60"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15602"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-SAL-INV-V1",
+      "slug": "dpf-sal-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "SAL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-SAL-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16334,
+          "sha256": "cd5dbfa42d809e1540a5938e7139ab66377e7aca3ca4461e483f41f8f91f991e"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-SAL-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2358,
+          "sha256": "cde03126bda7c942964cedb69a5f8ace6a6b75eb4aa14bd3a86c6365ae61360f"
+        }
+      ],
+      "package": {
+        "filename": "DPF-SAL-INV-V1-V1.zip",
+        "bytes": 15620,
+        "sha256": "f078d0029fa9724d9835ab0059cdbbfa9be90e712a33fd2ad8dfd63e7af5619e",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Potong Rambut Pria",
+            "Shampoo salon 1 L",
+            "Sarung cape",
+            "Pomade retail 80 g"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15620"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BNG-INV-V1",
+      "slug": "dpf-bng-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "BNG",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BNG-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16319,
+          "sha256": "cb351f85d7dd71ba23ea102580b55c11593365e716e53d7945db70f43765a229"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BNG-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2397,
+          "sha256": "302572379f77d07200adbbbf63fc15b22ce9a6b42471eda9e1f841066f10b29f"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BNG-INV-V1-V1.zip",
+        "bytes": 15651,
+        "sha256": "d3a7cf85ff7cdb97040f07a82eca3383f6f0a51225efb18c56b62faa91d3ed60",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Servis Berkala Motor Matic",
+            "Oli mesin 10W-40",
+            "Busi motor matic",
+            "Kampas rem depan",
+            "Suku cadang"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15651"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-ONL-INV-V1",
+      "slug": "dpf-onl-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "ONL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-ONL-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16337,
+          "sha256": "f44f55f1b8fe34fd1783466978f3eb2abfad5a2bc2ab0ab782a397beb67cbb03"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-ONL-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2419,
+          "sha256": "e69513fba4d4d6b706ea709033afbac19d0a2eee85f2a14aa7c118f8a3a42dc2"
+        }
+      ],
+      "package": {
+        "filename": "DPF-ONL-INV-V1-V1.zip",
+        "bytes": 15663,
+        "sha256": "86255142ea9d34b950d0c73658072039c252d299a63b6e484d7303a54f0eba46",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Kemeja Casual Reseller",
+            "Kemeja casual warna navy",
+            "Kardus kirim ukuran M",
+            "Bubble wrap 50 cm",
+            "Packing"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15663"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BAK-INV-V1",
+      "slug": "dpf-bak-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "BAK",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BAK-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16335,
+          "sha256": "262caeaddcc07e968d0c19fbbd90bc0bc5002689437167509201f7ca1d28b063"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BAK-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2388,
+          "sha256": "edd198b7da6ef036211f1b6c2b79db01c326f6bd02ea9e852549f8ddd9c21797"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BAK-INV-V1-V1.zip",
+        "bytes": 15664,
+        "sha256": "9ff847ac4e5f168ac38d1cd066d25cb05db8aff20d89b0d176aaa1d2180c567a",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Brownies Cokelat Loyang 20 cm",
+            "Tepung protein tinggi",
+            "Cokelat compound",
+            "Box brownies 20 cm"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15664"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-PRO-INV-V1",
+      "slug": "dpf-pro-inv-v1",
+      "masterCode": "INV",
+      "nicheCode": "PRO",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 25000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-PRO-INV-V1-Inventory.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 16338,
+          "sha256": "251667b96fd912895381bdb1a8dbcadc3b5680e7cceb48d29ebb53b9d512eea2"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-PRO-INV-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2447,
+          "sha256": "dcf669b5b711107f19e08eefa87823c04cca9d4834b970abeacd206351355931"
+        }
+      ],
+      "package": {
+        "filename": "DPF-PRO-INV-V1-V1.zip",
+        "bytes": 15722,
+        "sha256": "51d35d66b924f93338484575da31a51ce0d8dc79f9b9e09cdb6cf425d7d30c33",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:5",
+            "files:2"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 31,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 4,
+          "uniqueTerms": [
+            "Konsultasi Operasional 90 Menit",
+            "Jam konsultasi tersedia",
+            "Lisensi desain bulanan",
+            "Slot proyek aktif"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:2",
+            "packageBytes:15722"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-ADMIN-V1",
+      "slug": "dpf-kul-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17527,
+          "sha256": "fdba223bdc3aae1bac54cb7790d1260da3e8ae17ba6db664aa0890752645cf64"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-KUL-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10477,
+          "sha256": "62838a30b8177110d3bc456d545e88252ba24c6daa4c50cf32d262eaf5ca7bdb"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2450,
+          "sha256": "da4c3e493a9682d7b08a1dae29fcf9e127bf374919dcbede47ba122e2a6aea55"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-ADMIN-V1-V1.zip",
+        "bytes": 26097,
+        "sha256": "0a0ed0ab9b9c527bb53a45cb6da913075cbc6c0eb47dff919cfcd864731a59ad",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Belanja bahan segar"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26097"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-CAF-ADMIN-V1",
+      "slug": "dpf-caf-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "CAF",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-CAF-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17528,
+          "sha256": "d487325cf00ebbc9bd74276a691493adeee0036389eab79abbe4903e6427d77d"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-CAF-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10485,
+          "sha256": "0266769bf5b3fcc9a3f5247c56297a00f8e75d17f30f5593207c45b65e6e8706"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-CAF-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2449,
+          "sha256": "c26492cceb70b70fa53208bc2e97fa57164984b50060af7c548fff4e69029617"
+        }
+      ],
+      "package": {
+        "filename": "DPF-CAF-ADMIN-V1-V1.zip",
+        "bytes": 26096,
+        "sha256": "c6a76955eb85100d73eb3bfd2c7206f560252eb49fd4c3c4c31b6e91e2c5470a",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Es Kopi Susu Gula Aren",
+            "Biji kopi house blend",
+            "Susu UHT",
+            "Cup 16 oz + lid",
+            "Biji kopi dan susu"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26096"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-RTL-ADMIN-V1",
+      "slug": "dpf-rtl-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "RTL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-RTL-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17545,
+          "sha256": "edbaeaff26e264bf39ca19b2d0f4265fbe6c6cc4f4b48b56e4e890506eec804c"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-RTL-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10493,
+          "sha256": "d07a04d9da93f2c52b3b19312e7c2ed95239989ab3146814dce2f182f425e3ef"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-RTL-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2473,
+          "sha256": "c823017e6566357b49a99d09e39b04964136a91519a51952a7fad459be746f8e"
+        }
+      ],
+      "package": {
+        "filename": "DPF-RTL-ADMIN-V1-V1.zip",
+        "bytes": 26133,
+        "sha256": "e9e9aae59f82e91cf7027052ab4803539ba78c2934fc13f9921bc7ee30a517df",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Paket Sembako Hemat",
+            "Minyak goreng 1 L",
+            "Mi instan goreng",
+            "Baterai AA isi 2",
+            "Kulakan barang"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26133"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-FAS-ADMIN-V1",
+      "slug": "dpf-fas-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "FAS",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-FAS-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17548,
+          "sha256": "e314521a098b54aa24cd6754b8c25e243260bea720ea6259a142f26d1041f714"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-FAS-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10482,
+          "sha256": "051587f6442ae266f2998148c28a5abb7187cc69a893e7dd221d475dfd0c1abc"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-FAS-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2449,
+          "sha256": "00fd039689bbbeb47def66452bd7c804b47c1ba11b2af388d77357d0174cc81c"
+        }
+      ],
+      "package": {
+        "filename": "DPF-FAS-ADMIN-V1-V1.zip",
+        "bytes": 26115,
+        "sha256": "1421d1deab85c5ea77a9ecf7651159cdc0e1b6c459dcf3fdb511b99af8fb7c95",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Kaos Cotton Combed 24s",
+            "Kaos blank hitam ukuran M",
+            "Kain linen warna natural",
+            "Poly mailer ukuran M",
+            "Bahan kain dan blank"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26115"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-LND-ADMIN-V1",
+      "slug": "dpf-lnd-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "LND",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-LND-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17520,
+          "sha256": "b8cb968da35aa599de5969c6d6cd275b9258769cf83c6603f8fdaa661c83a79d"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-LND-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10486,
+          "sha256": "d7c8d5ed18c8cc92967370e7b81604622456cf03819c45b926b4bdb2bfc92eb4"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-LND-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2439,
+          "sha256": "b163a6a3d53a52e38e553a98ed75bc9ba8fe95d6584ff4c91c3666c34849a110"
+        }
+      ],
+      "package": {
+        "filename": "DPF-LND-ADMIN-V1-V1.zip",
+        "bytes": 26083,
+        "sha256": "86f1c3562879bc232d45833593591bb6317a75f4085d72381979cf39578bb961",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Cuci Kering Lipat Reguler",
+            "Deterjen cair konsentrat",
+            "Pewangi floral",
+            "Plastik laundry 40 x 60",
+            "Deterjen dan pewangi"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26083"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-SAL-ADMIN-V1",
+      "slug": "dpf-sal-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "SAL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-SAL-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17512,
+          "sha256": "db9a44f7e655a0cbecaa06316f9bcce4b093d1d50aa9d33c1305121b052ddb51"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-SAL-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10477,
+          "sha256": "ec1e6265ff959043f5cb6595a9da5dd0f168f0e6cb1d411bb13cf42e511233d8"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-SAL-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2434,
+          "sha256": "0bdf1bf1e74fc65cefe969b18ce3f2f765098a505b9a68b48ddb5c965855309d"
+        }
+      ],
+      "package": {
+        "filename": "DPF-SAL-ADMIN-V1-V1.zip",
+        "bytes": 26062,
+        "sha256": "7e34067c11e0e29dcd0a5f6ed3da7acd338ae93b626b07e6c03d736499969cfc",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Potong Rambut Pria",
+            "Shampoo salon 1 L",
+            "Sarung cape",
+            "Pomade retail 80 g",
+            "Bahan treatment"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26062"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BNG-ADMIN-V1",
+      "slug": "dpf-bng-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "BNG",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BNG-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17507,
+          "sha256": "c61a8e97577331322f6034cf10c97ed893e6c423e2d20fa6aa7a3beeae7787a0"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-BNG-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10479,
+          "sha256": "76ade0ac4b66820052d30a6934022dc9c0722fe3ac833e056e71d4ba17297204"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BNG-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2473,
+          "sha256": "2bc2fe07f7acbfceba3bdb6414ae23104e74a0ec49cf6fe6f9d18d2eb15dfae3"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BNG-ADMIN-V1-V1.zip",
+        "bytes": 26094,
+        "sha256": "2feef70296a6136d9575d2d04f60996f001f9a64a3ff66b78ac320649ed43583",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Servis Berkala Motor Matic",
+            "Oli mesin 10W-40",
+            "Busi motor matic",
+            "Kampas rem depan",
+            "Suku cadang"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26094"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-ONL-ADMIN-V1",
+      "slug": "dpf-onl-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "ONL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-ONL-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17547,
+          "sha256": "778ffb7e09a32aa6dcafda7597f7b74081ec1b97cbd885cedae22b3029b66f3e"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-ONL-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10486,
+          "sha256": "f9c3755a963492372e5c6e9f5d23451d77ac9591334d1bf9e2772b4dac2b8789"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-ONL-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2490,
+          "sha256": "b775f6b9e621b0c4f399f50097127f2dace33cd539712d67b22ad35cc9250f2b"
+        }
+      ],
+      "package": {
+        "filename": "DPF-ONL-ADMIN-V1-V1.zip",
+        "bytes": 26155,
+        "sha256": "e3d366b633e99983ed84892b507c6763ba946b1f4f696cd3fa7dd775e39fe2d4",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 6,
+          "uniqueTerms": [
+            "Kemeja Casual Reseller",
+            "Kemeja casual warna navy",
+            "Kardus kirim ukuran M",
+            "Bubble wrap 50 cm",
+            "Pembelian supplier",
+            "Packing"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26155"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BAK-ADMIN-V1",
+      "slug": "dpf-bak-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "BAK",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BAK-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17527,
+          "sha256": "f8f66c98480f94c39e24860027340b10b2bca07f5f9682a6ade909e2c753db3a"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-BAK-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10493,
+          "sha256": "5ad42b90dffe69a873b0b4e02ad6de8444cecbe3e8dae1b5d0f531db60431597"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BAK-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2478,
+          "sha256": "dc8428cf33fd34a775a7c0afa498835df58366a93711a41fc58148295bc7c06b"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BAK-ADMIN-V1-V1.zip",
+        "bytes": 26135,
+        "sha256": "26b834ad4304748ba2774b2e9fd7d50a2d73e85372f34ca4644fa445dd03128a",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Brownies Cokelat Loyang 20 cm",
+            "Tepung protein tinggi",
+            "Cokelat compound",
+            "Box brownies 20 cm",
+            "Tepung dan bahan resep"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26135"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-PRO-ADMIN-V1",
+      "slug": "dpf-pro-admin-v1",
+      "masterCode": "ADMIN",
+      "nicheCode": "PRO",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 29000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-PRO-ADMIN-V1-Administrasi.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 17539,
+          "sha256": "c167aa0df233d66ac49f024a0fc52ece3d475a132f39c315f511d445293144f1"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-PRO-ADMIN-V1-Formulir-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10488,
+          "sha256": "2feeb2c8b4379d9d5761ef710e63f6146938dbecedb204165b51a98306e121e5"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-PRO-ADMIN-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2512,
+          "sha256": "6de74bfce83c5fc4ce6a8b8f737d128138832919e2964d384f1f5c7a703963cf"
+        }
+      ],
+      "package": {
+        "filename": "DPF-PRO-ADMIN-V1-V1.zip",
+        "bytes": 26178,
+        "sha256": "16874ad0ae0288a2334f1901cd5383b2e9d51e2d2b2bc1dd930c618ab6205711",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:7",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 6,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 5,
+          "uniqueTerms": [
+            "Konsultasi Operasional 90 Menit",
+            "Jam konsultasi tersedia",
+            "Lisensi desain bulanan",
+            "Slot proyek aktif",
+            "Jam kerja delivery"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:26178"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-KUL-MKT-V1",
+      "slug": "dpf-kul-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "KUL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-KUL-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20294,
+          "sha256": "fca5b3ab859c7d09ca7d57c31240ba8a7ecb199822226b7bfd3c05fca8d135e7"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-KUL-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10477,
+          "sha256": "2bdc387ccd7006f60ca693fbfc279a9c4a069a5a86d00ecb6b7a761749239edc"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-KUL-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2409,
+          "sha256": "2ca75869c6b3ed6a574524b381b343b206e5cd90008ece8c7d3e0331c503b0b7"
+        }
+      ],
+      "package": {
+        "filename": "DPF-KUL-MKT-V1-V1.zip",
+        "bytes": 29037,
+        "sha256": "52a9c35d24776da2c7532a9ab5249803de2876925e0f0f04535f96bea08b05c1",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Nasi Goreng Ayam",
+            "Soto Ayam",
+            "Es Teh Lemon",
+            "Beras medium",
+            "Ayam fillet",
+            "Gelas 16 oz",
+            "Paket makan siang: nasi goreng ayam + es teh",
+            "Paket keluarga soto ayam 4 mangkuk",
+            "Tambah telur pada menu nasi goreng"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29037"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-CAF-MKT-V1",
+      "slug": "dpf-caf-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "CAF",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-CAF-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20354,
+          "sha256": "c90f4a8a762ea9ebbf124882061e93ad8f5004fc7faf3f5622038a4e253feb3f"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-CAF-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10487,
+          "sha256": "8d8c951a1a5163b0d7379ff8988eee7bba0300915721e550f24ed351a50c0b0c"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-CAF-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2403,
+          "sha256": "2a3047e2924a5174b01e08eeccb98c7ddb8eddb9c070385f0c270dd0f920f2f4"
+        }
+      ],
+      "package": {
+        "filename": "DPF-CAF-MKT-V1-V1.zip",
+        "bytes": 29103,
+        "sha256": "b2c6be5f84347c7fc63644d589cd2f6e519067c12fee86b1810c909672b37c48",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Es Kopi Susu Gula Aren",
+            "Matcha Latte",
+            "Croissant Butter",
+            "Biji kopi house blend",
+            "Susu UHT",
+            "Cup 16 oz + lid",
+            "Pairing espresso susu dengan croissant",
+            "Kartu kunjungan 6 gelas",
+            "Matcha latte ukuran reguler"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29103"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-RTL-MKT-V1",
+      "slug": "dpf-rtl-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "RTL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-RTL-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20319,
+          "sha256": "b6be81538b955705e4fa95d228e148ee86caee248bc6e225969ea532b3885bee"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-RTL-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10457,
+          "sha256": "6feca24b5ab49844b83423c4d16501f999aa3dbf1ea70f9c3f6145d74288df98"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-RTL-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2431,
+          "sha256": "ce1649567b4e6376a12d46fd667356bcfb6ccc4d613b78034a71948e38bdb220"
+        }
+      ],
+      "package": {
+        "filename": "DPF-RTL-MKT-V1-V1.zip",
+        "bytes": 29067,
+        "sha256": "5209d2de1e2c3a11add484dc660b814cd613f40100c8632bde6d9631367816d5",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Paket Sembako Hemat",
+            "Air Mineral 600 ml",
+            "Telur Ayam",
+            "Minyak goreng 1 L",
+            "Mi instan goreng",
+            "Baterai AA isi 2",
+            "Paket beras 5 kg, minyak, dan gula",
+            "Pesan barang rutin lewat WhatsApp",
+            "Harga khusus pembelian satu dus"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29067"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-FAS-MKT-V1",
+      "slug": "dpf-fas-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "FAS",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-FAS-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20316,
+          "sha256": "ca67298f00240493ad06924aac21a026680156aeaaa09709d9fdafebdd22b8b7"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-FAS-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10485,
+          "sha256": "6b14f5cbe7e21b5986cdbde8b782c4d8c70de24f20d51842319e3c7df0bf59e8"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-FAS-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2410,
+          "sha256": "29760bcce5f1993e4833da5cb17208e7d264f423432da60037fb9a5818f53a3b"
+        }
+      ],
+      "package": {
+        "filename": "DPF-FAS-MKT-V1-V1.zip",
+        "bytes": 29065,
+        "sha256": "21ecae7f838f1e9f6612ce6f92c75141d7f23658bd04dc80fca2f8b2b34c022e",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Kaos Cotton Combed 24s",
+            "Kemeja Linen",
+            "Totebag Kanvas",
+            "Kaos blank hitam ukuran M",
+            "Kain linen warna natural",
+            "Poly mailer ukuran M",
+            "Kaos cotton combed dengan panduan ukuran",
+            "Pre-order kemeja linen warna natural",
+            "Paket reseller 12 pcs campur ukuran"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29065"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-LND-MKT-V1",
+      "slug": "dpf-lnd-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "LND",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-LND-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20318,
+          "sha256": "9226358e75ec574b860d87b1d31c279172064ea419b9718bc5701c4e74a7c81e"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-LND-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10475,
+          "sha256": "cb09039fd4ebb2911143ca3995a031ec3a9ddab73492f63215f5f441f69c5606"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-LND-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2397,
+          "sha256": "c1ee5321faa1d7b869c2acec297d8f42526563f01dccc79c4eeb0fa5038ae23a"
+        }
+      ],
+      "package": {
+        "filename": "DPF-LND-MKT-V1-V1.zip",
+        "bytes": 29038,
+        "sha256": "c1d656cc500f05b8dacdf9a741f7f84d9defc534a8f1d6f3bda76cc362027e94",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Cuci Kering Lipat Reguler",
+            "Cuci Setrika Express",
+            "Cuci Sepatu Basic",
+            "Deterjen cair konsentrat",
+            "Pewangi floral",
+            "Plastik laundry 40 x 60",
+            "Paket langganan cuci 20 kg",
+            "Cuci sepatu basic",
+            "Layanan express dengan kuota harian"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29038"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-SAL-MKT-V1",
+      "slug": "dpf-sal-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "SAL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-SAL-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20309,
+          "sha256": "c9cb481f511b924ed713f73d7ca798006c3e55a86e03aedcb62a5cba45d92136"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-SAL-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10470,
+          "sha256": "7bfa79b9ae03c8d8794c318ff2dad9b5f98a8e8612d43416b4ad4483923ef7a6"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-SAL-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2394,
+          "sha256": "ed4310e2d01540768fae2d64b93cb535f454bb7bf8413e2994c8aba98f1590e3"
+        }
+      ],
+      "package": {
+        "filename": "DPF-SAL-MKT-V1-V1.zip",
+        "bytes": 29027,
+        "sha256": "b1f271df61b8a4027041c20502410995c630caa90e31ecd68f2cd7ac23016f0d",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Potong Rambut Pria",
+            "Hair Spa Basic",
+            "Paket Potong + Cuci",
+            "Shampoo salon 1 L",
+            "Sarung cape",
+            "Pomade retail 80 g",
+            "Paket potong dan cuci",
+            "Pengingat jadwal potong 3-4 minggu",
+            "Hair spa setelah konsultasi kondisi rambut"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29027"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BNG-MKT-V1",
+      "slug": "dpf-bng-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "BNG",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BNG-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20314,
+          "sha256": "4d4d1a2235727af0ce7a6ce319baa8991a417a9988253bd6c37e3f2392327503"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-BNG-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10467,
+          "sha256": "60fea02c55a498ea9407c9fbc107d5e063a05d28fbc42b351ea515896da07baf"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BNG-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2433,
+          "sha256": "b9d705ee693b3cfa7b98750c8fcbf05189f6c94cbc9c61b1de2b2e529ac8a86c"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BNG-MKT-V1-V1.zip",
+        "bytes": 29062,
+        "sha256": "dac87362e78f54563c6b739125896cbb1572b928de0a211c73ec64ae6161db91",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Servis Berkala Motor Matic",
+            "Ganti Kampas Rem Depan",
+            "Tambal Ban Tubeless",
+            "Oli mesin 10W-40",
+            "Busi motor matic",
+            "Kampas rem depan",
+            "Pemeriksaan ringan sebelum servis berkala",
+            "Paket oli dan pemeriksaan rem",
+            "Pengingat servis armada kurir"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29062"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-ONL-MKT-V1",
+      "slug": "dpf-onl-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "ONL",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-ONL-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20300,
+          "sha256": "c854670b55f0ffe9a07593ac07dd7abb11a1d275cfff072134edf89fa27156a7"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-ONL-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10459,
+          "sha256": "2dc7917078e8cce6ec4fee27992b08d406b4ce625e2a26ccf91303a116ea1e8a"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-ONL-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2448,
+          "sha256": "1b6a2fc24a05a4ae3155bcee74f041c65464bac314cd90405db85abc09009c1c"
+        }
+      ],
+      "package": {
+        "filename": "DPF-ONL-MKT-V1-V1.zip",
+        "bytes": 29055,
+        "sha256": "166cd7d2d4f83e02ab8a0105d2c8120a6bfd2af92cb37f7d4c4a008109e6950c",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 10,
+          "uniqueTerms": [
+            "Kemeja Casual Reseller",
+            "Paket Organizer Meja",
+            "Bundle Perawatan Sepatu",
+            "Kemeja casual warna navy",
+            "Kardus kirim ukuran M",
+            "Bubble wrap 50 cm",
+            "Packing",
+            "Bundle organizer meja dengan dua ukuran",
+            "Voucher repeat order terjadwal",
+            "Video proses packing pesanan rapuh"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29055"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-BAK-MKT-V1",
+      "slug": "dpf-bak-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "BAK",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-BAK-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20312,
+          "sha256": "80ea1609f241dfad1c45548724bb6d26ade5b302933e6c62f513208288c4ecec"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-BAK-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10464,
+          "sha256": "0c3db806522306f43463b5ce68973caaffc3e36c98db7487249c0280fd72d30e"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-BAK-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2431,
+          "sha256": "f4de4505426ccf861e5e7808083e0d9d67fc9547afc37cb32b800e2743de9cf1"
+        }
+      ],
+      "package": {
+        "filename": "DPF-BAK-MKT-V1-V1.zip",
+        "bytes": 29064,
+        "sha256": "1f3af36b20ce04904ca2f470c07a0b0ca50ef35cbe88739fc0b5b95c4e758248",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Brownies Cokelat Loyang 20 cm",
+            "Roti Sobek Keju",
+            "Cookies Oat 250 g",
+            "Tepung protein tinggi",
+            "Cokelat compound",
+            "Box brownies 20 cm",
+            "Brownies loyang untuk rapat",
+            "Roti sobek keju batch pagi",
+            "Hampers cookies dengan kartu ucapan"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29064"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    },
+    {
+      "sku": "DPF-PRO-MKT-V1",
+      "slug": "dpf-pro-mkt-v1",
+      "masterCode": "MKT",
+      "nicheCode": "PRO",
+      "version": "V1",
+      "generatorVersion": "1.0.0",
+      "generatedAt": "2026-10-05T00:00:00.000Z",
+      "priceIdr": 39000,
+      "files": [
+        {
+          "role": "primary-workbook",
+          "filename": "DPF-PRO-MKT-V1-Marketing.xlsx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "bytes": 20400,
+          "sha256": "6b20f56dc1c2ffafbc642d77d741e9caf72906fb424047a9dd8b2d251508d835"
+        },
+        {
+          "role": "editable-forms",
+          "filename": "DPF-PRO-MKT-V1-Lembar-Kerja-Editable.docx",
+          "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "bytes": 10531,
+          "sha256": "cfa87e729bea1c7aafa8c21ca8cbdbc5eec75d10585fb6df6bc0cd3480fa4837"
+        },
+        {
+          "role": "quick-start",
+          "filename": "DPF-PRO-MKT-V1-Panduan-Cepat.pdf",
+          "mimeType": "application/pdf",
+          "bytes": 2475,
+          "sha256": "75fdc231972abf528e8e3a84174b909d6954131222e9a993b404550031aa4184"
+        }
+      ],
+      "package": {
+        "filename": "DPF-PRO-MKT-V1-V1.zip",
+        "bytes": 29263,
+        "sha256": "b12cc6e90dc6aecc6aca1b72559f6ffc51c87b2564c276a96d46421578a4ced4",
+        "mimeType": "application/zip"
+      },
+      "qa": {
+        "passed": true,
+        "structure": {
+          "passed": true,
+          "checks": [
+            "sheets:9",
+            "files:3"
+          ],
+          "failures": []
+        },
+        "formulas": {
+          "passed": true,
+          "count": 8,
+          "failures": []
+        },
+        "content": {
+          "passed": true,
+          "failures": []
+        },
+        "nicheSpecificity": {
+          "passed": true,
+          "score": 9,
+          "uniqueTerms": [
+            "Konsultasi Operasional 90 Menit",
+            "Paket Desain Identitas Dasar",
+            "Review Laporan Keuangan",
+            "Jam konsultasi tersedia",
+            "Lisensi desain bulanan",
+            "Slot proyek aktif",
+            "Sesi pemetaan masalah 90 menit",
+            "Paket desain identitas dengan batas revisi jelas",
+            "Review laporan keuangan untuk pemilik usaha"
+          ],
+          "failures": []
+        },
+        "packaging": {
+          "passed": true,
+          "checks": [
+            "zipEntries:3",
+            "packageBytes:29263"
+          ],
+          "failures": []
+        },
+        "status": "QA_PASSED"
+      },
+      "status": "QA_PASSED"
+    }
+  ]
+}

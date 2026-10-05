@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 11,
+    "uniqueTerms": [
+      "Cuci Kering Lipat Reguler",
+      "Cuci Setrika Express",
+      "Cuci Sepatu Basic",
+      "Deterjen cair konsentrat",
+      "Pewangi floral",
+      "Plastik laundry 40 x 60",
+      "Deterjen dan pewangi",
+      "Listrik mesin",
+      "Air sumur atau PAM",
+      "Plastik kemasan",
+      "Cuci sepatu basic"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15277"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

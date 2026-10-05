@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-CAF-ADMIN-V1",
+  "slug": "dpf-caf-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "CAF",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-CAF-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17528,
+      "sha256": "d487325cf00ebbc9bd74276a691493adeee0036389eab79abbe4903e6427d77d"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-CAF-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10485,
+      "sha256": "0266769bf5b3fcc9a3f5247c56297a00f8e75d17f30f5593207c45b65e6e8706"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-CAF-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2449,
+      "sha256": "c26492cceb70b70fa53208bc2e97fa57164984b50060af7c548fff4e69029617"
+    }
+  ],
+  "package": {
+    "filename": "DPF-CAF-ADMIN-V1-V1.zip",
+    "bytes": 26096,
+    "sha256": "c6a76955eb85100d73eb3bfd2c7206f560252eb49fd4c3c4c31b6e91e2c5470a",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Es Kopi Susu Gula Aren",
+        "Biji kopi house blend",
+        "Susu UHT",
+        "Cup 16 oz + lid",
+        "Biji kopi dan susu"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26096"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

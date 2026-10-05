@@ -1,0 +1,9 @@
+{
+  "status": "STAGING_PUBLISHED",
+  "count": 50,
+  "replay": "IDEMPOTENT",
+  "secondPassDuplicateObjects": 0,
+  "secondPassDuplicateRows": 0,
+  "bucket": "dpf-delivery-v1",
+  "private": true
+}

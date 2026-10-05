@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Es Kopi Susu Gula Aren",
+      "Matcha Latte",
+      "Croissant Butter",
+      "Biji kopi house blend",
+      "Susu UHT",
+      "Cup 16 oz + lid",
+      "Biji kopi dan susu",
+      "Pastry titip jual",
+      "Biaya platform pesan"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15319"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

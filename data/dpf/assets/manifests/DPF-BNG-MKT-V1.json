@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-BNG-MKT-V1",
+  "slug": "dpf-bng-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "BNG",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BNG-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20314,
+      "sha256": "4d4d1a2235727af0ce7a6ce319baa8991a417a9988253bd6c37e3f2392327503"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-BNG-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10467,
+      "sha256": "60fea02c55a498ea9407c9fbc107d5e063a05d28fbc42b351ea515896da07baf"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BNG-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2433,
+      "sha256": "b9d705ee693b3cfa7b98750c8fcbf05189f6c94cbc9c61b1de2b2e529ac8a86c"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BNG-MKT-V1-V1.zip",
+    "bytes": 29062,
+    "sha256": "dac87362e78f54563c6b739125896cbb1572b928de0a211c73ec64ae6161db91",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Servis Berkala Motor Matic",
+        "Ganti Kampas Rem Depan",
+        "Tambal Ban Tubeless",
+        "Oli mesin 10W-40",
+        "Busi motor matic",
+        "Kampas rem depan",
+        "Pemeriksaan ringan sebelum servis berkala",
+        "Paket oli dan pemeriksaan rem",
+        "Pengingat servis armada kurir"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29062"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-RTL-HPP-V1",
+  "slug": "dpf-rtl-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "RTL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-RTL-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14662,
+      "sha256": "a411425c9caecdb4b1fae3511725c14759ce2ff3cd1092d8c86f647e046067d8"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-RTL-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2412,
+      "sha256": "964ea89be65cdee79f22cf37592bdeea4194c6d2eff5cc27ff7accd8e1c53a25"
+    }
+  ],
+  "package": {
+    "filename": "DPF-RTL-HPP-V1-V1.zip",
+    "bytes": 15203,
+    "sha256": "38ad8c69e201b2b2ef800cd1a8b751bd0db08b0ecce1090df840e2126ba94ac8",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 36,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Paket Sembako Hemat",
+        "Air Mineral 600 ml",
+        "Telur Ayam",
+        "Minyak goreng 1 L",
+        "Mi instan goreng",
+        "Baterai AA isi 2",
+        "Kulakan barang",
+        "Ongkos angkut",
+        "Biaya QRIS"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15203"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-FAS-HPP-V1",
+  "slug": "dpf-fas-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "FAS",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-FAS-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14791,
+      "sha256": "fcc7d87250882b4fe44278c0bcf77e3db8c53f43cf879a367c6144396a73cf4a"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-FAS-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2390,
+      "sha256": "be6036161c9c84a2d0f08ac51ec4c9fa7efed07b4ac266d47723b9fa3ccb2fee"
+    }
+  ],
+  "package": {
+    "filename": "DPF-FAS-HPP-V1-V1.zip",
+    "bytes": 15317,
+    "sha256": "412b16cf0aab8cc1af0bfbc48b45a5721f3db82c972390b325ddebb32caeedd7",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Kaos Cotton Combed 24s",
+        "Kemeja Linen",
+        "Totebag Kanvas",
+        "Kaos blank hitam ukuran M",
+        "Kain linen warna natural",
+        "Poly mailer ukuran M",
+        "Bahan kain dan blank",
+        "Jasa jahit",
+        "Sablon atau bordir"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15317"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

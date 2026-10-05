@@ -1,0 +1,80 @@
+{
+  "sku": "DPF-LND-HPP-V1",
+  "slug": "dpf-lnd-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "LND",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-LND-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14788,
+      "sha256": "35d77ebf99c73e2c4606c0c66fa1495090f05bac4317d3217596453a25211902"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-LND-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2368,
+      "sha256": "6d5ec1415fe95cb27aacc584df4a9236d88de53d09ea0003fd96755defb45910"
+    }
+  ],
+  "package": {
+    "filename": "DPF-LND-HPP-V1-V1.zip",
+    "bytes": 15277,
+    "sha256": "ba684759564e86d8a48264507421173f0a02923908f69d83447b2b7e940938c0",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 11,
+      "uniqueTerms": [
+        "Cuci Kering Lipat Reguler",
+        "Cuci Setrika Express",
+        "Cuci Sepatu Basic",
+        "Deterjen cair konsentrat",
+        "Pewangi floral",
+        "Plastik laundry 40 x 60",
+        "Deterjen dan pewangi",
+        "Listrik mesin",
+        "Air sumur atau PAM",
+        "Plastik kemasan",
+        "Cuci sepatu basic"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15277"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

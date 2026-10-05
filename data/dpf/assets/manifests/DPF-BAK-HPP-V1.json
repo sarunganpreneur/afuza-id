@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-BAK-HPP-V1",
+  "slug": "dpf-bak-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "BAK",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BAK-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14808,
+      "sha256": "ba6df294d84f116e08438105fa96fe4cd152038141eeb5a58771667bdcaa24b5"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BAK-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2410,
+      "sha256": "50ebecb9973cef8dddacb316169107e54138e0a1d9582a563ec5d1ddb3294a05"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BAK-HPP-V1-V1.zip",
+    "bytes": 15332,
+    "sha256": "ffaed21e0023d55aeb701e86ecc09f20f97f3edd95110549db094325f8d16549",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Brownies Cokelat Loyang 20 cm",
+        "Roti Sobek Keju",
+        "Cookies Oat 250 g",
+        "Tepung protein tinggi",
+        "Cokelat compound",
+        "Box brownies 20 cm",
+        "Tepung dan bahan resep",
+        "Gas oven",
+        "Kemasan dan label"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15332"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

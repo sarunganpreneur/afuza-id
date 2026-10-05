@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:5",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 31,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Servis Berkala Motor Matic",
+      "Oli mesin 10W-40",
+      "Busi motor matic",
+      "Kampas rem depan",
+      "Suku cadang"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15651"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

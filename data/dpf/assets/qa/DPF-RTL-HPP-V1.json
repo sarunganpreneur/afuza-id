@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 36,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Paket Sembako Hemat",
+      "Air Mineral 600 ml",
+      "Telur Ayam",
+      "Minyak goreng 1 L",
+      "Mi instan goreng",
+      "Baterai AA isi 2",
+      "Kulakan barang",
+      "Ongkos angkut",
+      "Biaya QRIS"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15203"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

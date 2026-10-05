@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-PRO-ADMIN-V1",
+  "slug": "dpf-pro-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "PRO",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-PRO-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17539,
+      "sha256": "c167aa0df233d66ac49f024a0fc52ece3d475a132f39c315f511d445293144f1"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-PRO-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10488,
+      "sha256": "2feeb2c8b4379d9d5761ef710e63f6146938dbecedb204165b51a98306e121e5"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-PRO-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2512,
+      "sha256": "6de74bfce83c5fc4ce6a8b8f737d128138832919e2964d384f1f5c7a703963cf"
+    }
+  ],
+  "package": {
+    "filename": "DPF-PRO-ADMIN-V1-V1.zip",
+    "bytes": 26178,
+    "sha256": "16874ad0ae0288a2334f1901cd5383b2e9d51e2d2b2bc1dd930c618ab6205711",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Konsultasi Operasional 90 Menit",
+        "Jam konsultasi tersedia",
+        "Lisensi desain bulanan",
+        "Slot proyek aktif",
+        "Jam kerja delivery"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26178"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

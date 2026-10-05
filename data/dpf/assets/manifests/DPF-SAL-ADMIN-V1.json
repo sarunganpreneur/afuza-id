@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-SAL-ADMIN-V1",
+  "slug": "dpf-sal-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "SAL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-SAL-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17512,
+      "sha256": "db9a44f7e655a0cbecaa06316f9bcce4b093d1d50aa9d33c1305121b052ddb51"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-SAL-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10477,
+      "sha256": "ec1e6265ff959043f5cb6595a9da5dd0f168f0e6cb1d411bb13cf42e511233d8"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-SAL-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2434,
+      "sha256": "0bdf1bf1e74fc65cefe969b18ce3f2f765098a505b9a68b48ddb5c965855309d"
+    }
+  ],
+  "package": {
+    "filename": "DPF-SAL-ADMIN-V1-V1.zip",
+    "bytes": 26062,
+    "sha256": "7e34067c11e0e29dcd0a5f6ed3da7acd338ae93b626b07e6c03d736499969cfc",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Potong Rambut Pria",
+        "Shampoo salon 1 L",
+        "Sarung cape",
+        "Pomade retail 80 g",
+        "Bahan treatment"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26062"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

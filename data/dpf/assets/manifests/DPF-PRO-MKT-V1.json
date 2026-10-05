@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-PRO-MKT-V1",
+  "slug": "dpf-pro-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "PRO",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-PRO-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20400,
+      "sha256": "6b20f56dc1c2ffafbc642d77d741e9caf72906fb424047a9dd8b2d251508d835"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-PRO-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10531,
+      "sha256": "cfa87e729bea1c7aafa8c21ca8cbdbc5eec75d10585fb6df6bc0cd3480fa4837"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-PRO-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2475,
+      "sha256": "75fdc231972abf528e8e3a84174b909d6954131222e9a993b404550031aa4184"
+    }
+  ],
+  "package": {
+    "filename": "DPF-PRO-MKT-V1-V1.zip",
+    "bytes": 29263,
+    "sha256": "b12cc6e90dc6aecc6aca1b72559f6ffc51c87b2564c276a96d46421578a4ced4",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Konsultasi Operasional 90 Menit",
+        "Paket Desain Identitas Dasar",
+        "Review Laporan Keuangan",
+        "Jam konsultasi tersedia",
+        "Lisensi desain bulanan",
+        "Slot proyek aktif",
+        "Sesi pemetaan masalah 90 menit",
+        "Paket desain identitas dengan batas revisi jelas",
+        "Review laporan keuangan untuk pemilik usaha"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29263"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-BNG-ADMIN-V1",
+  "slug": "dpf-bng-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "BNG",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BNG-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17507,
+      "sha256": "c61a8e97577331322f6034cf10c97ed893e6c423e2d20fa6aa7a3beeae7787a0"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-BNG-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10479,
+      "sha256": "76ade0ac4b66820052d30a6934022dc9c0722fe3ac833e056e71d4ba17297204"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BNG-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2473,
+      "sha256": "2bc2fe07f7acbfceba3bdb6414ae23104e74a0ec49cf6fe6f9d18d2eb15dfae3"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BNG-ADMIN-V1-V1.zip",
+    "bytes": 26094,
+    "sha256": "2feef70296a6136d9575d2d04f60996f001f9a64a3ff66b78ac320649ed43583",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Servis Berkala Motor Matic",
+        "Oli mesin 10W-40",
+        "Busi motor matic",
+        "Kampas rem depan",
+        "Suku cadang"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26094"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

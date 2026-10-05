@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:9",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 8,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Nasi Goreng Ayam",
+      "Soto Ayam",
+      "Es Teh Lemon",
+      "Beras medium",
+      "Ayam fillet",
+      "Gelas 16 oz",
+      "Paket makan siang: nasi goreng ayam + es teh",
+      "Paket keluarga soto ayam 4 mangkuk",
+      "Tambah telur pada menu nasi goreng"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:29037"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

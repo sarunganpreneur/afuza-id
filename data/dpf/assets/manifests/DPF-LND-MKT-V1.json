@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-LND-MKT-V1",
+  "slug": "dpf-lnd-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "LND",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-LND-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20318,
+      "sha256": "9226358e75ec574b860d87b1d31c279172064ea419b9718bc5701c4e74a7c81e"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-LND-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10475,
+      "sha256": "cb09039fd4ebb2911143ca3995a031ec3a9ddab73492f63215f5f441f69c5606"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-LND-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2397,
+      "sha256": "c1ee5321faa1d7b869c2acec297d8f42526563f01dccc79c4eeb0fa5038ae23a"
+    }
+  ],
+  "package": {
+    "filename": "DPF-LND-MKT-V1-V1.zip",
+    "bytes": 29038,
+    "sha256": "c1d656cc500f05b8dacdf9a741f7f84d9defc534a8f1d6f3bda76cc362027e94",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Cuci Kering Lipat Reguler",
+        "Cuci Setrika Express",
+        "Cuci Sepatu Basic",
+        "Deterjen cair konsentrat",
+        "Pewangi floral",
+        "Plastik laundry 40 x 60",
+        "Paket langganan cuci 20 kg",
+        "Cuci sepatu basic",
+        "Layanan express dengan kuota harian"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29038"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

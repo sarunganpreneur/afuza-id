@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-CAF-MKT-V1",
+  "slug": "dpf-caf-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "CAF",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-CAF-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20354,
+      "sha256": "c90f4a8a762ea9ebbf124882061e93ad8f5004fc7faf3f5622038a4e253feb3f"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-CAF-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10487,
+      "sha256": "8d8c951a1a5163b0d7379ff8988eee7bba0300915721e550f24ed351a50c0b0c"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-CAF-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2403,
+      "sha256": "2a3047e2924a5174b01e08eeccb98c7ddb8eddb9c070385f0c270dd0f920f2f4"
+    }
+  ],
+  "package": {
+    "filename": "DPF-CAF-MKT-V1-V1.zip",
+    "bytes": 29103,
+    "sha256": "b2c6be5f84347c7fc63644d589cd2f6e519067c12fee86b1810c909672b37c48",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Es Kopi Susu Gula Aren",
+        "Matcha Latte",
+        "Croissant Butter",
+        "Biji kopi house blend",
+        "Susu UHT",
+        "Cup 16 oz + lid",
+        "Pairing espresso susu dengan croissant",
+        "Kartu kunjungan 6 gelas",
+        "Matcha latte ukuran reguler"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29103"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

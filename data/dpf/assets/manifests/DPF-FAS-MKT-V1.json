@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-FAS-MKT-V1",
+  "slug": "dpf-fas-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "FAS",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-FAS-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20316,
+      "sha256": "ca67298f00240493ad06924aac21a026680156aeaaa09709d9fdafebdd22b8b7"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-FAS-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10485,
+      "sha256": "6b14f5cbe7e21b5986cdbde8b782c4d8c70de24f20d51842319e3c7df0bf59e8"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-FAS-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2410,
+      "sha256": "29760bcce5f1993e4833da5cb17208e7d264f423432da60037fb9a5818f53a3b"
+    }
+  ],
+  "package": {
+    "filename": "DPF-FAS-MKT-V1-V1.zip",
+    "bytes": 29065,
+    "sha256": "21ecae7f838f1e9f6612ce6f92c75141d7f23658bd04dc80fca2f8b2b34c022e",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Kaos Cotton Combed 24s",
+        "Kemeja Linen",
+        "Totebag Kanvas",
+        "Kaos blank hitam ukuran M",
+        "Kain linen warna natural",
+        "Poly mailer ukuran M",
+        "Kaos cotton combed dengan panduan ukuran",
+        "Pre-order kemeja linen warna natural",
+        "Paket reseller 12 pcs campur ukuran"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29065"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

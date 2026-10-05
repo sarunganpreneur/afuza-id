@@ -1,0 +1,79 @@
+{
+  "sku": "DPF-ONL-HPP-V1",
+  "slug": "dpf-onl-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "ONL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-ONL-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14794,
+      "sha256": "5ee056ffaa7ae60e846f2a3260971a8bb07e73a4ba15b4e06a3c915a14eed90f"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-ONL-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2435,
+      "sha256": "8303cbccb0d4c4396abdc74df6bd746cf353955632ab1af4f7091e5bc5cb7afb"
+    }
+  ],
+  "package": {
+    "filename": "DPF-ONL-HPP-V1-V1.zip",
+    "bytes": 15360,
+    "sha256": "72271358a5033e149b0a148dcb135085171cd476ff780d085c380c26434e32c4",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 10,
+      "uniqueTerms": [
+        "Kemeja Casual Reseller",
+        "Paket Organizer Meja",
+        "Bundle Perawatan Sepatu",
+        "Kemeja casual warna navy",
+        "Kardus kirim ukuran M",
+        "Bubble wrap 50 cm",
+        "Pembelian supplier",
+        "Biaya marketplace",
+        "Iklan produk",
+        "Packing"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15360"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

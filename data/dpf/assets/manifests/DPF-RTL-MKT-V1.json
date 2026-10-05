@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-RTL-MKT-V1",
+  "slug": "dpf-rtl-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "RTL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-RTL-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20319,
+      "sha256": "b6be81538b955705e4fa95d228e148ee86caee248bc6e225969ea532b3885bee"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-RTL-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10457,
+      "sha256": "6feca24b5ab49844b83423c4d16501f999aa3dbf1ea70f9c3f6145d74288df98"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-RTL-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2431,
+      "sha256": "ce1649567b4e6376a12d46fd667356bcfb6ccc4d613b78034a71948e38bdb220"
+    }
+  ],
+  "package": {
+    "filename": "DPF-RTL-MKT-V1-V1.zip",
+    "bytes": 29067,
+    "sha256": "5209d2de1e2c3a11add484dc660b814cd613f40100c8632bde6d9631367816d5",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Paket Sembako Hemat",
+        "Air Mineral 600 ml",
+        "Telur Ayam",
+        "Minyak goreng 1 L",
+        "Mi instan goreng",
+        "Baterai AA isi 2",
+        "Paket beras 5 kg, minyak, dan gula",
+        "Pesan barang rutin lewat WhatsApp",
+        "Harga khusus pembelian satu dus"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29067"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-SAL-INV-V1",
+  "slug": "dpf-sal-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "SAL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-SAL-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16334,
+      "sha256": "cd5dbfa42d809e1540a5938e7139ab66377e7aca3ca4461e483f41f8f91f991e"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-SAL-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2358,
+      "sha256": "cde03126bda7c942964cedb69a5f8ace6a6b75eb4aa14bd3a86c6365ae61360f"
+    }
+  ],
+  "package": {
+    "filename": "DPF-SAL-INV-V1-V1.zip",
+    "bytes": 15620,
+    "sha256": "f078d0029fa9724d9835ab0059cdbbfa9be90e712a33fd2ad8dfd63e7af5619e",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Potong Rambut Pria",
+        "Shampoo salon 1 L",
+        "Sarung cape",
+        "Pomade retail 80 g"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15620"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-SAL-HPP-V1",
+  "slug": "dpf-sal-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "SAL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-SAL-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14803,
+      "sha256": "e6f9a04cf32eb126374228149bccb881c847ccae439440e1c30c7b1e08efc88f"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-SAL-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2367,
+      "sha256": "aeef3b3648054ae18101cbfbe4bb04d534030f549b093a1c43e4f8afec6f0d0e"
+    }
+  ],
+  "package": {
+    "filename": "DPF-SAL-HPP-V1-V1.zip",
+    "bytes": 15305,
+    "sha256": "d42b8d388c0abd5b313cb5c742900c800a282502cdeaead1a9ed4d2ad2979314",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Potong Rambut Pria",
+        "Hair Spa Basic",
+        "Paket Potong + Cuci",
+        "Shampoo salon 1 L",
+        "Sarung cape",
+        "Pomade retail 80 g",
+        "Bahan treatment",
+        "Laundry handuk",
+        "Komisi stylist"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15305"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

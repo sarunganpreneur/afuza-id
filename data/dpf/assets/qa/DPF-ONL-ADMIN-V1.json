@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:7",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 6,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 6,
+    "uniqueTerms": [
+      "Kemeja Casual Reseller",
+      "Kemeja casual warna navy",
+      "Kardus kirim ukuran M",
+      "Bubble wrap 50 cm",
+      "Pembelian supplier",
+      "Packing"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:26155"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

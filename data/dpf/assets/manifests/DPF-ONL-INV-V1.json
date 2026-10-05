@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-ONL-INV-V1",
+  "slug": "dpf-onl-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "ONL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-ONL-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16337,
+      "sha256": "f44f55f1b8fe34fd1783466978f3eb2abfad5a2bc2ab0ab782a397beb67cbb03"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-ONL-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2419,
+      "sha256": "e69513fba4d4d6b706ea709033afbac19d0a2eee85f2a14aa7c118f8a3a42dc2"
+    }
+  ],
+  "package": {
+    "filename": "DPF-ONL-INV-V1-V1.zip",
+    "bytes": 15663,
+    "sha256": "86255142ea9d34b950d0c73658072039c252d299a63b6e484d7303a54f0eba46",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Kemeja Casual Reseller",
+        "Kemeja casual warna navy",
+        "Kardus kirim ukuran M",
+        "Bubble wrap 50 cm",
+        "Packing"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15663"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

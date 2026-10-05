@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Konsultasi Operasional 90 Menit",
+      "Paket Desain Identitas Dasar",
+      "Review Laporan Keuangan",
+      "Jam konsultasi tersedia",
+      "Lisensi desain bulanan",
+      "Slot proyek aktif",
+      "Jam kerja delivery",
+      "Lisensi software",
+      "Subkontraktor"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15419"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

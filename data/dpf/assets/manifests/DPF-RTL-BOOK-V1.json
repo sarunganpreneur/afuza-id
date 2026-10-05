@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-RTL-BOOK-V1",
+  "slug": "dpf-rtl-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "RTL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-RTL-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16972,
+      "sha256": "ec22b290d97969240037865492e7a322c58cb9a677c7ceaeed46e2094be710af"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-RTL-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2405,
+      "sha256": "9b6b99fe06a40699c353038018d9718ee5a34313385479998c69dd48817a9d99"
+    }
+  ],
+  "package": {
+    "filename": "DPF-RTL-BOOK-V1-V1.zip",
+    "bytes": 16284,
+    "sha256": "ec5753ad8caf29e73305c9da99482496b8c06663d1618590a04ca20df0770163",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Paket Sembako Hemat",
+        "Air Mineral 600 ml",
+        "Telur Ayam",
+        "Kulakan barang",
+        "Ongkos angkut"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16284"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

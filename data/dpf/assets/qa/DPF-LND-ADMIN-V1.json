@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:7",
+      "files:3"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 6,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 5,
+    "uniqueTerms": [
+      "Cuci Kering Lipat Reguler",
+      "Deterjen cair konsentrat",
+      "Pewangi floral",
+      "Plastik laundry 40 x 60",
+      "Deterjen dan pewangi"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:3",
+      "packageBytes:26083"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

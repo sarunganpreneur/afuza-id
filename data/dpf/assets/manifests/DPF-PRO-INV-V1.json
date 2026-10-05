@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-PRO-INV-V1",
+  "slug": "dpf-pro-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "PRO",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-PRO-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16338,
+      "sha256": "251667b96fd912895381bdb1a8dbcadc3b5680e7cceb48d29ebb53b9d512eea2"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-PRO-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2447,
+      "sha256": "dcf669b5b711107f19e08eefa87823c04cca9d4834b970abeacd206351355931"
+    }
+  ],
+  "package": {
+    "filename": "DPF-PRO-INV-V1-V1.zip",
+    "bytes": 15722,
+    "sha256": "51d35d66b924f93338484575da31a51ce0d8dc79f9b9e09cdb6cf425d7d30c33",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Konsultasi Operasional 90 Menit",
+        "Jam konsultasi tersedia",
+        "Lisensi desain bulanan",
+        "Slot proyek aktif"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15722"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

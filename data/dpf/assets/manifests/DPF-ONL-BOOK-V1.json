@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-ONL-BOOK-V1",
+  "slug": "dpf-onl-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "ONL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-ONL-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16968,
+      "sha256": "27d4be72f8eca3003bdab64600b94a1425525d2edcaba457a1274132213796cd"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-ONL-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2428,
+      "sha256": "d221d10b16404b485c061ac4566b65ed1992206a63f5a9a0244ae540757d1299"
+    }
+  ],
+  "package": {
+    "filename": "DPF-ONL-BOOK-V1-V1.zip",
+    "bytes": 16344,
+    "sha256": "a7a60ee87d355f7fbd4eacb4e72a0825a14f34f55c29b969e3ec38f2cf3bf6a8",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Kemeja Casual Reseller",
+        "Paket Organizer Meja",
+        "Bundle Perawatan Sepatu",
+        "Pembelian supplier",
+        "Biaya marketplace"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16344"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

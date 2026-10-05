@@ -1,0 +1,75 @@
+{
+  "sku": "DPF-BNG-BOOK-V1",
+  "slug": "dpf-bng-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "BNG",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BNG-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16958,
+      "sha256": "6bc23e0ab1930622f303598487eb129310f591eb13690c00a118a6affb6e309e"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BNG-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2411,
+      "sha256": "f9591ab1bb95e26a49dc36be8c91ad9e87075aa0923002f322a35742e042a10d"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BNG-BOOK-V1-V1.zip",
+    "bytes": 16277,
+    "sha256": "e5f9db93a6982b6e2016a6c64b8bbd351775d6c0e415140ad15ba2aba903fff2",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 6,
+      "uniqueTerms": [
+        "Servis Berkala Motor Matic",
+        "Ganti Kampas Rem Depan",
+        "Tambal Ban Tubeless",
+        "Kampas rem depan",
+        "Suku cadang",
+        "Consumable bengkel"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16277"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

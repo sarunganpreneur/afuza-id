@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 15,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 6,
+    "uniqueTerms": [
+      "Servis Berkala Motor Matic",
+      "Ganti Kampas Rem Depan",
+      "Tambal Ban Tubeless",
+      "Kampas rem depan",
+      "Suku cadang",
+      "Consumable bengkel"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:16277"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

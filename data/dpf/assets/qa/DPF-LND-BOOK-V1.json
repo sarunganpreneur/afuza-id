@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 15,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 6,
+    "uniqueTerms": [
+      "Cuci Kering Lipat Reguler",
+      "Cuci Setrika Express",
+      "Cuci Sepatu Basic",
+      "Deterjen dan pewangi",
+      "Listrik mesin",
+      "Cuci sepatu basic"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:16213"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

@@ -1,0 +1,86 @@
+{
+  "sku": "DPF-ONL-MKT-V1",
+  "slug": "dpf-onl-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "ONL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-ONL-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20300,
+      "sha256": "c854670b55f0ffe9a07593ac07dd7abb11a1d275cfff072134edf89fa27156a7"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-ONL-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10459,
+      "sha256": "2dc7917078e8cce6ec4fee27992b08d406b4ce625e2a26ccf91303a116ea1e8a"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-ONL-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2448,
+      "sha256": "1b6a2fc24a05a4ae3155bcee74f041c65464bac314cd90405db85abc09009c1c"
+    }
+  ],
+  "package": {
+    "filename": "DPF-ONL-MKT-V1-V1.zip",
+    "bytes": 29055,
+    "sha256": "166cd7d2d4f83e02ab8a0105d2c8120a6bfd2af92cb37f7d4c4a008109e6950c",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 10,
+      "uniqueTerms": [
+        "Kemeja Casual Reseller",
+        "Paket Organizer Meja",
+        "Bundle Perawatan Sepatu",
+        "Kemeja casual warna navy",
+        "Kardus kirim ukuran M",
+        "Bubble wrap 50 cm",
+        "Packing",
+        "Bundle organizer meja dengan dua ukuran",
+        "Voucher repeat order terjadwal",
+        "Video proses packing pesanan rapuh"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29055"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

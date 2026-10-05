@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-SAL-MKT-V1",
+  "slug": "dpf-sal-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "SAL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-SAL-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20309,
+      "sha256": "c9cb481f511b924ed713f73d7ca798006c3e55a86e03aedcb62a5cba45d92136"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-SAL-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10470,
+      "sha256": "7bfa79b9ae03c8d8794c318ff2dad9b5f98a8e8612d43416b4ad4483923ef7a6"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-SAL-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2394,
+      "sha256": "ed4310e2d01540768fae2d64b93cb535f454bb7bf8413e2994c8aba98f1590e3"
+    }
+  ],
+  "package": {
+    "filename": "DPF-SAL-MKT-V1-V1.zip",
+    "bytes": 29027,
+    "sha256": "b1f271df61b8a4027041c20502410995c630caa90e31ecd68f2cd7ac23016f0d",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Potong Rambut Pria",
+        "Hair Spa Basic",
+        "Paket Potong + Cuci",
+        "Shampoo salon 1 L",
+        "Sarung cape",
+        "Pomade retail 80 g",
+        "Paket potong dan cuci",
+        "Pengingat jadwal potong 3-4 minggu",
+        "Hair spa setelah konsultasi kondisi rambut"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29027"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

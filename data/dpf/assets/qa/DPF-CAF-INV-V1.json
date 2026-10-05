@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:5",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 31,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 4,
+    "uniqueTerms": [
+      "Es Kopi Susu Gula Aren",
+      "Biji kopi house blend",
+      "Susu UHT",
+      "Cup 16 oz + lid"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15646"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

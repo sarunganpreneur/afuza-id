@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Kaos Cotton Combed 24s",
+      "Kemeja Linen",
+      "Totebag Kanvas",
+      "Kaos blank hitam ukuran M",
+      "Kain linen warna natural",
+      "Poly mailer ukuran M",
+      "Bahan kain dan blank",
+      "Jasa jahit",
+      "Sablon atau bordir"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15317"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

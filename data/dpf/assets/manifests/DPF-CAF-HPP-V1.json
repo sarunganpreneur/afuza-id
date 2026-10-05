@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-CAF-HPP-V1",
+  "slug": "dpf-caf-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "CAF",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-CAF-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14793,
+      "sha256": "c3f331be9d6bb61db6a558f5d5fdf08ba5e41cc90abebbf9aef77c1e2b4d39e6"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-CAF-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2384,
+      "sha256": "30e080c0782035994e85d7dd295fdd69553250a7522478f38a45bbfc82c50db8"
+    }
+  ],
+  "package": {
+    "filename": "DPF-CAF-HPP-V1-V1.zip",
+    "bytes": 15319,
+    "sha256": "73a8506965326b173abfe5d05daa76241fc00c4035d65f3a750de65032c137fb",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Es Kopi Susu Gula Aren",
+        "Matcha Latte",
+        "Croissant Butter",
+        "Biji kopi house blend",
+        "Susu UHT",
+        "Cup 16 oz + lid",
+        "Biji kopi dan susu",
+        "Pastry titip jual",
+        "Biaya platform pesan"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15319"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-CAF-BOOK-V1",
+  "slug": "dpf-caf-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "CAF",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-CAF-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16964,
+      "sha256": "6be55ab556d05ab36f21017a6e12d769e426fe47fed86e7812b7512f73f8c350"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-CAF-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2375,
+      "sha256": "38640c9518406eebfab1c478b42c0bc045a01db456a6bd54115c962a7ca27edc"
+    }
+  ],
+  "package": {
+    "filename": "DPF-CAF-BOOK-V1-V1.zip",
+    "bytes": 16258,
+    "sha256": "14ccfc07b773891d20f53a696d96b33a8ba6a97e5f91511946d34d21ed43fce0",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Es Kopi Susu Gula Aren",
+        "Matcha Latte",
+        "Croissant Butter",
+        "Biji kopi dan susu",
+        "Pastry titip jual"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16258"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "structure": {
+    "passed": true,
+    "checks": [
+      "sheets:6",
+      "files:2"
+    ],
+    "failures": []
+  },
+  "formulas": {
+    "passed": true,
+    "count": 39,
+    "failures": []
+  },
+  "content": {
+    "passed": true,
+    "failures": []
+  },
+  "nicheSpecificity": {
+    "passed": true,
+    "score": 9,
+    "uniqueTerms": [
+      "Potong Rambut Pria",
+      "Hair Spa Basic",
+      "Paket Potong + Cuci",
+      "Shampoo salon 1 L",
+      "Sarung cape",
+      "Pomade retail 80 g",
+      "Bahan treatment",
+      "Laundry handuk",
+      "Komisi stylist"
+    ],
+    "failures": []
+  },
+  "packaging": {
+    "passed": true,
+    "checks": [
+      "zipEntries:2",
+      "packageBytes:15305"
+    ],
+    "failures": []
+  },
+  "status": "QA_PASSED"
+}

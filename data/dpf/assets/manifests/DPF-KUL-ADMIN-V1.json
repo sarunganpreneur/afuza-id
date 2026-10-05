@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-KUL-ADMIN-V1",
+  "slug": "dpf-kul-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "KUL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-KUL-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17527,
+      "sha256": "fdba223bdc3aae1bac54cb7790d1260da3e8ae17ba6db664aa0890752645cf64"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-KUL-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10477,
+      "sha256": "62838a30b8177110d3bc456d545e88252ba24c6daa4c50cf32d262eaf5ca7bdb"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-KUL-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2450,
+      "sha256": "da4c3e493a9682d7b08a1dae29fcf9e127bf374919dcbede47ba122e2a6aea55"
+    }
+  ],
+  "package": {
+    "filename": "DPF-KUL-ADMIN-V1-V1.zip",
+    "bytes": 26097,
+    "sha256": "0a0ed0ab9b9c527bb53a45cb6da913075cbc6c0eb47dff919cfcd864731a59ad",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Nasi Goreng Ayam",
+        "Beras medium",
+        "Ayam fillet",
+        "Gelas 16 oz",
+        "Belanja bahan segar"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26097"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

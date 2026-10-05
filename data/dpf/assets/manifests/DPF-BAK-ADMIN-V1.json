@@ -1,0 +1,81 @@
+{
+  "sku": "DPF-BAK-ADMIN-V1",
+  "slug": "dpf-bak-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "BAK",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BAK-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17527,
+      "sha256": "f8f66c98480f94c39e24860027340b10b2bca07f5f9682a6ade909e2c753db3a"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-BAK-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10493,
+      "sha256": "5ad42b90dffe69a873b0b4e02ad6de8444cecbe3e8dae1b5d0f531db60431597"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BAK-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2478,
+      "sha256": "dc8428cf33fd34a775a7c0afa498835df58366a93711a41fc58148295bc7c06b"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BAK-ADMIN-V1-V1.zip",
+    "bytes": 26135,
+    "sha256": "26b834ad4304748ba2774b2e9fd7d50a2d73e85372f34ca4644fa445dd03128a",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Brownies Cokelat Loyang 20 cm",
+        "Tepung protein tinggi",
+        "Cokelat compound",
+        "Box brownies 20 cm",
+        "Tepung dan bahan resep"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26135"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

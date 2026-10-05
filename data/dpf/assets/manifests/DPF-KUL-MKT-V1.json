@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-KUL-MKT-V1",
+  "slug": "dpf-kul-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "KUL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-KUL-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20294,
+      "sha256": "fca5b3ab859c7d09ca7d57c31240ba8a7ecb199822226b7bfd3c05fca8d135e7"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-KUL-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10477,
+      "sha256": "2bdc387ccd7006f60ca693fbfc279a9c4a069a5a86d00ecb6b7a761749239edc"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-KUL-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2409,
+      "sha256": "2ca75869c6b3ed6a574524b381b343b206e5cd90008ece8c7d3e0331c503b0b7"
+    }
+  ],
+  "package": {
+    "filename": "DPF-KUL-MKT-V1-V1.zip",
+    "bytes": 29037,
+    "sha256": "52a9c35d24776da2c7532a9ab5249803de2876925e0f0f04535f96bea08b05c1",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Nasi Goreng Ayam",
+        "Soto Ayam",
+        "Es Teh Lemon",
+        "Beras medium",
+        "Ayam fillet",
+        "Gelas 16 oz",
+        "Paket makan siang: nasi goreng ayam + es teh",
+        "Paket keluarga soto ayam 4 mangkuk",
+        "Tambah telur pada menu nasi goreng"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29037"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

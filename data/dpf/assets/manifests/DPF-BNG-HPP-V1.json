@@ -1,0 +1,78 @@
+{
+  "sku": "DPF-BNG-HPP-V1",
+  "slug": "dpf-bng-hpp-v1",
+  "masterCode": "HPP",
+  "nicheCode": "BNG",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 19000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BNG-HPP-V1-Kalkulator.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 14777,
+      "sha256": "3ce2671ea4a4b452fae6bad1696bf336f05c0b8cc7c507eca071cd65fbd53d01"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BNG-HPP-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2405,
+      "sha256": "6c65d13b9cfe3077796ee63b372332bed0fe0c7b2519b9081d9f558eeec7ac98"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BNG-HPP-V1-V1.zip",
+    "bytes": 15317,
+    "sha256": "b044ae0149b3cd7f1cbd2e4f2b7feef77e87fb93893bc1bcac81ad46ec4a1520",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 39,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Servis Berkala Motor Matic",
+        "Ganti Kampas Rem Depan",
+        "Tambal Ban Tubeless",
+        "Oli mesin 10W-40",
+        "Busi motor matic",
+        "Kampas rem depan",
+        "Suku cadang",
+        "Consumable bengkel",
+        "Upah mekanik"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15317"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

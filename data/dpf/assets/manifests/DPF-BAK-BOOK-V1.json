@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-BAK-BOOK-V1",
+  "slug": "dpf-bak-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "BAK",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BAK-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16964,
+      "sha256": "747e2a43ed73ba0eaa3917eefdb61cf2c78a482942c5481c6fad70bc927dc7af"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BAK-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2401,
+      "sha256": "0025fa5b46dca587a3d506ba5573ca8bd99bf62d138f921c71dad3ac76f34a05"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BAK-BOOK-V1-V1.zip",
+    "bytes": 16255,
+    "sha256": "1247742ae9516efeeba361aafe3e0542c2b34253dee79237aec0d667fe45c5a3",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Brownies Cokelat Loyang 20 cm",
+        "Roti Sobek Keju",
+        "Cookies Oat 250 g",
+        "Tepung dan bahan resep",
+        "Gas oven"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16255"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

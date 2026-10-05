@@ -1,0 +1,73 @@
+{
+  "sku": "DPF-BAK-INV-V1",
+  "slug": "dpf-bak-inv-v1",
+  "masterCode": "INV",
+  "nicheCode": "BAK",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 25000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BAK-INV-V1-Inventory.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16335,
+      "sha256": "262caeaddcc07e968d0c19fbbd90bc0bc5002689437167509201f7ca1d28b063"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BAK-INV-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2388,
+      "sha256": "edd198b7da6ef036211f1b6c2b79db01c326f6bd02ea9e852549f8ddd9c21797"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BAK-INV-V1-V1.zip",
+    "bytes": 15664,
+    "sha256": "9ff847ac4e5f168ac38d1cd066d25cb05db8aff20d89b0d176aaa1d2180c567a",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:5",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 31,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 4,
+      "uniqueTerms": [
+        "Brownies Cokelat Loyang 20 cm",
+        "Tepung protein tinggi",
+        "Cokelat compound",
+        "Box brownies 20 cm"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:15664"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

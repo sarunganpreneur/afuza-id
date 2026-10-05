@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-PRO-BOOK-V1",
+  "slug": "dpf-pro-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "PRO",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-PRO-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16995,
+      "sha256": "baea52de811cf6ffb1f4589ca8b8dac96ab3db70dde0ed742d9a0863e6f0813a"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-PRO-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2444,
+      "sha256": "3bfa9408e70d9d6885ea716b7a90c5ab55fb81ebd7e631292f5d1dd94ff32e2a"
+    }
+  ],
+  "package": {
+    "filename": "DPF-PRO-BOOK-V1-V1.zip",
+    "bytes": 16348,
+    "sha256": "34824f458757d3964eed636fc0a1740b8542214be9551a514a14a37a759769f9",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Konsultasi Operasional 90 Menit",
+        "Paket Desain Identitas Dasar",
+        "Review Laporan Keuangan",
+        "Jam kerja delivery",
+        "Lisensi software"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16348"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

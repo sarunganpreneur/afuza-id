@@ -1,0 +1,74 @@
+{
+  "sku": "DPF-FAS-BOOK-V1",
+  "slug": "dpf-fas-book-v1",
+  "masterCode": "BOOK",
+  "nicheCode": "FAS",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-FAS-BOOK-V1-Pembukuan.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 16962,
+      "sha256": "2b2c4def35482570232a1de086776b6e90bd3f5204a7d4ee8752468109430514"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-FAS-BOOK-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2380,
+      "sha256": "47ca2e186dc5f9a6e513934fa88486804966ad579972bb46802dbcda926dbe1c"
+    }
+  ],
+  "package": {
+    "filename": "DPF-FAS-BOOK-V1-V1.zip",
+    "bytes": 16222,
+    "sha256": "9a9b1534847e569a849f7f814752aa9b83695de0724c931d84a871f97e22ae05",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:6",
+        "files:2"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 15,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 5,
+      "uniqueTerms": [
+        "Kaos Cotton Combed 24s",
+        "Kemeja Linen",
+        "Totebag Kanvas",
+        "Bahan kain dan blank",
+        "Jasa jahit"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:2",
+        "packageBytes:16222"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

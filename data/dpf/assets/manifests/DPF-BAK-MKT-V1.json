@@ -1,0 +1,85 @@
+{
+  "sku": "DPF-BAK-MKT-V1",
+  "slug": "dpf-bak-mkt-v1",
+  "masterCode": "MKT",
+  "nicheCode": "BAK",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 39000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-BAK-MKT-V1-Marketing.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 20312,
+      "sha256": "80ea1609f241dfad1c45548724bb6d26ade5b302933e6c62f513208288c4ecec"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-BAK-MKT-V1-Lembar-Kerja-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10464,
+      "sha256": "0c3db806522306f43463b5ce68973caaffc3e36c98db7487249c0280fd72d30e"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-BAK-MKT-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2431,
+      "sha256": "f4de4505426ccf861e5e7808083e0d9d67fc9547afc37cb32b800e2743de9cf1"
+    }
+  ],
+  "package": {
+    "filename": "DPF-BAK-MKT-V1-V1.zip",
+    "bytes": 29064,
+    "sha256": "1f3af36b20ce04904ca2f470c07a0b0ca50ef35cbe88739fc0b5b95c4e758248",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:9",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 8,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 9,
+      "uniqueTerms": [
+        "Brownies Cokelat Loyang 20 cm",
+        "Roti Sobek Keju",
+        "Cookies Oat 250 g",
+        "Tepung protein tinggi",
+        "Cokelat compound",
+        "Box brownies 20 cm",
+        "Brownies loyang untuk rapat",
+        "Roti sobek keju batch pagi",
+        "Hampers cookies dengan kartu ucapan"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:29064"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}

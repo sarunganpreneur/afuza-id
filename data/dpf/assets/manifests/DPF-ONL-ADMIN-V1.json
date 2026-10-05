@@ -1,0 +1,82 @@
+{
+  "sku": "DPF-ONL-ADMIN-V1",
+  "slug": "dpf-onl-admin-v1",
+  "masterCode": "ADMIN",
+  "nicheCode": "ONL",
+  "version": "V1",
+  "generatorVersion": "1.0.0",
+  "generatedAt": "2026-10-05T00:00:00.000Z",
+  "priceIdr": 29000,
+  "files": [
+    {
+      "role": "primary-workbook",
+      "filename": "DPF-ONL-ADMIN-V1-Administrasi.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 17547,
+      "sha256": "778ffb7e09a32aa6dcafda7597f7b74081ec1b97cbd885cedae22b3029b66f3e"
+    },
+    {
+      "role": "editable-forms",
+      "filename": "DPF-ONL-ADMIN-V1-Formulir-Editable.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 10486,
+      "sha256": "f9c3755a963492372e5c6e9f5d23451d77ac9591334d1bf9e2772b4dac2b8789"
+    },
+    {
+      "role": "quick-start",
+      "filename": "DPF-ONL-ADMIN-V1-Panduan-Cepat.pdf",
+      "mimeType": "application/pdf",
+      "bytes": 2490,
+      "sha256": "b775f6b9e621b0c4f399f50097127f2dace33cd539712d67b22ad35cc9250f2b"
+    }
+  ],
+  "package": {
+    "filename": "DPF-ONL-ADMIN-V1-V1.zip",
+    "bytes": 26155,
+    "sha256": "e3d366b633e99983ed84892b507c6763ba946b1f4f696cd3fa7dd775e39fe2d4",
+    "mimeType": "application/zip"
+  },
+  "qa": {
+    "passed": true,
+    "structure": {
+      "passed": true,
+      "checks": [
+        "sheets:7",
+        "files:3"
+      ],
+      "failures": []
+    },
+    "formulas": {
+      "passed": true,
+      "count": 6,
+      "failures": []
+    },
+    "content": {
+      "passed": true,
+      "failures": []
+    },
+    "nicheSpecificity": {
+      "passed": true,
+      "score": 6,
+      "uniqueTerms": [
+        "Kemeja Casual Reseller",
+        "Kemeja casual warna navy",
+        "Kardus kirim ukuran M",
+        "Bubble wrap 50 cm",
+        "Pembelian supplier",
+        "Packing"
+      ],
+      "failures": []
+    },
+    "packaging": {
+      "passed": true,
+      "checks": [
+        "zipEntries:3",
+        "packageBytes:26155"
+      ],
+      "failures": []
+    },
+    "status": "QA_PASSED"
+  },
+  "status": "STAGING_PUBLISHED"
+}
