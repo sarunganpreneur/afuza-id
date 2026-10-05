@@ -2,10 +2,28 @@
   "schema_version": 1,
   "worker_provider": "fake",
   "supported_provider_ids": ["fake", "local-agent", "vscode-agent", "codex", "other"],
+  "provider_abstraction": {
+    "enabled_provider": "fake",
+    "candidate_provider": null,
+    "implemented_adapters": ["fake", "local-agent"],
+    "future_provider_ids": ["vscode-agent", "codex", "other"],
+    "task_dispatch_enabled": false
+  },
   "production_forbidden": true,
   "max_attempts": 2,
   "lifecycle": ["READY", "PREPARING", "RUNNING", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED"],
+  "real_worker_lifecycle": ["READY", "PREPARING", "WORKSPACE_READY", "WORKER_RUNNING", "WORKER_FINISHED", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED"],
   "failure_states": ["BLOCKED", "FAILED", "AWAITING_APPROVAL"],
+  "real_worker_sandbox_requirements": ["non_interactive", "working_directory_scoped", "filesystem_scoped", "environment_isolated", "network_disabled", "command_allowlisted", "reliable_exit_status"],
+  "worker_authority": {
+    "shell": false,
+    "git_write": false,
+    "push": false,
+    "commit": false,
+    "production": false,
+    "deployment": false,
+    "secrets": false
+  },
   "source_branches": {
     "chalwa.id": "feature/ax06-backlog-chalwa",
     "klodhost": "feature/ax06-backlog-klodhost",

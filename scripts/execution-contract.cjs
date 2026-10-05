@@ -347,7 +347,7 @@ async function executeGate(repo, name, definition, context = {}, runner = spawnS
       const allowed = Object.values(context.genericQualityGates || {}).some((candidate) =>
         candidate.command === definition.command && JSON.stringify(candidate.args) === JSON.stringify(definition.args));
       if (!allowed) return { name, status: "FAIL", detail: "Command is not in the approved generic gate registry" };
-      const result = runner(definition.command, definition.args, { cwd: repo, encoding: "utf8", timeout: context.timeout || 300000, maxBuffer: 4 * 1024 * 1024, shell: false });
+      const result = runner(definition.command, definition.args, { cwd: repo, encoding: "utf8", timeout: context.timeout || 300000, maxBuffer: 4 * 1024 * 1024, shell: false, env: context.env || process.env });
       return { name, status: result.status === 0 ? "PASS" : "FAIL", detail: result.status === 0 ? `${definition.command} ${definition.args.join(" ")} passed` : (result.stderr || result.stdout || `exit ${result.status}`).trim() };
     }
     if (definition.type === "git_diff_check") {
@@ -365,7 +365,7 @@ async function executeGate(repo, name, definition, context = {}, runner = spawnS
     }
     if (definition.type === "test_name") {
       const args = ["test", "--", "--run", definition.file, "-t", definition.name];
-      const result = runner("npm", args, { cwd: repo, encoding: "utf8", timeout: context.timeout || 300000, maxBuffer: 4 * 1024 * 1024, shell: false });
+      const result = runner("npm", args, { cwd: repo, encoding: "utf8", timeout: context.timeout || 300000, maxBuffer: 4 * 1024 * 1024, shell: false, env: context.env || process.env });
       return { name, status: result.status === 0 ? "PASS" : "FAIL", detail: result.status === 0 ? `test passed: ${definition.name}` : (result.stderr || result.stdout || `exit ${result.status}`).trim() };
     }
     if (definition.type === "route_exists" || definition.type === "api_contract") {

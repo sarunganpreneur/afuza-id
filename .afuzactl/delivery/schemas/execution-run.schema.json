@@ -9,7 +9,7 @@
     "execution_id": { "type": "string", "minLength": 1 },
     "project_id": { "enum": ["chalwa.id", "klodhost", "marketing-agency"] },
     "task_id": { "type": "string", "pattern": "^(CHW|KLO|MKT)-06-[0-9]{2}$" },
-    "status": { "enum": ["READY", "PREPARING", "RUNNING", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED", "BLOCKED", "FAILED", "AWAITING_APPROVAL"] },
+    "status": { "enum": ["READY", "PREPARING", "RUNNING", "WORKSPACE_READY", "WORKER_RUNNING", "WORKER_FINISHED", "VALIDATING", "COMMITTING", "PUBLISHING", "COMPLETED", "BLOCKED", "FAILED", "AWAITING_APPROVAL"] },
     "simulation": { "type": "boolean" },
     "task_completed": { "type": "boolean" },
     "started_at": { "type": ["string", "null"] },

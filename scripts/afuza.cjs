@@ -10,6 +10,7 @@ const { buildPortfolioPlan, createBatch, inventoryFileName, transitionBatch } = 
 const { createInbox } = require("./portfolio-inbox.cjs");
 const delivery = require("./delivery-orchestrator.cjs");
 const execution = require("./execution-contract.cjs");
+const workerAdapter = require("./real-worker-adapter.cjs");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONTROL = path.join(ROOT, ".afuzactl");
@@ -1137,7 +1138,22 @@ async function runDeliveryCommand(args) {
   const deliveryRoot = path.join(ECOSYSTEM_ROOT, "..", "delivery");
   const lanes = delivery.loadLanes(deliveryRoot);
   const [subcommand, projectId, ...options] = args;
-  if (["execution-plan", "execution-inspect", "execution-test"].includes(subcommand)) {
+  if (["worker-status", "worker-probe"].includes(subcommand)) {
+    const contract = readJson(path.join(deliveryRoot, "execution-contract.json"));
+    const runtime = workerAdapter.discoverWorkerCapabilities({ configuredProvider: contract.worker_provider });
+    if (subcommand === "worker-probe") {
+      console.log(JSON.stringify(runtime, null, 2));
+      return 0;
+    }
+    const laneState = delivery.loadState(deliveryRoot).lanes;
+    const executions = Object.fromEntries(lanes.map((lane) => {
+      const run = execution.getExecutionState(deliveryRoot, lane.id);
+      return [lane.id, { task_state: laneState[lane.id]?.status || "UNKNOWN", run_status: run?.status || "NOT_RUN", task_completed: run?.task_completed === true, stale: run ? workerAdapter.staleRunDisposition(run) : false }];
+    }));
+    console.log(JSON.stringify({ configured_provider: contract.worker_provider, candidate_provider: runtime.candidate_provider, dispatch_enabled: false, executions }, null, 2));
+    return 0;
+  }
+  if (["execution-plan", "execution-inspect", "execution-test", "execution-preflight"].includes(subcommand)) {
     const normalizedProject = projectId === "chalwa" ? "chalwa.id" : projectId;
     const lane = lanes.find((item) => item.id === normalizedProject);
     if (!lane) throw new Error(`Unknown delivery project: ${projectId || "(missing)"}`);
@@ -1154,7 +1170,9 @@ async function runDeliveryCommand(args) {
     const taskBranch = selection.status === "READY" ? execution.taskBranchName(lane.id, selection.task) : null;
     const workspacePath = taskBranch ? execution.worktreePath(lane.id, selection.task) : null;
     const repoCheck = execution.inspectSourceRepository(lane, sourceBranch, contract, undefined, { taskBranch, workspacePath });
-    const stagingCheck = await delivery.executeLane(lane, { deliveryRoot, canonicalRepo: ROOT });
+    const stagingCheck = subcommand === "execution-preflight"
+      ? await delivery.inspectLane(lane, { controlRoot: deliveryRoot, canonicalRepo: ROOT })
+      : await delivery.executeLane(lane, { deliveryRoot, canonicalRepo: ROOT });
     const plan = execution.buildExecutionPlan({ lane, ...sources, contract, repoCheck, stagingCheck });
     let schemaValid = false;
     if (plan.spec) {
@@ -1162,7 +1180,7 @@ async function runDeliveryCommand(args) {
       schemaValid = new Ajv({ allErrors: true, schemaId: "auto" }).validate(specSchema, plan.spec);
       if (!schemaValid) plan.blockers.push("EXECUTION_SPEC_SCHEMA_INVALID");
     }
-    if (subcommand === "execution-plan") {
+    if (subcommand === "execution-plan" || subcommand === "execution-preflight") {
       const result = {
         contract_status: plan.blockers.length === 0 && schemaValid ? "VALID" : "BLOCKED",
         worker_provider: contract.worker_provider,
@@ -1171,6 +1189,13 @@ async function runDeliveryCommand(args) {
         blockers: plan.blockers,
         spec: plan.spec,
       };
+      if (subcommand === "execution-preflight") {
+        result.preflight_status = result.contract_status === "VALID" ? "PASS_FAKE_ONLY" : "BLOCKED";
+        result.real_worker_ready = false;
+        result.candidate_provider = workerAdapter.discoverWorkerCapabilities({ configuredProvider: contract.worker_provider }).candidate_provider;
+        result.task_dispatch_available = false;
+        delete result.spec;
+      }
       console.log(JSON.stringify(result, null, 2));
       return result.contract_status === "VALID" ? 0 : 1;
     }
@@ -1225,7 +1250,7 @@ async function runDeliveryCommand(args) {
     console.log(JSON.stringify(result, null, 2));
     return result.results.some((item) => ["FAILED", "BLOCKED"].includes(item.status)) ? 1 : 0;
   }
-  console.log("Usage: ./afuza delivery <status|plan|run <project> --dry-run|run-all --dry-run|execution-plan <project>|execution-inspect <project>|execution-test <project> --fake|report>");
+  console.log("Usage: ./afuza delivery <status|plan|run <project> --dry-run|run-all --dry-run|worker-status|worker-probe|execution-preflight <project>|execution-plan <project>|execution-inspect <project>|execution-test <project> --fake|report>");
   return 2;
 }
 

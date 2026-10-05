@@ -375,6 +375,7 @@ module.exports = {
   classifyChecks,
   discoverLanes,
   executeLane,
+  inspectLane,
   loadLanes,
   loadTaskSources,
   loadState,
